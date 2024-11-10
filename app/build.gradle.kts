@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -33,6 +35,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -42,7 +47,16 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
+    /*  J UNIT  */
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
+
+    /*  ESPRESSO  */
     androidTestImplementation(libs.androidx.espresso.core)
+
+    /*  HILT  */
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
 }
