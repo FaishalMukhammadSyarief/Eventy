@@ -164,7 +164,8 @@
             android:layout_width="match_parent"
             android:layout_marginHorizontal="@dimen/margin_screen"
             android:backgroundTint="@color/navy"
-            android:text="@string/register"
+            android:onClick="@{() -> activity.toOtp()}"
+            android:text="@string/minta_kode_otp"
             android:textColor="@color/white"
             app:layout_constraintTop_toBottomOf="@+id/cb_remember"
             tools:ignore="VisualLintButtonSize" />

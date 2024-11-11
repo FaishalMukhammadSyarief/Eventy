@@ -9,6 +9,7 @@ import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseActivity
 import com.zhalz.eventy.databinding.ActivityRegisterBinding
 import com.zhalz.eventy.presentation.login.LoginActivity
+import com.zhalz.eventy.presentation.otp.OtpActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,5 +33,6 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding, RegisterViewModel
     }
 
     fun toLogin() = openActivity<LoginActivity> { finish() }
+    fun toOtp() = openActivity<OtpActivity>()
 
 }

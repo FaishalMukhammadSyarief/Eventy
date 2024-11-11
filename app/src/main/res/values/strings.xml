@@ -26,4 +26,5 @@
     <string name="sudah_punya_akun">Sudah punya akun?</string>
     <string name="nomor_telepon">Nomor Telepon</string>
     <string name="register">Register</string>
+    <string name="minta_kode_otp">Minta Kode OTP</string>
 </resources>
