@@ -1,4 +1,4 @@
-package com.zhalz.eventy.presentation.main
+package com.zhalz.eventy.presentation.landing
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -6,11 +6,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseActivity
-import com.zhalz.eventy.databinding.ActivityMainBinding
+import com.zhalz.eventy.databinding.ActivityLandingBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.activity_main) {
+class LandingActivity : BaseActivity<ActivityLandingBinding, LandingViewModel>(R.layout.activity_landing) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
