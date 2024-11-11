@@ -7,6 +7,8 @@
     <string name="cd_slider">Slider</string>
     <string name="sign_up">Sign Up</string>
     <string name="welcome">Selamat Datang \ndi Eventy</string>
+    <string name="email_error">Invalid email format</string>
+    <string name="email_empty">Email field is required</string>
     <string name="password_error">Password harus lebih dari 8 karakter</string>
     <string name="password_empty">Password dibutuhkan</string>
     <string name="text_empty">Text dibutuhkan</string>
@@ -17,4 +19,11 @@
     <string name="daftar_sekarang">Daftar Sekarang</string>
     <string name="nama_email">Nama / Email</string>
     <string name="login">Login</string>
+    <string name="nama_pengguna">Nama Pengguna</string>
+    <string name="email">Email</string>
+    <string name="hint_ulangi_kata_sandi">Ulangi Kata Sandi</string>
+    <string name="masuk_sekarang">Masuk sekarang</string>
+    <string name="sudah_punya_akun">Sudah punya akun?</string>
+    <string name="nomor_telepon">Nomor Telepon</string>
+    <string name="register">Register</string>
 </resources>
