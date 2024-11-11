@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="activity"
+            type="com.zhalz.eventy.presentation.register.RegisterActivity" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -183,6 +187,7 @@
                 style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="@{() -> activity.toLogin()}"
                 android:text="@string/masuk_sekarang"
                 android:textColor="@color/gray"
                 android:textSize="@dimen/text_default"

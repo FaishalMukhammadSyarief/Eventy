@@ -4,9 +4,11 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.crocodic.core.extension.openActivity
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseActivity
 import com.zhalz.eventy.databinding.ActivityRegisterBinding
+import com.zhalz.eventy.presentation.login.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -14,6 +16,8 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding, RegisterViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        binding.activity = this
 
         initUI()
 
@@ -26,4 +30,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding, RegisterViewModel
             insets
         }
     }
+
+    fun toLogin() = openActivity<LoginActivity> { finish() }
+
 }
