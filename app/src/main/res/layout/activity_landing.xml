@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="activity"
+            type="com.zhalz.eventy.presentation.landing.LandingActivity" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -83,6 +87,7 @@
             android:textAllCaps="true"
             android:textColor="@color/white"
             app:fontFamily="@font/poppins_bold"
+            android:onClick="@{() -> activity.toLogin()}"
 
             app:layout_constraintBottom_toTopOf="@id/tv_or"
             app:layout_constraintEnd_toEndOf="parent"

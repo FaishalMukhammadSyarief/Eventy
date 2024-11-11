@@ -5,8 +5,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.crocodic.core.base.activity.NoViewModelActivity
+import com.crocodic.core.extension.openActivity
 import com.zhalz.eventy.R
 import com.zhalz.eventy.databinding.ActivityLandingBinding
+import com.zhalz.eventy.presentation.login.LoginActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -14,6 +16,8 @@ class LandingActivity : NoViewModelActivity<ActivityLandingBinding>(R.layout.act
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        binding.activity = this
 
         initUI()
     }
@@ -25,5 +29,7 @@ class LandingActivity : NoViewModelActivity<ActivityLandingBinding>(R.layout.act
             insets
         }
     }
+
+    fun toLogin() = openActivity<LoginActivity> { finish() }
 
 }
