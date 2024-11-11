@@ -93,7 +93,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:strokeColor="@color/gray"
-            app:strokeWidth="1.5dp"
+            app:strokeWidth="1dp"
             tools:ignore="VisualLintButtonSize" />
 
         <TextView
@@ -123,7 +123,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:strokeColor="@color/cyan"
-            app:strokeWidth="1.5dp"
+            app:strokeWidth="1dp"
             tools:ignore="VisualLintButtonSize,TextContrastCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
