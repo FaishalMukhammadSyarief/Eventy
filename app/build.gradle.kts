@@ -3,16 +3,19 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
+    id("com.google.firebase.firebase-perf")
 }
 
 android {
     namespace = "com.zhalz.eventy"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.zhalz.eventy"
         minSdk = 28
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -58,5 +61,12 @@ dependencies {
     /*  HILT  */
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+
+    /*  FIREBASE  */
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+
+    /*  CROCODIC CORE  */
+    implementation(libs.androidcoreproject)
 
 }
