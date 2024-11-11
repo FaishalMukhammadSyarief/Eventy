@@ -11,16 +11,114 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
         tools:context=".presentation.landing.LandingActivity">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <ImageView
+            android:id="@+id/ic_eventy_logo"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_marginTop="65dp"
+            android:contentDescription="@string/cd_eventy_logo"
+            android:src="@drawable/ic_eventy_logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="215dp"
+            android:layout_height="75dp"
+            android:contentDescription="@string/cd_eventy_logo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_eventy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ic_eventy_logo" />
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cd_slider"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_slide"
+            android:layout_marginBottom="18dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_welcome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome"
+            android:gravity="center"
+            app:fontFamily="@font/poppins_bold"
+            android:textColor="@color/navy"
+            android:textSize="@dimen/text_super_large"
+            app:layout_constraintBottom_toTopOf="@id/tv_desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_desc"
+            app:fontFamily="@font/poppins_regular"
+            android:textColor="@color/dark_blue"
+            android:layout_marginBottom="16dp"
+            android:textSize="@dimen/text_default"
+            app:layout_constraintBottom_toTopOf="@id/btn_sign_in"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sign_in"
+            style="@style/MyButton"
+            android:layout_width="275dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/cyan"
+            android:text="@string/sign_in"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            app:fontFamily="@font/poppins_bold"
+
+            app:layout_constraintBottom_toTopOf="@id/tv_or"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:strokeColor="@color/gray"
+            app:strokeWidth="1.5dp"
+            tools:ignore="VisualLintButtonSize" />
+
+        <TextView
+            android:id="@+id/tv_or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/atau"
+            app:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintBottom_toTopOf="@+id/btn_sign_up"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sign_up"
+            style="@style/MyButton"
+            android:layout_width="275dp"
+            android:layout_marginBottom="50dp"
+            android:backgroundTint="@color/yellow"
+            android:text="@string/sign_up"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            app:fontFamily="@font/poppins_bold"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:strokeColor="@color/cyan"
+            app:strokeWidth="1.5dp"
+            tools:ignore="VisualLintButtonSize,TextContrastCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

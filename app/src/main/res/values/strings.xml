@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Eventy</string>
+    <string name="cd_eventy_logo">Eventy Logo</string>
+    <string name="sign_in">Sign In</string>
+    <string name="atau">Atau</string>
+    <string name="app_desc">Aplikasi Manajemen Event</string>
+    <string name="cd_slider">Slider</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="welcome">Selamat Datang \ndi Eventy</string>
 </resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyButton">
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="cornerRadius">@dimen/edit_text_radius</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>
