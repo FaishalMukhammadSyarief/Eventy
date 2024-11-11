@@ -11,11 +11,145 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".presentation.otp.OtpActivity">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|enterAlwaysCollapsed|enterAlways"
+                app:navigationIcon="@drawable/ic_back"
+                app:title="@string/verifikasi_kode"
+                app:titleTextAppearance="@style/ToolbarTitleAppearance" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="36dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <ImageView
+                android:id="@+id/iv_eventy"
+                android:layout_width="215dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="65dp"
+                android:contentDescription="@string/cd_eventy_logo"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_eventy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_otp_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:text="@string/masukkan_kode_otp_yang_telah_dikirimkan_ke_n_62_xxxxxxxxx90"
+                app:layout_constraintTop_toBottomOf="@+id/iv_eventy" />
+
+            <LinearLayout
+                android:id="@+id/container_otp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:orientation="horizontal"
+                android:weightSum="4"
+                app:layout_constraintTop_toBottomOf="@+id/tv_otp_desc">
+
+                <EditText
+                    style="@style/OtpInput"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_weight="1"
+                    android:autofillHints="phone"
+                    android:hint="@string/otp_code"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_otp_desc"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <EditText
+                    style="@style/OtpInput"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:autofillHints="phone"
+                    android:hint="@string/otp_code"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_otp_desc" />
+
+                <EditText
+                    style="@style/OtpInput"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:autofillHints="phone"
+                    android:hint="@string/otp_code"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_otp_desc" />
+
+                <EditText
+                    style="@style/OtpInput"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_weight="1"
+                    android:autofillHints="phone"
+                    android:hint="@string/otp_code"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_otp_desc" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/margin_screen"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/container_otp"
+                tools:layout_editor_absoluteX="36dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tidak_menerima_kode_otp"
+                    android:textSize="@dimen/text_default" />
+
+                <Button
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kirim_ulang"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text_default"
+                    app:fontFamily="@font/poppins_bold"
+                    tools:ignore="TextContrastCheck" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_send"
+                style="@style/MyButton"
+                android:layout_width="match_parent"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/navy"
+                android:text="@string/kirim"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                tools:ignore="VisualLintButtonSize" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

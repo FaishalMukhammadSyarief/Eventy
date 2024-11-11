@@ -7,5 +7,8 @@
     <color name="cyan">#056D8A</color>
     <color name="dark_blue">#496989</color>
     <color name="navy">#003C4D</color>
+    <color name="blue">#2F88FF</color>
     <color name="gray">#6B6A6A</color>
+
+    <color name="transparent">#00000000</color>
 </resources>
