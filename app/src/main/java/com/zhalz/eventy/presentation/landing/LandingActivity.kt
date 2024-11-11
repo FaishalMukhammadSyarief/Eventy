@@ -4,13 +4,13 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.crocodic.core.base.activity.NoViewModelActivity
 import com.zhalz.eventy.R
-import com.zhalz.eventy.base.BaseActivity
 import com.zhalz.eventy.databinding.ActivityLandingBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LandingActivity : BaseActivity<ActivityLandingBinding, LandingViewModel>(R.layout.activity_landing) {
+class LandingActivity : NoViewModelActivity<ActivityLandingBinding>(R.layout.activity_landing) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
