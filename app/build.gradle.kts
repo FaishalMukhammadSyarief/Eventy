@@ -69,4 +69,17 @@ dependencies {
     /*  CROCODIC CORE  */
     implementation(libs.androidcoreproject)
 
+    /*  NAVIGATION  */
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+
+    /*  SWIPE REFRESH  */
+    implementation (libs.androidx.swiperefreshlayout)
+
+    /*  GLIDE  */
+    implementation (libs.glide)
+
+    /*  LOTTIE  */
+    implementation (libs.lottie)
+
 }
