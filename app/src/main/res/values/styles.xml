@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--  UI ELEMENT  -->
+    <style name="MyTextInputLayout">
+        <item name="errorEnabled">true</item>
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="boxCornerRadiusTopStart">@dimen/edit_text_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/edit_text_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/edit_text_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/edit_text_radius</item>
+    </style>
+
+    <style name="MyEditText">
+        <item name="android:textSize">@dimen/text_default</item>
+    </style>
+
     <style name="MyButton">
         <item name="android:layout_height">@dimen/button_height</item>
         <item name="cornerRadius">@dimen/edit_text_radius</item>

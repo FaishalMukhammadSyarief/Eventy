@@ -7,4 +7,14 @@
     <string name="cd_slider">Slider</string>
     <string name="sign_up">Sign Up</string>
     <string name="welcome">Selamat Datang \ndi Eventy</string>
+    <string name="password_error">Password must be 8 character or more</string>
+    <string name="password_empty">Password field is required</string>
+    <string name="text_empty">Text field is required</string>
+    <string name="hint_kata_sandi">Kata Sandi</string>
+    <string name="belum_punya_akun">Belum Punya Akun?</string>
+    <string name="remember_me">Remember me</string>
+    <string name="lupa_kata_sandi">Lupa kata sandi?</string>
+    <string name="daftar_sekarang">Daftar Sekarang</string>
+    <string name="nama_email">Nama / Email</string>
+    <string name="login">Login</string>
 </resources>
