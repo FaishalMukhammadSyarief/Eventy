@@ -34,4 +34,9 @@
     <string name="kirim">Kirim</string>
     <string name="masukkan_kode_otp_yang_telah_dikirimkan_ke_n_62_xxxxxxxxx90">Masukkan kode OTP yang telah dikirimkan ke \n+62 XXXXXXXXX90</string>
     <string name="otp_code">OTP Code</string>
+    <string name="selamat">Selamat !!</string>
+    <string name="success_register">Success Register</string>
+    <string name="verifikasi_sukses">Verifikasi sukses</string>
+    <string name="pendaftaran_selesai">Pendaftaran selesai</string>
+    <string name="kode_otp_dibutuhkan">Kode OTP dibutuhkan</string>
 </resources>
