@@ -1,12 +1,11 @@
 package com.zhalz.eventy.presentation.otp
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.widget.addTextChangedListener
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseActivity
 import com.zhalz.eventy.databinding.ActivityOtpBinding
@@ -22,22 +21,12 @@ class OtpActivity : BaseActivity<ActivityOtpBinding, OtpViewModel>(R.layout.acti
 
         val otpBoxes = (0 until binding.containerOtp.childCount).map { binding.containerOtp.getChildAt(it) as EditText }
 
-        otpBoxes.forEachIndexed { index, editText ->
-            editText.addTextChangedListener(object : TextWatcher {
-                override fun afterTextChanged(s: Editable?) {
-                    if (s?.length == 1) {
-                        if (index < otpBoxes.size - 1) otpBoxes[index + 1].requestFocus()
-                        else {
-                            editText.clearFocus()
-                            if (otpBoxes.all { it.text.toString().isNotEmpty() }) binding.btnSend.requestFocus()
-                        }
-                    }
-                    else if (s?.isEmpty() == true && index > 0) otpBoxes[index - 1].requestFocus()
-                }
-
-                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-            })
+        otpBoxes.forEachIndexed { i, editText ->
+            editText.addTextChangedListener {
+                if (it?.isNotEmpty() == true && i < otpBoxes.size - 1) otpBoxes[i + 1].requestFocus()
+                if (it?.isEmpty() == true && i > 0) otpBoxes[i - 1].requestFocus()
+                if (it?.isNotEmpty() == true && i == otpBoxes.size - 1) binding.btnSend.requestFocus()
+            }
         }
     }
 
