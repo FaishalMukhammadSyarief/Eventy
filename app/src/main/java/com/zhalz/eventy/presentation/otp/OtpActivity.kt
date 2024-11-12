@@ -5,12 +5,17 @@ import android.view.View.VISIBLE
 import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.core.widget.addTextChangedListener
+import androidx.lifecycle.lifecycleScope
+import com.crocodic.core.extension.openActivity
 import com.crocodic.core.extension.tos
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseActivity
 import com.zhalz.eventy.databinding.ActivityOtpBinding
+import com.zhalz.eventy.presentation.home.HomeActivity
 import com.zhalz.eventy.utils.getAnim
 import com.zhalz.eventy.utils.setStatusBarColor
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class OtpActivity : BaseActivity<ActivityOtpBinding, OtpViewModel>(R.layout.activity_otp) {
 
@@ -44,9 +49,17 @@ class OtpActivity : BaseActivity<ActivityOtpBinding, OtpViewModel>(R.layout.acti
         startAnimation(getAnim(R.anim.anim_slide_up))
     }
 
+    private fun toHome() = lifecycleScope.launch {
+        delay(2_000)
+        openActivity<HomeActivity> { finishAffinity() }
+    }
+
     fun send() {
-        if (otpBoxes.all { it.text.toString().isEmpty() }) tos(getString(R.string.kode_otp_dibutuhkan))
-        else showSuccessMessage()
+        if (otpBoxes.all { it.text.toString().isNotEmpty() }) {
+            showSuccessMessage()
+            toHome()
+        }
+        else tos(getString(R.string.kode_otp_dibutuhkan))
     }
 
 }
