@@ -19,15 +19,6 @@ class OtpActivity : BaseActivity<ActivityOtpBinding, OtpViewModel>(R.layout.acti
 
         initUI()
 
-        val otpBoxes = (0 until binding.containerOtp.childCount).map { binding.containerOtp.getChildAt(it) as EditText }
-
-        otpBoxes.forEachIndexed { i, editText ->
-            editText.addTextChangedListener {
-                if (it?.isNotEmpty() == true && i < otpBoxes.size - 1) otpBoxes[i + 1].requestFocus()
-                if (it?.isEmpty() == true && i > 0) otpBoxes[i - 1].requestFocus()
-                if (it?.isNotEmpty() == true && i == otpBoxes.size - 1) binding.btnSend.requestFocus()
-            }
-        }
     }
 
     private fun initUI() {
@@ -35,6 +26,18 @@ class OtpActivity : BaseActivity<ActivityOtpBinding, OtpViewModel>(R.layout.acti
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        /**  OTP  **/
+        val otpBoxes = (0 until binding.containerOtp.childCount).map { binding.containerOtp.getChildAt(it) as EditText }
+
+        otpBoxes.forEachIndexed { i, editText ->
+            editText.addTextChangedListener {
+                if (it == null) return@addTextChangedListener
+                if (it.isNotEmpty() && i < otpBoxes.size - 1) otpBoxes[i + 1].requestFocus()
+                if (it.isEmpty() && i > 0) otpBoxes[i - 1].requestFocus()
+                if (it.isNotEmpty() && i == otpBoxes.size - 1) binding.btnSend.requestFocus()
+            }
         }
     }
 }
