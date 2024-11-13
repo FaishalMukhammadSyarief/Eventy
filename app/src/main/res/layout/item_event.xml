@@ -4,6 +4,10 @@
 
     <data>
 
+        <variable
+            name="data"
+            type="com.zhalz.eventy.domain.model.Event" />
+
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -20,6 +24,7 @@
             android:background="@drawable/bg_round_bottom_end"
             android:elevation="8dp"
             android:padding="10dp"
+            android:text="@{data.category}"
             android:textColor="@color/white"
             app:fontFamily="@font/poppins_semi_bold"
             tools:text="Music" />
@@ -45,20 +50,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="12dp"
                 android:layout_marginVertical="8dp"
-                tools:text="Music Festival"
                 android:textSize="@dimen/text_default"
                 android:textStyle="bold"
-                tools:ignore="VisualLintBounds" />
+                android:text="@{data.title}"
+                tools:ignore="VisualLintBounds"
+                tools:text="Music Festival" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="12dp"
-                tools:text="25 Aug, 2024"
                 android:textSize="@dimen/text_medium"
+                android:text="@{data.date}"
                 android:textStyle="bold"
-                tools:ignore="VisualLintBounds" />
+                tools:ignore="VisualLintBounds"
+                tools:text="25 Aug, 2024" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_role"
@@ -67,6 +74,7 @@
                 android:layout_marginHorizontal="12dp"
                 android:layout_marginVertical="8dp"
                 android:textColor="@color/light_gray"
+                android:text="@{data.role}"
                 android:textSize="@dimen/text_small"
                 android:textStyle="bold"
                 tools:ignore="VisualLintBounds,TextContrastCheck"
