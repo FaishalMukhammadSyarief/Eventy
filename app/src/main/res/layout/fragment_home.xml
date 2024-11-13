@@ -1,20 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="@dimen/margin_screen"
         tools:context=".presentation.home.HomeFragment">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/schedule_today"
+            android:textSize="@dimen/text_large"
+            app:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_view_schedule"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btn_view_schedule" />
 
-    </FrameLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_view_schedule"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/view_schedule"
+            android:text="@string/view_all"
+            android:textSize="@dimen/text_default"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/btn_view_schedule" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/event"
+            android:textColor="@color/cyan"
+            android:textSize="@dimen/text_large"
+            app:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_view_event"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btn_view_event" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_view_event"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_screen"
+            android:contentDescription="@string/view_event"
+            android:text="@string/view_all"
+            android:textSize="@dimen/text_default"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_schedule" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/btn_view_event"
+            app:spanCount="2"
+            tools:listitem="@layout/item_event" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
