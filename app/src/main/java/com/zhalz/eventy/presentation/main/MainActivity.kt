@@ -1,4 +1,4 @@
-package com.zhalz.eventy.presentation.home
+package com.zhalz.eventy.presentation.main
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -8,14 +8,16 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.crocodic.core.base.activity.NoViewModelActivity
+import com.crocodic.core.extension.openActivity
 import com.crocodic.core.extension.tos
 import com.zhalz.eventy.R
-import com.zhalz.eventy.databinding.ActivityHomeBinding
+import com.zhalz.eventy.databinding.ActivityMainBinding
+import com.zhalz.eventy.presentation.contact.ContactActivity
 
-class HomeActivity : NoViewModelActivity<ActivityHomeBinding>(R.layout.activity_home) {
+class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     private val appBarConfiguration by lazy { AppBarConfiguration(
-        setOf( R.id.nav_contact ),
+        setOf( R.id.nav_home ),
         binding.drawerLayout
     ) }
 
@@ -34,7 +36,7 @@ class HomeActivity : NoViewModelActivity<ActivityHomeBinding>(R.layout.activity_
 
         binding.navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.menu_contact -> navController.navigate(R.id.nav_contact)
+                R.id.menu_contact -> openActivity<ContactActivity>()
                 R.id.menu_help -> tos("HELP")
                 R.id.menu_logout -> tos("LOGOUT")
             }

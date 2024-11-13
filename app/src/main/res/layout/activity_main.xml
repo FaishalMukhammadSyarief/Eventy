@@ -7,7 +7,7 @@
 
         <variable
             name="activity"
-            type="com.zhalz.eventy.presentation.home.HomeActivity" />
+            type="com.zhalz.eventy.presentation.main.MainActivity" />
 
     </data>
 
@@ -15,7 +15,7 @@
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.home.HomeActivity"
+        tools:context=".presentation.main.MainActivity"
         tools:openDrawer="start">
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -40,8 +40,8 @@
 
                     <com.google.android.material.imageview.ShapeableImageView
                         style="@style/MyRoundImage"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
                         android:layout_gravity="end|center_horizontal"
                         android:layout_marginEnd="@dimen/margin_screen"
                         android:elevation="8dp"
@@ -57,6 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:defaultNavHost="true"
+                android:layout_margin="@dimen/margin_screen"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 app:navGraph="@navigation/nav_graph" />
 

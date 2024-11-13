@@ -11,7 +11,7 @@ import com.crocodic.core.extension.tos
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseActivity
 import com.zhalz.eventy.databinding.ActivityOtpBinding
-import com.zhalz.eventy.presentation.home.HomeActivity
+import com.zhalz.eventy.presentation.main.MainActivity
 import com.zhalz.eventy.utils.getAnim
 import com.zhalz.eventy.utils.setStatusBarColor
 import kotlinx.coroutines.delay
@@ -51,7 +51,7 @@ class OtpActivity : BaseActivity<ActivityOtpBinding, OtpViewModel>(R.layout.acti
 
     private fun toHome() = lifecycleScope.launch {
         delay(2_000)
-        openActivity<HomeActivity> { finishAffinity() }
+        openActivity<MainActivity> { finishAffinity() }
     }
 
     fun send() {
