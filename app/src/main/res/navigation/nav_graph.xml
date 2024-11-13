@@ -11,4 +11,10 @@
         android:label="@string/app_name"
         tools:layout="@layout/fragment_home" />
 
+    <activity
+        android:id="@+id/nav_contact"
+        android:name="com.zhalz.eventy.presentation.contact.ContactActivity"
+        android:label="@string/friend"
+        tools:layout="@layout/activity_contact" />
+
 </navigation>
