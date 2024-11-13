@@ -11,39 +11,65 @@
 
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/main"
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        tools:context=".presentation.home.HomeActivity">
+        tools:context=".presentation.home.HomeActivity"
+        tools:openDrawer="start">
 
-        <com.google.android.material.appbar.AppBarLayout
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/main"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:fitsSystemWindows="true"
+            android:layout_height="match_parent">
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/toolbar"
+            <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_scrollFlags="scroll|enterAlwaysCollapsed|enterAlways"
-                app:navigationIcon="@drawable/ic_menu_burger"
-                app:navigationOnClickListener="@{() -> activity.finish()}"
-                app:title="@string/app_name"
-                app:titleCentered="true"
-                app:titleTextAppearance="@style/ToolbarTitleAppearance" >
+                android:layout_height="wrap_content">
 
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="end|center_horizontal"
-                    android:src="@drawable/success"
-                    android:layout_marginEnd="16dp"
-                    android:scaleType="centerCrop" />
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_scrollFlags="scroll|enterAlwaysCollapsed|enterAlways"
+                    app:navigationIcon="@drawable/ic_menu_burger"
+                    app:title="@string/app_name"
+                    app:titleCentered="true"
+                    app:titleTextAppearance="@style/ToolbarTitleAppearance">
 
-            </com.google.android.material.appbar.MaterialToolbar>
+                    <com.google.android.material.imageview.ShapeableImageView
+                        style="@style/MyRoundImage"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_gravity="end|center_horizontal"
+                        android:layout_marginEnd="@dimen/margin_screen"
+                        android:elevation="8dp"
+                        android:src="@drawable/faishal" />
 
-        </com.google.android.material.appbar.AppBarLayout>
+                </com.google.android.material.appbar.MaterialToolbar>
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <fragment
+                android:id="@+id/nav_host"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:navGraph="@navigation/nav_graph" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/nav_header"
+            app:menu="@menu/menu_drawer" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
 </layout>
