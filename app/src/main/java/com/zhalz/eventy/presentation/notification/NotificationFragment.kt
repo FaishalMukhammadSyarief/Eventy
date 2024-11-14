@@ -1,60 +1,55 @@
 package com.zhalz.eventy.presentation.notification
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.crocodic.core.base.adapter.ReactiveListAdapter
 import com.zhalz.eventy.R
+import com.zhalz.eventy.base.BaseFragment
+import com.zhalz.eventy.databinding.FragmentNotificationBinding
+import com.zhalz.eventy.databinding.ItemNotifBinding
+import com.zhalz.eventy.domain.model.Notif
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class NotificationFragment : BaseFragment<FragmentNotificationBinding>(R.layout.fragment_notification) {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [NotificationFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class NotificationFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private val notif7Adapter by lazy {
+        ReactiveListAdapter<ItemNotifBinding, Notif>(R.layout.item_notif)
+    }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    private val notif30Adapter by lazy {
+        ReactiveListAdapter<ItemNotifBinding, Notif>(R.layout.item_notif)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding?.notif7Adapter = notif7Adapter
+        binding?.notif30Adapter = notif30Adapter
+
+        val notif7List = listOf(
+            Notif(1, "Music Festival", "Anda memiliki tugas yang belum diselesaikan", "4j"),
+            Notif(2, "Music Festival", "Anda memiliki jadwal meeting", "1h"),
+        )
+
+        val notif30List = listOf(
+            Notif(1, "Music Festival", "Anda memiliki tugas yang belum diselesaikan", "4j"),
+            Notif(2, "Music Festival", "Anda memiliki jadwal meeting", "1h"),
+        )
+
+        DividerItemDecoration(requireContext(), LinearLayoutManager(requireContext()).orientation).also {
+            binding?.rv7?.addItemDecoration(it)
+            binding?.rv30?.addItemDecoration(it)
         }
+
+        notif7Adapter.submitList(notif7List)
+        notif30Adapter.submitList(notif30List)
+
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notification, container, false)
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment NotificationFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            NotificationFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

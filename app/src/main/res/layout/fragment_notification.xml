@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.notification.NotificationFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <variable
+            name="notif7Adapter"
+            type="com.crocodic.core.base.adapter.ReactiveListAdapter" />
+
+        <variable
+            name="notif30Adapter"
+            type="com.crocodic.core.base.adapter.ReactiveListAdapter" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:padding="@dimen/margin_screen"
+        tools:context=".presentation.home.HomeFragment">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_7_hari_terakhir"
+            android:textSize="@dimen/text_large"
+            app:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adapter="@{notif7Adapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="@string/_30_hari_terakhir"
+            android:textSize="@dimen/text_large"
+            app:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_7" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adapter="@{notif30Adapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            tools:listitem="@layout/item_notif" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
