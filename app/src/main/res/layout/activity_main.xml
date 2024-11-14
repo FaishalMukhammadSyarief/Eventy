@@ -15,14 +15,13 @@
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.main.MainActivity"
-        tools:openDrawer="start">
+        tools:context=".presentation.main.MainActivity">
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:id="@+id/main"
             android:layout_width="match_parent"
-            android:fitsSystemWindows="true"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
 
             <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
@@ -32,7 +31,6 @@
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    app:layout_scrollFlags="scroll|enterAlwaysCollapsed|enterAlways"
                     app:navigationIcon="@drawable/ic_menu_burger"
                     app:title="@string/app_name"
                     app:titleCentered="true"
@@ -45,20 +43,52 @@
                         android:layout_gravity="end|center_horizontal"
                         android:layout_marginEnd="@dimen/margin_screen"
                         android:elevation="8dp"
-                        android:src="@drawable/faishal" />
+                        android:src="@drawable/faishal"
+                        tools:ignore="ImageContrastCheck" />
 
                 </com.google.android.material.appbar.MaterialToolbar>
 
             </com.google.android.material.appbar.AppBarLayout>
 
-            <fragment
-                android:id="@+id/nav_host"
-                android:name="androidx.navigation.fragment.NavHostFragment"
+            <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:defaultNavHost="true"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                app:navGraph="@navigation/nav_graph" />
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/nav_host"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:defaultNavHost="true"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:navGraph="@navigation/nav_graph" />
+
+            </androidx.core.widget.NestedScrollView>
+
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_gravity="bottom"
+                android:backgroundTint="@color/white"
+                android:fitsSystemWindows="true"
+                app:contentInsetStart="0dp"
+                app:hideOnScroll="true">
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottom_nav"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparent"
+                    app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
+                    app:itemIconSize="20dp"
+                    app:itemIconTint="@color/selector_icon_color"
+                    app:itemRippleColor="@color/transparent"
+                    app:labelVisibilityMode="labeled"
+                    app:menu="@menu/menu_bottom_app"
+                    tools:ignore="VisualLintBottomNav" />
+
+            </com.google.android.material.bottomappbar.BottomAppBar>
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
