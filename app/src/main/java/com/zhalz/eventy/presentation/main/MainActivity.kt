@@ -27,6 +27,11 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
 
         binding.activity = this
 
+        setDrawer()
+
+    }
+
+    private fun setDrawer() {
         setSupportActionBar(binding.toolbar)
 
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -41,7 +46,6 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
             binding.drawerLayout.closeDrawers()
             true
         }
-
     }
 
     override fun onSupportNavigateUp() =

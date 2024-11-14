@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_round_bottom_end"
             android:elevation="8dp"
-            android:padding="10dp"
+            android:padding="8dp"
             android:text="@{data.category}"
             android:textColor="@color/white"
             app:fontFamily="@font/poppins_semi_bold"

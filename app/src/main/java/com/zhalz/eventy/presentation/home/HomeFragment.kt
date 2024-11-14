@@ -26,6 +26,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding?.eventAdapter = eventAdapter
+        binding?.scheduleAdapter = scheduleAdapter
+
         val scheduleList = listOf(
             Schedule(1, "Meeting 1", "Aug 10, 10:00 AM", "On Google Meet", 2),
             Schedule(2, "Meeting 2", "Aug 10, 03:00 PM", "On Zoom", 4)
@@ -36,14 +39,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
             Event(2, "Tech Conference", "26 Aug, 2024", "Member - Divisi Produksi", "Expo"),
         )
 
-        val dividerDecoration = DividerItemDecoration(requireContext(), LinearLayoutManager(requireContext()).orientation)
-        binding?.rvSchedule?.addItemDecoration(dividerDecoration)
+        DividerItemDecoration(requireContext(), LinearLayoutManager(requireContext()).orientation).also {
+            binding?.rvSchedule?.addItemDecoration(it)
+        }
 
         scheduleAdapter.submitList(scheduleList)
-        binding?.rvSchedule?.adapter = scheduleAdapter
-
         eventAdapter.submitList(eventList)
-        binding?.rvEvent?.adapter = eventAdapter
 
     }
 
