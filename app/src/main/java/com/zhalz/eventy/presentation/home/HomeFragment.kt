@@ -35,8 +35,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         )
 
         val eventList = listOf(
-            Event(1, "Music Festival", "25 Aug, 2024", "Project Manager", "Music"),
-            Event(2, "Tech Conference", "26 Aug, 2024", "Member - Divisi Produksi", "Expo"),
+            Event(1, "Music Festival", "25 Aug, 2024", "Project Manager", "Sampookong", "Music"),
+            Event(2, "Tech Conference", "26 Aug, 2024", "Member - Divisi Produksi", "City Hall, Main Street", "Expo"),
         )
 
         DividerItemDecoration(requireContext(), LinearLayoutManager(requireContext()).orientation).also {
