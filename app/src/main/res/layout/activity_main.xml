@@ -15,7 +15,8 @@
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.main.MainActivity">
+        tools:context=".presentation.main.MainActivity"
+        tools:openDrawer="start">
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:id="@+id/main"
@@ -73,7 +74,8 @@
                 android:backgroundTint="@color/white"
                 android:fitsSystemWindows="true"
                 app:contentInsetStart="0dp"
-                app:hideOnScroll="true">
+                app:hideOnScroll="true"
+                tools:ignore="VisualLintBottomAppBar">
 
                 <com.google.android.material.bottomnavigation.BottomNavigationView
                     android:id="@+id/bottom_nav"
@@ -84,6 +86,7 @@
                     app:itemIconSize="20dp"
                     app:itemIconTint="@color/selector_icon_color"
                     app:itemRippleColor="@color/transparent"
+                    app:itemTextColor="@color/selector_icon_color"
                     app:labelVisibilityMode="labeled"
                     app:menu="@menu/menu_bottom_app"
                     tools:ignore="VisualLintBottomNav" />
