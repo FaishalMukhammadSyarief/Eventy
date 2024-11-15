@@ -72,4 +72,8 @@
     <string name="tab_layout">Tab Layout</string>
     <string name="friend2">FRIEND</string>
     <string name="collaborator">COLLABORATOR</string>
+    <string name="https_wa_grup_event_com">https//wa.grup event.com</string>
+    <string name="_15_00_wib_end">15:00 WIB - end</string>
+    <string name="konsep_acara">Konsep Acara</string>
+    <string name="konsepacarafestival_pdf">KonsepAcaraFestival.pdf</string>
 </resources>
