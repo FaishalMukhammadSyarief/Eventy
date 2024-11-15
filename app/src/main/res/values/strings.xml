@@ -60,4 +60,11 @@
     <string name="_30_hari_terakhir">30 Hari Terakhir</string>
     <string name="august">August</string>
     <string name="july">July</string>
+    <string name="_123456789">123456789</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="social_media">Social Media</string>
+    <string name="linkedin">LinkedIn</string>
+    <string name="instagram">Instagram</string>
+    <string name="facebook">Facebook</string>
+    <string name="update">Update</string>
 </resources>

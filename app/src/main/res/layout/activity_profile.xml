@@ -15,11 +15,11 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
         tools:context=".presentation.profile.ProfileActivity">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
+            android:fitsSystemWindows="true"
             android:layout_height="wrap_content">
 
             <com.google.android.material.appbar.MaterialToolbar
@@ -32,7 +32,183 @@
                 app:titleCentered="true"
                 app:titleTextAppearance="@style/ToolbarTitleAppearance" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue" />
+
         </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/very_light_gray"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_screen">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    style="@style/MyRoundImage"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginBottom="12dp"
+                    android:src="@drawable/faishal" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/faishal_mukhammad"
+                    android:textSize="@dimen/text_large"
+                    app:fontFamily="@font/poppins_semi_bold" />
+
+                <TextView
+                    android:id="@+id/tv_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="32dp"
+                    android:text="@string/_123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tv_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="@string/phone_number"
+                    android:textSize="14sp" />
+
+                <!--  PHONE  -->
+                <com.zhalz.eventy.presentation.custom_view.TextLayoutNormal
+                    android:id="@+id/etl_phone"
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintEnabled="false"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_welcome"
+                    app:startIconDrawable="@drawable/ic_phone">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/MyEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_slightly_round"
+                        android:hint="@string/phone_number"
+                        android:inputType="phone"
+                        tools:ignore="VisualLintTextFieldSize,TextContrastCheck,DuplicateSpeakableTextCheck" />
+                </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
+
+                <TextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="@string/email"
+                    android:textSize="14sp" />
+
+                <!--  EMAIL  -->
+                <com.zhalz.eventy.presentation.custom_view.TextLayoutEmail
+                    android:id="@+id/etl_email"
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintEnabled="false"
+                    app:startIconDrawable="@drawable/ic_gmail">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/MyEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_slightly_round"
+                        android:hint="@string/email"
+                        android:inputType="textEmailAddress"
+                        tools:ignore="VisualLintTextFieldSize,TextContrastCheck,DuplicateSpeakableTextCheck" />
+                </com.zhalz.eventy.presentation.custom_view.TextLayoutEmail>
+
+                <TextView
+                    android:id="@+id/tv_social"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="@string/social_media"
+                    android:textSize="14sp" />
+
+                <!--  SOCIAL MEDIA  -->
+                <com.zhalz.eventy.presentation.custom_view.TextLayoutNormal
+                    android:id="@+id/etl_linkedin"
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintEnabled="false"
+                    app:startIconDrawable="@drawable/ic_linkedin">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/MyEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_slightly_round"
+                        android:hint="@string/linkedin"
+                        android:inputType="text"
+                        tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+                </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
+
+                <com.zhalz.eventy.presentation.custom_view.TextLayoutNormal
+                    android:id="@+id/etl_instagram"
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintEnabled="false"
+                    app:startIconDrawable="@drawable/ic_instagram">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/MyEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_slightly_round"
+                        android:hint="@string/instagram"
+                        android:inputType="text"
+                        tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+                </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
+
+                <com.zhalz.eventy.presentation.custom_view.TextLayoutNormal
+                    android:id="@+id/etl_facebook"
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintEnabled="false"
+                    app:startIconDrawable="@drawable/ic_facebook">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/MyEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_slightly_round"
+                        android:hint="@string/facebook"
+                        android:inputType="text"
+                        tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+                </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_sign_in"
+                    style="@style/MyButton"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:backgroundTint="@color/blue"
+                    android:text="@string/update"
+                    android:textColor="@color/white"
+                    app:layout_constraintTop_toBottomOf="@+id/cb_remember"
+                    tools:ignore="VisualLintButtonSize" />
+
+            </LinearLayout>
+
+        </ScrollView>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

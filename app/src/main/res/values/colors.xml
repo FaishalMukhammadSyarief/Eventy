@@ -10,6 +10,7 @@
     <color name="blue">#2F88FF</color>
     <color name="gray">#6B6A6A</color>
     <color name="light_gray">#AFAFAF</color>
+    <color name="very_light_gray">#F1F1F1</color>
 
     <color name="transparent">#00000000</color>
 </resources>
