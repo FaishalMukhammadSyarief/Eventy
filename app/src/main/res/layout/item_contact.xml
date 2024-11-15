@@ -1,0 +1,58 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zhalz.eventy.domain.model.Person" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_screen"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_profile"
+            style="@style/MyRoundImage"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:elevation="8dp"
+            android:src="@drawable/faishal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_marginStart="12dp"
+            android:gravity="bottom"
+            android:text="@{data.name}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium"
+            app:fontFamily="@font/poppins_medium"
+            app:layout_constraintStart_toEndOf="@+id/iv_profile"
+            app:layout_constraintTop_toTopOf="@+id/iv_profile"
+            tools:ignore="TextSizeCheck"
+            tools:text="@string/faishal_mukhammad" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_id"
+            textNumber="@{data.id}"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="12dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
+            app:layout_constraintStart_toEndOf="@+id/iv_profile"
+            tools:ignore="TextSizeCheck"
+            tools:text="@string/_081313327023" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

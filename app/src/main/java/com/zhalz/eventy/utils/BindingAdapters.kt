@@ -7,3 +7,8 @@ import androidx.databinding.BindingAdapter
 fun TextView.formatAttendees(attendant: Int) {
     "$attendant Attendees".also { this.text = it }
 }
+
+@BindingAdapter("textNumber")
+fun TextView.textNumber(text: Int) {
+    this.text = text.toString()
+}
