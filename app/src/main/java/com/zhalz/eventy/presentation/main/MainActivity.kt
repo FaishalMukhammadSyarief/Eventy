@@ -8,9 +8,11 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.crocodic.core.base.activity.NoViewModelActivity
+import com.crocodic.core.extension.openActivity
 import com.crocodic.core.extension.tos
 import com.zhalz.eventy.R
 import com.zhalz.eventy.databinding.ActivityMainBinding
+import com.zhalz.eventy.presentation.profile.ProfileActivity
 import com.zhalz.eventy.utils.setStatusBarColor
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -53,6 +55,8 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
             true
         }
     }
+
+    fun toProfile() = openActivity<ProfileActivity>()
 
     override fun onSupportNavigateUp() =
         navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
