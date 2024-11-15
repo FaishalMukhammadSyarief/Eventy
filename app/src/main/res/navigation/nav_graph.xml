@@ -14,7 +14,7 @@
             android:id="@+id/action_home_to_schedule"
             app:destination="@id/nav_schedule"
             app:popUpTo="@id/nav_home"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_home_to_history"
             app:destination="@id/nav_history"
