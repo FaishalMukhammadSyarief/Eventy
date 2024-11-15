@@ -9,6 +9,12 @@
             name="activity"
             type="com.zhalz.eventy.presentation.profile.ProfileActivity" />
 
+        <variable
+            name="isEdit"
+            type="Boolean" />
+
+        <import type="android.view.View" />
+
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -19,18 +25,20 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:fitsSystemWindows="true"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                android:paddingEnd="12dp"
                 app:navigationIcon="@drawable/ic_back"
                 app:navigationOnClickListener="@{() -> activity.finish()}"
                 app:title="Profile"
                 app:titleCentered="true"
-                app:titleTextAppearance="@style/ToolbarTitleAppearance" />
+                app:titleTextAppearance="@style/ToolbarTitleAppearance"
+                tools:ignore="RtlSymmetry" />
 
             <View
                 android:layout_width="match_parent"
@@ -201,8 +209,10 @@
                     android:layout_width="wrap_content"
                     android:layout_marginTop="12dp"
                     android:backgroundTint="@color/blue"
+                    android:onClick="@{() -> activity.toEdit()}"
                     android:text="@string/update"
                     android:textColor="@color/white"
+                    android:visibility="@{isEdit ? View.GONE : View.VISIBLE}"
                     app:layout_constraintTop_toBottomOf="@+id/cb_remember"
                     tools:ignore="VisualLintButtonSize" />
 
