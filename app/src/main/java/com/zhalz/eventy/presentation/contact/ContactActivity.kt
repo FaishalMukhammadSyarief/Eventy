@@ -2,37 +2,32 @@ package com.zhalz.eventy.presentation.contact
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.crocodic.core.base.activity.NoViewModelActivity
-import com.crocodic.core.base.adapter.ReactiveListAdapter
+import com.google.android.material.tabs.TabLayoutMediator
 import com.zhalz.eventy.R
 import com.zhalz.eventy.databinding.ActivityContactBinding
-import com.zhalz.eventy.databinding.ItemContactBinding
-import com.zhalz.eventy.domain.model.Person
+import com.zhalz.eventy.presentation.adapter.PagerAdapter
 
 class ContactActivity : NoViewModelActivity<ActivityContactBinding>(R.layout.activity_contact) {
-
-    private val contactAdapter by lazy {
-        ReactiveListAdapter<ItemContactBinding, Person>(R.layout.item_contact)
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding.contactAdapter = contactAdapter
+        binding.activity = this
 
-        val contactList = listOf(
-            Person(1092312, "Ikhsandi Saktiawan", "ikhsan@mail.com"),
-            Person(1239112, "Fabe Bustanil", "fatichin@mail.com"),
-        )
-
-        DividerItemDecoration(this, LinearLayoutManager(this).orientation).also {
-            binding.rvContact.addItemDecoration(it)
-        }
-
-        contactAdapter.submitList(contactList)
-
+        initUI()
     }
+
+    private fun initUI() {
+        /** == VIEW PAGER == **/
+        binding.viewPager.adapter = PagerAdapter(this)
+        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+            when (position) {
+                0 -> tab.text = getString(R.string.friend2)
+                1 -> tab.text = getString(R.string.collaborator)
+            }
+        }.attach()
+    }
+
 }

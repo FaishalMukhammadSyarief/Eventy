@@ -82,4 +82,7 @@ dependencies {
     /*  LOTTIE  */
     implementation (libs.lottie)
 
+    /*  VIEW PAGER II  */
+    implementation("androidx.viewpager2:viewpager2:1.1.0")
+
 }
