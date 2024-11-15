@@ -51,6 +51,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     }
 
     fun toSchedule() = findNavController().navigate(R.id.action_home_to_schedule)
+    fun toHistory() = findNavController().navigate(R.id.action_home_to_history)
 
     override fun onDestroyView() {
         super.onDestroyView()

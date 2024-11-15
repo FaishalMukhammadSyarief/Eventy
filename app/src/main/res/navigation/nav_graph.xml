@@ -12,7 +12,13 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_home_to_schedule"
-            app:destination="@id/nav_schedule" />
+            app:destination="@id/nav_schedule"
+            app:popUpTo="@id/nav_home" />
+        <action
+            android:id="@+id/action_home_to_history"
+            app:destination="@id/nav_history"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
