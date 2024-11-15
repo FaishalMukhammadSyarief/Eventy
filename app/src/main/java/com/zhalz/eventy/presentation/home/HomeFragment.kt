@@ -2,6 +2,7 @@ package com.zhalz.eventy.presentation.home
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.crocodic.core.base.adapter.ReactiveListAdapter
@@ -26,6 +27,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding?.fragment = this
         binding?.eventAdapter = eventAdapter
         binding?.scheduleAdapter = scheduleAdapter
 
@@ -47,6 +49,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         eventAdapter.submitList(eventList)
 
     }
+
+    fun toSchedule() = findNavController().navigate(R.id.action_home_to_schedule)
 
     override fun onDestroyView() {
         super.onDestroyView()

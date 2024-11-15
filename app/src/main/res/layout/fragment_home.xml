@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="fragment"
+            type="com.zhalz.eventy.presentation.home.HomeFragment" />
+
+        <variable
             name="scheduleAdapter"
             type="com.crocodic.core.base.adapter.ReactiveListAdapter" />
 
@@ -39,6 +43,7 @@
             android:contentDescription="@string/view_schedule"
             android:text="@string/view_all"
             android:textSize="@dimen/text_default"
+            android:onClick="@{() -> fragment.toSchedule()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
