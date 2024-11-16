@@ -23,22 +23,15 @@ class EventActivity : BaseActivity<ActivityEventBinding, EventViewModel>(R.layou
         else @Suppress("DEPRECATION") intent.getParcelableExtra(EXTRA_EVENT)
     }
 
-    var title = ""
-    var date = ""
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        title = event?.title.orEmpty()
-        date = event?.date.orEmpty()
-
         binding.activity = this
         binding.divisionAdapter = divisionAdapter
+        binding.event = event
 
-        val divisionList = event?.divisionList
-
-        divisionAdapter.submitList(divisionList)
+        divisionAdapter.submitList(event?.divisionList)
 
     }
 

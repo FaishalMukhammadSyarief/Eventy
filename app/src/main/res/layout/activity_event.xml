@@ -13,6 +13,10 @@
             name="divisionAdapter"
             type="com.crocodic.core.base.adapter.ReactiveListAdapter" />
 
+        <variable
+            name="event"
+            type="com.zhalz.eventy.domain.model.Event" />
+
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -78,13 +82,13 @@
                         android:layout_height="33dp"
                         android:layout_marginStart="12dp"
                         android:gravity="bottom"
+                        android:text="@string/faishal_mukhammad"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_medium"
                         app:fontFamily="@font/poppins_medium"
                         app:layout_constraintStart_toEndOf="@+id/iv_profile"
                         app:layout_constraintTop_toTopOf="@+id/iv_profile"
-                        tools:ignore="TextSizeCheck"
-                        android:text="@string/faishal_mukhammad" />
+                        tools:ignore="TextSizeCheck" />
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tv_role"
@@ -92,10 +96,10 @@
                         android:layout_height="32dp"
                         android:layout_marginStart="12dp"
                         android:gravity="center"
+                        android:text="@string/project_manager"
                         app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
                         app:layout_constraintStart_toEndOf="@+id/iv_profile"
-                        tools:ignore="TextSizeCheck"
-                        android:text="@string/project_manager" />
+                        tools:ignore="TextSizeCheck" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -103,15 +107,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_screen"
+                    android:text="@{event.title}"
                     android:textSize="@dimen/text_medium"
-                    android:text="@{activity.title}"
                     app:fontFamily="@font/poppins_semi_bold"
                     tools:text="Music Festival" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{activity.date}"
+                    android:text="@{event.date}"
                     android:textSize="14sp"
                     tools:text="25 Aug, 2025" />
 
