@@ -10,6 +10,10 @@
             type="com.zhalz.eventy.presentation.profile.ProfileActivity" />
 
         <variable
+            name="person"
+            type="com.zhalz.eventy.domain.model.Person" />
+
+        <variable
             name="isEdit"
             type="Boolean" />
 
@@ -71,7 +75,8 @@
                     android:id="@+id/tv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/faishal_mukhammad"
+                    tools:text="@string/faishal_mukhammad"
+                    android:text="@{person.name}"
                     android:textSize="@dimen/text_large"
                     app:fontFamily="@font/poppins_semi_bold" />
 
@@ -80,7 +85,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="32dp"
-                    android:text="@string/_123456789"
+                    textNumber="@{person.id}"
+                    tools:text="@string/_123456789"
                     android:textColor="@color/blue"
                     android:textSize="14sp"
                     tools:ignore="TextContrastCheck" />

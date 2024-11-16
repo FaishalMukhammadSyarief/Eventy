@@ -70,7 +70,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     private fun toDetail(event: Event) = context?.openActivity<EventActivity> { putExtra(EXTRA_EVENT, event) }
 
-
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null

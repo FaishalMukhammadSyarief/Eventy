@@ -5,16 +5,19 @@ import android.view.View
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.crocodic.core.base.adapter.ReactiveListAdapter
+import com.crocodic.core.extension.openActivity
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
 import com.zhalz.eventy.databinding.FragmentFriendBinding
 import com.zhalz.eventy.databinding.ItemContactBinding
 import com.zhalz.eventy.domain.model.Person
+import com.zhalz.eventy.presentation.profile.ProfileActivity
+import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_PERSON
 
 class FriendFragment : BaseFragment<FragmentFriendBinding>(R.layout.fragment_friend) {
 
     private val contactAdapter by lazy {
-        ReactiveListAdapter<ItemContactBinding, Person>(R.layout.item_contact)
+        ReactiveListAdapter<ItemContactBinding, Person>(R.layout.item_contact).initItem { _, data -> toDetail(data) }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -33,6 +36,8 @@ class FriendFragment : BaseFragment<FragmentFriendBinding>(R.layout.fragment_fri
 
         contactAdapter.submitList(contactList)
     }
+
+    private fun toDetail(person: Person) = context?.openActivity<ProfileActivity> { putExtra(EXTRA_PERSON, person) }
 
     override fun onDestroyView() {
         super.onDestroyView()
