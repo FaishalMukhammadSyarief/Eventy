@@ -6,7 +6,7 @@ import com.crocodic.core.base.activity.NoViewModelActivity
 import com.google.android.material.tabs.TabLayoutMediator
 import com.zhalz.eventy.R
 import com.zhalz.eventy.databinding.ActivityContactBinding
-import com.zhalz.eventy.presentation.adapter.PagerAdapter
+import com.zhalz.eventy.presentation.adapter.ContactPagerAdapter
 
 class ContactActivity : NoViewModelActivity<ActivityContactBinding>(R.layout.activity_contact) {
 
@@ -21,7 +21,7 @@ class ContactActivity : NoViewModelActivity<ActivityContactBinding>(R.layout.act
 
     private fun initUI() {
         /** == VIEW PAGER == **/
-        binding.viewPager.adapter = PagerAdapter(this)
+        binding.viewPager.adapter = ContactPagerAdapter(this)
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             when (position) {
                 0 -> tab.text = getString(R.string.friend2)
