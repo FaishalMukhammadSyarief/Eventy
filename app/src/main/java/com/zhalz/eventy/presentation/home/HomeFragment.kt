@@ -16,6 +16,7 @@ import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.domain.model.Event
 import com.zhalz.eventy.domain.model.Person
 import com.zhalz.eventy.domain.model.Schedule
+import com.zhalz.eventy.domain.model.Task
 import com.zhalz.eventy.presentation.event.EventActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_EVENT
 
@@ -46,9 +47,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
             Person(1239112, "Fabe Bustanil", "fatichin@mail.com"),
         )
 
+        val taskList = listOf(
+            Task(1092312, "Menyiapkan LCD", "Augustus 22, 2024", teamList),
+            Task(1239112, "Menyiapkan Banner", "Augustus 23, 2024", teamList),
+        )
+
         val divisionList = listOf(
-            Division(1092312, "Divisi Perlengkapan", R.color.blue, teamList),
-            Division(1232991, "Divisi Acara", R.color.yellow, teamList),
+            Division(1092312, "Divisi Perlengkapan", R.color.blue, teamList, taskList),
+            Division(1232991, "Divisi Acara", R.color.yellow, teamList, taskList),
         )
 
         val eventList = listOf(

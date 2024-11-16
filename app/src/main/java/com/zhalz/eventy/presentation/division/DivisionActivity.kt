@@ -13,7 +13,7 @@ import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
 
 class DivisionActivity : BaseActivity<ActivityDivisionBinding, DivisionViewModel>(R.layout.activity_division) {
 
-    private val division: Division? by lazy {
+    val division: Division? by lazy {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) intent.getParcelableExtra(EXTRA_DIVISION, Division::class.java)
         else @Suppress("DEPRECATION") intent.getParcelableExtra(EXTRA_DIVISION)
     }

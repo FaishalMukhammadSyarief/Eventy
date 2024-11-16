@@ -35,6 +35,7 @@
                 app:navigationIcon="@drawable/ic_back"
                 app:navigationOnClickListener="@{() -> activity.finish()}"
                 app:title="@{division.title}"
+                app:titleCentered="true"
                 app:titleTextAppearance="@style/ToolbarTitleAppearance"
                 tools:ignore="RtlSymmetry"
                 tools:title="Division" />

@@ -4,10 +4,9 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Division(
+data class Task(
     val id: Int,
     val title: String,
-    val color: Int,
+    val date: String,
     val team: List<Person>,
-    val task: List<Task>,
 ) : Parcelable
