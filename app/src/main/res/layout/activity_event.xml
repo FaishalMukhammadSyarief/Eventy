@@ -9,6 +9,10 @@
             name="activity"
             type="com.zhalz.eventy.presentation.event.EventActivity" />
 
+        <variable
+            name="divisionAdapter"
+            type="com.crocodic.core.base.adapter.ReactiveListAdapter" />
+
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -65,7 +69,8 @@
                         android:src="@drawable/faishal"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ImageContrastCheck" />
 
                     <TextView
                         android:id="@+id/tv_name"
@@ -79,7 +84,7 @@
                         app:layout_constraintStart_toEndOf="@+id/iv_profile"
                         app:layout_constraintTop_toTopOf="@+id/iv_profile"
                         tools:ignore="TextSizeCheck"
-                        tools:text="@string/faishal_mukhammad" />
+                        android:text="@string/faishal_mukhammad" />
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tv_role"
@@ -90,7 +95,7 @@
                         app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
                         app:layout_constraintStart_toEndOf="@+id/iv_profile"
                         tools:ignore="TextSizeCheck"
-                        tools:text="Project Manager" />
+                        android:text="@string/project_manager" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -99,12 +104,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_screen"
                     android:textSize="@dimen/text_medium"
+                    android:text="@{activity.title}"
                     app:fontFamily="@font/poppins_semi_bold"
                     tools:text="Music Festival" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text="@{activity.date}"
                     android:textSize="14sp"
                     tools:text="25 Aug, 2025" />
 
@@ -117,7 +124,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margin_screen"
+                    android:layout_marginBottom="32dp"
                     android:text="@string/https_wa_grup_event_com"
                     android:textColor="@color/blue"
                     android:textSize="14sp"
@@ -168,7 +175,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                    android:adapter="@{divisionAdapter}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_division" />
 
             </LinearLayout>
 

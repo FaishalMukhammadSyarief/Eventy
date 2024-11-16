@@ -76,4 +76,7 @@
     <string name="_15_00_wib_end">15:00 WIB - end</string>
     <string name="konsep_acara">Konsep Acara</string>
     <string name="konsepacarafestival_pdf">KonsepAcaraFestival.pdf</string>
+    <string name="divisi_perlengkapan">Divisi Perlengkapan</string>
+    <string name="team">Team</string>
+    <string name="project_manager">Project Manager</string>
 </resources>

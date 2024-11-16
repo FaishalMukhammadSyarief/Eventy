@@ -4,12 +4,9 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Event(
+data class Division(
     val id: Int,
     val title: String,
-    val date: String,
-    val role: String,
-    val place: String,
-    val category: String,
-    val divisionList: List<Division>,
+    val color: Int,
+    val team: List<Person>,
 ) : Parcelable
