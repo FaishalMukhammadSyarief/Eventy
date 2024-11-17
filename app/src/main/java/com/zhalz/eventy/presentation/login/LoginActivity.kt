@@ -8,6 +8,7 @@ import com.crocodic.core.extension.openActivity
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseActivity
 import com.zhalz.eventy.databinding.ActivityLoginBinding
+import com.zhalz.eventy.presentation.main.MainActivity
 import com.zhalz.eventy.presentation.register.RegisterActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -32,5 +33,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
     }
 
     fun toRegister() = openActivity<RegisterActivity> { finish() }
+    fun toHome() = openActivity<MainActivity> { finish() }
 
 }
