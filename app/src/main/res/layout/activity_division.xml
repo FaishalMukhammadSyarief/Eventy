@@ -19,7 +19,6 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
         tools:context=".presentation.division.DivisionActivity">
 
         <com.google.android.material.appbar.AppBarLayout
@@ -27,18 +26,55 @@
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true">
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/toolbar"
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:paddingEnd="8dp"
-                app:navigationIcon="@drawable/ic_back"
-                app:navigationOnClickListener="@{() -> activity.finish()}"
-                app:title="@{division.title}"
-                app:titleCentered="true"
-                app:titleTextAppearance="@style/ToolbarTitleAppearance"
-                tools:ignore="RtlSymmetry"
-                tools:title="Division" />
+                android:layout_height="300dp"
+                app:contentScrim="@color/white"
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+                app:titleEnabled="false">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                        android:id="@+id/circularProgressIndicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:progress="70"
+                        app:indicatorColor="@color/orange"
+                        app:indicatorSize="125dp"
+                        app:trackThickness="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/_70"
+                        android:textColor="@color/orange"
+                        android:textSize="@dimen/text_medium"
+                        app:fontFamily="@font/poppins_semi_bold"
+                        tools:ignore="TextContrastCheck" />
+
+                </FrameLayout>
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:paddingEnd="8dp"
+                    app:layout_collapseMode="pin"
+                    app:menu="@menu/menu_bottom_app"
+                    app:navigationIcon="@drawable/ic_back"
+                    app:navigationOnClickListener="@{() -> activity.finish()}"
+                    app:title="@{division.title}"
+                    app:titleCentered="true"
+                    tools:ignore="RtlSymmetry"
+                    tools:title="@string/divisi_perlengkapan" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout"
