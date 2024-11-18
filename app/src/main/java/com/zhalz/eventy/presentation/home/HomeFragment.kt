@@ -43,8 +43,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         )
 
         val teamList = listOf(
-            Person(1092312, "Ikhsandi Saktiawan", "ikhsan@mail.com"),
-            Person(1239112, "Fabe Bustanil", "fatichin@mail.com"),
+            Person(1092312, "Ikhsandi Saktiawan", "ikhsan@mail.com", "081326584842", "Ikhsandi", "_ikhsan_", "ikhsanD"),
+            Person(1239112, "Fabe Bustanil", "fatichin@mail.com", "084562529854", "Fabe B F", "xbstnl", "bustanil"),
         )
 
         val taskList = listOf(

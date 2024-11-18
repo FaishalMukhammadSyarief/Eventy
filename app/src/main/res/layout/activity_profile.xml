@@ -75,21 +75,21 @@
                     android:id="@+id/tv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="@string/faishal_mukhammad"
                     android:text="@{person.name}"
                     android:textSize="@dimen/text_large"
-                    app:fontFamily="@font/poppins_semi_bold" />
+                    app:fontFamily="@font/poppins_semi_bold"
+                    tools:text="@string/faishal_mukhammad" />
 
                 <TextView
                     android:id="@+id/tv_id"
+                    textNumber="@{person.id}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="32dp"
-                    textNumber="@{person.id}"
-                    tools:text="@string/_123456789"
                     android:textColor="@color/blue"
                     android:textSize="14sp"
-                    tools:ignore="TextContrastCheck" />
+                    tools:ignore="TextContrastCheck"
+                    tools:text="@string/_123456789" />
 
                 <TextView
                     android:id="@+id/tv_phone"
@@ -114,8 +114,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/bg_slightly_round"
+                        android:enabled="@{isEdit}"
                         android:hint="@string/phone_number"
                         android:inputType="phone"
+                        android:text="@{person.phone}"
+                        android:textColor="@color/black"
                         tools:ignore="VisualLintTextFieldSize,TextContrastCheck,DuplicateSpeakableTextCheck" />
                 </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
 
@@ -141,8 +144,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/bg_slightly_round"
+                        android:enabled="@{isEdit}"
                         android:hint="@string/email"
                         android:inputType="textEmailAddress"
+                        android:text="@{person.email}"
+                        android:textColor="@color/black"
                         tools:ignore="VisualLintTextFieldSize,TextContrastCheck,DuplicateSpeakableTextCheck" />
                 </com.zhalz.eventy.presentation.custom_view.TextLayoutEmail>
 
@@ -168,8 +174,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/bg_slightly_round"
+                        android:enabled="@{isEdit}"
                         android:hint="@string/linkedin"
                         android:inputType="text"
+                        android:text="@{person.linkedin}"
+                        android:textColor="@color/black"
                         tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
                 </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
 
@@ -186,8 +195,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/bg_slightly_round"
+                        android:enabled="@{isEdit}"
                         android:hint="@string/instagram"
                         android:inputType="text"
+                        android:text="@{person.instagram}"
+                        android:textColor="@color/black"
                         tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
                 </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
 
@@ -204,8 +216,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/bg_slightly_round"
+                        android:enabled="@{isEdit}"
                         android:hint="@string/facebook"
                         android:inputType="text"
+                        android:text="@{person.facebook}"
+                        android:textColor="@color/black"
                         tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
                 </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
 

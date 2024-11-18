@@ -20,8 +20,10 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding, ProfileViewModel>(R
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+        val myself = Person(1234567, "Faishal Mukhammad", "faishalmukhammadsyarief@gmail.com", "081313327023", "Faishal Mukhammad Syarief", "_zhalz_", "faishall")
+
         binding.activity = this
-        binding.person = person
+        binding.person = person ?: myself
 
         binding.toolbar.setOnMenuItemClickListener {
             if (it.itemId == R.id.menu_check) updateProfile()
