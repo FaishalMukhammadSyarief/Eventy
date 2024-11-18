@@ -20,6 +20,11 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding, ProfileViewModel>(R
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+        if (person?.id != 1234567) {
+            binding.isEdit = true
+            binding.toolbar.menu.clear()
+        }
+
         binding.activity = this
         binding.person = person
 
