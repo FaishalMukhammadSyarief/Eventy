@@ -36,6 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:paddingEnd="8dp"
+                app:menu="@menu/menu_event"
                 app:navigationIcon="@drawable/ic_back"
                 app:navigationOnClickListener="@{() -> activity.finish()}"
                 app:title="Event"

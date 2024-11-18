@@ -80,4 +80,8 @@
     <string name="team">Team</string>
     <string name="project_manager">Project Manager</string>
     <string name="_70">70%</string>
+    <string name="add_meeting">Add Meeting</string>
+    <string name="menu">Menu</string>
+    <string name="member">Member</string>
+    <string name="report">Report</string>
 </resources>
