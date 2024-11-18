@@ -84,4 +84,5 @@
     <string name="menu">Menu</string>
     <string name="member">Member</string>
     <string name="report">Report</string>
+    <string name="add_collaborator">Add Collaborator</string>
 </resources>

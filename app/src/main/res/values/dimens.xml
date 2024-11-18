@@ -13,7 +13,5 @@
     <dimen name="text_small">10sp</dimen>
 
     <dimen name="button_height">48dp</dimen>
-    <dimen name="search_bar_height">48dp</dimen>
-    <dimen name="extended_fab_height">48dp</dimen>
 
 </resources>
