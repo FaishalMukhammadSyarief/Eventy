@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_scrollFlags="scroll|enterAlwaysCollapsed|enterAlways"
-                app:navigationIcon="@drawable/ic_back"
+                app:navigationIcon="@drawable/ic_back_arrow"
                 app:navigationOnClickListener="@{() -> activity.finish()}"
                 app:title="@string/verifikasi_kode"
                 app:titleTextAppearance="@style/ToolbarTitleAppearance" />

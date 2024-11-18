@@ -37,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:paddingEnd="12dp"
-                app:navigationIcon="@drawable/ic_back"
+                app:navigationIcon="@drawable/ic_back_arrow"
                 app:navigationOnClickListener="@{() -> activity.finish()}"
                 app:title="Profile"
                 app:titleCentered="true"

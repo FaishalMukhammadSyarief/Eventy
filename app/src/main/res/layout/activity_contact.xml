@@ -29,7 +29,7 @@
                 android:layout_height="?attr/actionBarSize"
                 android:paddingEnd="8dp"
                 app:menu="@menu/menu_contact"
-                app:navigationIcon="@drawable/ic_back"
+                app:navigationIcon="@drawable/ic_back_arrow"
                 app:navigationOnClickListener="@{() -> activity.finish()}"
                 app:title="Contact"
                 app:titleTextAppearance="@style/ToolbarTitleAppearance"

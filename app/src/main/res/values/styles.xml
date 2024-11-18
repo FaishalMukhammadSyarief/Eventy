@@ -23,8 +23,8 @@
     </style>
 
     <style name="ToolbarTitleAppearance" >
-        <item name="fontFamily">@font/poppins_bold</item>
-        <item name="android:textSize">@dimen/text_large</item>
+        <item name="fontFamily">@font/poppins_semi_bold</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 

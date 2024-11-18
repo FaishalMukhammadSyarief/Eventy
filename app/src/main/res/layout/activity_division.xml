@@ -67,7 +67,7 @@
                     android:paddingEnd="8dp"
                     app:layout_collapseMode="pin"
                     app:menu="@menu/menu_bottom_app"
-                    app:navigationIcon="@drawable/ic_back"
+                    app:navigationIcon="@drawable/ic_back_arrow"
                     app:navigationOnClickListener="@{() -> activity.finish()}"
                     app:title="@{division.title}"
                     app:titleCentered="true"
