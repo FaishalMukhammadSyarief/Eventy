@@ -44,8 +44,8 @@
                         android:layout_gravity="end|center_horizontal"
                         android:layout_marginEnd="@dimen/margin_screen"
                         android:elevation="8dp"
-                        android:src="@drawable/faishal"
                         android:onClick="@{() -> activity.toProfile()}"
+                        android:src="@drawable/faishal"
                         tools:ignore="ImageContrastCheck" />
 
                 </com.google.android.material.appbar.MaterialToolbar>
