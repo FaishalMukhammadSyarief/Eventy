@@ -1,4 +1,4 @@
-package com.zhalz.eventy.presentation.collaborator
+package com.zhalz.eventy.presentation.contact.collaborator
 
 import android.os.Bundle
 import android.view.View

@@ -1,4 +1,4 @@
-package com.zhalz.eventy.presentation.home
+package com.zhalz.eventy.presentation.main.home
 
 import android.os.Bundle
 import android.view.View

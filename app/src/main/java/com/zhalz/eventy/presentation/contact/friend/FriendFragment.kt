@@ -1,4 +1,4 @@
-package com.zhalz.eventy.presentation.friend
+package com.zhalz.eventy.presentation.contact.friend
 
 import android.os.Bundle
 import android.view.View

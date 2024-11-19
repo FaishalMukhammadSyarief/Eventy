@@ -1,4 +1,4 @@
-package com.zhalz.eventy.presentation.schedule
+package com.zhalz.eventy.presentation.main.schedule
 
 import android.os.Bundle
 import android.view.View

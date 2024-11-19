@@ -1,4 +1,4 @@
-package com.zhalz.eventy.presentation.notification
+package com.zhalz.eventy.presentation.main.notification
 
 import android.os.Bundle
 import android.view.View
