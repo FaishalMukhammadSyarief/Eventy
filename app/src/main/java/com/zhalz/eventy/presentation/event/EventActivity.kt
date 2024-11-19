@@ -12,6 +12,7 @@ import com.zhalz.eventy.databinding.ItemDivisionBinding
 import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.domain.model.Event
 import com.zhalz.eventy.presentation.division.DivisionActivity
+import com.zhalz.eventy.presentation.member.MemberActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_EVENT
 
@@ -36,8 +37,16 @@ class EventActivity : BaseActivity<ActivityEventBinding, EventViewModel>(R.layou
 
         divisionAdapter.submitList(event?.divisionList)
 
+        binding.toolbar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.menu_member -> toMember(event)
+            }
+            true
+        }
+
     }
 
     private fun toDetail(division: Division) = openActivity<DivisionActivity> { putExtra(EXTRA_DIVISION, division) }
+    private fun toMember(event: Event?) = openActivity<MemberActivity> { putExtra(EXTRA_EVENT, event) }
 
 }

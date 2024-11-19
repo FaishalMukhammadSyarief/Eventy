@@ -12,4 +12,7 @@ data class Event(
     val place: String,
     val category: String,
     val divisionList: List<Division>,
+    val managerList: List<Person>,
+    val coordinatorList: List<Person>,
+    val memberList: List<Person>,
 ) : Parcelable
