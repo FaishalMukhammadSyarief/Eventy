@@ -26,9 +26,9 @@
 
             <View
                 android:id="@+id/color"
-                setBackground="@{data.color}"
                 android:layout_width="12dp"
                 android:layout_height="match_parent"
+                android:background="@{data.color}"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:background="@color/text_red" />
 

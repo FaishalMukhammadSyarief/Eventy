@@ -1,6 +1,5 @@
 package com.zhalz.eventy.utils
 
-import android.view.View
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.google.android.material.progressindicator.CircularProgressIndicator
@@ -13,10 +12,6 @@ fun TextView.formatAttendees(attendant: Int) =
 @BindingAdapter("textNumber")
 fun TextView.textNumber(text: Int) =
     text.toString().also { this.text = it }
-
-@BindingAdapter("setBackground")
-fun View.setBackground(color: Int) =
-    this.setBackgroundColor(color)
 
 @BindingAdapter("indicatorColor")
 fun CircularProgressIndicator.setIndicatorColor(color: Int) =
