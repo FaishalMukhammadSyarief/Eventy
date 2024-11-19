@@ -39,11 +39,11 @@
 
                     <com.google.android.material.progressindicator.CircularProgressIndicator
                         android:id="@+id/circularProgressIndicator"
+                        indicatorColor="@{division.color}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:progress="70"
-                        app:indicatorColor="@color/orange"
                         app:indicatorSize="125dp"
                         app:trackThickness="8dp" />
 
@@ -52,7 +52,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="@string/_70"
-                        android:textColor="@color/orange"
+                        android:textColor="@{division.color}"
                         android:textSize="@dimen/text_medium"
                         app:fontFamily="@font/poppins_semi_bold"
                         tools:ignore="TextContrastCheck" />
@@ -77,14 +77,14 @@
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout"
+                tabIndicatorColor="@{division.color}"
+                tabSelectedTextColor="@{division.color}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/tab_layout"
-                app:tabIndicatorColor="@color/orange"
                 app:tabIndicatorFullWidth="true"
                 app:tabMode="fixed"
                 app:tabRippleColor="@color/transparent"
-                app:tabSelectedTextColor="@color/orange"
                 app:tabTextColor="@color/light_gray" />
 
         </com.google.android.material.appbar.AppBarLayout>

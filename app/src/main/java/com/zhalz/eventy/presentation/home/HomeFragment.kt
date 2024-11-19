@@ -2,6 +2,7 @@ package com.zhalz.eventy.presentation.home
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat.getColor
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -53,8 +54,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         )
 
         val divisionList = listOf(
-            Division(1092312, "Divisi Perlengkapan", R.color.blue, teamList, taskList),
-            Division(1232991, "Divisi Acara", R.color.yellow, teamList, taskList),
+            Division(1092312, "Divisi Perlengkapan", getColor(requireContext(), R.color.blue), teamList, taskList),
+            Division(1232991, "Divisi Acara", getColor(requireContext(), R.color.orange), teamList, taskList),
         )
 
         val eventList = listOf(

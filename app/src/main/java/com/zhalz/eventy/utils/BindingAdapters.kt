@@ -2,20 +2,30 @@ package com.zhalz.eventy.utils
 
 import android.view.View
 import android.widget.TextView
-import androidx.core.content.ContextCompat.getColor
 import androidx.databinding.BindingAdapter
+import com.google.android.material.progressindicator.CircularProgressIndicator
+import com.google.android.material.tabs.TabLayout
 
 @BindingAdapter("attendees")
-fun TextView.formatAttendees(attendant: Int) {
+fun TextView.formatAttendees(attendant: Int) =
     "$attendant Attendees".also { this.text = it }
-}
 
 @BindingAdapter("textNumber")
-fun TextView.textNumber(text: Int) {
-    this.text = text.toString()
-}
+fun TextView.textNumber(text: Int) =
+    text.toString().also { this.text = it }
 
 @BindingAdapter("setBackground")
-fun View.setBackground(color: Int) {
-    this.setBackgroundColor(getColor(this.context, color))
-}
+fun View.setBackground(color: Int) =
+    this.setBackgroundColor(color)
+
+@BindingAdapter("indicatorColor")
+fun CircularProgressIndicator.setIndicatorColor(color: Int) =
+    this.setIndicatorColor(color)
+
+@BindingAdapter("tabIndicatorColor")
+fun TabLayout.setTabIndicatorColor(color: Int) =
+    this.setSelectedTabIndicatorColor(color)
+
+@BindingAdapter("tabSelectedTextColor")
+fun TabLayout.setTabSelectedTextColor(color: Int) =
+    this.setTabTextColors(this.tabTextColors?.defaultColor ?: color, color)
