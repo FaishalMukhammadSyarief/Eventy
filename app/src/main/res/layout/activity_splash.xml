@@ -11,7 +11,33 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.SplashActivity">
+        android:background="@drawable/gr_blue_white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".presentation.landing.LandingActivity">
+
+        <ImageView
+            android:id="@+id/ic_eventy_logo"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_marginTop="175dp"
+            android:contentDescription="@string/cd_eventy_logo"
+            android:src="@drawable/ic_eventy_logo_yellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="215dp"
+            android:layout_height="75dp"
+            android:contentDescription="@string/cd_eventy_logo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_eventy_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ic_eventy_logo"
+            tools:ignore="ImageContrastCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
