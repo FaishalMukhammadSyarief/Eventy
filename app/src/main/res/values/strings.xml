@@ -85,4 +85,5 @@
     <string name="member">Member</string>
     <string name="report">Report</string>
     <string name="add_collaborator">Add Collaborator</string>
+    <string name="cd_add_event">Add Event</string>
 </resources>

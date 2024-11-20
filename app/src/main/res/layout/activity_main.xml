@@ -69,12 +69,16 @@
             </androidx.core.widget.NestedScrollView>
 
             <com.google.android.material.bottomappbar.BottomAppBar
+                android:id="@+id/bottom_app"
                 android:layout_width="match_parent"
                 android:layout_height="75dp"
                 android:layout_gravity="bottom"
                 android:backgroundTint="@color/white"
                 android:fitsSystemWindows="true"
                 app:contentInsetStart="0dp"
+                app:fabAlignmentMode="end"
+                app:fabAnchorMode="cradle"
+                app:fabCradleVerticalOffset="42dp"
                 app:hideOnScroll="true"
                 tools:ignore="VisualLintBottomAppBar">
 
@@ -93,6 +97,19 @@
                     tools:ignore="VisualLintBottomNav" />
 
             </com.google.android.material.bottomappbar.BottomAppBar>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:contentDescription="@string/cd_add_event"
+                android:src="@drawable/ic_add"
+                app:layout_anchor="@id/bottom_app"
+                app:maxImageSize="40dp"
+                android:onClick="@{() -> activity.toCreate()}"
+                app:shapeAppearance="@style/RoundCorner"
+                app:tint="@color/gray"
+                tools:ignore="ImageContrastCheck" />
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

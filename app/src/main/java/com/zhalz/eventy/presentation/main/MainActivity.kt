@@ -15,6 +15,7 @@ import com.zhalz.eventy.R
 import com.zhalz.eventy.databinding.ActivityMainBinding
 import com.zhalz.eventy.databinding.NavHeaderBinding
 import com.zhalz.eventy.domain.model.Person
+import com.zhalz.eventy.presentation.create_event.CreateEventActivity
 import com.zhalz.eventy.presentation.profile.ProfileActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_PERSON
 import com.zhalz.eventy.utils.setStatusBarColor
@@ -72,6 +73,7 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
     }
 
     fun toProfile() = openActivity<ProfileActivity> { putExtra(EXTRA_PERSON, user) }
+    fun toCreate() = openActivity<CreateEventActivity>()
 
     override fun onSupportNavigateUp() =
         navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
