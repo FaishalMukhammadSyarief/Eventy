@@ -158,11 +158,13 @@
                         app:hintEnabled="false">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_start_date"
                             style="@style/MyEditText"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:focusable="false"
                             android:hint="@string/start_date"
-                            android:inputType="date"
+                            android:inputType="none"
                             android:textColor="@color/black"
                             tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
                     </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
@@ -177,11 +179,13 @@
                         app:hintEnabled="false">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_due_date"
                             style="@style/MyEditText"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:focusable="false"
                             android:hint="@string/due_date"
-                            android:inputType="text"
+                            android:inputType="none"
                             android:textColor="@color/black"
                             tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
                     </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
