@@ -13,5 +13,11 @@ class CreateEventActivity : BaseActivity<ActivityCreateEventBinding, CreateEvent
 
         binding.activity = this
 
+        binding.toolbar.setOnMenuItemClickListener {
+            if (it.itemId == R.id.menu_check) finish()
+            true
+        }
+
     }
+
 }

@@ -63,7 +63,6 @@
                     android:src="@drawable/faishal" />
 
                 <TextView
-                    android:id="@+id/tv_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
@@ -84,7 +83,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="@string/enter_title"
-                        android:inputType="phone"
+                        android:inputType="text"
                         android:textColor="@color/black"
                         tools:ignore="VisualLintTextFieldSize,TextContrastCheck,DuplicateSpeakableTextCheck" />
                 </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
@@ -114,7 +113,6 @@
                 </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
 
                 <TextView
-                    android:id="@+id/tv_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
@@ -123,7 +121,6 @@
 
                 <!--  LOCATION  -->
                 <com.zhalz.eventy.presentation.custom_view.TextLayoutNormal
-                    android:id="@+id/etl_email"
                     style="@style/MyTextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -165,7 +162,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:hint="@string/start_date"
-                            android:inputType="text"
+                            android:inputType="date"
                             android:textColor="@color/black"
                             tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
                     </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
@@ -192,7 +189,6 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/tv_social"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
@@ -201,7 +197,6 @@
 
                 <!--  CATEGORY  -->
                 <com.zhalz.eventy.presentation.custom_view.TextLayoutNormal
-                    android:id="@+id/etl_linkedin"
                     style="@style/MyTextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -225,7 +220,6 @@
                     android:textSize="14sp" />
 
                 <com.zhalz.eventy.presentation.custom_view.TextLayoutNormal
-                    android:id="@+id/etl_facebook"
                     style="@style/MyTextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -240,13 +234,6 @@
                         android:textColor="@color/black"
                         tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
                 </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:text="@string/division"
-                    android:textSize="14sp" />
 
             </LinearLayout>
 
