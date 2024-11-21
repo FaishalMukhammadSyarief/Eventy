@@ -11,6 +11,7 @@ import com.zhalz.eventy.databinding.ActivityEventBinding
 import com.zhalz.eventy.databinding.ItemDivisionBinding
 import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.domain.model.Event
+import com.zhalz.eventy.presentation.create_schedule.CreateScheduleActivity
 import com.zhalz.eventy.presentation.division.DivisionActivity
 import com.zhalz.eventy.presentation.member.MemberActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
@@ -39,7 +40,8 @@ class EventActivity : BaseActivity<ActivityEventBinding, EventViewModel>(R.layou
 
         binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
-                R.id.menu_member -> toMember(event)
+                R.id.menu_member -> openActivity<MemberActivity> { putExtra(EXTRA_EVENT, event) }
+                R.id.menu_add_meeting -> openActivity<CreateScheduleActivity>()
             }
             true
         }
@@ -47,6 +49,5 @@ class EventActivity : BaseActivity<ActivityEventBinding, EventViewModel>(R.layou
     }
 
     private fun toDetail(division: Division) = openActivity<DivisionActivity> { putExtra(EXTRA_DIVISION, division) }
-    private fun toMember(event: Event?) = openActivity<MemberActivity> { putExtra(EXTRA_EVENT, event) }
 
 }
