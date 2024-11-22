@@ -14,6 +14,7 @@ import com.zhalz.eventy.domain.model.Event
 import com.zhalz.eventy.presentation.create_schedule.CreateScheduleActivity
 import com.zhalz.eventy.presentation.division.DivisionActivity
 import com.zhalz.eventy.presentation.member.MemberActivity
+import com.zhalz.eventy.presentation.report.ReportActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_EVENT
 
@@ -40,8 +41,9 @@ class EventActivity : BaseActivity<ActivityEventBinding, EventViewModel>(R.layou
 
         binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
-                R.id.menu_member -> openActivity<MemberActivity> { putExtra(EXTRA_EVENT, event) }
                 R.id.menu_add_meeting -> openActivity<CreateScheduleActivity>()
+                R.id.menu_member -> openActivity<MemberActivity> { putExtra(EXTRA_EVENT, event) }
+                R.id.menu_report -> openActivity<ReportActivity>()
             }
             true
         }
