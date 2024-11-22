@@ -3,6 +3,7 @@ package com.zhalz.eventy.utils
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.google.android.material.progressindicator.CircularProgressIndicator
+import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.tabs.TabLayout
 
 @BindingAdapter("attendees")
@@ -15,6 +16,10 @@ fun TextView.textNumber(text: Int) =
 
 @BindingAdapter("indicatorColor")
 fun CircularProgressIndicator.setIndicatorColor(color: Int) =
+    this.setIndicatorColor(color)
+
+@BindingAdapter("indicatorColor")
+fun LinearProgressIndicator.setIndicatorColor(color: Int) =
     this.setIndicatorColor(color)
 
 @BindingAdapter("tabIndicatorColor")

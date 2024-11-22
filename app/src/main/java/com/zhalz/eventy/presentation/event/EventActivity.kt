@@ -43,7 +43,7 @@ class EventActivity : BaseActivity<ActivityEventBinding, EventViewModel>(R.layou
             when (it.itemId) {
                 R.id.menu_add_meeting -> openActivity<CreateScheduleActivity>()
                 R.id.menu_member -> openActivity<MemberActivity> { putExtra(EXTRA_EVENT, event) }
-                R.id.menu_report -> openActivity<ReportActivity>()
+                R.id.menu_report -> openActivity<ReportActivity> { putExtra(EXTRA_EVENT, event) }
             }
             true
         }
