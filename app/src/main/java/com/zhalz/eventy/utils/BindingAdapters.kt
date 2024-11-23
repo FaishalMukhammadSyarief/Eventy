@@ -10,6 +10,10 @@ import com.google.android.material.tabs.TabLayout
 fun TextView.formatAttendees(attendant: Int) =
     "$attendant Attendees".also { this.text = it }
 
+@BindingAdapter("rupiah")
+fun TextView.formatRupiah(amount: Int) =
+    "Rp. $amount".also { this.text = it }
+
 @BindingAdapter("textNumber")
 fun TextView.textNumber(text: Int) =
     text.toString().also { this.text = it }

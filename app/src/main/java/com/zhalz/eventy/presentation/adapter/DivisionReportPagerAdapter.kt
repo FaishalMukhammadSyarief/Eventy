@@ -3,6 +3,7 @@ package com.zhalz.eventy.presentation.adapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.zhalz.eventy.presentation.division.task.TaskFragment
+import com.zhalz.eventy.presentation.report.division.spending.SpendingFragment
 
 class DivisionReportPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
 
@@ -11,7 +12,7 @@ class DivisionReportPagerAdapter(activity: AppCompatActivity) : FragmentStateAda
     override fun createFragment(position: Int) =
         when(position) {
             0 -> TaskFragment()
-            else -> TaskFragment()
+            else -> SpendingFragment()
         }
 
 }

@@ -35,9 +35,8 @@ class DivisionReportActivity : NoViewModelActivity<ActivityDivisionReportBinding
         binding.viewPager.adapter = DivisionReportPagerAdapter(this)
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             when (position) {
-                0 -> tab.text = "TASK"
-                1 -> tab.text = "IN PROGRESS"
-                2 -> tab.text = "COMPLETED"
+                0 -> tab.text = "OVERVIEW"
+                1 -> tab.text = "SPENDING"
             }
         }.attach()
     }
