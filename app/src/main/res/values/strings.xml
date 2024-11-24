@@ -108,4 +108,8 @@
     <string name="menyiapkan_snack">Menyiapkan snack</string>
     <string name="rp_75_000">Rp. 75.000</string>
     <string name="spending_rp_350_000">Spending Rp. 350.000</string>
+    <string name="status_overview_6">Status (6)</string>
+    <string name="on_progress">On Progress</string>
+    <string name="uncompleted">Uncompleted</string>
+    <string name="completed">Completed</string>
 </resources>
