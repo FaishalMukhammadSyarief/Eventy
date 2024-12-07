@@ -1,10 +1,12 @@
 package com.zhalz.eventy.utils
 
 import android.widget.TextView
+import androidx.core.content.ContextCompat.getColor
 import androidx.databinding.BindingAdapter
 import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.tabs.TabLayout
+import com.zhalz.eventy.R
 import com.zhalz.eventy.domain.model.Person
 
 @BindingAdapter("attendees")
@@ -29,16 +31,16 @@ fun TextView.listToText(list: List<Person>) =
 
 @BindingAdapter("indicatorColor")
 fun CircularProgressIndicator.setIndicatorColor(color: Int) =
-    this.setIndicatorColor(color)
+    this.setIndicatorColor(getColor(this.context, color))
 
 @BindingAdapter("indicatorColor")
 fun LinearProgressIndicator.setIndicatorColor(color: Int) =
-    this.setIndicatorColor(color)
+    this.setIndicatorColor(getColor(this.context, color))
 
 @BindingAdapter("tabIndicatorColor")
 fun TabLayout.setTabIndicatorColor(color: Int) =
-    this.setSelectedTabIndicatorColor(color)
+    this.setSelectedTabIndicatorColor(getColor(this.context, color))
 
 @BindingAdapter("tabSelectedTextColor")
 fun TabLayout.setTabSelectedTextColor(color: Int) =
-    this.setTabTextColors(this.tabTextColors?.defaultColor ?: color, color)
+    this.setTabTextColors(this.tabTextColors?.defaultColor ?: getColor(this.context, color), getColor(this.context, color))
