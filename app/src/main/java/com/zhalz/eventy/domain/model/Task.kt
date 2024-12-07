@@ -8,5 +8,6 @@ data class Task(
     val id: Int,
     val title: String,
     val date: String,
+    val author: String,
     val team: List<Person>,
 ) : Parcelable

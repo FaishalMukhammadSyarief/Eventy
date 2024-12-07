@@ -57,8 +57,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         )
 
         val taskList = listOf(
-            Task(1092312, "Menyiapkan LCD", "Augustus 22, 2024", teamList),
-            Task(1239112, "Menyiapkan Banner", "Augustus 23, 2024", teamList),
+            Task(1092312, "Menyiapkan Panggung", "Augustus 22, 2024", "Rafi Raditya", teamList),
+            Task(1239112, "Menyiapkan Banner", "Augustus 23, 2024", "Ramadandy", teamList),
         )
 
         val divisionList = listOf(

@@ -112,4 +112,8 @@
     <string name="on_progress">On Progress</string>
     <string name="uncompleted">Uncompleted</string>
     <string name="completed">Completed</string>
+    <string name="status">Status</string>
+    <string name="author">Author</string>
+    <string name="add_comment">Add Comment..</string>
+    <string name="comment">Comment (%1$d)</string>
 </resources>

@@ -5,18 +5,27 @@ import androidx.databinding.BindingAdapter
 import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.tabs.TabLayout
+import com.zhalz.eventy.domain.model.Person
 
 @BindingAdapter("attendees")
 fun TextView.formatAttendees(attendant: Int) =
-    "$attendant Attendees".also { this.text = it }
+    "$attendant Attendees".also { text = it }
 
 @BindingAdapter("rupiah")
 fun TextView.formatRupiah(amount: Int) =
-    "Rp. $amount".also { this.text = it }
+    "Rp. $amount".also { text = it }
 
 @BindingAdapter("textNumber")
 fun TextView.textNumber(text: Int) =
     text.toString().also { this.text = it }
+
+@BindingAdapter("textSemicolon")
+fun TextView.textSemicolon(text: String) =
+    ":  $text".also { this.text = it }
+
+@BindingAdapter("listToText")
+fun TextView.listToText(list: List<Person>) =
+    ":  ${ list.joinToString(", ") { it.name } }".also { text = it }
 
 @BindingAdapter("indicatorColor")
 fun CircularProgressIndicator.setIndicatorColor(color: Int) =
