@@ -9,6 +9,7 @@ import com.zhalz.eventy.base.BaseActivity
 import com.zhalz.eventy.databinding.ActivityDivisionBinding
 import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.presentation.adapter.DivisionPagerAdapter
+import com.zhalz.eventy.presentation.dialog.AddPeopleFragment
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
 
 class DivisionActivity : BaseActivity<ActivityDivisionBinding, DivisionViewModel>(R.layout.activity_division) {
@@ -38,6 +39,13 @@ class DivisionActivity : BaseActivity<ActivityDivisionBinding, DivisionViewModel
                 2 -> tab.text = "COMPLETED"
             }
         }.attach()
+
+        binding.toolbar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.menu_add_collaborator -> AddPeopleFragment().show(supportFragmentManager, AddPeopleFragment::class.java.simpleName)
+            }
+            true
+        }
     }
 
 }

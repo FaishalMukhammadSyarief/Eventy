@@ -116,4 +116,5 @@
     <string name="author">Author</string>
     <string name="add_comment">Add Comment..</string>
     <string name="comment">Comment (%1$d)</string>
+    <string name="enter_name_or_phone_number">Enter name or phone number</string>
 </resources>

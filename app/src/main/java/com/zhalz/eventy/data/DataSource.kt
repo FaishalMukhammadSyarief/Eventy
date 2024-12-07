@@ -15,6 +15,7 @@ val scheduleList = listOf(
 val teamList = listOf(
     Person(1321422, "Rafi Raditya", "radit@mail.com", "087852163210", "Raditya", "rafi.raditya", "rafi"),
     Person(1233543, "Dandy Rama", "rama@mail.com", "089525223615", "Dandyy", "_dandy_", "rama"),
+    Person(3424123, "Fabe Bustanil", "fatichin@mail.com", "084562529854", "Fabe B F", "xbstnl", "bustanil"),
 )
 
 val managerList = listOf(
@@ -26,8 +27,8 @@ val managerList2 = listOf(
 )
 
 val taskList = listOf(
-    Task(1092312, "Menyiapkan Panggung", "Augustus 22, 2024", "Rafi Raditya", teamList),
-    Task(1239112, "Menyiapkan Banner", "Augustus 23, 2024", "Ramadandy", teamList),
+    Task(1092312, "Menyiapkan Panggung", "Augustus 22, 2024", "Saiful", teamList),
+    Task(1239112, "Menyiapkan Banner", "Augustus 23, 2024", "Ikhsandi", teamList),
 )
 
 val divisionList = listOf(

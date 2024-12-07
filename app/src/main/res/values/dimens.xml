@@ -2,6 +2,7 @@
 <resources>
 
     <dimen name="margin_screen">16dp</dimen>
+    <dimen name="margin_dialog">32dp</dimen>
 
     <dimen name="edit_text_radius">12dp</dimen>
 
