@@ -22,8 +22,8 @@
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginTop="8dp"
+            android:gravity="center"
             android:text="@string/status_overview_6"
             android:textSize="@dimen/text_large"
             app:fontFamily="@font/poppins_semi_bold"
@@ -52,6 +52,7 @@
                     android:layout_gravity="center"
                     android:progress="70"
                     app:indicatorSize="125dp"
+                    app:trackColor="@color/gray"
                     app:trackThickness="8dp" />
 
                 <TextView
@@ -94,34 +95,15 @@
                     app:layout_constraintTop_toTopOf="@+id/uncompleted" />
 
                 <View
-                    android:id="@+id/on_progress"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_marginTop="16dp"
-                    android:background="@drawable/bg_round_4"
-                    android:backgroundTint="@color/blue"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/uncompleted" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="@string/on_progress"
-                    app:fontFamily="@font/poppins_medium"
-                    app:layout_constraintBottom_toBottomOf="@+id/on_progress"
-                    app:layout_constraintStart_toEndOf="@+id/on_progress"
-                    app:layout_constraintTop_toTopOf="@+id/on_progress" />
-
-                <View
                     android:id="@+id/completed"
+                    backgroundTint="@{division.color}"
                     android:layout_width="18dp"
                     android:layout_height="18dp"
                     android:layout_marginTop="16dp"
                     android:background="@drawable/bg_round_4"
-                    android:backgroundTint="@color/text_green"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/on_progress" />
+                    app:layout_constraintTop_toBottomOf="@id/uncompleted"
+                    tools:backgroundTint="@color/text_green" />
 
                 <TextView
                     android:layout_width="wrap_content"

@@ -33,6 +33,10 @@ fun TextView.listToText(list: List<Person>) =
 fun View.backgroundColor(color: Int) =
     this.setBackgroundColor(getColor(this.context, color))
 
+@BindingAdapter("backgroundTint")
+fun View.backgroundTint(color: Int) =
+    this.background.setTint(getColor(this.context, color))
+
 @BindingAdapter("indicatorColor")
 fun CircularProgressIndicator.setIndicatorColor(color: Int) =
     this.setIndicatorColor(getColor(this.context, color))
