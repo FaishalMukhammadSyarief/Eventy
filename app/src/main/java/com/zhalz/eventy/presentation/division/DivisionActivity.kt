@@ -1,8 +1,10 @@
 package com.zhalz.eventy.presentation.division
 
-import android.os.Build
+import android.os.Build.VERSION.SDK_INT
+import android.os.Build.VERSION_CODES.TIRAMISU
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import com.crocodic.core.extension.openActivity
 import com.google.android.material.tabs.TabLayoutMediator
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseActivity
@@ -10,12 +12,13 @@ import com.zhalz.eventy.databinding.ActivityDivisionBinding
 import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.presentation.adapter.DivisionPagerAdapter
 import com.zhalz.eventy.presentation.dialog.AddPeopleFragment
+import com.zhalz.eventy.presentation.member.MemberActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
 
 class DivisionActivity : BaseActivity<ActivityDivisionBinding, DivisionViewModel>(R.layout.activity_division) {
 
     val division: Division? by lazy {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) intent.getParcelableExtra(EXTRA_DIVISION, Division::class.java)
+        if (SDK_INT >= TIRAMISU) intent.getParcelableExtra(EXTRA_DIVISION, Division::class.java)
         else @Suppress("DEPRECATION") intent.getParcelableExtra(EXTRA_DIVISION)
     }
 
@@ -43,6 +46,7 @@ class DivisionActivity : BaseActivity<ActivityDivisionBinding, DivisionViewModel
         binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.menu_add_collaborator -> AddPeopleFragment().show(supportFragmentManager, AddPeopleFragment::class.java.simpleName)
+                R.id.menu_member -> openActivity<MemberActivity>()
             }
             true
         }

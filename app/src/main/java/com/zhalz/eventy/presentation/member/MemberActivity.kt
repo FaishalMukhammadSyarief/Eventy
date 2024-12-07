@@ -1,6 +1,5 @@
 package com.zhalz.eventy.presentation.member
 
-import android.os.Build
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -9,12 +8,13 @@ import com.crocodic.core.base.activity.NoViewModelActivity
 import com.crocodic.core.base.adapter.ReactiveListAdapter
 import com.crocodic.core.extension.openActivity
 import com.zhalz.eventy.R
+import com.zhalz.eventy.data.managerList
+import com.zhalz.eventy.data.teamList
 import com.zhalz.eventy.databinding.ActivityMemberBinding
 import com.zhalz.eventy.databinding.ItemContactBinding
-import com.zhalz.eventy.domain.model.Event
 import com.zhalz.eventy.domain.model.Person
+import com.zhalz.eventy.presentation.dialog.AddPeopleFragment
 import com.zhalz.eventy.presentation.profile.ProfileActivity
-import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_EVENT
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_PERSON
 
 class MemberActivity : NoViewModelActivity<ActivityMemberBinding>(R.layout.activity_member) {
@@ -31,10 +31,10 @@ class MemberActivity : NoViewModelActivity<ActivityMemberBinding>(R.layout.activ
         ReactiveListAdapter<ItemContactBinding, Person>(R.layout.item_contact).initItem { _, data -> toDetail(data) }
     }
 
-    private val event by lazy {
+    /*private val event by lazy {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) intent.getParcelableExtra(EXTRA_EVENT, Event::class.java)
         else @Suppress("DEPRECATION") intent.getParcelableExtra(EXTRA_EVENT)
-    }
+    }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,9 +52,16 @@ class MemberActivity : NoViewModelActivity<ActivityMemberBinding>(R.layout.activ
             binding.rvMember.addItemDecoration(it)
         }
 
-        managerAdapter.submitList(event?.managerList)
-        coordinatorAdapter.submitList(event?.coordinatorList)
-        memberAdapter.submitList(event?.memberList)
+        managerAdapter.submitList(managerList)
+        coordinatorAdapter.submitList(teamList)
+        memberAdapter.submitList(teamList)
+
+        binding.toolbar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.menu_add_friend -> AddPeopleFragment().show(supportFragmentManager, AddPeopleFragment::class.java.simpleName)
+            }
+            true
+        }
 
     }
 
