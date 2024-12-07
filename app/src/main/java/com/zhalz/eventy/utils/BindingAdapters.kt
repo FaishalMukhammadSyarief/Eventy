@@ -1,12 +1,12 @@
 package com.zhalz.eventy.utils
 
+import android.view.View
 import android.widget.TextView
 import androidx.core.content.ContextCompat.getColor
 import androidx.databinding.BindingAdapter
 import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.tabs.TabLayout
-import com.zhalz.eventy.R
 import com.zhalz.eventy.domain.model.Person
 
 @BindingAdapter("attendees")
@@ -28,6 +28,10 @@ fun TextView.textSemicolon(text: String) =
 @BindingAdapter("listToText")
 fun TextView.listToText(list: List<Person>) =
     ":  ${ list.joinToString(", ") { it.name } }".also { text = it }
+
+@BindingAdapter("backgroundColor")
+fun View.backgroundColor(color: Int) =
+    this.setBackgroundColor(getColor(this.context, color))
 
 @BindingAdapter("indicatorColor")
 fun CircularProgressIndicator.setIndicatorColor(color: Int) =

@@ -30,7 +30,7 @@
                 android:id="@+id/color"
                 android:layout_width="12dp"
                 android:layout_height="match_parent"
-                android:background="@{data.color}"
+                backgroundColor="@{data.color}"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:background="@color/text_red" />
 
