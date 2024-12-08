@@ -60,4 +60,13 @@
         <item name="android:color">@color/transparent</item>
     </style>
 
+    <style name="MyExtendedFAB">
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textSize">@dimen/text_default</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="iconTint">@null</item>
+    </style>
+
 </resources>
