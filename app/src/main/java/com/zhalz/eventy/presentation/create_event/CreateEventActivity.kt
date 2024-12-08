@@ -9,9 +9,7 @@ import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseActivity
 import com.zhalz.eventy.databinding.ActivityCreateEventBinding
 import com.zhalz.eventy.databinding.ItemDivisionBinding
-import com.zhalz.eventy.databinding.ItemScheduleBinding
 import com.zhalz.eventy.domain.model.Division
-import com.zhalz.eventy.domain.model.Schedule
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
