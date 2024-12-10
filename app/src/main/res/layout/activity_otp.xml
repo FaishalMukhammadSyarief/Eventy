@@ -14,8 +14,8 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
-        android:fitsSystemWindows="true"
         android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
         tools:context=".presentation.otp.OtpActivity">
 
         <com.google.android.material.appbar.AppBarLayout
@@ -29,7 +29,7 @@
                 app:layout_scrollFlags="scroll|enterAlwaysCollapsed|enterAlways"
                 app:navigationIcon="@drawable/ic_back_arrow"
                 app:navigationOnClickListener="@{() -> activity.finish()}"
-                app:title="@string/verifikasi_kode"
+                app:title="@string/verification"
                 app:titleTextAppearance="@style/ToolbarTitleAppearance" />
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -57,7 +57,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="64dp"
-                android:text="@string/masukkan_kode_otp_yang_telah_dikirimkan_ke_n_62_xxxxxxxxx90"
+                android:gravity="center"
+                android:text="@string/enter_the_otp_sent_to_zhalz_mail_com"
                 app:layout_constraintTop_toBottomOf="@+id/iv_eventy"
                 tools:ignore="TextContrastCheck"
                 tools:layout_editor_absoluteX="36dp" />
@@ -128,14 +129,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/tidak_menerima_kode_otp"
+                    android:text="@string/don_t_receive_the_otp"
                     android:textSize="@dimen/text_default" />
 
                 <Button
                     style="@style/Widget.Material3.Button.TextButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/kirim_ulang"
+                    android:text="@string/resend_otp"
                     android:textColor="@color/blue"
                     android:textSize="@dimen/text_default"
                     app:fontFamily="@font/poppins_bold"
@@ -147,9 +148,9 @@
                 style="@style/MyButton"
                 android:layout_width="match_parent"
                 android:layout_marginTop="16dp"
-                android:backgroundTint="@color/navy"
-                android:text="@string/kirim"
+                android:backgroundTint="@color/dark_blue"
                 android:onClick="@{() -> activity.send()}"
+                android:text="@string/verify"
                 android:textColor="@color/white"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout"
                 tools:ignore="VisualLintButtonSize" />
@@ -160,17 +161,17 @@
             android:id="@+id/screen_success"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
             android:background="@drawable/gr_blue_black"
-            android:visibility="gone"
+            android:fitsSystemWindows="true"
             android:gravity="center_horizontal"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="120dp"
-                android:text="@string/selamat"
+                android:text="@string/congratulation"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="32sp"
@@ -180,14 +181,14 @@
                 android:layout_width="275dp"
                 android:layout_height="275dp"
                 android:layout_marginTop="36dp"
-                android:src="@drawable/success"
-                android:contentDescription="@string/success_register" />
+                android:contentDescription="@string/success_register"
+                android:src="@drawable/success" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
-                android:text="@string/verifikasi_sukses"
+                android:text="@string/verification_success"
                 android:textColor="@color/white"
                 android:textSize="26sp"
                 app:fontFamily="@font/poppins_semi_bold" />
@@ -195,7 +196,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/pendaftaran_selesai"
+                android:text="@string/registration_complete"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:fontFamily="@font/poppins_semi_bold" />

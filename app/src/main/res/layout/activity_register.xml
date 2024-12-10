@@ -36,7 +36,7 @@
             android:gravity="center"
             android:text="@string/sign_up"
             android:textAllCaps="true"
-            android:textColor="@color/navy"
+            android:textColor="@color/dark_blue"
             android:textSize="@dimen/text_large"
             app:fontFamily="@font/poppins_bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +57,7 @@
                 style="@style/MyEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="@string/nama_pengguna"
+                android:hint="@string/username"
                 android:inputType="text"
                 tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
         </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
@@ -93,7 +93,7 @@
                 style="@style/MyEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="@string/nomor_telepon"
+                android:hint="@string/phone_number"
                 android:inputType="phone"
                 tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
         </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
@@ -112,7 +112,7 @@
                 style="@style/MyEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="@string/hint_kata_sandi"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
         </com.zhalz.eventy.presentation.custom_view.TextLayoutPassword>
@@ -131,43 +131,22 @@
                 style="@style/MyEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="@string/hint_ulangi_kata_sandi"
+                android:hint="@string/confirm_password"
                 android:inputType="textPassword"
                 tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
         </com.zhalz.eventy.presentation.custom_view.TextLayoutPassword>
-
-        <com.google.android.material.checkbox.MaterialCheckBox
-            android:id="@+id/cb_remember"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_screen"
-            android:text="@string/remember_me"
-            android:textSize="@dimen/text_default"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etl_password_confirm"
-            tools:ignore="VisualLintButtonSize" />
-
-        <com.google.android.material.button.MaterialButton
-            style="@style/Widget.Material3.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_screen"
-            android:text="@string/lupa_kata_sandi"
-            android:textColor="@color/gray"
-            android:textSize="@dimen/text_default"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etl_password_confirm" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_sign_in"
             style="@style/MyButton"
             android:layout_width="match_parent"
             android:layout_marginHorizontal="@dimen/margin_screen"
-            android:backgroundTint="@color/navy"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/dark_blue"
             android:onClick="@{() -> activity.toOtp()}"
-            android:text="@string/minta_kode_otp"
+            android:text="@string/request_code"
             android:textColor="@color/white"
-            app:layout_constraintTop_toBottomOf="@+id/cb_remember"
+            app:layout_constraintTop_toBottomOf="@+id/etl_password_confirm"
             tools:ignore="VisualLintButtonSize" />
 
         <LinearLayout
@@ -181,7 +160,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sudah_punya_akun"
+                android:text="@string/already_have_an_account"
                 android:textSize="@dimen/text_default" />
 
             <Button
@@ -189,8 +168,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="@{() -> activity.toLogin()}"
-                android:text="@string/masuk_sekarang"
-                android:textColor="@color/gray"
+                android:text="@string/login_now"
+                android:textColor="@color/blue"
                 android:textSize="@dimen/text_default"
                 app:fontFamily="@font/poppins_bold" />
         </LinearLayout>

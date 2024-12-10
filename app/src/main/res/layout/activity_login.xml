@@ -34,9 +34,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/sign_in"
+            android:text="@string/login"
             android:textAllCaps="true"
-            android:textColor="@color/navy"
+            android:textColor="@color/dark_blue"
             android:textSize="@dimen/text_large"
             app:fontFamily="@font/poppins_bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +57,7 @@
                 style="@style/MyEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="@string/nama_email"
+                android:hint="@string/name_email"
                 android:inputType="text"
                 tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
         </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
@@ -76,7 +76,7 @@
                 style="@style/MyEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="@string/hint_kata_sandi"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
         </com.zhalz.eventy.presentation.custom_view.TextLayoutPassword>
@@ -97,7 +97,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_screen"
-            android:text="@string/lupa_kata_sandi"
+            android:text="@string/forgot_password"
             android:textColor="@color/gray"
             android:textSize="@dimen/text_default"
             app:layout_constraintEnd_toEndOf="parent"
@@ -108,10 +108,10 @@
             style="@style/MyButton"
             android:layout_width="match_parent"
             android:layout_marginHorizontal="@dimen/margin_screen"
-            android:backgroundTint="@color/navy"
+            android:backgroundTint="@color/dark_blue"
+            android:onClick="@{() -> activity.toHome()}"
             android:text="@string/login"
             android:textColor="@color/white"
-            android:onClick="@{() -> activity.toHome()}"
             app:layout_constraintTop_toBottomOf="@+id/cb_remember"
             tools:ignore="VisualLintButtonSize" />
 
@@ -126,7 +126,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/belum_punya_akun"
+                android:text="@string/don_t_have_an_account"
                 android:textSize="@dimen/text_default" />
 
             <Button
@@ -134,8 +134,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="@{() -> activity.toRegister()}"
-                android:text="@string/daftar_sekarang"
-                android:textColor="@color/gray"
+                android:text="@string/register_now"
+                android:textColor="@color/blue"
                 android:textSize="@dimen/text_default"
                 app:fontFamily="@font/poppins_bold" />
         </LinearLayout>

@@ -63,7 +63,7 @@
             app:layout_constraintStart_toEndOf="@+id/image"
             app:layout_constraintTop_toBottomOf="@+id/tv_place"
             tools:ignore="VisualLintBounds"
-            tools:text="Date: 23/07/2024, Time: 10.00 AM" />
+            tools:text="Date: 23/07/2024" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
