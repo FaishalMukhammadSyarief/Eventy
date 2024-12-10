@@ -1,4 +1,4 @@
-package com.zhalz.eventy.presentation.dialog
+package com.zhalz.eventy.presentation.dialog.add_people
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -50,6 +50,11 @@ class AddPeopleFragment : DialogFragment() {
 
             setBackgroundDrawableResource(R.drawable.bg_slightly_round)
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

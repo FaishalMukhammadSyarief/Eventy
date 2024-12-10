@@ -118,4 +118,8 @@
     <string name="comment">Comment (%1$d)</string>
     <string name="enter_name_or_phone_number">Enter name or phone number</string>
     <string name="add_division">Add Division</string>
+    <string name="enter_coordinator">Enter Coordinator</string>
+    <string name="pick_color">Pick Color</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
 </resources>

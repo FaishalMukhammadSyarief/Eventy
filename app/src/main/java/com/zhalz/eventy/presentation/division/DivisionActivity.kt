@@ -11,7 +11,7 @@ import com.zhalz.eventy.base.BaseActivity
 import com.zhalz.eventy.databinding.ActivityDivisionBinding
 import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.presentation.adapter.DivisionPagerAdapter
-import com.zhalz.eventy.presentation.dialog.AddPeopleFragment
+import com.zhalz.eventy.presentation.dialog.add_people.AddPeopleFragment
 import com.zhalz.eventy.presentation.member.MemberActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
 

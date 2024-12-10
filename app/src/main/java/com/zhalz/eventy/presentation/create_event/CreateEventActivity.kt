@@ -9,6 +9,7 @@ import com.zhalz.eventy.data.divisionList
 import com.zhalz.eventy.databinding.ActivityCreateEventBinding
 import com.zhalz.eventy.databinding.ItemDivisionBinding
 import com.zhalz.eventy.domain.model.Division
+import com.zhalz.eventy.presentation.dialog.add_division.AddDivisionFragment
 import com.zhalz.eventy.utils.showMaterialDatePicker
 
 class CreateEventActivity : BaseActivity<ActivityCreateEventBinding, CreateEventViewModel>(R.layout.activity_create_event) {
@@ -22,10 +23,9 @@ class CreateEventActivity : BaseActivity<ActivityCreateEventBinding, CreateEvent
         enableEdgeToEdge()
 
         binding.activity = this
+        binding.divisionAdapter = divisionAdapter
 
         divisionAdapter.submitList(divisionList)
-
-        binding.divisionAdapter = divisionAdapter
 
         binding.toolbar.setOnMenuItemClickListener {
             if (it.itemId == R.id.menu_check) finish()
@@ -41,5 +41,7 @@ class CreateEventActivity : BaseActivity<ActivityCreateEventBinding, CreateEvent
         }
 
     }
+
+    fun showDialog() = AddDivisionFragment().show(supportFragmentManager, AddDivisionFragment::class.java.simpleName)
 
 }

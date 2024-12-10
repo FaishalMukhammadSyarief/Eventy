@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="dialog"
+            type="com.zhalz.eventy.presentation.dialog.add_division.AddDivisionFragment" />
+
+        <variable
+            name="adapter"
+            type="com.crocodic.core.base.adapter.ReactiveListAdapter" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/shapeableImageView"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/ic_add_apps" />
+
+        <TextView
+            android:id="@+id/tv_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:text="@string/add_division"
+            android:textSize="@dimen/text_medium"
+            app:fontFamily="@font/poppins_semi_bold" />
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="@dimen/margin_screen"
+            android:layout_marginTop="24dp"
+            android:background="@color/gray" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginHorizontal="@dimen/margin_screen"
+            android:layout_marginTop="24dp"
+            android:text="@string/title"
+            android:textSize="14sp" />
+
+        <!--  TITLE  -->
+        <com.zhalz.eventy.presentation.custom_view.TextLayoutNormal
+            android:id="@+id/etl_title"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_screen"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/enter_title"
+                android:inputType="text"
+                android:textColor="@color/black"
+                tools:ignore="VisualLintTextFieldSize,TextContrastCheck,DuplicateSpeakableTextCheck" />
+        </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginHorizontal="@dimen/margin_screen"
+            android:layout_marginTop="8dp"
+            android:text="@string/coordinator"
+            android:textSize="14sp" />
+
+        <!--  COORDINATOR  -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etl_school"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_screen"
+            android:hint="@string/enter_coordinator"
+            app:endIconDrawable="@drawable/ic_arrow_down"
+            app:endIconMode="custom"
+            app:hintEnabled="false">
+
+            <AutoCompleteTextView
+                android:id="@+id/atv_school"
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="@string/enter_coordinator"
+                android:inputType="none"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/black"
+                tools:ignore="VisualLintTextFieldSize" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginHorizontal="@dimen/margin_screen"
+            android:layout_marginTop="8dp"
+            android:text="@string/pick_color"
+            android:textSize="14sp" />
+
+        <RadioGroup
+            android:id="@+id/color_picker_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_screen"
+            android:layout_marginBottom="32dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_purple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:buttonTint="@color/purple"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:buttonTint="@color/text_red" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_pink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:buttonTint="@color/pink" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_orange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:buttonTint="@color/orange" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_yellow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:buttonTint="@color/yellow" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:buttonTint="@color/text_green" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/rb_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:buttonTint="@color/blue" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_screen"
+            android:layout_marginBottom="32dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancel"
+                style="@style/MyButton"
+                android:layout_width="0dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/transparent"
+                android:onClick="@{() -> dialog.dismiss()}"
+                android:text="@string/cancel"
+                android:textColor="@color/black"
+                tools:ignore="VisualLintButtonSize" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add"
+                style="@style/MyButton"
+                android:layout_width="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/black"
+                android:text="@string/add"
+                android:textColor="@color/white"
+                tools:ignore="VisualLintButtonSize" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

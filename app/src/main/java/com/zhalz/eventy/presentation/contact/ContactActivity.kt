@@ -7,7 +7,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.zhalz.eventy.R
 import com.zhalz.eventy.databinding.ActivityContactBinding
 import com.zhalz.eventy.presentation.adapter.ContactPagerAdapter
-import com.zhalz.eventy.presentation.dialog.AddPeopleFragment
+import com.zhalz.eventy.presentation.dialog.add_people.AddPeopleFragment
 
 class ContactActivity : NoViewModelActivity<ActivityContactBinding>(R.layout.activity_contact) {
 

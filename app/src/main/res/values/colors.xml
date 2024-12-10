@@ -13,5 +13,8 @@
     <color name="light_gray">#AFAFAF</color>
     <color name="very_light_gray">#F1F1F1</color>
 
+    <color name="pink">#FF378A</color>
+    <color name="purple">#B200FF</color>
+
     <color name="transparent">#00000000</color>
 </resources>
