@@ -16,6 +16,7 @@ import com.zhalz.eventy.databinding.ActivityMainBinding
 import com.zhalz.eventy.databinding.NavHeaderBinding
 import com.zhalz.eventy.domain.model.Person
 import com.zhalz.eventy.presentation.create_event.CreateEventActivity
+import com.zhalz.eventy.presentation.landing.LandingActivity
 import com.zhalz.eventy.presentation.profile.ProfileActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_PERSON
 import com.zhalz.eventy.utils.setStatusBarColor
@@ -58,7 +59,7 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
             when (it.itemId) {
                 R.id.menu_contact -> navController.navigate(R.id.nav_contact)
                 R.id.menu_help -> tos("HELP")
-                R.id.menu_logout -> tos("LOGOUT")
+                R.id.menu_logout -> openActivity<LandingActivity> { finishAffinity() }
             }
             binding.drawerLayout.closeDrawers()
             true
