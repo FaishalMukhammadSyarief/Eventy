@@ -204,21 +204,31 @@
                     android:textSize="14sp" />
 
                 <!--  CATEGORY  -->
-                <com.zhalz.eventy.presentation.custom_view.TextLayoutNormal
-                    style="@style/MyTextInputLayout"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etl_category"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:hint="@string/enter_coordinator"
+                    app:boxCornerRadiusBottomEnd="@dimen/edit_text_radius"
+                    app:boxCornerRadiusBottomStart="@dimen/edit_text_radius"
+                    app:boxCornerRadiusTopEnd="@dimen/edit_text_radius"
+                    app:boxCornerRadiusTopStart="@dimen/edit_text_radius"
+                    app:boxStrokeColor="@color/black"
+                    app:errorEnabled="true"
                     app:hintEnabled="false">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <AutoCompleteTextView
+                        android:id="@+id/atv_category"
                         style="@style/MyEditText"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="56dp"
                         android:hint="@string/enter_category"
-                        android:inputType="text"
+                        android:inputType="none"
+                        android:paddingHorizontal="16dp"
                         android:textColor="@color/black"
-                        tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
-                </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
+                        tools:ignore="VisualLintTextFieldSize" />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
                     android:layout_width="wrap_content"

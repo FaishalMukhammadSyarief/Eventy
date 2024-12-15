@@ -71,6 +71,7 @@
                 android:layout_height="match_parent"
                 android:hint="@string/enter_title"
                 android:inputType="text"
+                android:text="@={dialog.title}"
                 android:textColor="@color/black"
                 tools:ignore="VisualLintTextFieldSize,TextContrastCheck,DuplicateSpeakableTextCheck" />
         </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
@@ -86,18 +87,22 @@
 
         <!--  COORDINATOR  -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/etl_school"
-            style="@style/MyTextInputLayout"
+            android:id="@+id/etl_coordinator"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_screen"
             android:hint="@string/enter_coordinator"
-            app:endIconDrawable="@drawable/ic_arrow_down"
-            app:endIconMode="custom"
+            android:layout_marginHorizontal="@dimen/margin_screen"
+            app:boxCornerRadiusBottomEnd="@dimen/edit_text_radius"
+            app:boxCornerRadiusBottomStart="@dimen/edit_text_radius"
+            app:boxCornerRadiusTopEnd="@dimen/edit_text_radius"
+            app:boxCornerRadiusTopStart="@dimen/edit_text_radius"
+            app:boxStrokeColor="@color/black"
+            app:errorEnabled="true"
             app:hintEnabled="false">
 
             <AutoCompleteTextView
-                android:id="@+id/atv_school"
+                android:id="@+id/atv_coordinator"
                 style="@style/MyEditText"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
