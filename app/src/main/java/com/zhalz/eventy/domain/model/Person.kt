@@ -9,7 +9,7 @@ data class Person (
     val name: String,
     val email: String,
     val phone: String,
-    val linkedin: String,
-    val instagram: String,
-    val facebook: String,
+    val linkedin: String? = null,
+    val instagram: String? = null,
+    val facebook: String? = null,
 ) : Parcelable

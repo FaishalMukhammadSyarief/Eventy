@@ -32,8 +32,8 @@ val taskList = mutableListOf(
 )
 
 val divisionList = mutableListOf(
-    Division(1092312, "Divisi Perlengkapan", R.color.blue, teamList, taskList),
-    Division(1232991, "Divisi Acara", R.color.orange, teamList, taskList),
+    Division(1092312, "Divisi Perlengkapan", R.color.blue, managerList[0].name, teamList, taskList),
+    Division(1232991, "Divisi Acara", R.color.orange, managerList2[0].name, teamList, taskList),
 )
 
 val eventList = mutableListOf(

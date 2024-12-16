@@ -12,6 +12,17 @@
         <item name="boxCornerRadiusBottomEnd">@dimen/edit_text_radius</item>
     </style>
 
+    <style name="MyDropdownMenu" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="errorEnabled">true</item>
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="boxCornerRadiusTopStart">@dimen/edit_text_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/edit_text_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/edit_text_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/edit_text_radius</item>
+        <item name="boxStrokeColor">@color/black</item>
+    </style>
+
     <style name="MyEditText">
         <item name="android:textSize">@dimen/text_default</item>
     </style>
@@ -22,13 +33,13 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="ToolbarTitleAppearance" >
+    <style name="ToolbarTitleAppearance">
         <item name="fontFamily">@font/poppins_semi_bold</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="OtpInput" >
+    <style name="OtpInput">
         <item name="android:layout_height">75dp</item>
         <item name="android:background">@drawable/bg_otp_input</item>
         <item name="android:gravity">center</item>

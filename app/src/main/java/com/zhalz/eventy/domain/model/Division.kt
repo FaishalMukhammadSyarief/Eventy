@@ -8,6 +8,7 @@ data class Division(
     val id: Int,
     val title: String,
     val color: Int,
-    val team: List<Person>,
-    val task: List<Task>,
+    val coordinator: String,
+    val team: List<Person>? = null,
+    val task: List<Task>? = null,
 ) : Parcelable

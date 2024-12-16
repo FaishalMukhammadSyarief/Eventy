@@ -3,7 +3,6 @@ package com.zhalz.eventy.presentation.create_event
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import com.crocodic.core.base.adapter.ReactiveListAdapter
-import com.crocodic.core.extension.tos
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseActivity
 import com.zhalz.eventy.data.divisionList
@@ -47,13 +46,15 @@ class CreateEventActivity : BaseActivity<ActivityCreateEventBinding, CreateEvent
     }
 
     private fun setCategory() {
-        val dropdownList = listOf("musoc", "catedral")
+        val dropdownList = listOf("musIc", "cathE", "foOtBedral")
 
-        binding.atvCategory.setDropdown(dropdownList) {
-            tos(dropdownList[it])
-        }
+        binding.atvCategory.setDropdown(dropdownList){}
     }
 
     fun showDialog() = AddDivisionFragment().show(supportFragmentManager, AddDivisionFragment::class.java.simpleName)
+
+    fun updateDivisionList() {
+        binding.divisionAdapter = divisionAdapter
+    }
 
 }
