@@ -1,6 +1,7 @@
 package com.zhalz.eventy.utils
 
 import android.app.Activity
+import android.content.Context
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ArrayAdapter
@@ -8,6 +9,9 @@ import android.widget.AutoCompleteTextView
 import androidx.annotation.ColorInt
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.datepicker.MaterialDatePicker.Builder.datePicker
 import com.google.android.material.datepicker.MaterialDatePicker.todayInUtcMilliseconds
@@ -64,3 +68,7 @@ fun ViewPager2.setupWithTabLayout(
     }.attach()
 }
 
+fun RecyclerView.addDivider(context: Context, orientation: Int = LinearLayoutManager.VERTICAL) =
+    DividerItemDecoration(context, orientation).also {
+        addItemDecoration(it)
+    }
