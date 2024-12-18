@@ -4,12 +4,13 @@ import android.os.Build
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import com.crocodic.core.base.activity.NoViewModelActivity
-import com.google.android.material.tabs.TabLayoutMediator
 import com.zhalz.eventy.R
 import com.zhalz.eventy.databinding.ActivityDivisionReportBinding
 import com.zhalz.eventy.domain.model.Division
-import com.zhalz.eventy.presentation.adapter.DivisionReportPagerAdapter
+import com.zhalz.eventy.presentation.report.division.overview.OverviewFragment
+import com.zhalz.eventy.presentation.report.division.spending.SpendingFragment
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
+import com.zhalz.eventy.utils.setupWithTabLayout
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -31,14 +32,12 @@ class DivisionReportActivity : NoViewModelActivity<ActivityDivisionReportBinding
     }
 
     private fun initUI() {
-        /** == VIEW PAGER == **/
-        binding.viewPager.adapter = DivisionReportPagerAdapter(this)
-        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
-            when (position) {
-                0 -> tab.text = "OVERVIEW"
-                1 -> tab.text = "SPENDING"
-            }
-        }.attach()
+        binding.viewPager.setupWithTabLayout(
+            this,
+            binding.tabLayout,
+            listOf(OverviewFragment(), SpendingFragment()),
+            listOf("OVERVIEW", "SPENDING")
+        )
     }
 
 }
