@@ -5,15 +5,15 @@ import android.os.Build.VERSION_CODES.TIRAMISU
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import com.crocodic.core.extension.openActivity
-import com.google.android.material.tabs.TabLayoutMediator
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseActivity
 import com.zhalz.eventy.databinding.ActivityDivisionBinding
 import com.zhalz.eventy.domain.model.Division
-import com.zhalz.eventy.presentation.adapter.DivisionPagerAdapter
 import com.zhalz.eventy.presentation.dialog.add_people.AddPeopleFragment
+import com.zhalz.eventy.presentation.division.task.TaskFragment
 import com.zhalz.eventy.presentation.member.MemberActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
+import com.zhalz.eventy.utils.setupWithTabLayout
 
 class DivisionActivity : BaseActivity<ActivityDivisionBinding, DivisionViewModel>(R.layout.activity_division) {
 
@@ -33,15 +33,12 @@ class DivisionActivity : BaseActivity<ActivityDivisionBinding, DivisionViewModel
     }
 
     private fun initUI() {
-        /** == VIEW PAGER == **/
-        binding.viewPager.adapter = DivisionPagerAdapter(this)
-        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
-            when (position) {
-                0 -> tab.text = "TASK"
-                1 -> tab.text = "IN PROGRESS"
-                2 -> tab.text = "COMPLETED"
-            }
-        }.attach()
+        binding.viewPager.setupWithTabLayout(
+            this,
+            binding.tabLayout,
+            listOf(TaskFragment(), TaskFragment(), TaskFragment()),
+            listOf("TASK", "IN PROGRESS", "COMPLETED")
+        )
 
         binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
