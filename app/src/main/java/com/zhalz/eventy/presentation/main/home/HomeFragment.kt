@@ -41,8 +41,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     }
 
     private fun initUI() {
-        binding?.rvSchedule?.adapter = scheduleAdapter
         binding?.rvSchedule?.addDivider(requireContext())
+        binding?.rvSchedule?.adapter = scheduleAdapter
         binding?.rvEvent?.adapter = eventAdapter
     }
 
