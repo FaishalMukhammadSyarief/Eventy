@@ -86,7 +86,7 @@ dependencies {
     /*  VIEW PAGER II  */
     implementation(libs.androidx.viewpager2)
 
-    /*  VIEW PAGER II  */
+    /*  IMAGE SLIDER  */
     implementation(libs.imageslideshow)
 
 }
