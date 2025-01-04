@@ -9,19 +9,14 @@
         app:showAsAction="always">
         <menu>
             <item
-                android:id="@+id/menu_add_meeting"
-                android:icon="@drawable/ic_monitor"
-                android:title="@string/add_meeting"
-                app:showAsAction="ifRoom|withText" />
-            <item
-                android:id="@+id/menu_member"
+                android:id="@+id/menu_edit"
                 android:icon="@drawable/ic_friend"
-                android:title="@string/member"
+                android:title="@string/edit"
                 app:showAsAction="ifRoom|withText" />
             <item
-                android:id="@+id/menu_report"
-                android:icon="@drawable/ic_chart"
-                android:title="@string/report"
+                android:id="@+id/menu_delete"
+                android:icon="@drawable/ic_delete"
+                android:title="@string/delete"
                 app:showAsAction="ifRoom|withText" />
         </menu>
     </item>

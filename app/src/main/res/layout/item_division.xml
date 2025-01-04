@@ -30,7 +30,7 @@
                 android:layout_height="match_parent"
                 backgroundColor="@{data.color}"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:background="@color/text_red" />
+                tools:background="@color/dark_blue" />
 
             <TextView
                 android:id="@+id/tv_division_title"
@@ -60,8 +60,8 @@
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/team"
-                    android:textSize="@dimen/text_default"
+                    android:text="@string/coordinator"
+                    android:textSize="@dimen/text_small"
                     app:fontFamily="@font/poppins_semi_bold" />
 
                 <com.google.android.material.imageview.ShapeableImageView

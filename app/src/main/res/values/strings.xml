@@ -160,5 +160,9 @@
     <string name="schedule_today">Schedule Today</string>
     <string name="event">Event</string>
     <string name="view_all">View All ></string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="meeting">Meeting</string>
+    <string name="spending">Spending</string>
 
 </resources>

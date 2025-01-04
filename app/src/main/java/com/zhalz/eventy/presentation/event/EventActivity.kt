@@ -41,9 +41,8 @@ class EventActivity : BaseActivity<ActivityEventBinding, EventViewModel>(R.layou
 
         binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
-                R.id.menu_add_meeting -> openActivity<CreateScheduleActivity>()
-                R.id.menu_member -> openActivity<MemberActivity> { putExtra(EXTRA_EVENT, event) }
-                R.id.menu_report -> openActivity<ReportActivity> { putExtra(EXTRA_EVENT, event) }
+                R.id.menu_delete -> {}
+                R.id.menu_edit -> {}
             }
             true
         }
@@ -51,5 +50,8 @@ class EventActivity : BaseActivity<ActivityEventBinding, EventViewModel>(R.layou
     }
 
     private fun toDetail(division: Division) = openActivity<DivisionActivity> { putExtra(EXTRA_DIVISION, division) }
+    fun toMember() = openActivity<MemberActivity>()
+    fun toMeeting() = openActivity<CreateScheduleActivity>()
+    fun toReport() = openActivity<ReportActivity>()
 
 }
