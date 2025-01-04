@@ -85,7 +85,7 @@
                 app:tabIndicatorFullWidth="true"
                 app:tabMode="fixed"
                 app:tabRippleColor="@color/transparent"
-                app:tabTextColor="@color/light_gray" />
+                app:tabTextColor="@color/text_grey" />
 
         </com.google.android.material.appbar.AppBarLayout>
 

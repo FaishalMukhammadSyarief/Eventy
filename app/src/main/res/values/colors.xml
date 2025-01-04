@@ -6,13 +6,14 @@
 
     <!--  BRAND  -->
     <color name="blue">#1F8BBD</color>
-<!--    <color name="light_blue">#2cb4fc</color>-->
     <color name="dark_blue">#044464</color>
     <color name="yellow">#F9CE12</color>
 
     <!--  COMPLEMENTARY  -->
     <color name="gray">#6B6A6A</color>
-    <color name="light_gray">#AFAFAF</color>
+    <color name="text_grey">#AFAFAF</color>
+    <color name="light_grey">#EBEBEB</color>
+    <color name="light_yellow">#FAECBA</color>
 
 
 

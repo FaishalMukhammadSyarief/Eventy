@@ -10,7 +10,7 @@
         <menu>
             <item
                 android:id="@+id/menu_edit"
-                android:icon="@drawable/ic_friend"
+                android:icon="@drawable/ic_pencil"
                 android:title="@string/edit"
                 app:showAsAction="ifRoom|withText" />
             <item

@@ -48,7 +48,7 @@
         android:layout_marginStart="8dp"
         android:gravity="center_vertical"
         android:text="45m ago"
-        android:textColor="@color/light_gray"
+        android:textColor="@color/text_grey"
         android:textSize="@dimen/text_small"
         app:layout_constraintBottom_toBottomOf="@+id/tv_name"
         app:layout_constraintStart_toEndOf="@+id/tv_name"

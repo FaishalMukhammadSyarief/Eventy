@@ -17,6 +17,8 @@ import com.zhalz.eventy.presentation.member.MemberActivity
 import com.zhalz.eventy.presentation.report.ReportActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_EVENT
+import com.zhalz.eventy.utils.getWindowBackgroundColor
+import com.zhalz.eventy.utils.setStatusBarColor
 
 class EventActivity : BaseActivity<ActivityEventBinding, EventViewModel>(R.layout.activity_event) {
 
@@ -32,6 +34,7 @@ class EventActivity : BaseActivity<ActivityEventBinding, EventViewModel>(R.layou
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        setStatusBarColor(getWindowBackgroundColor())
 
         binding.activity = this
         binding.divisionAdapter = divisionAdapter

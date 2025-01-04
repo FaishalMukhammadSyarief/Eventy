@@ -37,6 +37,8 @@ val divisionList = mutableListOf(
 )
 
 val eventList = mutableListOf(
-    Event(1, "Music Festival", "lorem ipsum dolor sit amet", "25 Aug, 2024", "Project Manager", "Sampookong", "Music", divisionList, managerList, teamList, teamList),
-    Event(2, "Tech Conference", "lorem ipsum dolor sit amet","26 Aug, 2024", "Member - Divisi Produksi", "City Hall, Main Street", "Expo", divisionList, managerList2, teamList, teamList),
+    Event(1, "Music Festival", "Experience an unforgettable evening of music, energy, and celebration at the Rhythm & Beats Festival 2025! This year’s lineup features world-renowned artists and rising stars across genres like pop, rock, electronic, and indie. Set against the stunning backdrop of the Sunset Grove Amphitheater, attendees will enjoy breathtaking performances, dazzling light shows, and a vibrant atmosphere.",
+        "25 Aug, 2024",
+        "Project Manager", "City Hall", "Music", divisionList, managerList, teamList, teamList),
+    Event(2, "Tech Conference", "lorem ipsum dolor sit amet","26 Aug, 2024", "Member - Divisi Produksi", "Sampookong", "Expo", divisionList, managerList2, teamList, teamList),
 )

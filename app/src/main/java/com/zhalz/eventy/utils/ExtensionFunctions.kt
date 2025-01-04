@@ -2,6 +2,7 @@ package com.zhalz.eventy.utils
 
 import android.app.Activity
 import android.content.Context
+import android.util.TypedValue
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ArrayAdapter
@@ -26,6 +27,13 @@ import java.util.Locale
 @Suppress("DEPRECATION")
 fun Activity.setStatusBarColor(@ColorInt color: Int) {
     window.statusBarColor = color
+}
+
+fun Activity.getWindowBackgroundColor() : Int {
+    val typedValue = TypedValue().also {
+        theme.resolveAttribute(android.R.attr.windowBackground, it, true)
+    }
+    return typedValue.data
 }
 
 fun Activity.getAnim(animation: Int): Animation = AnimationUtils.loadAnimation(this, animation)
