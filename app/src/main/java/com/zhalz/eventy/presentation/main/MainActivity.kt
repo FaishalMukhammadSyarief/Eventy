@@ -30,7 +30,7 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
     }
 
     private val navController by lazy {
-        (supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment).navController
+        binding.navHost.getFragment<NavHostFragment>().navController
     }
 
     private val user by lazy {
@@ -39,38 +39,36 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setStatusBarColor(TRANSPARENT)
 
         binding.activity = this
 
+        setNavigation()
         setDrawer()
+    }
 
+    private fun setNavigation() {
+        setSupportActionBar(binding.toolbar)
+        setupActionBarWithNavController(navController, appBarConfiguration)
         binding.bottomNav.setupWithNavController(navController)
     }
 
     private fun setDrawer() {
-        setSupportActionBar(binding.toolbar)
-
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        binding.navView.setupWithNavController(navController)
-
-        binding.navView.setNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.menu_contact -> navController.navigate(R.id.nav_contact)
-                R.id.menu_help -> tos("HELP")
-                R.id.menu_logout -> openActivity<LandingActivity> { finishAffinity() }
-            }
-            binding.drawerLayout.closeDrawers()
-            true
-        }
-
         val header = binding.navView.getHeaderView(0)
         DataBindingUtil.bind<NavHeaderBinding>(header)?.apply {
             person = user
             root.setOnClickListener { openActivity<ProfileActivity> { putExtra(EXTRA_PERSON, user) } }
         }
 
+        binding.navView.setNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.nav_contact -> navController.navigate(R.id.nav_contact)
+                R.id.menu_help -> tos("HELP")
+                R.id.menu_logout -> openActivity<LandingActivity> { finishAffinity() }
+            }
+            binding.drawerLayout.closeDrawers()
+            true
+        }
     }
 
     fun toProfile() = openActivity<ProfileActivity> { putExtra(EXTRA_PERSON, user) }
