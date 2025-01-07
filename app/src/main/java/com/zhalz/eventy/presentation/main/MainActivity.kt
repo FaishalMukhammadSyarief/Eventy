@@ -12,9 +12,9 @@ import com.crocodic.core.base.activity.NoViewModelActivity
 import com.crocodic.core.extension.openActivity
 import com.crocodic.core.extension.tos
 import com.zhalz.eventy.R
+import com.zhalz.eventy.data.user
 import com.zhalz.eventy.databinding.ActivityMainBinding
 import com.zhalz.eventy.databinding.NavHeaderBinding
-import com.zhalz.eventy.domain.model.Person
 import com.zhalz.eventy.presentation.create_event.CreateEventActivity
 import com.zhalz.eventy.presentation.landing.LandingActivity
 import com.zhalz.eventy.presentation.profile.ProfileActivity
@@ -26,15 +26,11 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     private val appBarConfiguration by lazy {
-        AppBarConfiguration(setOf(R.id.nav_home, R.id.nav_history, R.id.nav_notif), binding.drawerLayout)
+        AppBarConfiguration(setOf(R.id.home_fragment, R.id.nav_history, R.id.nav_notif), binding.drawerLayout)
     }
 
     private val navController by lazy {
         binding.navHost.getFragment<NavHostFragment>().navController
-    }
-
-    private val user by lazy {
-        Person(1234567, "Faishal Mukhammad", "faishalmukhammadsyarief@gmail.com", "081313327023", "Faishal Mukhammad Syarief", "_zhalz_", "faishall")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

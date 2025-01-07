@@ -7,6 +7,8 @@ import com.zhalz.eventy.domain.model.Person
 import com.zhalz.eventy.domain.model.Schedule
 import com.zhalz.eventy.domain.model.Task
 
+val user = Person(1234567, "Faishal Mukhammad", "faishalmukhammadsyarief@gmail.com", "081313327023", "Faishal Mukhammad Syarief", "_zhalz_", "faishall")
+
 val scheduleList = mutableListOf(
     Schedule(1, "Meeting 1", "Aug 10, 10:00 AM", "On Google Meet", 2),
     Schedule(2, "Meeting 2", "Aug 10, 03:00 PM", "On Zoom", 4)
