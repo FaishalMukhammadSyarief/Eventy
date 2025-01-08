@@ -1,8 +1,14 @@
 package com.zhalz.eventy.utils
 
+import android.animation.ObjectAnimator
 import android.app.Activity
 import android.content.Context
 import android.util.TypedValue
+import android.view.View
+import android.view.View.ALPHA
+import android.view.View.GONE
+import android.view.View.TRANSLATION_Y
+import android.view.View.VISIBLE
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ArrayAdapter
@@ -80,3 +86,31 @@ fun RecyclerView.addDivider(context: Context, orientation: Int = LinearLayoutMan
     DividerItemDecoration(context, orientation).also {
         addItemDecoration(it)
     }
+
+fun View.gone() = this.apply {
+    visibility = GONE
+}
+
+fun View.visible() = this.apply {
+    visibility = VISIBLE
+}
+
+fun View.slideDown() = ObjectAnimator
+    .ofFloat(this, TRANSLATION_Y, 0f, this.height.toFloat())
+    .setDuration(400)
+    .start()
+
+fun View.slideUp() = ObjectAnimator
+    .ofFloat(this, TRANSLATION_Y, this.height.toFloat(), 0f)
+    .setDuration(400)
+    .start()
+
+fun View.fadeOut() = ObjectAnimator
+    .ofFloat(this, ALPHA, 1f, 0f)
+    .setDuration(400)
+    .start()
+
+fun View.fadeIn() = ObjectAnimator
+    .ofFloat(this, ALPHA, 0f, 1f)
+    .setDuration(400)
+    .start()

@@ -32,15 +32,15 @@
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    app:navigationIcon="@drawable/ic_menu_burger"
-                    app:title="@string/app_name"
                     app:titleCentered="true"
-                    app:titleTextAppearance="@style/ToolbarTitleAppearance">
+                    app:titleTextAppearance="@style/ToolbarTitleAppearance"
+                    tools:title="@string/app_name">
 
                     <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_profile"
                         style="@style/MyRoundImage"
-                        android:layout_width="52dp"
-                        android:layout_height="52dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_gravity="end|center_horizontal"
                         android:layout_marginEnd="@dimen/margin_screen"
                         android:elevation="8dp"
@@ -79,7 +79,6 @@
                 app:fabAlignmentMode="end"
                 app:fabAnchorMode="cradle"
                 app:fabCradleVerticalOffset="42dp"
-                app:hideOnScroll="true"
                 tools:ignore="VisualLintBottomAppBar">
 
                 <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -99,14 +98,15 @@
             </com.google.android.material.bottomappbar.BottomAppBar>
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_create"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/white"
                 android:contentDescription="@string/cd_add_event"
+                android:onClick="@{() -> activity.toCreate()}"
                 android:src="@drawable/ic_add"
                 app:layout_anchor="@id/bottom_app"
                 app:maxImageSize="40dp"
-                android:onClick="@{() -> activity.toCreate()}"
                 app:shapeAppearance="@style/RoundCorner"
                 app:tint="@color/gray"
                 tools:ignore="ImageContrastCheck" />

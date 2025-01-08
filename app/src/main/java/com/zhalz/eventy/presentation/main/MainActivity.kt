@@ -2,7 +2,9 @@ package com.zhalz.eventy.presentation.main
 
 import android.graphics.Color.TRANSPARENT
 import android.os.Bundle
+import android.view.View
 import androidx.databinding.DataBindingUtil
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -19,7 +21,14 @@ import com.zhalz.eventy.presentation.create_event.CreateEventActivity
 import com.zhalz.eventy.presentation.landing.LandingActivity
 import com.zhalz.eventy.presentation.profile.ProfileActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_PERSON
+import com.zhalz.eventy.utils.fadeIn
+import com.zhalz.eventy.utils.fadeOut
+import com.zhalz.eventy.utils.getWindowBackgroundColor
+import com.zhalz.eventy.utils.gone
 import com.zhalz.eventy.utils.setStatusBarColor
+import com.zhalz.eventy.utils.slideDown
+import com.zhalz.eventy.utils.slideUp
+import com.zhalz.eventy.utils.visible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -35,18 +44,18 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStatusBarColor(TRANSPARENT)
+        setStatusBarColor(getWindowBackgroundColor())
 
         binding.activity = this
 
-        setNavigation()
+        setActionbar()
         setDrawer()
+        setBottomNav()
     }
 
-    private fun setNavigation() {
+    private fun setActionbar() {
         setSupportActionBar(binding.toolbar)
         setupActionBarWithNavController(navController, appBarConfiguration)
-        binding.bottomNav.setupWithNavController(navController)
     }
 
     private fun setDrawer() {
@@ -65,7 +74,35 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
             binding.drawerLayout.closeDrawers()
             true
         }
+
+        binding.drawerLayout.addDrawerListener(object : DrawerLayout.SimpleDrawerListener() {
+            override fun onDrawerSlide(drawerView: View, slideOffset: Float) = setStatusBarColor(TRANSPARENT)
+
+            override fun onDrawerClosed(drawerView: View) = setStatusBarColor(getWindowBackgroundColor())
+        })
+
     }
+
+    private fun setBottomNav() {
+        binding.bottomNav.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.event_fragment -> binding.apply {
+                    bottomApp.slideDown()
+                    fabCreate.fadeOut()
+                    ivProfile.gone()
+                }
+                else -> binding.apply {
+                    if (bottomApp.translationY != 0f) bottomApp.slideUp()
+                    if (fabCreate.alpha == 0f) fabCreate.fadeIn()
+                    ivProfile.visible()
+                }
+            }
+        }
+    }
+
+    fun setToolbarTitle(title: String) = binding.toolbar.setTitle(title)
 
     fun toProfile() = openActivity<ProfileActivity> { putExtra(EXTRA_PERSON, user) }
     fun toCreate() = openActivity<CreateEventActivity>()

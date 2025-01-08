@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.crocodic.core.base.adapter.ReactiveListAdapter
-import com.crocodic.core.extension.openActivity
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
 import com.zhalz.eventy.data.eventList
@@ -14,9 +13,8 @@ import com.zhalz.eventy.databinding.ItemEventBinding
 import com.zhalz.eventy.databinding.ItemScheduleBinding
 import com.zhalz.eventy.domain.model.Event
 import com.zhalz.eventy.domain.model.Schedule
-import com.zhalz.eventy.presentation.event.EventActivity
-import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_EVENT
 import com.zhalz.eventy.utils.addDivider
+import com.zhalz.eventy.utils.extension.navigate
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
@@ -49,7 +47,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     fun toSchedule() = findNavController().navigate(R.id.action_home_to_schedule)
     fun toHistory() = findNavController().navigate(R.id.action_home_to_history)
 
-    private fun toDetail(event: Event) = context?.openActivity<EventActivity> { putExtra(EXTRA_EVENT, event) }
+    private fun toDetail(event: Event) = HomeFragmentDirections.actionHomeToEvent(event).navigate(this)
 
     override fun onDestroyView() {
         super.onDestroyView()

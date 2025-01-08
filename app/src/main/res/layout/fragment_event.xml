@@ -1,14 +1,291 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.event.EventFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.zhalz.eventy.presentation.event.EventFragment" />
+
+        <variable
+            name="adapter"
+            type="com.crocodic.core.base.adapter.ReactiveListAdapter" />
+
+        <variable
+            name="event"
+            type="com.zhalz.eventy.domain.model.Event" />
+
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
 
-</FrameLayout>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginHorizontal="@dimen/margin_screen"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ship"
+            app:shapeAppearance="@style/SlightlyRoundCorner"
+            tools:visibility="gone" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginVertical="24dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_member"
+                style="@style/MyFAB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:contentDescription="@string/member"
+                android:onClick="@{() -> fragment.toMember()}"
+                android:src="@drawable/ic_friend"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/fab_member"
+                android:text="@string/member"
+                android:textAppearance="@style/ButtonTitle"
+                app:fontFamily="@font/poppins_light"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/fab_member"
+                app:layout_constraintStart_toStartOf="@+id/fab_member"
+                app:layout_constraintTop_toBottomOf="@id/fab_member"
+                tools:ignore="TextContrastCheck" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_meeting"
+                style="@style/MyFAB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:contentDescription="@string/meeting"
+                android:onClick="@{() -> fragment.toMeeting()}"
+                android:src="@drawable/ic_monitor"
+                app:layout_constraintStart_toEndOf="@id/fab_member"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/fab_meeting"
+                android:text="@string/meeting"
+                android:textAppearance="@style/ButtonTitle"
+                app:fontFamily="@font/poppins_light"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/fab_meeting"
+                app:layout_constraintStart_toStartOf="@+id/fab_meeting"
+                app:layout_constraintTop_toBottomOf="@id/fab_meeting"
+                tools:ignore="TextContrastCheck" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_report"
+                style="@style/MyFAB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:contentDescription="@string/report"
+                android:onClick="@{() -> fragment.toReport()}"
+                android:src="@drawable/ic_chart"
+                app:layout_constraintStart_toEndOf="@id/fab_meeting"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/fab_report"
+                android:text="@string/report"
+                android:textAppearance="@style/ButtonTitle"
+                app:fontFamily="@font/poppins_light"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/fab_report"
+                app:layout_constraintStart_toStartOf="@+id/fab_report"
+                app:layout_constraintTop_toBottomOf="@id/fab_report"
+                tools:ignore="TextContrastCheck" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_spending"
+                style="@style/MyFAB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:contentDescription="@string/spending"
+                android:onClick="@{() -> fragment.toMember()}"
+                android:src="@drawable/ic_coin"
+                app:layout_constraintStart_toEndOf="@id/fab_report"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:labelFor="@id/fab_spending"
+                android:text="@string/spending"
+                android:textAppearance="@style/ButtonTitle"
+                app:fontFamily="@font/poppins_light"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/fab_spending"
+                app:layout_constraintStart_toStartOf="@+id/fab_spending"
+                app:layout_constraintTop_toBottomOf="@id/fab_spending"
+                tools:ignore="TextContrastCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_screen"
+            android:text="@string/description"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium"
+            app:fontFamily="@font/poppins_bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_screen"
+            android:layout_marginTop="8dp"
+            android:text="@{event.description}"
+            android:textSize="@dimen/text_default"
+            app:fontFamily="@font/poppins_regular"
+            tools:text="@tools:sample/lorem" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/light_grey"
+                android:clickable="false"
+                android:contentDescription="@string/location"
+                android:src="@drawable/ic_location"
+                app:elevation="0dp"
+                app:fabCustomSize="55dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:maxImageSize="21dp"
+                app:shapeAppearance="@style/RoundCorner"
+                app:tint="@color/blue"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
+                android:text="Bandung, Central Java"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_default"
+                app:fontFamily="@font/poppins_regular"
+                app:layout_constraintStart_toEndOf="@+id/fab_location"
+                app:layout_constraintTop_toTopOf="@+id/fab_location"
+                tools:ignore="TextContrastCheck"
+                tools:text="Bandung, Central Java" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
+                android:text="@{event.place}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_medium"
+                app:fontFamily="@font/poppins_semi_bold"
+                app:layout_constraintBottom_toBottomOf="@+id/fab_location"
+                app:layout_constraintStart_toEndOf="@+id/fab_location"
+                tools:text="City Hall" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/light_grey"
+                android:clickable="false"
+                android:contentDescription="@string/location"
+                android:src="@drawable/ic_calendar"
+                app:elevation="0dp"
+                app:fabCustomSize="55dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:maxImageSize="21dp"
+                app:shapeAppearance="@style/RoundCorner"
+                app:tint="@color/blue"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
+                android:text="Dec, 10 - 13 2025"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_default"
+                app:fontFamily="@font/poppins_regular"
+                app:layout_constraintStart_toEndOf="@+id/fab_date"
+                app:layout_constraintTop_toTopOf="@+id/fab_date"
+                tools:ignore="TextContrastCheck"
+                tools:text="Dec, 10 - 13 2025" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
+                android:text="08:00 - 10:00"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_medium"
+                app:fontFamily="@font/poppins_semi_bold"
+                app:layout_constraintBottom_toBottomOf="@+id/fab_date"
+                app:layout_constraintStart_toEndOf="@+id/fab_date"
+                tools:text="08:00 - 10:00" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_screen"
+            android:layout_marginTop="24dp"
+            android:text="@string/division"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium"
+            app:fontFamily="@font/poppins_bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:adapter="@{adapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_division" />
+
+    </LinearLayout>
+
+</layout>

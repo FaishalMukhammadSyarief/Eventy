@@ -3,23 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/nav_home">
+    app:startDestination="@id/home_fragment">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/home_fragment"
         android:name="com.zhalz.eventy.presentation.main.home.HomeFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_home_to_schedule"
             app:destination="@id/nav_schedule"
-            app:popUpTo="@id/nav_home"
+            app:popUpTo="@id/home_fragment"
             app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_home_to_history"
             app:destination="@id/nav_history"
-            app:popUpTo="@id/nav_home"
+            app:popUpTo="@id/home_fragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_home_to_event"
+            app:destination="@id/event_fragment"
+            app:enterAnim="@anim/anim_slide_up"
+            app:popExitAnim="@anim/anim_slide_down" />
     </fragment>
 
     <fragment
@@ -39,6 +44,15 @@
         android:name="com.zhalz.eventy.presentation.main.schedule.ScheduleFragment"
         android:label="Schedule"
         tools:layout="@layout/fragment_schedule" />
+
+    <fragment
+        android:id="@+id/event_fragment"
+        android:name="com.zhalz.eventy.presentation.event.EventFragment"
+        tools:layout="@layout/fragment_event">
+        <argument
+            android:name="eventArgs"
+            app:argType="com.zhalz.eventy.domain.model.Event" />
+    </fragment>
 
     <activity
         android:id="@+id/nav_contact"
