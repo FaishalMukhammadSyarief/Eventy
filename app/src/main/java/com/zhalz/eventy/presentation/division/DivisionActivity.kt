@@ -13,7 +13,7 @@ import com.zhalz.eventy.presentation.dialog.add_people.AddPeopleFragment
 import com.zhalz.eventy.presentation.division.task.TaskFragment
 import com.zhalz.eventy.presentation.member.MemberActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
-import com.zhalz.eventy.utils.setupWithTabLayout
+import com.zhalz.eventy.utils.extension.setupWithTabLayout
 
 class DivisionActivity : BaseActivity<ActivityDivisionBinding, DivisionViewModel>(R.layout.activity_division) {
 

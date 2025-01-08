@@ -18,8 +18,8 @@ import com.zhalz.eventy.presentation.member.MemberActivity
 import com.zhalz.eventy.presentation.report.ReportActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_EVENT
-import com.zhalz.eventy.utils.getWindowBackgroundColor
-import com.zhalz.eventy.utils.setStatusBarColor
+import com.zhalz.eventy.utils.extension.getWindowBackgroundColor
+import com.zhalz.eventy.utils.extension.setStatusBarColor
 
 class EventActivity : BaseActivity<ActivityEventBinding, EventViewModel>(R.layout.activity_event) {
 

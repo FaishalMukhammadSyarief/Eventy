@@ -21,14 +21,14 @@ import com.zhalz.eventy.presentation.create_event.CreateEventActivity
 import com.zhalz.eventy.presentation.landing.LandingActivity
 import com.zhalz.eventy.presentation.profile.ProfileActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_PERSON
-import com.zhalz.eventy.utils.fadeIn
-import com.zhalz.eventy.utils.fadeOut
-import com.zhalz.eventy.utils.getWindowBackgroundColor
-import com.zhalz.eventy.utils.gone
-import com.zhalz.eventy.utils.setStatusBarColor
-import com.zhalz.eventy.utils.slideDown
-import com.zhalz.eventy.utils.slideUp
-import com.zhalz.eventy.utils.visible
+import com.zhalz.eventy.utils.extension.fadeIn
+import com.zhalz.eventy.utils.extension.fadeOut
+import com.zhalz.eventy.utils.extension.getWindowBackgroundColor
+import com.zhalz.eventy.utils.extension.gone
+import com.zhalz.eventy.utils.extension.setStatusBarColor
+import com.zhalz.eventy.utils.extension.slideDown
+import com.zhalz.eventy.utils.extension.slideUp
+import com.zhalz.eventy.utils.extension.visible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

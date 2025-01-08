@@ -8,7 +8,7 @@ import com.zhalz.eventy.databinding.ActivityContactBinding
 import com.zhalz.eventy.presentation.contact.collaborator.CollaboratorFragment
 import com.zhalz.eventy.presentation.contact.friend.FriendFragment
 import com.zhalz.eventy.presentation.dialog.add_people.AddPeopleFragment
-import com.zhalz.eventy.utils.setupWithTabLayout
+import com.zhalz.eventy.utils.extension.setupWithTabLayout
 
 class ContactActivity : NoViewModelActivity<ActivityContactBinding>(R.layout.activity_contact) {
 

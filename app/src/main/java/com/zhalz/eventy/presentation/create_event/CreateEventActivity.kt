@@ -10,8 +10,8 @@ import com.zhalz.eventy.databinding.ActivityCreateEventBinding
 import com.zhalz.eventy.databinding.ItemDivisionBinding
 import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.presentation.dialog.add_division.AddDivisionFragment
-import com.zhalz.eventy.utils.setDropdown
-import com.zhalz.eventy.utils.showMaterialDatePicker
+import com.zhalz.eventy.utils.extension.setDropdown
+import com.zhalz.eventy.utils.extension.showMaterialDatePicker
 
 class CreateEventActivity : BaseActivity<ActivityCreateEventBinding, CreateEventViewModel>(R.layout.activity_create_event) {
 

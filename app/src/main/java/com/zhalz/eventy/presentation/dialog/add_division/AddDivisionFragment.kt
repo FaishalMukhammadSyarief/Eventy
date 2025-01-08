@@ -15,7 +15,7 @@ import com.zhalz.eventy.databinding.FragmentAddDivisionBinding
 import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.domain.model.Person
 import com.zhalz.eventy.presentation.create_event.CreateEventActivity
-import com.zhalz.eventy.utils.setDropdown
+import com.zhalz.eventy.utils.extension.setDropdown
 
 class AddDivisionFragment : DialogFragment() {
 

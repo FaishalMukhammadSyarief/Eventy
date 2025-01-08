@@ -12,8 +12,8 @@ import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseActivity
 import com.zhalz.eventy.databinding.ActivityOtpBinding
 import com.zhalz.eventy.presentation.main.MainActivity
-import com.zhalz.eventy.utils.getAnim
-import com.zhalz.eventy.utils.setStatusBarColor
+import com.zhalz.eventy.utils.extension.getAnim
+import com.zhalz.eventy.utils.extension.setStatusBarColor
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

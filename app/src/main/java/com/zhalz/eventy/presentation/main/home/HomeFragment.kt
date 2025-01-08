@@ -13,7 +13,7 @@ import com.zhalz.eventy.databinding.ItemEventBinding
 import com.zhalz.eventy.databinding.ItemScheduleBinding
 import com.zhalz.eventy.domain.model.Event
 import com.zhalz.eventy.domain.model.Schedule
-import com.zhalz.eventy.utils.addDivider
+import com.zhalz.eventy.utils.extension.addDivider
 import com.zhalz.eventy.utils.extension.navigate
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {

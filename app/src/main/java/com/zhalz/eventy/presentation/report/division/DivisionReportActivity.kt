@@ -10,7 +10,7 @@ import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.presentation.report.division.overview.OverviewFragment
 import com.zhalz.eventy.presentation.report.division.spending.SpendingFragment
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
-import com.zhalz.eventy.utils.setupWithTabLayout
+import com.zhalz.eventy.utils.extension.setupWithTabLayout
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
