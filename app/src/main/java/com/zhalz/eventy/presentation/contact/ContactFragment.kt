@@ -33,9 +33,12 @@ class ContactFragment : BaseFragment<FragmentContactBinding>(R.layout.fragment_c
 
         addMenu(R.menu.menu_contact) {
             when (it.itemId) {
-                R.id.menu_add_friend -> context?.tos("Add Friend")
+                R.id.menu_add_friend -> {
+                    context?.tos("Add Friend")
+                    true
+                }
+                else -> false
             }
-            true
         }
 
     }
