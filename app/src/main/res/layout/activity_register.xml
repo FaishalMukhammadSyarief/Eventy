@@ -7,7 +7,7 @@
 
         <variable
             name="activity"
-            type="com.zhalz.eventy.presentation.register.RegisterActivity" />
+            type="com.zhalz.eventy.presentation.auth.register.RegisterActivity" />
 
     </data>
 
@@ -15,7 +15,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.login.LoginActivity">
+        tools:context=".presentation.auth.login.LoginActivity">
 
         <ImageView
             android:id="@+id/iv_eventy"

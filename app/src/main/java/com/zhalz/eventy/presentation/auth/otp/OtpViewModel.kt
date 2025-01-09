@@ -1,8 +1,8 @@
-package com.zhalz.eventy.presentation.register
+package com.zhalz.eventy.presentation.auth.otp
 
 import com.zhalz.eventy.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class RegisterViewModel @Inject constructor(): BaseViewModel()
+class OtpViewModel @Inject constructor() : BaseViewModel()

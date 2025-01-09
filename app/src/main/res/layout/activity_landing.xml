@@ -7,7 +7,7 @@
 
         <variable
             name="activity"
-            type="com.zhalz.eventy.presentation.landing.LandingActivity" />
+            type="com.zhalz.eventy.presentation.auth.landing.LandingActivity" />
 
     </data>
 
@@ -17,7 +17,7 @@
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        tools:context=".presentation.landing.LandingActivity">
+        tools:context=".presentation.auth.landing.LandingActivity">
 
         <ImageView
             android:id="@+id/ic_eventy_logo"

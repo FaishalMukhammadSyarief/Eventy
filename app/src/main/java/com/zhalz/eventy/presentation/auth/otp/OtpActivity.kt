@@ -1,4 +1,4 @@
-package com.zhalz.eventy.presentation.otp
+package com.zhalz.eventy.presentation.auth.otp
 import android.graphics.Color.TRANSPARENT
 import android.os.Bundle
 import android.view.View.VISIBLE

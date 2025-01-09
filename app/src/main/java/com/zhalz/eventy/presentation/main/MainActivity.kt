@@ -17,8 +17,8 @@ import com.zhalz.eventy.R
 import com.zhalz.eventy.data.user
 import com.zhalz.eventy.databinding.ActivityMainBinding
 import com.zhalz.eventy.databinding.NavHeaderBinding
+import com.zhalz.eventy.presentation.auth.landing.LandingActivity
 import com.zhalz.eventy.presentation.create_event.CreateEventActivity
-import com.zhalz.eventy.presentation.landing.LandingActivity
 import com.zhalz.eventy.presentation.profile.ProfileActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_PERSON
 import com.zhalz.eventy.utils.extension.fadeIn
@@ -67,7 +67,7 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
 
         binding.navView.setNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.contact_activity -> navController.navigate(R.id.contact_activity)
+                R.id.contact_fragment -> navController.navigate(R.id.action_home_to_contact)
                 R.id.menu_help -> tos("HELP")
                 R.id.menu_logout -> openActivity<LandingActivity> { finishAffinity() }
             }
@@ -89,6 +89,11 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.event_fragment -> binding.apply {
+                    bottomApp.slideDown()
+                    fabCreate.fadeOut()
+                    ivProfile.gone()
+                }
+                R.id.contact_fragment -> binding.apply {
                     bottomApp.slideDown()
                     fabCreate.fadeOut()
                     ivProfile.gone()

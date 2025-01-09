@@ -25,6 +25,9 @@
             app:destination="@id/event_fragment"
             app:enterAnim="@anim/anim_slide_up"
             app:popExitAnim="@anim/anim_slide_down" />
+        <action
+            android:id="@+id/action_home_to_contact"
+            app:destination="@id/contact_fragment" />
     </fragment>
 
     <fragment
@@ -59,6 +62,12 @@
             android:name="eventArgs"
             app:argType="com.zhalz.eventy.domain.model.Event" />
     </fragment>
+
+    <fragment
+        android:id="@+id/contact_fragment"
+        android:name="com.zhalz.eventy.presentation.contact.ContactFragment"
+        android:label="Contact"
+        tools:layout="@layout/fragment_contact" />
 
     <activity
         android:id="@+id/contact_activity"

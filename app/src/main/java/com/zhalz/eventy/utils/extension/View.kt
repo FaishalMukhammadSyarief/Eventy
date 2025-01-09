@@ -7,8 +7,8 @@ import android.view.View.ALPHA
 import android.view.View.TRANSLATION_Y
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -45,7 +45,7 @@ fun AutoCompleteTextView.setDropdown(list: List<String?>, onSelected: (Int) -> U
 }
 
 fun ViewPager2.setupWithTabLayout(
-    activity: AppCompatActivity,
+    activity: FragmentActivity,
     tabLayout: TabLayout,
     fragments: List<Fragment>,
     titles: List<String>

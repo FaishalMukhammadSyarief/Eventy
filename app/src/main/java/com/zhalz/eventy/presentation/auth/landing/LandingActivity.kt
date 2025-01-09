@@ -1,19 +1,19 @@
-package com.zhalz.eventy.presentation.login
+package com.zhalz.eventy.presentation.auth.landing
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.crocodic.core.base.activity.NoViewModelActivity
 import com.crocodic.core.extension.openActivity
 import com.zhalz.eventy.R
-import com.zhalz.eventy.base.BaseActivity
-import com.zhalz.eventy.databinding.ActivityLoginBinding
-import com.zhalz.eventy.presentation.main.MainActivity
-import com.zhalz.eventy.presentation.register.RegisterActivity
+import com.zhalz.eventy.databinding.ActivityLandingBinding
+import com.zhalz.eventy.presentation.auth.login.LoginActivity
+import com.zhalz.eventy.presentation.auth.register.RegisterActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layout.activity_login) {
+class LandingActivity : NoViewModelActivity<ActivityLandingBinding>(R.layout.activity_landing) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -21,7 +21,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
         binding.activity = this
 
         initUI()
-
     }
 
     private fun initUI() {
@@ -32,7 +31,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>(R.layou
         }
     }
 
+    fun toLogin() = openActivity<LoginActivity> { finish() }
     fun toRegister() = openActivity<RegisterActivity> { finish() }
-    fun toHome() = openActivity<MainActivity> { finish() }
 
 }

@@ -14,7 +14,7 @@
         android:background="@drawable/gr_blue_white"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        tools:context=".presentation.landing.LandingActivity">
+        tools:context=".presentation.auth.landing.LandingActivity">
 
         <ImageView
             android:id="@+id/ic_eventy_logo"

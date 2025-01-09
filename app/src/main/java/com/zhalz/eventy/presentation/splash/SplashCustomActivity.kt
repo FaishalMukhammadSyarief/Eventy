@@ -9,7 +9,7 @@ import com.crocodic.core.base.activity.NoViewModelActivity
 import com.crocodic.core.extension.openActivity
 import com.zhalz.eventy.R
 import com.zhalz.eventy.databinding.ActivitySplashBinding
-import com.zhalz.eventy.presentation.landing.LandingActivity
+import com.zhalz.eventy.presentation.auth.landing.LandingActivity
 
 class SplashCustomActivity : NoViewModelActivity<ActivitySplashBinding>(R.layout.activity_splash) {
     override fun onCreate(savedInstanceState: Bundle?) {

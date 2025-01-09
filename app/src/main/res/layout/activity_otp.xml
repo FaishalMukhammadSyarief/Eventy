@@ -7,7 +7,7 @@
 
         <variable
             name="activity"
-            type="com.zhalz.eventy.presentation.otp.OtpActivity" />
+            type="com.zhalz.eventy.presentation.auth.otp.OtpActivity" />
 
     </data>
 
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context=".presentation.otp.OtpActivity">
+        tools:context=".presentation.auth.otp.OtpActivity">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"

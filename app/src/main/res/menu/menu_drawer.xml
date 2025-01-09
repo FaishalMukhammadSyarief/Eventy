@@ -4,7 +4,7 @@
     tools:showIn="navigation_view">
 
     <item
-        android:id="@+id/menu_contact"
+        android:id="@+id/contact_fragment"
         android:icon="@drawable/ic_friend"
         android:title="@string/friend" />
     <item
