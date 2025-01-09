@@ -12,12 +12,12 @@
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_home_to_schedule"
-            app:destination="@id/nav_schedule"
+            app:destination="@id/schedule_fragment"
             app:popUpTo="@id/home_fragment"
             app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_home_to_history"
-            app:destination="@id/nav_history"
+            app:destination="@id/history_fragment"
             app:popUpTo="@id/home_fragment"
             app:popUpToInclusive="true" />
         <action
@@ -28,19 +28,19 @@
     </fragment>
 
     <fragment
-        android:id="@+id/nav_history"
+        android:id="@+id/history_fragment"
         android:name="com.zhalz.eventy.presentation.main.history.HistoryFragment"
         android:label="@string/history"
         tools:layout="@layout/fragment_history" />
 
     <fragment
-        android:id="@+id/nav_notif"
+        android:id="@+id/notification_fragment"
         android:name="com.zhalz.eventy.presentation.main.notification.NotificationFragment"
         android:label="@string/notifikasi"
         tools:layout="@layout/fragment_notification" />
 
     <fragment
-        android:id="@+id/nav_schedule"
+        android:id="@+id/schedule_fragment"
         android:name="com.zhalz.eventy.presentation.main.schedule.ScheduleFragment"
         android:label="Schedule"
         tools:layout="@layout/fragment_schedule" />
@@ -55,7 +55,7 @@
     </fragment>
 
     <activity
-        android:id="@+id/nav_contact"
+        android:id="@+id/contact_activity"
         android:name="com.zhalz.eventy.presentation.contact.ContactActivity"
         android:label="@string/friend"
         tools:layout="@layout/activity_contact" />

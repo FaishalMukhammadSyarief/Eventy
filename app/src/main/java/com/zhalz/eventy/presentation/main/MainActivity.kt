@@ -35,7 +35,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     private val appBarConfiguration by lazy {
-        AppBarConfiguration(setOf(R.id.home_fragment, R.id.nav_history, R.id.nav_notif), binding.drawerLayout)
+        AppBarConfiguration(setOf(R.id.home_fragment, R.id.history_fragment, R.id.notification_fragment), binding.drawerLayout)
     }
 
     private val navController by lazy {
@@ -67,7 +67,7 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
 
         binding.navView.setNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.nav_contact -> navController.navigate(R.id.nav_contact)
+                R.id.contact_activity -> navController.navigate(R.id.contact_activity)
                 R.id.menu_help -> tos("HELP")
                 R.id.menu_logout -> openActivity<LandingActivity> { finishAffinity() }
             }
