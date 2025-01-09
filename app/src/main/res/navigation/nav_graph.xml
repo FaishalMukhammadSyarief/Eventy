@@ -31,7 +31,13 @@
         android:id="@+id/history_fragment"
         android:name="com.zhalz.eventy.presentation.main.history.HistoryFragment"
         android:label="@string/history"
-        tools:layout="@layout/fragment_history" />
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_history_to_event"
+            app:destination="@id/event_fragment"
+            app:enterAnim="@anim/anim_slide_up"
+            app:popExitAnim="@anim/anim_slide_down" />
+    </fragment>
 
     <fragment
         android:id="@+id/notification_fragment"

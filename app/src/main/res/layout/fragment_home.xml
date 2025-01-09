@@ -9,10 +9,6 @@
             name="fragment"
             type="com.zhalz.eventy.presentation.main.home.HomeFragment" />
 
-        <variable
-            name="scheduleAdapter"
-            type="com.crocodic.core.base.adapter.ReactiveListAdapter" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
