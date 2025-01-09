@@ -7,16 +7,10 @@ import android.view.View.ALPHA
 import android.view.View.TRANSLATION_Y
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
 import com.zhalz.eventy.R
-import com.zhalz.eventy.presentation.adapter.PagerAdapter
 
 /*  Visibility  */
 fun View.gone() = this.apply {
@@ -42,34 +36,6 @@ fun AutoCompleteTextView.setDropdown(list: List<String?>, onSelected: (Int) -> U
     setOnItemClickListener { _, _, position, _ ->
         onSelected(position)
     }
-}
-
-fun ViewPager2.setupWithTabLayout(
-    activity: FragmentActivity,
-    tabLayout: TabLayout,
-    fragments: List<Fragment>,
-    titles: List<String>
-) {
-    adapter = PagerAdapter(activity, fragments)
-
-    TabLayoutMediator(tabLayout, this) { tab, position ->
-        tab.text = titles[position]
-    }.attach()
-}
-
-fun Fragment.setupTabLayout(
-    viewPager2: ViewPager2?,
-    tabLayout: TabLayout?,
-    fragments: List<Fragment>,
-    titles: List<String>
-) {
-    if (viewPager2 == null || tabLayout == null) return
-
-    viewPager2.adapter = PagerAdapter(requireActivity(), fragments)
-
-    TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
-        tab.text = titles[position]
-    }.attach()
 }
 
 

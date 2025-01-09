@@ -11,7 +11,11 @@ import androidx.annotation.ColorInt
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
+import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
+import com.zhalz.eventy.presentation.adapter.PagerAdapter
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -57,4 +61,19 @@ fun Fragment.addMenu(
             onMenuItemSelected(menuItem)
 
     }, this)
+}
+
+fun Fragment.setupTabLayout(
+    viewPager2: ViewPager2?,
+    tabLayout: TabLayout?,
+    fragments: List<Fragment>,
+    titles: List<String>
+) {
+    if (viewPager2 == null || tabLayout == null) return
+
+    viewPager2.adapter = PagerAdapter(requireActivity(), fragments)
+
+    TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
+        tab.text = titles[position]
+    }.attach()
 }
