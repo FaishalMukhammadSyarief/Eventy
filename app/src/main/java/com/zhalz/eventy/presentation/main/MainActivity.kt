@@ -102,8 +102,6 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
         }
     }
 
-    fun setToolbarTitle(title: String) = binding.toolbar.setTitle(title)
-
     fun toProfile() = openActivity<ProfileActivity> { putExtra(EXTRA_PERSON, user) }
     fun toCreate() = openActivity<CreateEventActivity>()
 

@@ -2,6 +2,7 @@ package com.zhalz.eventy.presentation.event
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.navArgs
 import com.crocodic.core.base.adapter.ReactiveListAdapter
 import com.crocodic.core.extension.openActivity
@@ -13,7 +14,6 @@ import com.zhalz.eventy.databinding.ItemDivisionBinding
 import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.presentation.create_schedule.CreateScheduleActivity
 import com.zhalz.eventy.presentation.division.DivisionActivity
-import com.zhalz.eventy.presentation.main.MainActivity
 import com.zhalz.eventy.presentation.member.MemberActivity
 import com.zhalz.eventy.presentation.report.ReportActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
@@ -26,7 +26,7 @@ class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event
         ReactiveListAdapter<ItemDivisionBinding, Division>(R.layout.item_division).initItem { _, data -> toDetail(data) }
     }
 
-    private val mainActivity by lazy { activity as MainActivity }
+    private val activity by lazy { requireActivity() as AppCompatActivity }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -36,7 +36,7 @@ class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event
     }
 
     private fun initUI() {
-        mainActivity.setToolbarTitle(args.eventArgs.title)
+        activity.supportActionBar?.title = args.eventArgs.title
 
         binding?.apply {
             fragment = this@EventFragment
