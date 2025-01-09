@@ -1,17 +1,14 @@
 package com.zhalz.eventy.presentation.contact
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
-import androidx.core.view.MenuProvider
 import com.crocodic.core.extension.tos
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
 import com.zhalz.eventy.databinding.FragmentContactBinding
 import com.zhalz.eventy.presentation.contact.collaborator.CollaboratorFragment
 import com.zhalz.eventy.presentation.contact.friend.FriendFragment
+import com.zhalz.eventy.utils.extension.addMenu
 import com.zhalz.eventy.utils.extension.setupWithTabLayout
 
 class ContactFragment : BaseFragment<FragmentContactBinding>(R.layout.fragment_contact) {
@@ -34,22 +31,13 @@ class ContactFragment : BaseFragment<FragmentContactBinding>(R.layout.fragment_c
             )
         }
 
-        requireActivity().addMenuProvider(object : MenuProvider {
-
-            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                menuInflater.inflate(R.menu.menu_contact, menu)
+        addMenu(R.menu.menu_contact) {
+            when (it.itemId) {
+                R.id.menu_add_friend -> context?.tos("Add Friend")
             }
+            true
+        }
 
-            override fun onMenuItemSelected(menuItem: MenuItem) =
-                when (menuItem.itemId) {
-                    R.id.menu_add_friend -> {
-                        context?.tos("lol")
-                        true
-                    }
-                    else -> false
-                }
-            }
-            , viewLifecycleOwner)
     }
 
     override fun onDestroyView() {

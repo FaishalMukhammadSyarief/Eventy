@@ -2,10 +2,17 @@ package com.zhalz.eventy.utils.extension
 
 import android.app.Activity
 import android.util.TypedValue
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.annotation.ColorInt
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.MenuProvider
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.LifecycleOwner
 import com.google.android.material.datepicker.MaterialDatePicker
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -38,4 +45,18 @@ fun AppCompatActivity.showMaterialDatePicker(onDateSelected: (String) -> Unit) {
     }
 
     datePicker.show(supportFragmentManager, "MATERIAL_DATE_PICKER")
+}
+
+fun Fragment.addMenu(
+    menuId: Int,
+    onMenuItemSelected: (MenuItem) -> Boolean
+) {
+    requireActivity().addMenuProvider(object : MenuProvider {
+        override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) =
+            menuInflater.inflate(menuId, menu)
+
+        override fun onMenuItemSelected(menuItem: MenuItem): Boolean =
+            onMenuItemSelected(menuItem)
+
+    }, this)
 }
