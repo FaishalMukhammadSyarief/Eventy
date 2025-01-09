@@ -44,9 +44,4 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>(R.layout.fragment_task) {
 
     private fun toDetail(task: Task) = context?.openActivity<TaskActivity> { putExtra(EXTRA_TASK, task) }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
-    }
-
 }

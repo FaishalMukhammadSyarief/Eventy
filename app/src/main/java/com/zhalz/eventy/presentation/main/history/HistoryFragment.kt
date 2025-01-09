@@ -33,9 +33,4 @@ class HistoryFragment : BaseFragment<FragmentHistoryBinding>(R.layout.fragment_h
 
     private fun toDetail(event: Event) = HistoryFragmentDirections.actionHistoryToEvent(event).navigate(this)
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
-    }
-
 }

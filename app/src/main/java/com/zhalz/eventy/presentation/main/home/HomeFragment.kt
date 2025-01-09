@@ -49,9 +49,4 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     private fun toDetail(event: Event) = HomeFragmentDirections.actionHomeToEvent(event).navigate(this)
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
-    }
-
 }

@@ -24,9 +24,4 @@ class OverviewFragment : BaseFragment<FragmentOverviewBinding>(R.layout.fragment
 
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
-    }
-
 }

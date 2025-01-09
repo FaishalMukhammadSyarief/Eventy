@@ -40,9 +40,4 @@ class CollaboratorFragment : BaseFragment<FragmentCollaboratorBinding>(R.layout.
 
     private fun toDetail(person: Person) = context?.openActivity<ProfileActivity> { putExtra(EXTRA_PERSON, person) }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
-    }
-
 }

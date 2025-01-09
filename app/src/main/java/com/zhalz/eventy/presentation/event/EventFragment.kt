@@ -52,9 +52,4 @@ class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event
     fun toMeeting() = context?.openActivity<CreateScheduleActivity>()
     fun toReport() = context?.openActivity<ReportActivity>()
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
-    }
-
 }

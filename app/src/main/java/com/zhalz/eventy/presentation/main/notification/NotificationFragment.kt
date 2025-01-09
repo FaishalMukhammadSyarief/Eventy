@@ -47,9 +47,4 @@ class NotificationFragment : BaseFragment<FragmentNotificationBinding>(R.layout.
 
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
-    }
-
 }

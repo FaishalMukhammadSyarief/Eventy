@@ -21,7 +21,6 @@ class ContactFragment : BaseFragment<FragmentContactBinding>(R.layout.fragment_c
     }
 
     private fun initUI() {
-
         setupTabLayout(
             binding?.viewPager,
             binding?.tabLayout,
@@ -38,12 +37,6 @@ class ContactFragment : BaseFragment<FragmentContactBinding>(R.layout.fragment_c
                 else -> false
             }
         }
-
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
     }
 
 }

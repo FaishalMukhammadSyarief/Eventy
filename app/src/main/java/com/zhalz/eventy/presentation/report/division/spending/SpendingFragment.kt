@@ -39,9 +39,4 @@ class SpendingFragment : BaseFragment<FragmentSpendingBinding>(R.layout.fragment
 
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
-    }
-
 }

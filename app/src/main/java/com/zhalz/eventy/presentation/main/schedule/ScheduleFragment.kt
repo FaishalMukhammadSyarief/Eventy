@@ -46,9 +46,4 @@ class ScheduleFragment : BaseFragment<FragmentScheduleBinding>(R.layout.fragment
         schedule2Adapter.submitList(schedule2List)
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
-    }
-
 }
