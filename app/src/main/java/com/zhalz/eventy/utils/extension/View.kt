@@ -57,6 +57,21 @@ fun ViewPager2.setupWithTabLayout(
     }.attach()
 }
 
+fun Fragment.setupTabLayout(
+    viewPager2: ViewPager2?,
+    tabLayout: TabLayout?,
+    fragments: List<Fragment>,
+    titles: List<String>
+) {
+    if (viewPager2 == null || tabLayout == null) return
+
+    viewPager2.adapter = PagerAdapter(requireActivity(), fragments)
+
+    TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
+        tab.text = titles[position]
+    }.attach()
+}
+
 
 /*  Animations  */
 fun View.slideDown() = ObjectAnimator.ofFloat(this, TRANSLATION_Y, 0f, this.height.toFloat())

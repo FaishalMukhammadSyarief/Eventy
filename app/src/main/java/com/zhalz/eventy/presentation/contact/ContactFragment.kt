@@ -9,7 +9,7 @@ import com.zhalz.eventy.databinding.FragmentContactBinding
 import com.zhalz.eventy.presentation.contact.collaborator.CollaboratorFragment
 import com.zhalz.eventy.presentation.contact.friend.FriendFragment
 import com.zhalz.eventy.utils.extension.addMenu
-import com.zhalz.eventy.utils.extension.setupWithTabLayout
+import com.zhalz.eventy.utils.extension.setupTabLayout
 
 class ContactFragment : BaseFragment<FragmentContactBinding>(R.layout.fragment_contact) {
 
@@ -22,14 +22,12 @@ class ContactFragment : BaseFragment<FragmentContactBinding>(R.layout.fragment_c
 
     private fun initUI() {
 
-        binding?.apply {
-            viewPager.setupWithTabLayout(
-                requireActivity(),
-                tabLayout,
-                listOf(FriendFragment(), CollaboratorFragment()),
-                listOf(getString(R.string.friend2), getString(R.string.collaborator))
-            )
-        }
+        setupTabLayout(
+            binding?.viewPager,
+            binding?.tabLayout,
+            listOf(FriendFragment(), CollaboratorFragment()),
+            listOf(getString(R.string.friend2), getString(R.string.collaborator))
+        )
 
         addMenu(R.menu.menu_contact) {
             when (it.itemId) {
