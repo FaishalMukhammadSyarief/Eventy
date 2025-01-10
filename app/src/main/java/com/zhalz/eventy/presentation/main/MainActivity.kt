@@ -93,6 +93,11 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
                     fabCreate.fadeOut()
                     ivProfile.gone()
                 }
+                R.id.member_fragment -> binding.apply {
+                    bottomApp.slideDown()
+                    fabCreate.fadeOut()
+                    ivProfile.gone()
+                }
                 R.id.contact_fragment -> binding.apply {
                     bottomApp.slideDown()
                     fabCreate.fadeOut()

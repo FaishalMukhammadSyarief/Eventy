@@ -3,6 +3,7 @@ package com.zhalz.eventy.presentation.event
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.crocodic.core.base.adapter.ReactiveListAdapter
 import com.crocodic.core.extension.openActivity
@@ -14,7 +15,6 @@ import com.zhalz.eventy.databinding.ItemDivisionBinding
 import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.presentation.create_schedule.CreateScheduleActivity
 import com.zhalz.eventy.presentation.division.DivisionActivity
-import com.zhalz.eventy.presentation.member.MemberActivity
 import com.zhalz.eventy.presentation.report.ReportActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
 
@@ -48,7 +48,7 @@ class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event
     }
 
     private fun toDetail(division: Division) = context?.openActivity<DivisionActivity> { putExtra(EXTRA_DIVISION, division) }
-    fun toMember() = context?.openActivity<MemberActivity>()
+    fun toMember() = findNavController().navigate(R.id.action_event_to_member)
     fun toMeeting() = context?.openActivity<CreateScheduleActivity>()
     fun toReport() = context?.openActivity<ReportActivity>()
 

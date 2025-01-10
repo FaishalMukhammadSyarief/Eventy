@@ -61,6 +61,10 @@
         <argument
             android:name="eventArgs"
             app:argType="com.zhalz.eventy.domain.model.Event" />
+        <action
+            android:id="@+id/action_event_to_member"
+            app:destination="@id/member_fragment"
+            app:enterAnim="@anim/anim_slide_up" />
     </fragment>
 
     <fragment
@@ -69,10 +73,10 @@
         android:label="Contact"
         tools:layout="@layout/fragment_contact" />
 
-    <activity
-        android:id="@+id/contact_activity"
-        android:name="com.zhalz.eventy.presentation.contact.ContactActivity"
-        android:label="@string/friend"
-        tools:layout="@layout/activity_contact" />
+    <fragment
+        android:id="@+id/member_fragment"
+        android:name="com.zhalz.eventy.presentation.member.MemberFragment"
+        android:label="Member"
+        tools:layout="@layout/fragment_member" />
 
 </navigation>
