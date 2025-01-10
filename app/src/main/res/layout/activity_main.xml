@@ -21,8 +21,7 @@
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:id="@+id/main"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true">
+            android:layout_height="match_parent">
 
             <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
@@ -73,20 +72,20 @@
             <com.google.android.material.bottomappbar.BottomAppBar
                 android:id="@+id/bottom_app"
                 android:layout_width="match_parent"
-                android:layout_height="75dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:backgroundTint="@color/white"
-                android:fitsSystemWindows="true"
                 app:contentInsetStart="0dp"
                 app:fabAlignmentMode="end"
                 app:fabAnchorMode="cradle"
                 app:fabCradleVerticalOffset="42dp"
+                app:paddingBottomSystemWindowInsets="false"
                 tools:ignore="VisualLintBottomAppBar">
 
                 <com.google.android.material.bottomnavigation.BottomNavigationView
                     android:id="@+id/bottom_nav"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="@color/transparent"
                     app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
                     app:itemIconSize="20dp"

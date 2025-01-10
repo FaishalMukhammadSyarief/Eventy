@@ -1,10 +1,11 @@
 package com.zhalz.eventy.presentation.main
 
-import android.graphics.Color.TRANSPARENT
 import android.os.Bundle
-import android.view.View
+import androidx.activity.enableEdgeToEdge
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
 import androidx.databinding.DataBindingUtil
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -13,6 +14,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.crocodic.core.base.activity.NoViewModelActivity
 import com.crocodic.core.extension.openActivity
 import com.crocodic.core.extension.tos
+import com.google.android.material.appbar.AppBarLayout
 import com.zhalz.eventy.R
 import com.zhalz.eventy.data.user
 import com.zhalz.eventy.databinding.ActivityMainBinding
@@ -23,9 +25,7 @@ import com.zhalz.eventy.presentation.profile.ProfileActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_PERSON
 import com.zhalz.eventy.utils.extension.fadeIn
 import com.zhalz.eventy.utils.extension.fadeOut
-import com.zhalz.eventy.utils.extension.getWindowBackgroundColor
 import com.zhalz.eventy.utils.extension.gone
-import com.zhalz.eventy.utils.extension.setStatusBarColor
 import com.zhalz.eventy.utils.extension.slideDown
 import com.zhalz.eventy.utils.extension.slideUp
 import com.zhalz.eventy.utils.extension.visible
@@ -44,7 +44,13 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStatusBarColor(getWindowBackgroundColor())
+        enableEdgeToEdge()
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.toolbar)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.updateLayoutParams<AppBarLayout.LayoutParams> { topMargin = systemBars.top }
+            insets
+        }
 
         binding.activity = this
 
@@ -74,13 +80,6 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
             binding.drawerLayout.closeDrawers()
             true
         }
-
-        binding.drawerLayout.addDrawerListener(object : DrawerLayout.SimpleDrawerListener() {
-            override fun onDrawerSlide(drawerView: View, slideOffset: Float) = setStatusBarColor(TRANSPARENT)
-
-            override fun onDrawerClosed(drawerView: View) = setStatusBarColor(getWindowBackgroundColor())
-        })
-
     }
 
     private fun setBottomNav() {
