@@ -2,7 +2,7 @@ package com.zhalz.eventy.presentation.contact
 
 import android.os.Bundle
 import android.view.View
-import com.crocodic.core.extension.tos
+import androidx.navigation.fragment.findNavController
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
 import com.zhalz.eventy.databinding.FragmentContactBinding
@@ -31,7 +31,7 @@ class ContactFragment : BaseFragment<FragmentContactBinding>(R.layout.fragment_c
         addMenu(R.menu.menu_contact) {
             when (it.itemId) {
                 R.id.menu_add_friend -> {
-                    context?.tos("Add Friend")
+                    findNavController().navigate(R.id.action_contact_to_add_person_dialog)
                     true
                 }
                 else -> false

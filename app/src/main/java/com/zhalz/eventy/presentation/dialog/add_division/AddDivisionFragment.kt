@@ -70,8 +70,8 @@ class AddDivisionFragment : DialogFragment() {
             val screenWidth = resources.displayMetrics.widthPixels
 
             setLayout(screenWidth - 2 * marginHorizontal, WRAP_CONTENT)
-
             setBackgroundDrawableResource(R.drawable.bg_slightly_round)
+            setElevation(18f)
         }
     }
 

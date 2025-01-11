@@ -2,9 +2,9 @@ package com.zhalz.eventy.presentation.member
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.crocodic.core.base.adapter.ReactiveListAdapter
 import com.crocodic.core.extension.openActivity
-import com.crocodic.core.extension.tos
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
 import com.zhalz.eventy.data.managerList
@@ -59,7 +59,7 @@ class MemberFragment : BaseFragment<FragmentMemberBinding>(R.layout.fragment_mem
         addMenu(R.menu.menu_contact) {
             when (it.itemId) {
                 R.id.menu_add_friend -> {
-                    context?.tos("Add Friend")
+                    findNavController().navigate(R.id.action_member_to_add_person_dialog)
                     true
                 }
                 else -> false

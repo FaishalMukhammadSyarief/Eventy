@@ -77,25 +77,25 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.event_fragment -> binding.apply {
-                    bottomApp.slideDown()
-                    fabCreate.fadeOut()
-                    ivProfile.gone()
-                }
-                R.id.member_fragment -> binding.apply {
-                    bottomApp.slideDown()
-                    fabCreate.fadeOut()
-                    ivProfile.gone()
-                }
-                R.id.contact_fragment -> binding.apply {
-                    bottomApp.slideDown()
-                    fabCreate.fadeOut()
-                    ivProfile.gone()
-                }
-                else -> binding.apply {
+                R.id.home_fragment -> binding.apply {
                     if (bottomApp.translationY != 0f) bottomApp.slideUp()
                     if (fabCreate.alpha == 0f) fabCreate.fadeIn()
                     ivProfile.visible()
+                }
+                R.id.history_fragment -> binding.apply {
+                    if (bottomApp.translationY != 0f) bottomApp.slideUp()
+                    if (fabCreate.alpha == 0f) fabCreate.fadeIn()
+                    ivProfile.visible()
+                }
+                R.id.notification_fragment -> binding.apply {
+                    if (bottomApp.translationY != 0f) bottomApp.slideUp()
+                    if (fabCreate.alpha == 0f) fabCreate.fadeIn()
+                    ivProfile.visible()
+                }
+                else -> binding.apply {
+                    bottomApp.slideDown()
+                    fabCreate.fadeOut()
+                    ivProfile.gone()
                 }
             }
         }
