@@ -34,7 +34,7 @@
         android:id="@+id/history_fragment"
         android:name="com.zhalz.eventy.presentation.main.history.HistoryFragment"
         android:label="@string/history"
-        tools:layout="@layout/fragment_history" >
+        tools:layout="@layout/fragment_history">
         <action
             android:id="@+id/action_history_to_event"
             app:destination="@id/event_fragment"
@@ -71,7 +71,7 @@
         android:id="@+id/contact_fragment"
         android:name="com.zhalz.eventy.presentation.contact.ContactFragment"
         android:label="Contact"
-        tools:layout="@layout/fragment_contact" >
+        tools:layout="@layout/fragment_contact">
         <action
             android:id="@+id/action_contact_to_add_person_dialog"
             app:destination="@id/add_person_dialog" />
@@ -81,7 +81,7 @@
         android:id="@+id/member_fragment"
         android:name="com.zhalz.eventy.presentation.member.MemberFragment"
         android:label="Member"
-        tools:layout="@layout/fragment_member" >
+        tools:layout="@layout/fragment_member">
         <action
             android:id="@+id/action_member_to_add_person_dialog"
             app:destination="@id/add_person_dialog" />
@@ -89,7 +89,7 @@
 
     <dialog
         android:id="@+id/add_person_dialog"
-        android:name="com.zhalz.eventy.presentation.dialog.add_people.AddPeopleFragment"
-        tools:layout="@layout/fragment_add_people" />
+        android:name="com.zhalz.eventy.presentation.dialog.add_person.AddPersonFragment"
+        tools:layout="@layout/fragment_add_person" />
 
 </navigation>

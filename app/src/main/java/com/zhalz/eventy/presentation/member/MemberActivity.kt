@@ -13,7 +13,7 @@ import com.zhalz.eventy.data.teamList
 import com.zhalz.eventy.databinding.ActivityMemberBinding
 import com.zhalz.eventy.databinding.ItemContactBinding
 import com.zhalz.eventy.domain.model.Person
-import com.zhalz.eventy.presentation.dialog.add_people.AddPeopleFragment
+import com.zhalz.eventy.presentation.dialog.add_person.AddPersonFragment
 import com.zhalz.eventy.presentation.profile.ProfileActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_PERSON
 
@@ -58,7 +58,7 @@ class MemberActivity : NoViewModelActivity<ActivityMemberBinding>(R.layout.activ
 
         binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
-                R.id.menu_add_friend -> AddPeopleFragment().show(supportFragmentManager, AddPeopleFragment::class.java.simpleName)
+                R.id.menu_add_friend -> AddPersonFragment().show(supportFragmentManager, AddPersonFragment::class.java.simpleName)
             }
             true
         }

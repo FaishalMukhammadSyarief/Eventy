@@ -9,7 +9,7 @@ import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseActivity
 import com.zhalz.eventy.databinding.ActivityDivisionBinding
 import com.zhalz.eventy.domain.model.Division
-import com.zhalz.eventy.presentation.dialog.add_people.AddPeopleFragment
+import com.zhalz.eventy.presentation.dialog.add_person.AddPersonFragment
 import com.zhalz.eventy.presentation.division.task.TaskFragment
 import com.zhalz.eventy.presentation.member.MemberActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
@@ -42,7 +42,7 @@ class DivisionActivity : BaseActivity<ActivityDivisionBinding, DivisionViewModel
 
         binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
-                R.id.menu_add_collaborator -> AddPeopleFragment().show(supportFragmentManager, AddPeopleFragment::class.java.simpleName)
+                R.id.menu_add_collaborator -> AddPersonFragment().show(supportFragmentManager, AddPersonFragment::class.java.simpleName)
                 R.id.menu_member -> openActivity<MemberActivity>()
             }
             true

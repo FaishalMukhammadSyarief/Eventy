@@ -1,4 +1,4 @@
-package com.zhalz.eventy.presentation.dialog.add_people
+package com.zhalz.eventy.presentation.dialog.add_person
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,13 +12,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.crocodic.core.base.adapter.ReactiveListAdapter
 import com.zhalz.eventy.R
 import com.zhalz.eventy.data.teamList
-import com.zhalz.eventy.databinding.FragmentAddPeopleBinding
+import com.zhalz.eventy.databinding.FragmentAddPersonBinding
 import com.zhalz.eventy.databinding.ItemAddContactBinding
 import com.zhalz.eventy.domain.model.Person
 
-class AddPeopleFragment : DialogFragment() {
+class AddPersonFragment : DialogFragment() {
 
-    private var _binding: FragmentAddPeopleBinding? = null
+    private var _binding: FragmentAddPersonBinding? = null
     private val binding get() = _binding!!
 
     private val personAdapter by lazy {
@@ -26,7 +26,7 @@ class AddPeopleFragment : DialogFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_people, container, false)
+        _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_person, container, false)
 
         binding.adapter = personAdapter
 
