@@ -37,12 +37,12 @@ class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event
     }
 
     private fun initUI() {
-        activity.supportActionBar?.title = args.eventArgs.title
+        activity.supportActionBar?.title = args.event.title
 
         binding?.apply {
             fragment = this@EventFragment
             adapter = divisionAdapter
-            event = args.eventArgs
+            event = args.event
         }
 
         divisionAdapter.submitList(divisionList)
@@ -50,7 +50,7 @@ class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event
 
     private fun toDetail(division: Division) = context?.openActivity<DivisionActivity> { putExtra(EXTRA_DIVISION, division) }
     fun toMember() = findNavController().navigate(R.id.action_event_to_member)
-    fun toSpending() = EventFragmentDirections.actionEventToSpending(args.eventArgs.divisionList[0]).navigate(this)
+    fun toSpending() = EventFragmentDirections.actionEventToSpending(args.event.divisionList[0]).navigate(this)
     fun toMeeting() = context?.openActivity<CreateScheduleActivity>()
     fun toReport() = context?.openActivity<ReportActivity>()
 
