@@ -65,6 +65,10 @@
             android:id="@+id/action_event_to_member"
             app:destination="@id/member_fragment"
             app:enterAnim="@anim/anim_slide_up" />
+        <action
+            android:id="@+id/action_event_to_spending"
+            app:destination="@id/spending_fragment"
+            app:enterAnim="@anim/anim_slide_up" />
     </fragment>
 
     <fragment
@@ -85,6 +89,15 @@
         <action
             android:id="@+id/action_member_to_add_person_dialog"
             app:destination="@id/add_person_dialog" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/spending_fragment"
+        android:name="com.zhalz.eventy.presentation.report.division.spending.SpendingFragment"
+        android:label="Spending" >
+        <argument
+            android:name="division"
+            app:argType="com.zhalz.eventy.domain.model.Division" />
     </fragment>
 
     <dialog
