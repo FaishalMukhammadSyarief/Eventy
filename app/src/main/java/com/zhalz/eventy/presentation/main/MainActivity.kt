@@ -2,9 +2,6 @@ package com.zhalz.eventy.presentation.main
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.updateLayoutParams
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -14,7 +11,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.crocodic.core.base.activity.NoViewModelActivity
 import com.crocodic.core.extension.openActivity
 import com.crocodic.core.extension.tos
-import com.google.android.material.appbar.AppBarLayout
 import com.zhalz.eventy.R
 import com.zhalz.eventy.data.user
 import com.zhalz.eventy.databinding.ActivityMainBinding
@@ -45,12 +41,6 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.toolbar)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.updateLayoutParams<AppBarLayout.LayoutParams> { topMargin = systemBars.top }
-            insets
-        }
 
         binding.activity = this
 
