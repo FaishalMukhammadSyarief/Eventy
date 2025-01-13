@@ -36,21 +36,7 @@
                     app:titleCentered="true"
                     app:titleTextAppearance="@style/ToolbarTitleAppearance"
                     tools:ignore="RtlSymmetry"
-                    tools:title="@string/app_name">
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/iv_profile"
-                        style="@style/MyRoundImage"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="end|center_horizontal"
-                        android:layout_marginEnd="8dp"
-                        android:elevation="8dp"
-                        android:onClick="@{() -> activity.toProfile()}"
-                        android:src="@drawable/faishal"
-                        tools:ignore="ImageContrastCheck" />
-
-                </com.google.android.material.appbar.MaterialToolbar>
+                    tools:title="@string/app_name" />
 
             </com.google.android.material.appbar.AppBarLayout>
 

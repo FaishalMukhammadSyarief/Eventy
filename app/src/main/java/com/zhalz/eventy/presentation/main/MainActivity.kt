@@ -20,10 +20,8 @@ import com.zhalz.eventy.presentation.profile.ProfileActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_PERSON
 import com.zhalz.eventy.utils.extension.fadeIn
 import com.zhalz.eventy.utils.extension.fadeOut
-import com.zhalz.eventy.utils.extension.gone
 import com.zhalz.eventy.utils.extension.slideDown
 import com.zhalz.eventy.utils.extension.slideUp
-import com.zhalz.eventy.utils.extension.visible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -79,23 +77,19 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
                 R.id.home_fragment -> binding.apply {
                     if (bottomApp.translationY != 0f) bottomApp.slideUp()
                     if (fabCreate.alpha == 0f) fabCreate.fadeIn()
-                    ivProfile.visible()
                 }
                 R.id.notification_fragment -> binding.apply {
                     if (bottomApp.translationY != 0f) bottomApp.slideUp()
                     if (fabCreate.alpha == 0f) fabCreate.fadeIn()
-                    ivProfile.visible()
                 }
                 else -> binding.apply {
                     bottomApp.slideDown()
                     fabCreate.fadeOut()
-                    ivProfile.gone()
                 }
             }
         }
     }
 
-    fun toProfile() = openActivity<ProfileActivity> { putExtra(EXTRA_PERSON, user) }
     fun toCreate() = navController.navigate(R.id.create_event_fragment)
 
     override fun onSupportNavigateUp() =
