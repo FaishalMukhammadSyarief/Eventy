@@ -15,8 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/margin_screen"
-        android:layout_marginTop="@dimen/margin_screen"
-        android:fitsSystemWindows="true">
+        android:layout_marginTop="48dp">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_profile"
@@ -47,11 +46,11 @@
 
         <TextView
             android:id="@+id/tv_id"
+            textNumber="@{person.id}"
             android:layout_width="wrap_content"
             android:layout_height="37dp"
             android:layout_marginStart="12dp"
             android:gravity="center"
-            textNumber="@{person.id}"
             app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
             app:layout_constraintStart_toEndOf="@+id/iv_profile"
             tools:text="@string/_081313327023" />
@@ -60,7 +59,6 @@
             android:id="@+id/separator"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_marginTop="@dimen/margin_screen"
             android:background="@color/text_grey"
             app:layout_constraintBottom_toBottomOf="parent" />
 
