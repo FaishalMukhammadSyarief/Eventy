@@ -1,4 +1,4 @@
-package com.zhalz.eventy.presentation.create_event
+package com.zhalz.eventy.presentation.main.create_event
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

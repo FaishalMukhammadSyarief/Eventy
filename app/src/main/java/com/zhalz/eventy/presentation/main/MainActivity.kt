@@ -16,7 +16,7 @@ import com.zhalz.eventy.data.user
 import com.zhalz.eventy.databinding.ActivityMainBinding
 import com.zhalz.eventy.databinding.NavHeaderBinding
 import com.zhalz.eventy.presentation.auth.landing.LandingActivity
-import com.zhalz.eventy.presentation.create_event.CreateEventActivity
+import com.zhalz.eventy.presentation.main.create_event.CreateEventActivity
 import com.zhalz.eventy.presentation.profile.ProfileActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_PERSON
 import com.zhalz.eventy.utils.extension.fadeIn

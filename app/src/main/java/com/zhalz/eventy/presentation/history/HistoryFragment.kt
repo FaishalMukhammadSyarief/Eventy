@@ -1,4 +1,4 @@
-package com.zhalz.eventy.presentation.main.history
+package com.zhalz.eventy.presentation.history
 
 import android.os.Bundle
 import android.view.View

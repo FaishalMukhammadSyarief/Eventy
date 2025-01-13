@@ -1,4 +1,4 @@
-package com.zhalz.eventy.presentation.create_event
+package com.zhalz.eventy.presentation.main.create_event
 
 import com.zhalz.eventy.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

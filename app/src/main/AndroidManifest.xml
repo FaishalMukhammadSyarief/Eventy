@@ -26,7 +26,7 @@
             android:name=".presentation.create_schedule.CreateScheduleActivity"
             android:exported="false" />
         <activity
-            android:name=".presentation.create_event.CreateEventActivity"
+            android:name=".presentation.main.create_event.CreateEventActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.member.MemberActivity"
