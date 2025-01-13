@@ -77,9 +77,11 @@
                 android:layout_gravity="bottom"
                 android:backgroundTint="@color/white"
                 app:contentInsetStart="0dp"
-                app:fabAlignmentMode="end"
+                app:fabAlignmentMode="center"
                 app:fabAnchorMode="cradle"
-                app:fabCradleVerticalOffset="42dp"
+                app:fabCradleMargin="12dp"
+                app:fabCradleRoundedCornerRadius="12dp"
+                app:fabCradleVerticalOffset="0dp"
                 app:paddingBottomSystemWindowInsets="false"
                 tools:ignore="VisualLintBottomAppBar">
 
@@ -89,11 +91,11 @@
                     android:layout_height="wrap_content"
                     android:background="@color/transparent"
                     app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
-                    app:itemIconSize="20dp"
+                    app:itemIconSize="18dp"
                     app:itemIconTint="@color/selector_icon_color"
                     app:itemRippleColor="@color/transparent"
-                    app:itemTextColor="@color/selector_icon_color"
-                    app:labelVisibilityMode="labeled"
+                    app:itemTextColor="@color/dark_blue"
+                    app:labelVisibilityMode="selected"
                     app:menu="@menu/menu_bottom_app"
                     tools:ignore="VisualLintBottomNav" />
 
@@ -103,14 +105,14 @@
                 android:id="@+id/fab_create"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="@color/yellow"
                 android:contentDescription="@string/cd_add_event"
                 android:onClick="@{() -> activity.toCreate()}"
                 android:src="@drawable/ic_add"
                 app:layout_anchor="@id/bottom_app"
                 app:maxImageSize="40dp"
                 app:shapeAppearance="@style/RoundCorner"
-                app:tint="@color/gray"
+                app:tint="@color/white"
                 tools:ignore="ImageContrastCheck" />
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>

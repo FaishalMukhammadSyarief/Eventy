@@ -31,7 +31,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     private val appBarConfiguration by lazy {
-        AppBarConfiguration(setOf(R.id.home_fragment, R.id.history_fragment, R.id.notification_fragment), binding.drawerLayout)
+        AppBarConfiguration(setOf(R.id.home_fragment, R.id.notification_fragment), binding.drawerLayout)
     }
 
     private val navController by lazy {

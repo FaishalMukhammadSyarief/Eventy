@@ -12,14 +12,10 @@
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_home_to_schedule"
-            app:destination="@id/schedule_fragment"
-            app:popUpTo="@id/home_fragment"
-            app:popUpToInclusive="false" />
+            app:destination="@id/schedule_fragment" />
         <action
             android:id="@+id/action_home_to_history"
-            app:destination="@id/history_fragment"
-            app:popUpTo="@id/home_fragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/history_fragment" />
         <action
             android:id="@+id/action_home_to_event"
             app:destination="@id/event_fragment"
@@ -45,7 +41,7 @@
     <fragment
         android:id="@+id/notification_fragment"
         android:name="com.zhalz.eventy.presentation.main.notification.NotificationFragment"
-        android:label="@string/notifikasi"
+        android:label="@string/notification"
         tools:layout="@layout/fragment_notification" />
 
     <fragment
@@ -94,7 +90,8 @@
     <fragment
         android:id="@+id/spending_fragment"
         android:name="com.zhalz.eventy.presentation.report.division.spending.SpendingFragment"
-        android:label="Spending" >
+        android:label="Spending"
+        tools:layout="@layout/fragment_spending">
         <argument
             android:name="division"
             app:argType="com.zhalz.eventy.domain.model.Division" />

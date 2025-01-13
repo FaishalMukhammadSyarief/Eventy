@@ -68,7 +68,7 @@
     </style>
 
     <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
-        <item name="android:color">@color/transparent</item>
+        <item name="android:color">@color/blue</item>
     </style>
 
     <style name="MyExtendedFAB">
