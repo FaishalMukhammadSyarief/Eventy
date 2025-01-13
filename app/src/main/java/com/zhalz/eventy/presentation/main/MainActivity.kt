@@ -62,7 +62,7 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
 
         binding.navView.setNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.contact_fragment -> navController.navigate(R.id.action_home_to_contact)
+                R.id.contact_fragment -> navController.navigate(R.id.contact_fragment)
                 R.id.menu_help -> tos("HELP")
                 R.id.menu_logout -> openActivity<LandingActivity> { finishAffinity() }
             }

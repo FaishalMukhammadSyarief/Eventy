@@ -21,9 +21,6 @@
             app:destination="@id/event_fragment"
             app:enterAnim="@anim/anim_slide_up"
             app:popExitAnim="@anim/anim_slide_down" />
-        <action
-            android:id="@+id/action_home_to_contact"
-            app:destination="@id/contact_fragment" />
     </fragment>
 
     <fragment
