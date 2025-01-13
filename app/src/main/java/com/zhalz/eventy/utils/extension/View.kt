@@ -75,13 +75,13 @@ fun View.slideUp(): ObjectAnimator = ObjectAnimator.ofFloat(this, TRANSLATION_Y,
 }
 
 fun View.fadeOut(): ObjectAnimator = ObjectAnimator.ofFloat(this, ALPHA, 1f, 0f).apply {
-    duration = 400
+    duration = 300
     onFinish { gone() }
     start()
 }
 
 fun View.fadeIn(): ObjectAnimator = ObjectAnimator.ofFloat(this, ALPHA, 0f, 1f).apply {
-    duration = 400
+    duration = 300
     onStart { visible() }
     start()
 }

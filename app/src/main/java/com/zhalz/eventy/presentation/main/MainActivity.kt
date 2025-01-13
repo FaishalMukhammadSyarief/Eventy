@@ -82,11 +82,6 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
                     if (fabCreate.alpha == 0f) fabCreate.fadeIn()
                     ivProfile.visible()
                 }
-                R.id.history_fragment -> binding.apply {
-                    if (bottomApp.translationY != 0f) bottomApp.slideUp()
-                    if (fabCreate.alpha == 0f) fabCreate.fadeIn()
-                    ivProfile.visible()
-                }
                 R.id.notification_fragment -> binding.apply {
                     if (bottomApp.translationY != 0f) bottomApp.slideUp()
                     if (fabCreate.alpha == 0f) fabCreate.fadeIn()
