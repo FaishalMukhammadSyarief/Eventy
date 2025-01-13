@@ -14,7 +14,6 @@ import com.zhalz.eventy.data.teamList
 import com.zhalz.eventy.databinding.FragmentAddDivisionBinding
 import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.domain.model.Person
-import com.zhalz.eventy.presentation.main.create_event.CreateEventActivity
 import com.zhalz.eventy.utils.extension.setDropdown
 
 class AddDivisionFragment : DialogFragment() {
@@ -59,7 +58,6 @@ class AddDivisionFragment : DialogFragment() {
 
     fun createDivision() {
         divisionList.add(Division(id, title, selectedColor, binding.atvCoordinator.text.toString()))
-        (activity as CreateEventActivity).updateDivisionList()
         dismiss()
     }
 

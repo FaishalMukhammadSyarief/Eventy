@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.zhalz.eventy.presentation.main.create_event.CreateEventFragment" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_screen">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                style="@style/MyRoundImage"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginBottom="12dp"
+                android:src="@drawable/faishal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/title"
+                android:textSize="14sp" />
+
+            <!--  TITLE  -->
+            <com.zhalz.eventy.presentation.custom_view.TextLayoutNormal
+                android:id="@+id/etl_phone"
+                style="@style/MyTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false"
+                app:layout_constraintTop_toBottomOf="@+id/tv_welcome">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/MyEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/enter_title"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    tools:ignore="VisualLintTextFieldSize,TextContrastCheck,DuplicateSpeakableTextCheck" />
+            </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/description"
+                android:textSize="14sp" />
+
+            <com.zhalz.eventy.presentation.custom_view.TextLayoutNormal
+                android:id="@+id/etl_instagram"
+                style="@style/MyTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/MyEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/enter_description"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+            </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/location"
+                android:textSize="14sp" />
+
+            <!--  LOCATION  -->
+            <com.zhalz.eventy.presentation.custom_view.TextLayoutNormal
+                style="@style/MyTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/MyEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/enter_location"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    tools:ignore="VisualLintTextFieldSize,TextContrastCheck,DuplicateSpeakableTextCheck" />
+            </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/date"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.zhalz.eventy.presentation.custom_view.TextLayoutNormal
+                    android:id="@+id/etl_start_date"
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_start_date"
+                        style="@style/MyEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:focusable="false"
+                        android:hint="@string/start_date"
+                        android:inputType="none"
+                        android:textColor="@color/black"
+                        tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+                </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
+
+                <com.zhalz.eventy.presentation.custom_view.TextLayoutNormal
+                    android:id="@+id/etl_due_date"
+                    style="@style/MyTextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_due_date"
+                        style="@style/MyEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:focusable="false"
+                        android:hint="@string/due_date"
+                        android:inputType="none"
+                        android:textColor="@color/black"
+                        tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+                </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/category"
+                android:textSize="14sp" />
+
+            <!--  CATEGORY  -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etl_category"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_coordinator"
+                app:boxCornerRadiusBottomEnd="@dimen/edit_text_radius"
+                app:boxCornerRadiusBottomStart="@dimen/edit_text_radius"
+                app:boxCornerRadiusTopEnd="@dimen/edit_text_radius"
+                app:boxCornerRadiusTopStart="@dimen/edit_text_radius"
+                app:boxStrokeColor="@color/black"
+                app:errorEnabled="true"
+                app:hintEnabled="false">
+
+                <AutoCompleteTextView
+                    android:id="@+id/atv_category"
+                    style="@style/MyEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:hint="@string/enter_category"
+                    android:inputType="none"
+                    android:paddingHorizontal="16dp"
+                    android:textColor="@color/black"
+                    tools:ignore="VisualLintTextFieldSize" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/file"
+                android:textSize="14sp" />
+
+            <com.zhalz.eventy.presentation.custom_view.TextLayoutNormal
+                style="@style/MyTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/MyEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/choose_file"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+            </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/division"
+                android:textSize="14sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_division"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="1"
+                tools:listitem="@layout/item_division" />
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/btn_google"
+                style="@style/MyExtendedFAB"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:onClick="@{() -> fragment.showDialog()}"
+                android:text="@string/add_division"
+                app:icon="@drawable/ic_add"
+                app:iconTint="@color/black"
+
+                app:layout_constraintEnd_toStartOf="@+id/anchor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/anchor"
+                tools:ignore="VisualLintButtonSize" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

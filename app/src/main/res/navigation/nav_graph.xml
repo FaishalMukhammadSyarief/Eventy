@@ -97,9 +97,24 @@
             app:argType="com.zhalz.eventy.domain.model.Division" />
     </fragment>
 
+    <fragment
+        android:id="@+id/create_event_fragment"
+        android:name="com.zhalz.eventy.presentation.main.create_event.CreateEventFragment"
+        android:label="Create Event"
+        tools:layout="@layout/fragment_create_event">
+        <action
+            android:id="@+id/action_create_event_to_add_division_dialog"
+            app:destination="@id/add_division_dialog" />
+    </fragment>
+
     <dialog
         android:id="@+id/add_person_dialog"
         android:name="com.zhalz.eventy.presentation.dialog.add_person.AddPersonFragment"
         tools:layout="@layout/fragment_add_person" />
+
+    <dialog
+        android:id="@+id/add_division_dialog"
+        android:name="com.zhalz.eventy.presentation.dialog.add_division.AddDivisionFragment"
+        tools:layout="@layout/fragment_add_division" />
 
 </navigation>

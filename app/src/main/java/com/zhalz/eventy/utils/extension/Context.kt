@@ -8,7 +8,6 @@ import android.view.MenuItem
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.annotation.ColorInt
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
@@ -34,7 +33,7 @@ fun Activity.getWindowBackgroundColor() : Int {
 
 fun Activity.getAnim(animation: Int): Animation = AnimationUtils.loadAnimation(this, animation)
 
-fun AppCompatActivity.showMaterialDatePicker(onDateSelected: (String) -> Unit) {
+fun Fragment.showMaterialDatePicker(onDateSelected: (String) -> Unit) {
     val datePicker = MaterialDatePicker.Builder.datePicker()
         .setTitleText("Select Start Date")
         .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
@@ -46,7 +45,7 @@ fun AppCompatActivity.showMaterialDatePicker(onDateSelected: (String) -> Unit) {
         onDateSelected(formatter)
     }
 
-    datePicker.show(supportFragmentManager, "MATERIAL_DATE_PICKER")
+    datePicker.show(requireActivity().supportFragmentManager, "MATERIAL_DATE_PICKER")
 }
 
 fun Fragment.addMenu(
