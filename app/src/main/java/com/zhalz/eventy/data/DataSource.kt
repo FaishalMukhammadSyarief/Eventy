@@ -43,4 +43,6 @@ val eventList = mutableListOf(
         "25 Aug, 2024",
         "Project Manager", "City Hall", "Music", divisionList, managerList, teamList, teamList),
     Event(2, "Tech Conference", "lorem ipsum dolor sit amet","26 Aug, 2024", "Member - Divisi Produksi", "Sampookong", "Expo", divisionList, managerList2, teamList, teamList),
+    Event(2, "Tech Conference", "lorem ipsum dolor sit amet","26 Aug, 2024", "Member - Divisi Produksi", "Sampookong", "Expo", divisionList, managerList2, teamList, teamList),
+    Event(2, "Tech Conference", "lorem ipsum dolor sit amet","26 Aug, 2024", "Member - Divisi Produksi", "Sampookong", "Expo", divisionList, managerList2, teamList, teamList),
 )
