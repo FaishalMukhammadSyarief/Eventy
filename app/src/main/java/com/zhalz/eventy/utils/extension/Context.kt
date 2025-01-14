@@ -1,7 +1,6 @@
 package com.zhalz.eventy.utils.extension
 
 import android.app.Activity
-import android.util.TypedValue
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -22,13 +21,6 @@ import java.util.Locale
 @Suppress("DEPRECATION")
 fun Activity.setStatusBarColor(@ColorInt color: Int) {
     window.statusBarColor = color
-}
-
-fun Activity.getWindowBackgroundColor() : Int {
-    val typedValue = TypedValue().also {
-        theme.resolveAttribute(android.R.attr.windowBackground, it, true)
-    }
-    return typedValue.data
 }
 
 fun Activity.getAnim(animation: Int): Animation = AnimationUtils.loadAnimation(this, animation)
@@ -59,8 +51,15 @@ fun Fragment.addMenu(
         override fun onMenuItemSelected(menuItem: MenuItem): Boolean =
             onMenuItemSelected(menuItem)
 
-    }, this)
+    }, viewLifecycleOwner)
 }
+
+fun Fragment.clearMenu() =
+    requireActivity().addMenuProvider(object : MenuProvider {
+        override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) = menu.clear()
+
+        override fun onMenuItemSelected(menuItem: MenuItem): Boolean = false
+    }, viewLifecycleOwner)
 
 fun Fragment.setupTabLayout(
     viewPager2: ViewPager2?,

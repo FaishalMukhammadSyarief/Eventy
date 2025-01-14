@@ -16,8 +16,6 @@ import com.zhalz.eventy.data.user
 import com.zhalz.eventy.databinding.ActivityMainBinding
 import com.zhalz.eventy.databinding.NavHeaderBinding
 import com.zhalz.eventy.presentation.auth.landing.LandingActivity
-import com.zhalz.eventy.presentation.profile.ProfileActivity
-import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_PERSON
 import com.zhalz.eventy.utils.extension.fadeIn
 import com.zhalz.eventy.utils.extension.fadeOut
 import com.zhalz.eventy.utils.extension.slideDown
@@ -55,7 +53,10 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
         val header = binding.navView.getHeaderView(0)
         DataBindingUtil.bind<NavHeaderBinding>(header)?.apply {
             person = user
-            root.setOnClickListener { openActivity<ProfileActivity> { putExtra(EXTRA_PERSON, user) } }
+            root.setOnClickListener {
+                navController.navigate(R.id.profile_fragment)
+                binding.drawerLayout.closeDrawers()
+            }
         }
 
         binding.navView.setNavigationItemSelectedListener {

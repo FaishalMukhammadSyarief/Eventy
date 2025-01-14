@@ -95,6 +95,12 @@
     </fragment>
 
     <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.zhalz.eventy.presentation.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
         android:id="@+id/create_event_fragment"
         android:name="com.zhalz.eventy.presentation.main.create_event.CreateEventFragment"
         android:label="Create Event"
