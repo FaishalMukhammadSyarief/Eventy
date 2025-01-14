@@ -151,7 +151,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_screen"
             android:text="@string/description"
-            android:textColor="@color/black"
+            android:textColor="@color/dark_blue"
             android:textSize="@dimen/text_medium"
             app:fontFamily="@font/poppins_bold" />
 
@@ -169,7 +169,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp">
+            android:layout_marginTop="32dp">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fab_location"
@@ -271,9 +271,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_screen"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:text="@string/division"
-            android:textColor="@color/black"
+            android:textColor="@color/dark_blue"
             android:textSize="@dimen/text_medium"
             app:fontFamily="@font/poppins_bold" />
 
