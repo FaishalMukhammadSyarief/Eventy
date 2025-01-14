@@ -63,7 +63,7 @@
         android:ellipsize="end"
         android:maxLines="5"
         android:text="The layout of the stage is great. But i have several suggestion about the left part."
-        android:textSize="@dimen/text_default"
+        android:textSize="@dimen/text_normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_profile"
         app:layout_constraintTop_toBottomOf="@+id/tv_name"

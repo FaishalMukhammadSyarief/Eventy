@@ -130,7 +130,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/don_t_receive_the_otp"
-                    android:textSize="@dimen/text_default" />
+                    android:textSize="@dimen/text_normal" />
 
                 <Button
                     style="@style/Widget.Material3.Button.TextButton"
@@ -138,7 +138,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/resend_otp"
                     android:textColor="@color/blue"
-                    android:textSize="@dimen/text_default"
+                    android:textSize="@dimen/text_normal"
                     app:fontFamily="@font/poppins_bold"
                     tools:ignore="TextContrastCheck" />
             </LinearLayout>

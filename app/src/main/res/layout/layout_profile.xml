@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="person"
+            type="com.zhalz.eventy.domain.model.Person" />
+
+        <variable
+            name="isUser"
+            type="Boolean" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_slightly_round"
+        android:backgroundTint="@color/dark_blue"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="32dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_profile"
+            style="@style/MyRoundImage"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            android:src="@drawable/faishal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/white"
+            app:strokeWidth="2dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="-2dp"
+            android:layout_marginBottom="-2dp"
+            android:backgroundTint="@color/white"
+            android:contentDescription="@string/edit"
+            android:src="@drawable/ic_pencil"
+            app:fabCustomSize="32dp"
+            android:visibility="@{isUser ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
+            app:layout_constraintEnd_toEndOf="@+id/iv_profile"
+            app:maxImageSize="12dp"
+            app:shapeAppearance="@style/RoundCorner"
+            app:tint="@color/dark_blue"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@{person.name}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_large"
+            app:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintTop_toBottomOf="@+id/iv_profile"
+            tools:text="@string/faishal_mukhammad" />
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{person.phone}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_normal"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            tools:text="@string/_081313327023" />
+
+        <TextView
+            android:id="@+id/tv_events"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="12"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_title"
+            app:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_phone"
+            tools:text="12" />
+
+        <TextView
+            android:id="@+id/tv_tasks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="36"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_title"
+            app:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintEnd_toStartOf="@+id/tv_events"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_phone"
+            tools:text="36" />
+
+        <TextView
+            android:id="@+id/tv_friends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="52"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_title"
+            app:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_events"
+            app:layout_constraintTop_toBottomOf="@+id/tv_phone"
+            tools:text="52" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/events"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_normal"
+            app:layout_constraintEnd_toEndOf="@+id/tv_events"
+            app:layout_constraintStart_toStartOf="@+id/tv_events"
+            app:layout_constraintTop_toBottomOf="@+id/tv_events" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/friends"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_normal"
+            app:layout_constraintEnd_toEndOf="@+id/tv_tasks"
+            app:layout_constraintStart_toStartOf="@+id/tv_tasks"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tasks" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tasks"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_normal"
+            app:layout_constraintEnd_toEndOf="@+id/tv_friends"
+            app:layout_constraintStart_toStartOf="@+id/tv_friends"
+            app:layout_constraintTop_toBottomOf="@+id/tv_friends" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fab_follow"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/white"
+            android:text="@string/add_friend"
+            android:textColor="@color/dark_blue"
+            android:textSize="@dimen/text_default"
+            app:fontFamily="@font/poppins_semi_bold"
+            app:icon="@drawable/ic_add"
+            app:iconSize="24dp"
+            app:iconTint="@color/dark_blue"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10"
+            app:shapeAppearance="@style/RoundCorner"
+            tools:ignore="ImageContrastCheck,VisualLintOverlap,TouchTargetSizeCheck,TextSizeCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -37,7 +37,7 @@
             android:text="@string/sign_up"
             android:textAllCaps="true"
             android:textColor="@color/dark_blue"
-            android:textSize="@dimen/text_large"
+            android:textSize="@dimen/text_very_large"
             app:fontFamily="@font/poppins_bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -161,7 +161,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/already_have_an_account"
-                android:textSize="@dimen/text_default" />
+                android:textSize="@dimen/text_normal" />
 
             <Button
                 style="@style/Widget.Material3.Button.TextButton"
@@ -170,7 +170,7 @@
                 android:onClick="@{() -> activity.toLogin()}"
                 android:text="@string/login_now"
                 android:textColor="@color/blue"
-                android:textSize="@dimen/text_default"
+                android:textSize="@dimen/text_normal"
                 app:fontFamily="@font/poppins_bold" />
         </LinearLayout>
 

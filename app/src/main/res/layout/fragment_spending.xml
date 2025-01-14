@@ -28,7 +28,7 @@
             android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="@string/spending_rp_350_000"
-            android:textSize="@dimen/text_large"
+            android:textSize="@dimen/text_very_large"
             app:fontFamily="@font/poppins_semi_bold" />
 
         <View

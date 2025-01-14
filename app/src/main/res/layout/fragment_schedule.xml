@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/august"
-            android:textSize="@dimen/text_large"
+            android:textSize="@dimen/text_very_large"
             app:fontFamily="@font/poppins_semi_bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
             android:text="@string/july"
-            android:textSize="@dimen/text_large"
+            android:textSize="@dimen/text_very_large"
             app:fontFamily="@font/poppins_semi_bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rv_1" />

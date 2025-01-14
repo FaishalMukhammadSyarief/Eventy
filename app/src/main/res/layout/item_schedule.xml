@@ -49,7 +49,7 @@
                 android:layout_marginStart="@dimen/margin_screen"
                 android:text="@{data.date}"
                 android:textColor="@color/text_grey"
-                android:textSize="@dimen/text_default"
+                android:textSize="@dimen/text_normal"
                 tools:ignore="TextContrastCheck"
                 tools:text="Aug 10, 10:00 AM" />
 
@@ -59,7 +59,7 @@
                 android:layout_marginStart="@dimen/margin_screen"
                 android:text="@{data.place}"
                 android:textColor="@color/text_grey"
-                android:textSize="@dimen/text_default"
+                android:textSize="@dimen/text_normal"
                 tools:ignore="TextContrastCheck"
                 tools:text="On Google Meet" />
 
