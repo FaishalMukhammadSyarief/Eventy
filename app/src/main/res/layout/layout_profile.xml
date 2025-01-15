@@ -47,8 +47,8 @@
             android:backgroundTint="@color/white"
             android:contentDescription="@string/edit"
             android:src="@drawable/ic_pencil"
-            app:fabCustomSize="32dp"
             android:visibility="@{isUser ? View.VISIBLE : View.GONE}"
+            app:fabCustomSize="32dp"
             app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
             app:layout_constraintEnd_toEndOf="@+id/iv_profile"
             app:maxImageSize="12dp"
@@ -144,6 +144,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_tasks" />
 
         <TextView
+            android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tasks"
@@ -162,11 +163,11 @@
             android:text="@string/add_friend"
             android:textColor="@color/dark_blue"
             android:textSize="@dimen/text_default"
+            android:visibility="@{isUser ? View.VISIBLE : View.GONE}"
             app:fontFamily="@font/poppins_semi_bold"
             app:icon="@drawable/ic_add"
             app:iconSize="24dp"
             app:iconTint="@color/dark_blue"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView10"

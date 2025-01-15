@@ -169,5 +169,6 @@
     <string name="friends">Friends</string>
     <string name="events">Events</string>
     <string name="tasks">Tasks</string>
+    <string name="mutual_event">Mutual Event</string>
 
 </resources>

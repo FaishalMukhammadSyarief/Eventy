@@ -82,7 +82,7 @@
 
     <style name="MyFAB">
         <item name="android:backgroundTint">@color/white</item>
-        <item name="tint">@color/blue</item>
+        <item name="tint">@color/dark_blue</item>
         <item name="elevation">3dp</item>
         <item name="fabCustomSize">60dp</item>
         <item name="android:layout_marginTop">4dp</item>
@@ -91,7 +91,7 @@
     <!--  TEXT APPEARANCE  -->
     <style name="ButtonTitle">
         <item name="android:textSize">@dimen/text_normal</item>
-        <item name="android:textColor">@color/blue</item>
+        <item name="android:textColor">@color/dark_blue</item>
     </style>
 
 </resources>
