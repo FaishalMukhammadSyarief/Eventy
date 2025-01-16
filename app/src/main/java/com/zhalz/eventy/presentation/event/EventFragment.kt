@@ -13,7 +13,6 @@ import com.zhalz.eventy.data.divisionList
 import com.zhalz.eventy.databinding.FragmentEventBinding
 import com.zhalz.eventy.databinding.ItemDivisionBinding
 import com.zhalz.eventy.domain.model.Division
-import com.zhalz.eventy.presentation.create_schedule.CreateScheduleActivity
 import com.zhalz.eventy.presentation.division.DivisionActivity
 import com.zhalz.eventy.presentation.report.ReportActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
@@ -51,7 +50,7 @@ class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event
     private fun toDetail(division: Division) = context?.openActivity<DivisionActivity> { putExtra(EXTRA_DIVISION, division) }
     fun toMember() = findNavController().navigate(R.id.action_event_to_member)
     fun toSpending() = EventFragmentDirections.actionEventToSpending(args.event.divisionList[0]).navigate(this)
-    fun toMeeting() = context?.openActivity<CreateScheduleActivity>()
+    fun toMeeting() = findNavController().navigate(R.id.action_event_to_meeting)
     fun toReport() = context?.openActivity<ReportActivity>()
 
 }

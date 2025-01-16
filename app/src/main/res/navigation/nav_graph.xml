@@ -62,6 +62,10 @@
             android:id="@+id/action_event_to_spending"
             app:destination="@id/spending_fragment"
             app:enterAnim="@anim/anim_slide_up" />
+        <action
+            android:id="@+id/action_event_to_meeting"
+            app:destination="@id/meeting_fragment"
+            app:enterAnim="@anim/anim_slide_up" />
     </fragment>
 
     <fragment
@@ -109,6 +113,12 @@
             android:id="@+id/action_create_event_to_add_division_dialog"
             app:destination="@id/add_division_dialog" />
     </fragment>
+
+    <fragment
+        android:id="@+id/meeting_fragment"
+        android:name="com.zhalz.eventy.presentation.meeting.MeetingFragment"
+        android:label="Meeting"
+        tools:layout="@layout/fragment_meeting" />
 
     <dialog
         android:id="@+id/add_person_dialog"
