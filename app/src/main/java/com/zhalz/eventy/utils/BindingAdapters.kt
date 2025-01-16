@@ -7,8 +7,13 @@ import androidx.databinding.BindingAdapter
 import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.tabs.TabLayout
+import com.zen.overlapimagelistview.OverlapImageListView
 import com.zhalz.eventy.domain.model.Person
 import com.zhalz.eventy.utils.extension.formatDate
+import com.zhalz.eventy.utils.extension.toBitmap
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.launch
 
 @BindingAdapter("attendees")
 fun TextView.formatAttendees(attendant: Int) =
@@ -69,3 +74,17 @@ fun TextView.setYear(date: String): String =
 @BindingAdapter("setDate")
 fun TextView.setDate(date: String): String =
     date.formatDate("dd MMM yyyy").also { this.text = it }
+
+@BindingAdapter("setTime")
+fun TextView.setTime(date: String): String =
+    date.formatDate("HH : mm").also { this.text = it }
+
+@BindingAdapter("listImage")
+fun OverlapImageListView.setOverlapImages(imageList: List<Int>) {
+    CoroutineScope(Main).launch {
+        val bitmapList = ArrayList(
+            imageList.map { context.toBitmap(it) }
+        )
+        this@setOverlapImages.imageList = bitmapList
+    }
+}

@@ -53,41 +53,44 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
-    /*  J UNIT  */
+    /*  J Unit  */
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
 
-    /*  ESPRESSO  */
+    /*  Espresso  */
     androidTestImplementation(libs.androidx.espresso.core)
 
-    /*  HILT  */
+    /*  Hilt  */
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
 
-    /*  FIREBASE  */
+    /*  Firebase  */
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
 
-    /*  CROCODIC CORE  */
+    /*  Crocodic Core  */
     implementation(libs.androidcoreproject)
 
-    /*  NAVIGATION  */
+    /*  Navigation  */
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
 
-    /*  SWIPE REFRESH  */
+    /*  Swipe Refresh  */
     implementation (libs.androidx.swiperefreshlayout)
 
-    /*  GLIDE  */
+    /*  Glide  */
     implementation (libs.glide)
 
-    /*  LOTTIE  */
+    /*  Lottie  */
     implementation (libs.lottie)
 
-    /*  VIEW PAGER II  */
+    /*  View Pager II  */
     implementation(libs.androidx.viewpager2)
 
-    /*  IMAGE SLIDER  */
+    /*  Image Slider  */
     implementation(libs.imageslideshow)
+
+    /*  Overlapping Image  */
+    implementation(libs.overlapimagelistview)
 
 }

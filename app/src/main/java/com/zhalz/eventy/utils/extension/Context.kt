@@ -1,19 +1,26 @@
 package com.zhalz.eventy.utils.extension
 
 import android.app.Activity
+import android.content.Context
+import android.graphics.Bitmap
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.annotation.ColorInt
+import androidx.annotation.DrawableRes
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions.circleCropTransform
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.zhalz.eventy.presentation.adapter.PagerAdapter
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.withContext
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -74,4 +81,13 @@ fun Fragment.setupTabLayout(
     TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
         tab.text = titles[position]
     }.attach()
+}
+
+suspend fun Context.toBitmap(@DrawableRes drawable: Int): Bitmap = withContext(IO) {
+    Glide.with(this@toBitmap)
+        .asBitmap()
+        .load(drawable)
+        .apply(circleCropTransform())
+        .submit()
+        .get()
 }

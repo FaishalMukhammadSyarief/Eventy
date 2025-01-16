@@ -9,9 +9,15 @@ import com.zhalz.eventy.domain.model.Task
 
 val user = Person(1234567, "Faishal Mukhammad", "faishalmukhammadsyarief@gmail.com", "081313327023", "Faishal Mukhammad Syarief", "_zhalz_", "faishall")
 
+val listImage = listOf(
+    R.drawable.faishal,
+    R.drawable.ship,
+    R.drawable.faishal
+)
+
 val scheduleList = mutableListOf(
-    Schedule(1, "Meeting 1", "Aug 10, 10:00 AM", "On Google Meet", 2),
-    Schedule(2, "Meeting 2", "Aug 10, 03:00 PM", "On Zoom", 4)
+    Schedule(1, "Meeting 1", "2025-01-02 06:33:45", "On Google Meet", 2, listImage),
+    Schedule(2, "Meeting 2", "2025-01-02 06:33:45", "On Zoom", 4, listImage)
 )
 
 val teamList = mutableListOf(
@@ -29,8 +35,8 @@ val managerList2 = mutableListOf(
 )
 
 val taskList = mutableListOf(
-    Task(1092312, "Menyiapkan Panggung", "Augustus 22, 2024", "Saiful", teamList),
-    Task(1239112, "Menyiapkan Banner", "Augustus 23, 2024", "Ikhsandi", teamList),
+    Task(1092312, "Menyiapkan Panggung", "2025-01-02 06:33:45", "Saiful", teamList),
+    Task(1239112, "Menyiapkan Banner", "2025-01-02 06:33:45", "Ikhsandi", teamList),
 )
 
 val divisionList = mutableListOf(

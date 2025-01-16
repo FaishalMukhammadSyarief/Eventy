@@ -6,4 +6,5 @@ data class Schedule (
     val date: String,
     val place: String,
     val attendant: Int,
+    val listImage: List<Int>
 )
