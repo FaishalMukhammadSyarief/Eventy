@@ -13,75 +13,91 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="10dp"
-        app:cardUseCompatPadding="true"
-        app:strokeColor="@color/gray"
-        app:strokeWidth="1dp">
+        app:cardCornerRadius="12dp"
+        app:cardUseCompatPadding="true">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_round_bottom_end"
-            android:backgroundTint="@color/dark_blue"
-            android:elevation="8dp"
-            android:paddingHorizontal="8dp"
-            android:paddingVertical="4dp"
-            android:text="@{data.category}"
-            android:textColor="@color/white"
-            app:fontFamily="@font/poppins_semi_bold"
-            tools:text="Music" />
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/image"
+                android:id="@+id/iv_image"
                 android:layout_width="match_parent"
-                android:layout_height="175dp"
+                android:layout_height="170dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ship"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearance="@style/SlightlyRoundCorner"
                 tools:ignore="ImageContrastCheck" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_event"
+                android:id="@+id/tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="12dp"
-                android:layout_marginVertical="8dp"
+                android:layout_marginTop="16dp"
                 android:text="@{data.title}"
                 android:textSize="@dimen/text_normal"
-                android:textStyle="bold"
-                tools:ignore="VisualLintBounds"
+                app:fontFamily="@font/poppins_semi_bold"
+                app:layout_constraintTop_toBottomOf="@+id/iv_image"
+                tools:layout_editor_absoluteX="12dp"
                 tools:text="Music Festival" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_location"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:tint="@color/gray"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@{data.place}"
+                android:textColor="@color/text_grey"
+                android:textSize="@dimen/text_small"
+
+                app:layout_constraintBottom_toBottomOf="@+id/iv_location"
+                app:layout_constraintStart_toEndOf="@+id/iv_location"
+                app:layout_constraintTop_toTopOf="@+id/iv_location"
+                tools:ignore="VisualLintBounds,TextContrastCheck"
+                tools:text="Main Hall" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_date"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_calendar"
+                android:tint="@color/gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_location" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_date"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="12dp"
+                android:layout_marginStart="6dp"
                 android:text="@{data.date}"
-                android:textSize="@dimen/text_medium"
-                android:textStyle="bold"
-                tools:ignore="VisualLintBounds"
-                tools:text="25 Aug, 2024" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_role"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="12dp"
-                android:layout_marginVertical="8dp"
-                android:text="@{data.role}"
                 android:textColor="@color/text_grey"
                 android:textSize="@dimen/text_small"
-                android:textStyle="bold"
-                tools:ignore="VisualLintBounds,TextContrastCheck"
-                tools:text="Project Manager" />
 
-        </LinearLayout>
+                app:layout_constraintBottom_toBottomOf="@+id/iv_date"
+                app:layout_constraintStart_toEndOf="@+id/iv_date"
+                app:layout_constraintTop_toTopOf="@+id/iv_date"
+                tools:ignore="VisualLintBounds,TextContrastCheck"
+                tools:text="12 Aug 2025" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
 </layout>
