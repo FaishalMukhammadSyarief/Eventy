@@ -21,8 +21,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:baselineAligned="false"
+            android:orientation="horizontal"
             android:weightSum="4">
 
             <FrameLayout
@@ -45,13 +45,13 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:background="@drawable/bg_round_4"
-                    android:paddingHorizontal="12dp"
                     android:backgroundTint="@color/blur"
-                    tools:text="Music Event"
+                    android:paddingHorizontal="12dp"
                     android:text="@{data.title}"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_medium"
-                    app:fontFamily="@font/poppins_semi_bold" />
+                    app:fontFamily="@font/poppins_semi_bold"
+                    tools:text="Music Event" />
 
             </FrameLayout>
 
@@ -63,6 +63,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    setDay="@{data.date}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -71,14 +72,17 @@
                     tools:text="15" />
 
                 <TextView
+                    setMonth="@{data.date}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:textSize="@dimen/text_small"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/text_normal"
                     app:fontFamily="@font/poppins_semi_bold"
                     tools:text="JAN" />
 
                 <TextView
+                    setYear="@{data.date}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"

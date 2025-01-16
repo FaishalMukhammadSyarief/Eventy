@@ -8,6 +8,7 @@ import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.tabs.TabLayout
 import com.zhalz.eventy.domain.model.Person
+import com.zhalz.eventy.utils.extension.formatDate
 
 @BindingAdapter("attendees")
 fun TextView.formatAttendees(attendant: Int) =
@@ -52,3 +53,19 @@ fun TabLayout.setTabIndicatorColor(color: Int) =
 @BindingAdapter("tabSelectedTextColor")
 fun TabLayout.setTabSelectedTextColor(color: Int) =
     this.setTabTextColors(this.tabTextColors?.defaultColor ?: getColor(this.context, color), getColor(this.context, color))
+
+@BindingAdapter("setDay")
+fun TextView.setDay(date: String): String =
+    date.formatDate("dd").also { this.text = it }
+
+@BindingAdapter("setMonth")
+fun TextView.setMonth(date: String): String =
+    date.formatDate("MMM").also { this.text = it }
+
+@BindingAdapter("setYear")
+fun TextView.setYear(date: String): String =
+    date.formatDate("yyyy").also { this.text = it }
+
+@BindingAdapter("setDate")
+fun TextView.setDate(date: String): String =
+    date.formatDate("dd MMM yyyy").also { this.text = it }
