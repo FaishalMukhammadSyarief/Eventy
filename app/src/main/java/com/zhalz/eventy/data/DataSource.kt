@@ -16,8 +16,9 @@ val listImage = listOf(
 )
 
 val scheduleList = mutableListOf(
-    Schedule(1, "Meeting 1", "2025-01-02 06:33:45", "On Google Meet", 2, listImage),
-    Schedule(2, "Meeting 2", "2025-01-02 06:33:45", "On Zoom", 4, listImage)
+    Schedule(1, "Meeting 1", "2025-01-17 06:33:45", "On Google Meet", 2, listImage),
+    Schedule(2, "Meeting 2", "2025-01-16 06:33:45", "On Zoom", 4, listImage),
+    Schedule(2, "Meeting 2", "2025-01-18 06:33:45", "On Zoom", 4, listImage)
 )
 
 val teamList = mutableListOf(

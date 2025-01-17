@@ -170,5 +170,8 @@
     <string name="events">Events</string>
     <string name="tasks">Tasks</string>
     <string name="mutual_event">Mutual Event</string>
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="yesterday">Yesterday</string>
 
 </resources>

@@ -10,6 +10,7 @@ import com.google.android.material.tabs.TabLayout
 import com.zen.overlapimagelistview.OverlapImageListView
 import com.zhalz.eventy.domain.model.Person
 import com.zhalz.eventy.utils.extension.formatDate
+import com.zhalz.eventy.utils.extension.recognizeDate
 import com.zhalz.eventy.utils.extension.toBitmap
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
@@ -58,7 +59,7 @@ fun TextView.setYear(date: String) {
 
 @BindingAdapter("setDate")
 fun TextView.setDate(date: String) {
-    text = date.formatDate("dd MMM yyyy")
+    text = date.recognizeDate(context, "dd MMM yyyy")
 }
 
 /*  Set Color  */
