@@ -14,8 +14,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingVertical="12dp"
-        android:background="@color/transparent">
+        android:background="@color/transparent"
+        android:paddingVertical="12dp">
 
         <View
             android:id="@+id/anchor_1"
@@ -45,7 +45,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_member"
+            android:id="@+id/fab_email"
             style="@style/MyFAB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,22 +59,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:labelFor="@id/fab_member"
+            android:labelFor="@id/fab_email"
             android:text="@string/email"
             android:textAppearance="@style/ButtonTitle"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/fab_member"
-            app:layout_constraintStart_toStartOf="@+id/fab_member"
-            app:layout_constraintTop_toBottomOf="@id/fab_member"
+            app:layout_constraintEnd_toEndOf="@+id/fab_email"
+            app:layout_constraintStart_toStartOf="@+id/fab_email"
+            app:layout_constraintTop_toBottomOf="@id/fab_email"
             tools:ignore="TextContrastCheck" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_meeting"
+            android:id="@+id/fab_facebook"
             style="@style/MyFAB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/linkedin"
-            android:src="@drawable/ic_linkedin"
+            android:contentDescription="@string/facebook"
+            android:src="@drawable/ic_facebook"
             app:layout_constraintEnd_toStartOf="@+id/anchor_1"
             app:layout_constraintStart_toEndOf="@+id/anchor_2"
             app:layout_constraintTop_toTopOf="parent" />
@@ -83,17 +83,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:labelFor="@id/fab_meeting"
-            android:text="@string/linkedin"
+            android:labelFor="@id/fab_facebook"
+            android:text="@string/facebook"
             android:textAppearance="@style/ButtonTitle"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/fab_meeting"
-            app:layout_constraintStart_toStartOf="@+id/fab_meeting"
-            app:layout_constraintTop_toBottomOf="@id/fab_meeting"
+            app:layout_constraintEnd_toEndOf="@+id/fab_facebook"
+            app:layout_constraintStart_toStartOf="@+id/fab_facebook"
+            app:layout_constraintTop_toBottomOf="@id/fab_facebook"
             tools:ignore="TextContrastCheck" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_report"
+            android:id="@+id/fab_instagram"
             style="@style/MyFAB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -104,26 +104,25 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:labelFor="@id/fab_report"
+            android:labelFor="@id/fab_instagram"
             android:text="@string/instagram"
             android:textAppearance="@style/ButtonTitle"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/fab_report"
-            app:layout_constraintStart_toStartOf="@+id/fab_report"
-            app:layout_constraintTop_toBottomOf="@id/fab_report"
+            app:layout_constraintEnd_toEndOf="@+id/fab_instagram"
+            app:layout_constraintStart_toStartOf="@+id/fab_instagram"
+            app:layout_constraintTop_toBottomOf="@id/fab_instagram"
             tools:ignore="TextContrastCheck" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_spending"
+            android:id="@+id/fab_linkedin"
             style="@style/MyFAB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/facebook"
-            android:src="@drawable/ic_facebook"
+            android:contentDescription="@string/linkedin"
+            android:src="@drawable/ic_linkedin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/anchor_3"
             app:layout_constraintTop_toTopOf="parent" />
@@ -132,13 +131,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:labelFor="@id/fab_spending"
-            android:text="@string/facebook"
+            android:labelFor="@id/fab_linkedin"
+            android:text="@string/linkedin"
             android:textAppearance="@style/ButtonTitle"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/fab_spending"
-            app:layout_constraintStart_toStartOf="@+id/fab_spending"
-            app:layout_constraintTop_toBottomOf="@id/fab_spending"
+            app:layout_constraintEnd_toEndOf="@+id/fab_linkedin"
+            app:layout_constraintStart_toStartOf="@+id/fab_linkedin"
+            app:layout_constraintTop_toBottomOf="@id/fab_linkedin"
             tools:ignore="TextContrastCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

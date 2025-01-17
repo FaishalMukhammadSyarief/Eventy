@@ -42,7 +42,7 @@
             app:fontFamily="@font/poppins_bold" />
 
         <include
-            layout="@layout/layout_labeled_fab"
+            layout="@layout/layout_profile_fab"
             app:fragment="@{fragment}" />
 
         <TextView
