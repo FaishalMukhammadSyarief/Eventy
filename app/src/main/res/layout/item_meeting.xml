@@ -40,39 +40,72 @@
                 tools:text="Design Meeting" />
 
             <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{"at " + data.location}'
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_small"
+                app:layout_constraintStart_toStartOf="@+id/tv_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                tools:ignore="TextContrastCheck"
+                tools:text="at Crocodic Work Office" />
+
+            <TextView
                 android:id="@+id/tv_date"
                 setDate="@{data.date}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_grey"
+                android:textColor="@color/gray"
                 android:textSize="@dimen/text_normal"
+                app:fontFamily="@font/poppins_semi_bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="TextContrastCheck"
                 tools:text="Tomorrow" />
 
             <TextView
-                android:id="@+id/tv_time"
+                android:id="@+id/tv_hour"
                 setHour="@{data.date}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/text_grey"
-                android:textSize="@dimen/text_normal"
-                app:layout_constraintStart_toStartOf="@+id/tv_title"
-                app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_small"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_clock"
+                app:layout_constraintStart_toEndOf="@+id/iv_clock"
+                app:layout_constraintTop_toTopOf="@+id/iv_clock"
                 tools:ignore="TextContrastCheck"
-                tools:text="10:00 - 11:00" />
+                tools:text="10 : 00" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_clock"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/ic_clock"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_location" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_share"
+                app:layout_constraintBottom_toBottomOf="@+id/overlapImage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/overlapImage" />
 
             <com.zen.overlapimagelistview.OverlapImageListView
                 android:id="@+id/overlapImage"
                 listImage="@{data.listImage}"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
                 android:layout_marginTop="24dp"
                 app:circleCount="3"
                 app:fillColor="@color/gray"
-                app:layout_constraintTop_toBottomOf="@+id/tv_time"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_hour"
                 app:strokeColor="@color/white"
                 app:strokeWidth="2dp" />
 

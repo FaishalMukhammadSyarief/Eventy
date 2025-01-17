@@ -57,7 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_screen"
-                android:text="@{data.place}"
+                android:text="@{data.location}"
                 android:textColor="@color/text_grey"
                 android:textSize="@dimen/text_normal"
                 tools:ignore="TextContrastCheck"
