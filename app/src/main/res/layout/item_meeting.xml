@@ -53,7 +53,7 @@
 
             <TextView
                 android:id="@+id/tv_time"
-                setTime="@{data.date}"
+                setHour="@{data.date}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"

@@ -61,12 +61,12 @@ fun Fragment.addMenu(
     }, viewLifecycleOwner)
 }
 
-fun Fragment.clearMenu() =
+/*fun Fragment.clearMenu() =
     requireActivity().addMenuProvider(object : MenuProvider {
         override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) = menu.clear()
 
         override fun onMenuItemSelected(menuItem: MenuItem): Boolean = false
-    }, viewLifecycleOwner)
+    }, viewLifecycleOwner)*/
 
 fun Fragment.setupTabLayout(
     viewPager2: ViewPager2?,
@@ -83,11 +83,12 @@ fun Fragment.setupTabLayout(
     }.attach()
 }
 
-suspend fun Context.toBitmap(@DrawableRes drawable: Int): Bitmap = withContext(IO) {
-    Glide.with(this@toBitmap)
-        .asBitmap()
-        .load(drawable)
-        .apply(circleCropTransform())
-        .submit()
-        .get()
-}
+suspend fun Context.toBitmap(@DrawableRes drawable: Int): Bitmap =
+    withContext(IO) {
+        Glide.with(this@toBitmap)
+            .asBitmap()
+            .load(drawable)
+            .apply(circleCropTransform())
+            .submit()
+            .get()
+    }
