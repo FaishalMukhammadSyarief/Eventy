@@ -38,24 +38,6 @@
             app:strokeColor="@color/white"
             app:strokeWidth="2dp" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="-2dp"
-            android:layout_marginBottom="-2dp"
-            android:backgroundTint="@color/white"
-            android:contentDescription="@string/edit"
-            android:src="@drawable/ic_pencil"
-            android:visibility="@{isUser ? View.VISIBLE : View.GONE}"
-            app:fabCustomSize="32dp"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
-            app:layout_constraintEnd_toEndOf="@+id/iv_profile"
-            app:maxImageSize="12dp"
-            app:shapeAppearance="@style/RoundCorner"
-            app:tint="@color/dark_blue"
-            tools:ignore="ImageContrastCheck" />
-
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="match_parent"
@@ -160,19 +142,21 @@
             android:layout_height="42dp"
             android:layout_marginTop="32dp"
             android:backgroundTint="@color/white"
-            android:text="@string/add_friend"
+            android:text="@{isUser ? @string/edit_profile : @string/add_friend}"
             android:textColor="@color/dark_blue"
             android:textSize="@dimen/text_default"
-            android:visibility="@{isUser ? View.VISIBLE : View.GONE}"
             app:fontFamily="@font/poppins_semi_bold"
-            app:icon="@drawable/ic_add"
-            app:iconSize="24dp"
+            app:icon="@{isUser ? @drawable/ic_pencil : @drawable/ic_add}"
+            iconSize="@{isUser ? @dimen/icon_size_user : @dimen/icon_size_default}"
             app:iconTint="@color/dark_blue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView10"
             app:shapeAppearance="@style/RoundCorner"
-            tools:ignore="ImageContrastCheck,VisualLintOverlap,TouchTargetSizeCheck,TextSizeCheck" />
+            tools:icon="@drawable/ic_add"
+            tools:iconSize="24dp"
+            tools:ignore="ImageContrastCheck,VisualLintOverlap,TouchTargetSizeCheck,TextSizeCheck"
+            tools:text="@string/add_friend" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
