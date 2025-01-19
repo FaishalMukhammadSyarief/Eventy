@@ -9,7 +9,6 @@ import com.zhalz.eventy.data.eventList
 import com.zhalz.eventy.databinding.FragmentHistoryBinding
 import com.zhalz.eventy.databinding.ItemHistoryBinding
 import com.zhalz.eventy.domain.model.Event
-import com.zhalz.eventy.utils.extension.addDivider
 import com.zhalz.eventy.utils.extension.navigate
 
 class HistoryFragment : BaseFragment<FragmentHistoryBinding>(R.layout.fragment_history) {
@@ -27,7 +26,6 @@ class HistoryFragment : BaseFragment<FragmentHistoryBinding>(R.layout.fragment_h
     }
 
     private fun initUI() = binding?.rvHistory?.apply {
-        addDivider(requireContext())
         adapter = historyAdapter
     }
 
