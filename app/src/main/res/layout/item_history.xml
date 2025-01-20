@@ -90,6 +90,7 @@
                     android:textSize="11sp"
                     app:fontFamily="@font/poppins_semi_bold"
                     tools:ignore="TextContrastCheck"
+                    android:layout_marginTop="-4dp"
                     tools:text="2025" />
 
             </LinearLayout>

@@ -93,9 +93,9 @@ fun TabLayout.setTabSelectedTextColor(color: Int) =
 
 /*  Overlap Image  */
 @BindingAdapter("listImage")
-fun OverlapImageListView.setOverlapImages(imageList: List<Int>) = CoroutineScope(IO).launch {
-    this@setOverlapImages.imageList = ArrayList(
-        imageList.map { context.toBitmap(it) }
+fun OverlapImageListView.setOverlapImages(images: List<Int>) = CoroutineScope(IO).launch {
+    imageList = ArrayList(
+        images.map { context.toBitmap(it) }
     )
 }
 
