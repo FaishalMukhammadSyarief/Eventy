@@ -11,6 +11,7 @@
 
     <!--  COMPLEMENTARY  -->
     <color name="gray">#6B6A6A</color>
+    <color name="semi_white">#B3FFFFFF</color>
     <color name="text_grey">#AFAFAF</color>
     <color name="light_grey">#EBEBEB</color>
     <color name="light_yellow">#FAECBA</color>

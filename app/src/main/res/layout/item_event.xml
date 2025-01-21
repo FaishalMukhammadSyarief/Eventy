@@ -14,19 +14,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="12dp"
-        app:cardUseCompatPadding="true">
+        app:cardUseCompatPadding="true"
+        app:strokeWidth="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="256dp"
             android:background="@color/white"
             android:orientation="vertical"
-            android:padding="16dp">
+            tools:ignore="TextSizeCheck">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/iv_image"
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ship"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -35,67 +36,73 @@
                 app:shapeAppearance="@style/SlightlyRoundCorner"
                 tools:ignore="ImageContrastCheck" />
 
+            <TextView
+                android:id="@+id/tv_day"
+                setDay="@{data.date}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_large"
+                app:fontFamily="@font/poppins_semi_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TextContrastCheck"
+                tools:text="15" />
+
+            <TextView
+                android:id="@+id/tv_month"
+                setMonth="@{data.date}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="-8dp"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_small"
+                app:fontFamily="@font/poppins_semi_bold"
+                app:layout_constraintEnd_toEndOf="@+id/tv_day"
+                app:layout_constraintStart_toStartOf="@+id/tv_day"
+                app:layout_constraintTop_toBottomOf="@+id/tv_day"
+                tools:ignore="TextContrastCheck"
+                tools:text="JAN" />
+
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_title"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="12dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
                 android:text="@{data.title}"
-                android:textSize="@dimen/text_normal"
-                app:fontFamily="@font/poppins_semi_bold"
-                app:layout_constraintTop_toBottomOf="@+id/iv_image"
-                tools:layout_editor_absoluteX="12dp"
-                tools:text="Music Festival" />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_location"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ic_location"
-                android:tint="@color/gray"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_medium"
+                app:fontFamily="@font/poppins_regular"
+                app:layout_constraintBottom_toTopOf="@+id/tv_location"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+                tools:text="Music Festival" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_location"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginBottom="24dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
                 android:text="@{data.place}"
-                android:textColor="@color/text_grey"
-                android:textSize="@dimen/text_small"
-
-                app:layout_constraintBottom_toBottomOf="@+id/iv_location"
-                app:layout_constraintStart_toEndOf="@+id/iv_location"
-                app:layout_constraintTop_toTopOf="@+id/iv_location"
-                tools:ignore="VisualLintBounds,TextContrastCheck"
+                android:textColor="@color/semi_white"
+                android:textSize="11sp"
+                app:fontFamily="@font/poppins_regular"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tv_title"
+                app:layout_constraintStart_toStartOf="@+id/tv_title"
                 tools:text="Main Hall" />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_date"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:layout_marginTop="12dp"
-                android:src="@drawable/ic_calendar"
-                android:tint="@color/gray"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv_location" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_date"
-                setDate="@{data.date}"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:textColor="@color/text_grey"
-                android:textSize="@dimen/text_small"
-
-                app:layout_constraintBottom_toBottomOf="@+id/iv_date"
-                app:layout_constraintStart_toEndOf="@+id/iv_date"
-                app:layout_constraintTop_toTopOf="@+id/iv_date"
-                tools:ignore="VisualLintBounds,TextContrastCheck"
-                tools:text="12 Aug 2025" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
