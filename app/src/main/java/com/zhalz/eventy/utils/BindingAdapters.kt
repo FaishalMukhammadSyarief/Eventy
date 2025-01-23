@@ -4,7 +4,6 @@ import android.view.View
 import android.widget.TextView
 import androidx.core.content.ContextCompat.getColor
 import androidx.databinding.BindingAdapter
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.tabs.TabLayout
@@ -97,9 +96,4 @@ fun OverlapImageListView.setOverlapImages(images: List<Int>) = CoroutineScope(IO
     imageList = ArrayList(
         images.map { context.toBitmap(it) }
     )
-}
-
-@BindingAdapter("iconSize")
-fun ExtendedFloatingActionButton.setIconSize(size: Float) {
-    setIconSize(size.toInt())
 }

@@ -146,15 +146,14 @@
             android:textColor="@color/dark_blue"
             android:textSize="@dimen/text_default"
             app:fontFamily="@font/poppins_semi_bold"
-            app:icon="@{isUser ? @drawable/ic_pencil : @drawable/ic_add}"
-            iconSize="@{isUser ? @dimen/icon_size_user : @dimen/icon_size_default}"
+            app:icon="@{isUser ? @drawable/ic_pencil : @drawable/ic_small_plus}"
+            app:iconSize="12dp"
             app:iconTint="@color/dark_blue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView10"
             app:shapeAppearance="@style/RoundCorner"
-            tools:icon="@drawable/ic_add"
-            tools:iconSize="24dp"
+            tools:icon="@drawable/ic_plus"
             tools:ignore="ImageContrastCheck,VisualLintOverlap,TouchTargetSizeCheck,TextSizeCheck"
             tools:text="@string/add_friend" />
 

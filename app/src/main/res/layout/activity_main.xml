@@ -95,7 +95,7 @@
                 android:backgroundTint="@color/yellow"
                 android:contentDescription="@string/cd_add_event"
                 android:onClick="@{() -> activity.toCreate()}"
-                android:src="@drawable/ic_add"
+                android:src="@drawable/ic_small_plus"
                 app:layout_anchor="@id/bottom_app"
                 app:maxImageSize="40dp"
                 app:shapeAppearance="@style/RoundCorner"
