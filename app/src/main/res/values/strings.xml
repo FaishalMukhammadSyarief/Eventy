@@ -174,5 +174,6 @@
     <string name="tomorrow">Tomorrow</string>
     <string name="yesterday">Yesterday</string>
     <string name="edit_profile">Edit Profile</string>
+    <string name="enter_member">Enter Member</string>
 
 </resources>

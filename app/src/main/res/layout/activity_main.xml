@@ -15,8 +15,7 @@
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.main.MainActivity"
-        tools:openDrawer="start">
+        tools:context=".presentation.main.MainActivity">
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:id="@+id/main"
@@ -100,6 +99,21 @@
                 app:maxImageSize="40dp"
                 app:shapeAppearance="@style/RoundCorner"
                 app:tint="@color/white"
+                tools:ignore="ImageContrastCheck" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_add_meeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="16dp"
+                android:backgroundTint="@color/white"
+                android:contentDescription="@string/cd_add_event"
+                android:onClick="@{() -> activity.showAddMeetingDialog()}"
+                android:src="@drawable/ic_small_plus"
+                android:visibility="gone"
+                app:maxImageSize="40dp"
+                app:tint="@color/black"
                 tools:ignore="ImageContrastCheck" />
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -83,15 +83,20 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
                     if (bottomApp.translationY != 0f) bottomApp.slideUp()
                     if (fabCreate.alpha == 0f) fabCreate.fadeIn()
                 }
+                R.id.meeting_fragment -> binding.apply {
+                    fabAddMeeting.fadeIn()
+                }
                 else -> binding.apply {
                     bottomApp.slideDown()
                     fabCreate.fadeOut()
+                    fabAddMeeting.fadeOut()
                 }
             }
         }
     }
 
     fun toCreate() = navController.navigate(R.id.create_event_fragment)
+    fun showAddMeetingDialog() = navController.navigate(R.id.add_meeting_dialog)
 
     override fun onSupportNavigateUp() =
         navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()

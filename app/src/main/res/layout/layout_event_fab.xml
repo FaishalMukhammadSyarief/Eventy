@@ -77,7 +77,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/meeting"
             android:onClick="@{() -> fragment.toMeeting()}"
-            android:src="@drawable/ic_monitor"
+            android:src="@drawable/ic_screen"
             app:layout_constraintEnd_toStartOf="@+id/anchor_1"
             app:layout_constraintStart_toEndOf="@+id/anchor_2"
             app:layout_constraintTop_toTopOf="parent" />
