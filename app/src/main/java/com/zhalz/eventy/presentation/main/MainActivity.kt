@@ -75,6 +75,9 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
+                R.id.meeting_fragment ->
+                    binding.fabAddMeeting.fadeIn()
+
                 R.id.home_fragment -> binding.apply {
                     if (bottomApp.translationY != 0f) bottomApp.slideUp()
                     if (fabCreate.alpha == 0f) fabCreate.fadeIn()
@@ -82,9 +85,6 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
                 R.id.notification_fragment -> binding.apply {
                     if (bottomApp.translationY != 0f) bottomApp.slideUp()
                     if (fabCreate.alpha == 0f) fabCreate.fadeIn()
-                }
-                R.id.meeting_fragment -> binding.apply {
-                    fabAddMeeting.fadeIn()
                 }
                 else -> binding.apply {
                     bottomApp.slideDown()

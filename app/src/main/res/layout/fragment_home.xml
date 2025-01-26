@@ -11,78 +11,86 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="@dimen/margin_screen"
-        tools:context=".presentation.main.home.HomeFragment">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/schedule_today"
-            android:textSize="@dimen/text_very_large"
-            app:fontFamily="@font/poppins_semi_bold"
-            app:layout_constraintBottom_toBottomOf="@+id/btn_view_schedule"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/btn_view_schedule" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_view_schedule"
-            style="@style/Widget.Material3.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/view_schedule"
-            android:onClick="@{() -> fragment.toSchedule()}"
-            android:text="@string/view_all"
-            android:textColor="@color/gray"
-            android:textSize="@dimen/text_normal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TextContrastCheck" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_schedule"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@+id/btn_view_schedule"
-            tools:itemCount="2"
-            tools:listitem="@layout/item_schedule" />
+            android:layout_height="match_parent"
+            android:padding="@dimen/margin_screen"
+            tools:context=".presentation.main.home.HomeFragment">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/event"
-            android:textSize="@dimen/text_very_large"
-            app:fontFamily="@font/poppins_semi_bold"
-            app:layout_constraintBottom_toBottomOf="@+id/btn_view_event"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/btn_view_event" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/schedule_today"
+                android:textSize="@dimen/text_very_large"
+                app:fontFamily="@font/poppins_semi_bold"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_view_schedule"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btn_view_schedule" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_view_event"
-            style="@style/Widget.Material3.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_screen"
-            android:contentDescription="@string/view_event"
-            android:onClick="@{() -> fragment.toHistory()}"
-            android:text="@string/view_all"
-            android:textColor="@color/gray"
-            android:textSize="@dimen/text_normal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rv_schedule"
-            tools:ignore="TextContrastCheck" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_view_schedule"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/view_schedule"
+                android:onClick="@{() -> fragment.toSchedule()}"
+                android:text="@string/view_all"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TextContrastCheck" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_event"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:layout_constraintTop_toBottomOf="@+id/btn_view_event"
-            app:spanCount="2"
-            tools:listitem="@layout/item_event" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_schedule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/btn_view_schedule"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_schedule" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/event"
+                android:textSize="@dimen/text_very_large"
+                app:fontFamily="@font/poppins_semi_bold"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_view_event"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btn_view_event" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_view_event"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_screen"
+                android:contentDescription="@string/view_event"
+                android:onClick="@{() -> fragment.toHistory()}"
+                android:text="@string/view_all"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_schedule"
+                tools:ignore="TextContrastCheck" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/btn_view_event"
+                app:spanCount="2"
+                tools:listitem="@layout/item_event" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
 </layout>

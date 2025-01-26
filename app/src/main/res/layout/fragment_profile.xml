@@ -21,48 +21,55 @@
 
     </data>
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <include
-            layout="@layout/layout_profile"
-            app:isUser="@{isUser}"
-            app:person="@{person}" />
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_screen"
-            android:layout_marginTop="24dp"
-            android:text="@string/contact"
-            android:textColor="@color/dark_blue"
-            android:textSize="@dimen/text_medium"
-            app:fontFamily="@font/poppins_bold" />
+            android:orientation="vertical">
 
-        <include
-            layout="@layout/layout_profile_fab"
-            app:fragment="@{fragment}" />
+            <include
+                layout="@layout/layout_profile"
+                app:isUser="@{isUser}"
+                app:person="@{person}" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_screen"
-            android:layout_marginTop="24dp"
-            android:text="@string/mutual_event"
-            android:textColor="@color/dark_blue"
-            android:textSize="@dimen/text_medium"
-            app:fontFamily="@font/poppins_bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
+                android:layout_marginTop="24dp"
+                android:text="@string/contact"
+                android:textColor="@color/dark_blue"
+                android:textSize="@dimen/text_medium"
+                app:fontFamily="@font/poppins_bold" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_mutual_event"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_screen"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_history" />
+            <include
+                layout="@layout/layout_profile_fab"
+                app:fragment="@{fragment}" />
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
+                android:layout_marginTop="24dp"
+                android:text="@string/mutual_event"
+                android:textColor="@color/dark_blue"
+                android:textSize="@dimen/text_medium"
+                app:fontFamily="@font/poppins_bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_mutual_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_history" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </layout>
