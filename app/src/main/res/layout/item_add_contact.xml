@@ -65,7 +65,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:maxImageSize="24dp"
-            app:shapeAppearance="@style/RoundCorner"
+            app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
             app:tint="@color/gray"
             tools:ignore="ImageContrastCheck" />
 

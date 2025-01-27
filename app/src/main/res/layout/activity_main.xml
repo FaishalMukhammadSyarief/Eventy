@@ -69,7 +69,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/transparent"
-                    app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
+                    app:itemActiveIndicatorStyle="@style/CustomIndicator"
                     app:itemIconSize="18dp"
                     app:itemIconTint="@color/selector_icon_color"
                     app:itemRippleColor="@color/transparent"
@@ -90,7 +90,7 @@
                 android:src="@drawable/ic_small_plus"
                 app:layout_anchor="@id/bottom_app"
                 app:maxImageSize="40dp"
-                app:shapeAppearance="@style/RoundCorner"
+                app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
                 app:tint="@color/white"
                 tools:ignore="ImageContrastCheck" />
 

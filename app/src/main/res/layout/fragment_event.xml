@@ -36,7 +36,7 @@
                 android:layout_marginTop="8dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ship"
-                app:shapeAppearance="@style/SlightlyRoundCorner"
+                app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium"
                 tools:visibility="gone" />
 
             <include
@@ -82,7 +82,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:maxImageSize="21dp"
-                    app:shapeAppearance="@style/RoundCorner"
+                    app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
                     app:tint="@color/blue"
                     tools:ignore="ImageContrastCheck" />
 
@@ -133,7 +133,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:maxImageSize="21dp"
-                    app:shapeAppearance="@style/RoundCorner"
+                    app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
                     app:tint="@color/blue"
                     tools:ignore="ImageContrastCheck" />
 
