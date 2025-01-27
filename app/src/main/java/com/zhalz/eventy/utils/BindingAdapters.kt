@@ -25,10 +25,6 @@ fun TextView.formatAttendees(attendant: Int) =
 fun TextView.formatRupiah(amount: Int) =
     "Rp. $amount".also { text = it }
 
-@BindingAdapter("textNumber")
-fun TextView.textNumber(input: Int) =
-    input.toString().also { text = it }
-
 @BindingAdapter("textSemicolon")
 fun TextView.textSemicolon(input: String) =
     ":  $input".also { text = it }
