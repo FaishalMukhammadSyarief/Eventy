@@ -21,10 +21,6 @@ import kotlinx.coroutines.launch
 fun TextView.formatAttendees(attendant: Int) =
     "$attendant Attendees".also { text = it }
 
-@BindingAdapter("rupiah")
-fun TextView.formatRupiah(amount: Int) =
-    "Rp. $amount".also { text = it }
-
 @BindingAdapter("textSemicolon")
 fun TextView.textSemicolon(input: String) =
     ":  $input".also { text = it }
