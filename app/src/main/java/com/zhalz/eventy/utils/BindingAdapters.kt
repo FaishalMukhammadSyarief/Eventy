@@ -17,10 +17,6 @@ import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 
 /*  Text View  */
-@BindingAdapter("textSemicolon")
-fun TextView.textSemicolon(input: String) =
-    ":  $input".also { text = it }
-
 @BindingAdapter("listToText")
 fun TextView.listToText(list: List<Person>) =
     ":  ${list.joinToString(", ") { it.name }}".also { text = it }

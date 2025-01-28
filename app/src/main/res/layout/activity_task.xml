@@ -95,7 +95,7 @@
 
             <TextView
                 android:id="@+id/tv_date"
-                textSemicolon="@{task.date}"
+                android:text='@{":  " + task.date}'
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -115,7 +115,7 @@
 
             <TextView
                 android:id="@+id/tv_author"
-                textSemicolon="@{task.author}"
+                android:text='@{":  " + task.author}'
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
