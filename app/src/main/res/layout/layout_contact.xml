@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/dark_blue"
+        android:contentDescription="@string/email"
+        android:src="@drawable/ic_gmail"
+        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
+        app:tint="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_facebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/dark_blue"
+        android:contentDescription="@string/email"
+        android:src="@drawable/ic_facebook"
+        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
+        app:tint="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_instagram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/dark_blue"
+        android:contentDescription="@string/email"
+        android:src="@drawable/ic_instagram"
+        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
+        app:tint="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_linkedin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/dark_blue"
+        android:contentDescription="@string/email"
+        android:src="@drawable/ic_linkedin"
+        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full"
+        app:tint="@color/white" />
+
+</LinearLayout>
