@@ -78,6 +78,16 @@
         <item name="android:layout_marginTop">4dp</item>
     </style>
 
+    <style name="MyFAB2">
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="fabCustomSize">46dp</item>
+        <item name="maxImageSize">21dp</item>
+        <item name="elevation">3dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Full</item>
+        <item name="tint">@color/dark_blue</item>
+    </style>
+
     <!--  TEXT APPEARANCE  -->
     <style name="ButtonTitle">
         <item name="android:textSize">@dimen/text_normal</item>
