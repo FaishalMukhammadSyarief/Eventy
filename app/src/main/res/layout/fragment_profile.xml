@@ -36,16 +36,6 @@
                 app:isUser="@{isUser}"
                 app:person="@{person}" />
 
-            <!--<TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/margin_screen"
-                android:layout_marginTop="8dp"
-                android:text="@string/contact"
-                android:gravity="center"
-                android:textColor="@color/dark_blue"
-                android:textSize="@dimen/text_medium"
-                app:fontFamily="@font/poppins_bold" />-->
 
             <include
                 layout="@layout/layout_contact"
@@ -55,9 +45,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/margin_screen"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/mutual_event"
-                android:gravity="center"
                 android:textColor="@color/dark_blue"
                 android:textSize="@dimen/text_medium"
                 app:fontFamily="@font/poppins_bold" />
@@ -66,7 +55,7 @@
                 android:id="@+id/rv_mutual_event"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/margin_screen"
+                android:layout_marginHorizontal="8dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_history" />
 

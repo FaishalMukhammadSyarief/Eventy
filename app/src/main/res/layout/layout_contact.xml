@@ -3,8 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="16dp"
-    android:background="@drawable/bg_slightly_round"
-    android:backgroundTint="@color/dark_blue"
+
     android:gravity="center"
     android:orientation="horizontal">
 
@@ -14,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/email"
-        android:src="@drawable/ic_gmail" />
+        android:src="@drawable/email" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_facebook"
@@ -22,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/facebook"
-        android:src="@drawable/ic_facebook" />
+        android:src="@drawable/facebook" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_instagram"
@@ -30,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/instagram"
-        android:src="@drawable/ic_instagram" />
+        android:src="@drawable/instagram" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_linkedin"
@@ -38,6 +37,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/linkedin"
-        android:src="@drawable/ic_linkedin" />
+        android:src="@drawable/linkedin" />
 
 </LinearLayout>

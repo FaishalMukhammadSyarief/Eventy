@@ -35,11 +35,6 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding, ProfileViewModel>(R
 
     }
 
-    fun toEdit() = binding.apply {
-        isEdit = true
-        toolbar.inflateMenu(R.menu.menu_profile)
-    }
-
     private fun updateProfile() = binding.apply {
         isEdit = false
         toolbar.menu.clear()
