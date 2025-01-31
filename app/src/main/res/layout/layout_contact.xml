@@ -8,7 +8,6 @@
     android:orientation="horizontal">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_email"
         style="@style/MyFAB2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,7 +15,6 @@
         android:src="@drawable/email" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_facebook"
         style="@style/MyFAB2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,7 +22,6 @@
         android:src="@drawable/facebook" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_instagram"
         style="@style/MyFAB2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,7 +29,6 @@
         android:src="@drawable/instagram" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_linkedin"
         style="@style/MyFAB2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

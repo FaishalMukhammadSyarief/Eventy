@@ -88,16 +88,6 @@
         <item name="tint">@color/white</item>
     </style>
 
-    <style name="MyFAB3">
-        <item name="android:layout_margin">16dp</item>
-        <item name="android:backgroundTint">@color/dark_blue</item>
-        <item name="fabCustomSize">42dp</item>
-        <item name="maxImageSize">18dp</item>
-        <item name="elevation">3dp</item>
-        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Full</item>
-        <item name="tint">@color/white</item>
-    </style>
-
     <!--  TEXT APPEARANCE  -->
     <style name="ButtonTitle">
         <item name="android:textSize">@dimen/text_normal</item>
