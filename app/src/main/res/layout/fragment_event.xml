@@ -40,7 +40,7 @@
                 tools:visibility="gone" />
 
             <include
-                layout="@layout/layout_event_fab"
+                layout="@layout/layout_event_option"
                 app:fragment="@{fragment}" />
 
             <TextView
