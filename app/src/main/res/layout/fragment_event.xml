@@ -48,7 +48,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/margin_screen"
                 android:text="@string/description"
-                android:textColor="@color/dark_blue"
                 android:textSize="@dimen/text_medium"
                 app:fontFamily="@font/poppins_bold" />
 
@@ -170,7 +169,6 @@
                 android:layout_marginHorizontal="@dimen/margin_screen"
                 android:layout_marginTop="32dp"
                 android:text="@string/division"
-                android:textColor="@color/dark_blue"
                 android:textSize="@dimen/text_medium"
                 app:fontFamily="@font/poppins_bold" />
 
