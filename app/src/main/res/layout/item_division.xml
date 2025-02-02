@@ -26,11 +26,13 @@
 
             <View
                 android:id="@+id/color"
-                android:layout_width="12dp"
+                android:layout_width="5dp"
                 android:layout_height="match_parent"
-                backgroundColor="@{data.color}"
+                android:layout_marginVertical="26dp"
+                android:background="@drawable/bg_round_end_3"
+                app:backgroundTint="@{data.color}"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:background="@color/dark_blue" />
+                tools:backgroundTint="@color/dark_blue" />
 
             <TextView
                 android:id="@+id/tv_division_title"
@@ -60,7 +62,7 @@
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/coordinator"
+                    android:text="Coord."
                     android:textSize="@dimen/text_small"
                     app:fontFamily="@font/poppins_semi_bold" />
 

@@ -47,10 +47,6 @@ fun TextView.setDate(date: String) {
 }
 
 /*  Set Color  */
-@BindingAdapter("backgroundColor")
-fun View.backgroundColor(color: Int) =
-    setBackgroundColor(getColor(context, color))
-
 @BindingAdapter("backgroundTint")
 fun View.backgroundTint(color: Int) =
     background.setTint(getColor(context, color))
