@@ -13,9 +13,7 @@ import com.zhalz.eventy.data.divisionList
 import com.zhalz.eventy.databinding.FragmentEventBinding
 import com.zhalz.eventy.databinding.ItemDivisionBinding
 import com.zhalz.eventy.domain.model.Division
-import com.zhalz.eventy.presentation.division.DivisionActivity
 import com.zhalz.eventy.presentation.report.ReportActivity
-import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
 import com.zhalz.eventy.utils.extension.navigate
 
 class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event) {
@@ -23,7 +21,7 @@ class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event
     private val args by navArgs<EventFragmentArgs>()
 
     private val divisionAdapter by lazy {
-        ReactiveListAdapter<ItemDivisionBinding, Division>(R.layout.item_division).initItem { _, data -> toDetail(data) }
+        ReactiveListAdapter<ItemDivisionBinding, Division>(R.layout.item_division).initItem { _, data -> toDivision(data) }
     }
 
     private val activity by lazy { requireActivity() as AppCompatActivity }
@@ -47,10 +45,10 @@ class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event
         divisionAdapter.submitList(divisionList)
     }
 
-    private fun toDetail(division: Division) = context?.openActivity<DivisionActivity> { putExtra(EXTRA_DIVISION, division) }
     fun toMember() = findNavController().navigate(R.id.action_event_to_member)
     fun toSpending() = EventFragmentDirections.actionEventToSpending(args.event.divisionList[0]).navigate(this)
     fun toMeeting() = findNavController().navigate(R.id.action_event_to_meeting)
     fun toReport() = context?.openActivity<ReportActivity>()
+    private fun toDivision(division: Division) = EventFragmentDirections.actionEventToDivision(division).navigate(this)
 
 }

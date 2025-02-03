@@ -65,6 +65,9 @@
             android:id="@+id/action_event_to_meeting"
             app:destination="@id/meeting_fragment"
             app:enterAnim="@anim/anim_slide_up" />
+        <action
+            android:id="@+id/action_event_to_division"
+            app:destination="@id/division_fragment" />
     </fragment>
 
     <fragment
@@ -118,6 +121,16 @@
         android:name="com.zhalz.eventy.presentation.meeting.MeetingFragment"
         android:label="Meeting"
         tools:layout="@layout/fragment_meeting" />
+
+    <fragment
+        android:id="@+id/division_fragment"
+        android:name="com.zhalz.eventy.presentation.division.DivisionFragment"
+        android:label="Division"
+        tools:layout="@layout/fragment_division">
+        <argument
+            android:name="division"
+            app:argType="com.zhalz.eventy.domain.model.Division" />
+    </fragment>
 
     <dialog
         android:id="@+id/add_person_dialog"

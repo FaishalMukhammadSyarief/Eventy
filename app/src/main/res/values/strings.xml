@@ -138,5 +138,7 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="enter_member">Enter Member</string>
     <string name="attendees">%1$d Attendees</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
