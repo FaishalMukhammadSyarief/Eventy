@@ -84,9 +84,6 @@ dependencies {
     /*  Lottie  */
     implementation (libs.lottie)
 
-    /*  View Pager II  */
-    implementation(libs.androidx.viewpager2)
-
     /*  Image Slider  */
     implementation(libs.imageslideshow)
 
