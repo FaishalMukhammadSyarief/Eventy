@@ -69,13 +69,11 @@ fun Fragment.addMenu(
     }, viewLifecycleOwner)*/
 
 fun Fragment.setupTabLayout(
-    viewPager2: ViewPager2?,
-    tabLayout: TabLayout?,
+    viewPager2: ViewPager2,
+    tabLayout: TabLayout,
     fragments: List<Fragment>,
     titles: List<String>
 ) {
-    if (viewPager2 == null || tabLayout == null) return
-
     viewPager2.adapter = PagerAdapter(requireActivity(), fragments)
 
     TabLayoutMediator(tabLayout, viewPager2) { tab, position ->

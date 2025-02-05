@@ -24,8 +24,8 @@ class DivisionFragment : BaseFragment<FragmentDivisionBinding>(R.layout.fragment
 
     private fun initUI() {
         setupTabLayout(
-            binding?.viewPager,
-            binding?.tabLayout,
+            bind.viewPager,
+            bind.tabLayout,
             listOf(TaskFragment(), TaskFragment(), TaskFragment()),
             listOf("TASK", "IN PROGRESS", "COMPLETED")
         )

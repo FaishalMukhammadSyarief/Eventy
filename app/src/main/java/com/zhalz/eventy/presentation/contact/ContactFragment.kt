@@ -22,8 +22,8 @@ class ContactFragment : BaseFragment<FragmentContactBinding>(R.layout.fragment_c
 
     private fun initUI() {
         setupTabLayout(
-            binding?.viewPager,
-            binding?.tabLayout,
+            bind.viewPager,
+            bind.tabLayout,
             listOf(FriendFragment(), CollaboratorFragment()),
             listOf(getString(R.string.friend2), getString(R.string.collaborator))
         )
