@@ -7,7 +7,7 @@ import com.crocodic.core.base.adapter.ReactiveListAdapter
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
 import com.zhalz.eventy.data.eventList
-import com.zhalz.eventy.data.scheduleList
+import com.zhalz.eventy.data.meetingList
 import com.zhalz.eventy.databinding.FragmentHomeBinding
 import com.zhalz.eventy.databinding.ItemEventBinding
 import com.zhalz.eventy.databinding.ItemScheduleBinding
@@ -33,7 +33,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
         initUI()
 
-        scheduleAdapter.submitList(scheduleList)
+        scheduleAdapter.submitList(meetingList)
         eventAdapter.submitList(eventList)
 
     }

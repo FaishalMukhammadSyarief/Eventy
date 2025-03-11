@@ -6,6 +6,7 @@ import androidx.navigation.fragment.navArgs
 import com.crocodic.core.base.adapter.ReactiveListAdapter
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
+import com.zhalz.eventy.data.spendingList
 import com.zhalz.eventy.databinding.FragmentSpendingBinding
 import com.zhalz.eventy.databinding.ItemSpendingBinding
 import com.zhalz.eventy.domain.model.Spending
@@ -23,12 +24,6 @@ class SpendingFragment : BaseFragment<FragmentSpendingBinding>(R.layout.fragment
 
         binding?.spendingAdapter = spendingAdapter
         binding?.division = args.division
-
-        val spendingList = listOf(
-            Spending(123, "Makanan", "22 Agustus 2024", 75000),
-            Spending(123, "Peralatan", "22 Agustus 2024", 200000),
-            Spending(123, "Minuman", "22 Agustus 2024", 75000),
-        )
 
         spendingAdapter.submitList(spendingList)
 

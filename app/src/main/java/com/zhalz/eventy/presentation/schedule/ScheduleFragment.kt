@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.crocodic.core.base.adapter.ReactiveListAdapter
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
-import com.zhalz.eventy.data.scheduleList
+import com.zhalz.eventy.data.meetingList
 import com.zhalz.eventy.databinding.FragmentScheduleBinding
 import com.zhalz.eventy.databinding.ItemScheduleBinding
 import com.zhalz.eventy.domain.model.Schedule
@@ -33,8 +33,8 @@ class ScheduleFragment : BaseFragment<FragmentScheduleBinding>(R.layout.fragment
             binding?.rv2?.addItemDecoration(it)
         }
 
-        schedule1Adapter.submitList(scheduleList)
-        schedule2Adapter.submitList(scheduleList)
+        schedule1Adapter.submitList(meetingList)
+        schedule2Adapter.submitList(meetingList)
     }
 
 }

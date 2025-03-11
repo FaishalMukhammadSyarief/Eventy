@@ -24,30 +24,53 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="@dimen/margin_screen"
             tools:context=".presentation.report.division.spending.SpendingFragment">
 
-            <TextView
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="@string/spending_rp_350_000"
-                android:textSize="@dimen/text_very_large"
-                app:fontFamily="@font/poppins_semi_bold" />
+                android:backgroundTint="@color/white"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginHorizontal="24dp"
-                android:layout_marginVertical="24dp"
-                tools:background="@color/black"
-                android:background="@{division.color}" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="Total"
+                    android:textColor="@color/grey_font"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="@dimen/text_small"
+                    app:fontFamily="@font/poppins_semi_bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:layout_marginTop="24dp"
+                    android:text="Rp. 350.000"
+                    android:textSize="@dimen/text_extra_large"
+                    app:fontFamily="@font/poppins_semi_bold" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:text="Expense"
+                android:textSize="@dimen/text_medium"
+                app:fontFamily="@font/poppins_semi_bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:adapter="@{spendingAdapter}"
+                android:layout_marginHorizontal="10dp"
                 tools:listitem="@layout/item_spending"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 

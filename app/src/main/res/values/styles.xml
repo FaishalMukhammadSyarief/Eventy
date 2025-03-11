@@ -46,7 +46,7 @@
         <item name="android:inputType">number</item>
         <item name="android:maxLength">1</item>
         <item name="android:maxLines">1</item>
-        <item name="android:textSize">@dimen/text_title</item>
+        <item name="android:textSize">@dimen/text_extra_large</item>
         <item name="android:textColorHint">@color/transparent</item>
         <item name="fontFamily">@font/poppins_bold</item>
     </style>

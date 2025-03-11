@@ -5,6 +5,7 @@ import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.domain.model.Event
 import com.zhalz.eventy.domain.model.Person
 import com.zhalz.eventy.domain.model.Schedule
+import com.zhalz.eventy.domain.model.Spending
 import com.zhalz.eventy.domain.model.Task
 
 val user = Person(1234567, "Faishal Mukhammad", "faishalmukhammadsyarief@gmail.com", "081313327023", "Faishal Mukhammad Syarief", "_zhalz_", "faishall")
@@ -15,7 +16,7 @@ val listImage = listOf(
     R.drawable.faishal
 )
 
-val scheduleList = mutableListOf(
+val meetingList = mutableListOf(
     Schedule(1, "Meeting 1", "2025-01-17 06:33:45", "Google Meet", 2, listImage),
     Schedule(2, "Meeting 2", "2025-01-16 06:33:45", "Zoom", 4, listImage),
     Schedule(2, "Meeting 2", "2025-01-18 06:33:45", "Zoom", 4, listImage)
@@ -52,4 +53,10 @@ val eventList = mutableListOf(
     Event(2, "Tech Conference", "lorem ipsum dolor sit amet", "2025-02-05 06:33:45", "Member - Divisi Produksi", "Sampookong", "Expo", divisionList, managerList2, teamList, teamList),
     Event(3, "Tech Conference", "lorem ipsum dolor sit amet", "2025-02-05 06:33:45", "Member - Divisi Produksi", "Sampookong", "Expo", divisionList, managerList2, teamList, teamList),
     Event(4, "Tech Conference", "lorem ipsum dolor sit amet", "2025-02-05 06:33:45", "Member - Divisi Produksi", "Sampookong", "Expo", divisionList, managerList2, teamList, teamList),
+)
+
+val spendingList = listOf(
+    Spending(123, "Makanan", "2025-01-17 06:33:45", 75000),
+    Spending(129, "Peralatan", "2025-01-17 06:33:45", 200000),
+    Spending(234, "Minuman", "2025-01-17 06:33:45", 75000),
 )
