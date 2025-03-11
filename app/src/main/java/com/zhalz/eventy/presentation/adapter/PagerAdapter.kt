@@ -17,13 +17,21 @@ class PagerAdapter(activity: FragmentActivity, private val items: List<Fragment>
 
 }
 
+class PagerAdapter2(activity: FragmentActivity, private val items: List<() -> Fragment>) : FragmentStateAdapter(activity) {
+
+    override fun getItemCount() = items.size
+
+    override fun createFragment(position: Int) = items[position]()
+
+}
+
 fun Activity.setupTabLayout(
     viewPager2: ViewPager2,
     tabLayout: TabLayout,
-    fragments: List<Fragment>,
+    fragments: List<() -> Fragment>,
     titles: List<String>
 ) {
-    viewPager2.adapter = PagerAdapter(this as AppCompatActivity, fragments)
+    viewPager2.adapter = PagerAdapter2(this as AppCompatActivity, fragments)
 
     TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
         tab.text = titles[position]
