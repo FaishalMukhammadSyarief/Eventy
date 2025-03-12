@@ -41,7 +41,7 @@
                 setDate="@{data.date}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/gray"
+                android:textColor="@color/grey"
                 android:layout_marginTop="4dp"
                 android:textSize="@dimen/text_small"
                 app:fontFamily="@font/poppins_medium"

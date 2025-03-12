@@ -26,11 +26,11 @@ class AddDivisionFragment : DialogFragment() {
 
     private val colorMap = mapOf(
         R.id.rb_purple to R.color.purple,
-        R.id.rb_red to com.crocodic.core.R.color.text_red,
+        R.id.rb_red to R.color.red,
         R.id.rb_pink to R.color.pink,
         R.id.rb_orange to R.color.orange,
         R.id.rb_yellow to R.color.yellow,
-        R.id.rb_green to com.crocodic.core.R.color.text_green,
+        R.id.rb_green to R.color.green,
         R.id.rb_blue to R.color.blue
     )
 

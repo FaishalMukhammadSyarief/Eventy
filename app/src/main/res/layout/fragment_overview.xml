@@ -52,7 +52,7 @@
                     android:layout_gravity="center"
                     android:progress="70"
                     app:indicatorSize="125dp"
-                    app:trackColor="@color/gray"
+                    app:trackColor="@color/grey"
                     app:trackThickness="8dp" />
 
                 <TextView
@@ -79,7 +79,7 @@
                     android:layout_width="18dp"
                     android:layout_height="18dp"
                     android:background="@drawable/bg_round_4"
-                    android:backgroundTint="@color/gray"
+                    android:backgroundTint="@color/grey"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 

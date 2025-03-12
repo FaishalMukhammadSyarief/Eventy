@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_screen"
             android:text="@string/forgot_password"
-            android:textColor="@color/gray"
+            android:textColor="@color/grey"
             android:textSize="@dimen/text_normal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etl_password" />

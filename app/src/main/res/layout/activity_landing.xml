@@ -92,7 +92,7 @@
             app:layout_constraintBottom_toTopOf="@id/tv_or"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:strokeColor="@color/gray"
+            app:strokeColor="@color/grey"
             app:strokeWidth="1dp"
             tools:ignore="VisualLintButtonSize" />
 
