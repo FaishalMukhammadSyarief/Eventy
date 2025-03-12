@@ -1,8 +1,12 @@
 package com.zhalz.eventy.utils
 
+import android.content.res.ColorStateList
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getColor
+import androidx.core.content.ContextCompat.getDrawable
 import androidx.databinding.BindingAdapter
 import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.google.android.material.progressindicator.LinearProgressIndicator
@@ -10,6 +14,7 @@ import com.google.android.material.tabs.TabLayout
 import com.zen.overlapimagelistview.OverlapImageListView
 import com.zhalz.eventy.domain.model.Person
 import com.zhalz.eventy.utils.extension.formatDate
+import com.zhalz.eventy.utils.extension.lighten
 import com.zhalz.eventy.utils.extension.recognizeDate
 import com.zhalz.eventy.utils.extension.toBitmap
 import kotlinx.coroutines.CoroutineScope
@@ -50,6 +55,20 @@ fun TextView.setDate(date: String) {
 @BindingAdapter("backgroundTint")
 fun View.backgroundTint(color: Int) =
     background.setTint(getColor(context, color))
+
+@BindingAdapter("lightenBackgroundTint")
+fun View.lightenBackgroundTint(color: Int) =
+    background.setTint(getColor(context, color).lighten())
+
+@BindingAdapter("iconTint")
+fun ImageView.setIconTint(color: Int) {
+    imageTintList = ColorStateList.valueOf(getColor(context, color))
+}
+
+@BindingAdapter("icon")
+fun ImageView.setIcon(iconRes: Int) {
+    setImageDrawable(getDrawable(context, iconRes))
+}
 
 @BindingAdapter("indicatorColor")
 fun CircularProgressIndicator.setIndicatorColor(color: Int) =

@@ -11,72 +11,105 @@
 
     </data>
 
-    <com.google.android.material.card.MaterialCardView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:backgroundTint="@color/white"
-        app:cardElevation="4dp"
-        app:cardUseCompatPadding="true"
-        app:strokeWidth="0dp">
+        android:layout_height="96dp"
+        android:orientation="horizontal">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:cardElevation="1dp"
+            app:cardUseCompatPadding="true"
+            app:lightenBackgroundTint="@{data.color}"
+            app:strokeWidth="0dp"
+            tools:backgroundTint="#D2E8F2">
+
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="16dp"
+                android:contentDescription="@string/division_icon"
+                app:icon="@{data.icon}"
+                app:iconTint="@{data.color}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_megaphone"
+                tools:tint="@color/blue" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            app:cardElevation="1dp"
+            app:cardUseCompatPadding="true"
+            app:lightenBackgroundTint="@{data.color}"
+            app:strokeWidth="0dp"
+            tools:backgroundTint="#D2E8F2">
 
-            <View
-                android:id="@+id/color"
-                android:layout_width="5dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginVertical="26dp"
-                android:background="@drawable/bg_round_end_3"
-                app:backgroundTint="@{data.color}"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:backgroundTint="@color/dark_blue" />
+                android:orientation="horizontal"
+                android:padding="16dp">
 
-            <TextView
-                android:id="@+id/tv_division_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginHorizontal="12dp"
-                android:text="@{data.title}"
-                android:textSize="@dimen/text_medium"
-                app:fontFamily="@font/poppins_semi_bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/color"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/divisi_perlengkapan" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:paddingHorizontal="28dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                <View
+                    android:id="@+id/anchor"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/tv_division_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Coord."
+                    android:layout_gravity="center_vertical"
+                    android:text="@{data.title}"
+                    android:textSize="@dimen/text_medium"
+                    app:fontFamily="@font/poppins_semi_bold"
+                    app:layout_constraintBottom_toTopOf="@+id/anchor"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Marketing" />
+
+                <TextView
+                    android:id="@+id/tv_division_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="16dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@{data.description}"
+                    android:textColor="@color/gray"
                     android:textSize="@dimen/text_small"
-                    app:fontFamily="@font/poppins_semi_bold" />
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/anchor"
+                    tools:ignore="TextContrastCheck"
+                    tools:text="Promotions, communications, and public relations" />
 
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/iv_profile"
-                    style="@style/MyRoundImage"
-                    android:layout_width="42dp"
-                    android:layout_height="42dp"
-                    android:elevation="8dp"
-                    android:src="@drawable/faishal" />
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/ic_arrow_right"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-    </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
 </layout>

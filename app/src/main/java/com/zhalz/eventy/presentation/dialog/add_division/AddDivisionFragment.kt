@@ -57,7 +57,7 @@ class AddDivisionFragment : DialogFragment() {
     }
 
     fun createDivision() {
-        divisionList.add(Division(id, title, selectedColor, binding.atvCoordinator.text.toString()))
+        divisionList.add(Division(id, title, "Promotions, communications, and public relations", selectedColor, R.drawable.ic_admin, binding.atvCoordinator.text.toString()))
         dismiss()
     }
 
