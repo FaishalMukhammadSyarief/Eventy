@@ -18,8 +18,10 @@ import com.zhalz.eventy.databinding.NavHeaderBinding
 import com.zhalz.eventy.presentation.auth.landing.LandingActivity
 import com.zhalz.eventy.utils.extension.fadeIn
 import com.zhalz.eventy.utils.extension.fadeOut
+import com.zhalz.eventy.utils.extension.gone
 import com.zhalz.eventy.utils.extension.slideDown
 import com.zhalz.eventy.utils.extension.slideUp
+import com.zhalz.eventy.utils.extension.visible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -42,6 +44,31 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
         setActionbar()
         setDrawer()
         setBottomNav()
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.meeting_fragment ->
+                    binding.fabAddMeeting.fadeIn()
+
+                R.id.home_fragment -> binding.apply {
+                    if (bottomApp.translationY != 0f) bottomApp.slideUp()
+                    if (fabCreate.alpha == 0f) fabCreate.fadeIn()
+                }
+                R.id.notification_fragment -> binding.apply {
+                    if (bottomApp.translationY != 0f) bottomApp.slideUp()
+                    if (fabCreate.alpha == 0f) fabCreate.fadeIn()
+                }
+                R.id.division_fragment -> binding.apply {
+                    toolbar.gone()
+                }
+                else -> binding.apply {
+                    toolbar.visible()
+                    bottomApp.slideDown()
+                    fabCreate.fadeOut()
+                    fabAddMeeting.fadeOut()
+                }
+            }
+        }
     }
 
     private fun setActionbar() {
@@ -70,32 +97,11 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
         }
     }
 
-    private fun setBottomNav() {
+    private fun setBottomNav() =
         binding.bottomNav.setupWithNavController(navController)
 
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
-                R.id.meeting_fragment ->
-                    binding.fabAddMeeting.fadeIn()
-
-                R.id.home_fragment -> binding.apply {
-                    if (bottomApp.translationY != 0f) bottomApp.slideUp()
-                    if (fabCreate.alpha == 0f) fabCreate.fadeIn()
-                }
-                R.id.notification_fragment -> binding.apply {
-                    if (bottomApp.translationY != 0f) bottomApp.slideUp()
-                    if (fabCreate.alpha == 0f) fabCreate.fadeIn()
-                }
-                else -> binding.apply {
-                    bottomApp.slideDown()
-                    fabCreate.fadeOut()
-                    fabAddMeeting.fadeOut()
-                }
-            }
-        }
-    }
-
     fun toCreate() = navController.navigate(R.id.create_event_fragment)
+
     fun showAddMeetingDialog() = navController.navigate(R.id.add_meeting_dialog)
 
     override fun onSupportNavigateUp() =
