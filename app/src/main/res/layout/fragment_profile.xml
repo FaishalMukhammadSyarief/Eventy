@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.zhalz.eventy.presentation.profile.ProfileFragment" />
+
+        <variable
+            name="person"
+            type="com.zhalz.eventy.domain.model.Person" />
+
+        <variable
+            name="isUser"
+            type="Boolean" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/layout_profile"
+                app:isUser="@{isUser}"
+                app:person="@{person}" />
+
+
+            <include
+                layout="@layout/layout_contact"
+                app:fragment="@{fragment}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
+                android:layout_marginTop="16dp"
+                android:text="@string/mutual_event"
+                android:textSize="@dimen/text_large"
+                app:fontFamily="@font/poppins_bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_mutual_event"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_history" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

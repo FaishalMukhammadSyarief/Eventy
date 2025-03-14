@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.zhalz.eventy.presentation.auth.otp.OtpActivity" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".presentation.auth.otp.OtpActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|enterAlwaysCollapsed|enterAlways"
+                app:navigationIcon="@drawable/ic_back_arrow"
+                app:navigationOnClickListener="@{() -> activity.finish()}"
+                app:title="@string/verification"
+                app:titleTextAppearance="@style/ToolbarTitleAppearance" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="36dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <ImageView
+                android:id="@+id/iv_eventy"
+                android:layout_width="215dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="65dp"
+                android:contentDescription="@string/cd_eventy_logo"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_eventy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_otp_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:gravity="center"
+                android:text="@string/enter_the_otp_sent_to_zhalz_mail_com"
+                app:layout_constraintTop_toBottomOf="@+id/iv_eventy"
+                tools:ignore="TextContrastCheck"
+                tools:layout_editor_absoluteX="36dp" />
+
+            <LinearLayout
+                android:id="@+id/container_otp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:orientation="horizontal"
+                android:weightSum="4"
+                app:layout_constraintTop_toBottomOf="@+id/tv_otp_desc">
+
+                <EditText
+                    style="@style/OtpInput"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_weight="1"
+                    android:autofillHints="phone"
+                    android:hint="@string/otp_code"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_otp_desc"
+                    tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
+
+                <EditText
+                    style="@style/OtpInput"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:autofillHints="phone"
+                    android:hint="@string/otp_code"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_otp_desc" />
+
+                <EditText
+                    style="@style/OtpInput"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:autofillHints="phone"
+                    android:hint="@string/otp_code"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_otp_desc" />
+
+                <EditText
+                    style="@style/OtpInput"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_weight="1"
+                    android:autofillHints="phone"
+                    android:hint="@string/otp_code"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_otp_desc"
+                    tools:ignore="TextContrastCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/margin_screen"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/container_otp"
+                tools:layout_editor_absoluteX="36dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/don_t_receive_the_otp"
+                    android:textSize="@dimen/text_normal" />
+
+                <Button
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/resend_otp"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text_normal"
+                    app:fontFamily="@font/poppins_bold"
+                    tools:ignore="TextContrastCheck" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_send"
+                style="@style/MyButton"
+                android:layout_width="match_parent"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/dark_blue"
+                android:onClick="@{() -> activity.send()}"
+                android:text="@string/verify"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                tools:ignore="VisualLintButtonSize" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/screen_success"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gr_blue_black"
+            android:fitsSystemWindows="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:text="@string/congratulation"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                app:fontFamily="@font/poppins_bold" />
+
+            <ImageView
+                android:layout_width="275dp"
+                android:layout_height="275dp"
+                android:layout_marginTop="36dp"
+                android:contentDescription="@string/success_register"
+                android:src="@drawable/success" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:text="@string/verification_success"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                app:fontFamily="@font/poppins_semi_bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/registration_complete"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:fontFamily="@font/poppins_semi_bold" />
+
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

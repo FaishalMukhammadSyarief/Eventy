@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_comment_count"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Comment (1)"
+        android:textSize="@dimen/text_medium"
+        app:fontFamily="@font/poppins_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_profile"
+        style="@style/MyRoundImage"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="8dp"
+        android:elevation="8dp"
+        android:src="@drawable/faishal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_comment_count" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_marginStart="12dp"
+        android:gravity="center_vertical"
+        android:text="@string/faishal_mukhammad"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:fontFamily="@font/poppins_medium"
+        app:layout_constraintStart_toEndOf="@+id/iv_profile"
+        app:layout_constraintTop_toTopOf="@+id/iv_profile"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center_vertical"
+        android:text="45m ago"
+        android:textColor="@color/text_grey"
+        android:textSize="@dimen/text_small"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_name"
+        app:layout_constraintStart_toEndOf="@+id/tv_name"
+        app:layout_constraintTop_toTopOf="@+id/tv_name"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/tv_comment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:ellipsize="end"
+        android:maxLines="5"
+        android:text="The layout of the stage is great. But i have several suggestion about the left part."
+        android:textSize="@dimen/text_normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_profile"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        tools:ignore="TextSizeCheck" />
+
+    <!--  COMMENT  -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/MyTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:endIconDrawable="@drawable/ic_send"
+        app:endIconMode="custom"
+        app:endIconTint="@color/blue"
+        app:hintEnabled="false"
+        app:layout_constraintTop_toBottomOf="@+id/tv_comment">
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/MyEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_slightly_round"
+            android:backgroundTint="@color/very_light_gray"
+            android:hint="@string/add_comment"
+            android:inputType="text"
+            android:textColor="@color/black"
+            tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingVertical="@dimen/margin_screen">
+
+            <!--  PROJECT MANAGER  -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
+                android:text="@string/project_manager"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_medium"
+                app:fontFamily="@font/poppins_semi_bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_manager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <!--  COORDINATOR  -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
+                android:layout_marginTop="@dimen/margin_screen"
+                android:text="@string/coordinator"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_medium"
+                app:fontFamily="@font/poppins_semi_bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_coordinator"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <!--  MEMBER  -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
+                android:layout_marginTop="@dimen/margin_screen"
+                android:text="@string/member"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_medium"
+                app:fontFamily="@font/poppins_semi_bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_member"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

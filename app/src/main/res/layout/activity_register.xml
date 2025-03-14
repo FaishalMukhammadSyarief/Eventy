@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.zhalz.eventy.presentation.auth.register.RegisterActivity" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.auth.login.LoginActivity">
+
+        <ImageView
+            android:id="@+id/iv_eventy"
+            android:layout_width="215dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="65dp"
+            android:contentDescription="@string/cd_eventy_logo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_eventy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/sign_up"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_blue"
+            android:textSize="@dimen/text_very_large"
+            app:fontFamily="@font/poppins_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_eventy" />
+
+        <!--  NAME  -->
+        <com.zhalz.eventy.presentation.custom_view.TextLayoutNormal
+            android:id="@+id/etl_name"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_screen"
+            android:layout_marginTop="18dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_welcome">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/username"
+                android:inputType="text"
+                tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+        </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
+
+        <!--  EMAIL  -->
+        <com.zhalz.eventy.presentation.custom_view.TextLayoutEmail
+            android:id="@+id/textLayoutNormal"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_screen"
+            app:layout_constraintTop_toBottomOf="@+id/etl_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+        </com.zhalz.eventy.presentation.custom_view.TextLayoutEmail>
+
+        <!--  PHONE  -->
+        <com.zhalz.eventy.presentation.custom_view.TextLayoutNormal
+            android:id="@+id/etl_phone"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_screen"
+            app:layout_constraintTop_toBottomOf="@+id/textLayoutNormal">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+        </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
+
+        <!--  PASSWORD  -->
+        <com.zhalz.eventy.presentation.custom_view.TextLayoutPassword
+            android:id="@+id/etl_password"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_screen"
+            app:endIconMode="password_toggle"
+            app:layout_constraintTop_toBottomOf="@+id/etl_phone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+        </com.zhalz.eventy.presentation.custom_view.TextLayoutPassword>
+
+        <!--  PASSWORD CONFIRM -->
+        <com.zhalz.eventy.presentation.custom_view.TextLayoutPassword
+            android:id="@+id/etl_password_confirm"
+            style="@style/MyTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_screen"
+            app:endIconMode="password_toggle"
+            app:layout_constraintTop_toBottomOf="@+id/etl_password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/MyEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword"
+                tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+        </com.zhalz.eventy.presentation.custom_view.TextLayoutPassword>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sign_in"
+            style="@style/MyButton"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/margin_screen"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/dark_blue"
+            android:onClick="@{() -> activity.toOtp()}"
+            android:text="@string/request_code"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/etl_password_confirm"
+            tools:ignore="VisualLintButtonSize" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin_screen"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/btn_sign_in">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/already_have_an_account"
+                android:textSize="@dimen/text_normal" />
+
+            <Button
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> activity.toLogin()}"
+                android:text="@string/login_now"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/text_normal"
+                app:fontFamily="@font/poppins_bold" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="spendingAdapter"
+            type="com.crocodic.core.base.adapter.ReactiveListAdapter" />
+
+        <variable
+            name="division"
+            type="com.zhalz.eventy.domain.model.Division" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".presentation.report.division.spending.SpendingFragment">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="Total"
+                    android:textColor="@color/grey"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="@dimen/text_small"
+                    app:fontFamily="@font/poppins_semi_bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:layout_marginTop="24dp"
+                    android:text="Rp. 350.000"
+                    android:textSize="@dimen/text_extra_large"
+                    app:fontFamily="@font/poppins_semi_bold" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:text="Expense"
+                android:textSize="@dimen/text_medium"
+                app:fontFamily="@font/poppins_semi_bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:adapter="@{spendingAdapter}"
+                android:layout_marginHorizontal="10dp"
+                tools:listitem="@layout/item_spending"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

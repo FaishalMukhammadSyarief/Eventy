@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.zhalz.eventy.presentation.member.MemberActivity" />
+
+        <variable
+            name="managerAdapter"
+            type="com.crocodic.core.base.adapter.ReactiveListAdapter" />
+
+        <variable
+            name="coordinatorAdapter"
+            type="com.crocodic.core.base.adapter.ReactiveListAdapter" />
+
+        <variable
+            name="memberAdapter"
+            type="com.crocodic.core.base.adapter.ReactiveListAdapter" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".presentation.member.MemberActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:paddingEnd="8dp"
+                app:menu="@menu/menu_contact"
+                app:navigationIcon="@drawable/ic_back_arrow"
+                app:navigationOnClickListener="@{() -> activity.finish()}"
+                app:title="Event Member"
+                app:titleTextAppearance="@style/ToolbarTitleAppearance"
+                tools:ignore="RtlSymmetry" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/margin_screen">
+
+                <!--  PROJECT MANAGER  -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_screen"
+                    android:text="@string/project_manager"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_medium"
+                    app:fontFamily="@font/poppins_semi_bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_manager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adapter="@{managerAdapter}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <!--  COORDINATOR  -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_screen"
+                    android:layout_marginTop="@dimen/margin_screen"
+                    android:text="@string/coordinator"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_medium"
+                    app:fontFamily="@font/poppins_semi_bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_coordinator"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adapter="@{coordinatorAdapter}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <!--  MEMBER  -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_screen"
+                    android:layout_marginTop="@dimen/margin_screen"
+                    android:text="@string/member"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_medium"
+                    app:fontFamily="@font/poppins_semi_bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_member"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adapter="@{memberAdapter}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

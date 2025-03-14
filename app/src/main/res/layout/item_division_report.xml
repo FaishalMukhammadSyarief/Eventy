@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zhalz.eventy.domain.model.Division" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:strokeWidth="0dp"
+        tools:ignore="TextSizeCheck">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/color"
+                android:layout_width="12dp"
+                android:layout_height="match_parent"
+                backgroundColor="@{data.color}"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:background="@color/text_red" />
+
+            <TextView
+                android:id="@+id/tv_division_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="@dimen/margin_screen"
+                android:text="@{data.title}"
+                android:textSize="@dimen/text_medium"
+                app:fontFamily="@font/poppins_semi_bold"
+                app:layout_constraintStart_toEndOf="@+id/color"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/divisi_perlengkapan" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_profile"
+                style="@style/MyRoundImage"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="12dp"
+                android:elevation="8dp"
+                android:padding="5dp"
+                android:src="@drawable/faishal"
+                app:layout_constraintStart_toEndOf="@+id/color"
+                app:layout_constraintTop_toBottomOf="@+id/tv_division_title" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/faishal_mukhammad"
+                android:textSize="@dimen/text_normal"
+                app:fontFamily="@font/poppins_semi_bold"
+                app:layout_constraintStart_toEndOf="@+id/iv_profile"
+                app:layout_constraintTop_toTopOf="@+id/iv_profile" />
+
+            <TextView
+                android:id="@+id/tv_role"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/coordinator"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/text_normal"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
+                app:layout_constraintStart_toEndOf="@+id/iv_profile" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_screen"
+                android:text="@string/_70"
+                android:textColor="@{data.color}"
+                android:textSize="14sp"
+                app:fontFamily="@font/poppins_semi_bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_profile"
+                tools:textColor="@color/text_red" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                indicatorColor="@{data.color}"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="16dp"
+                android:progress="70"
+                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintStart_toStartOf="@+id/iv_profile"
+                app:layout_constraintTop_toBottomOf="@id/iv_profile"
+                tools:indicatorColor="@color/text_red" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

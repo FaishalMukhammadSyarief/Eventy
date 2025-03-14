@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="division"
+            type="com.zhalz.eventy.domain.model.Division" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_screen"
+        tools:context=".presentation.report.division.overview.OverviewFragment">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/status_overview_6"
+            android:textSize="@dimen/text_very_large"
+            app:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@+id/textView8"
+            tools:layout_editor_absoluteX="16dp">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/circularProgressIndicator"
+                    indicatorColor="@{division.color}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:progress="70"
+                    app:indicatorSize="125dp"
+                    app:trackColor="@color/grey"
+                    app:trackThickness="8dp" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/_70"
+                    android:textColor="@{division.color}"
+                    android:textSize="@dimen/text_medium"
+                    app:fontFamily="@font/poppins_semi_bold"
+                    tools:ignore="TextContrastCheck" />
+            </FrameLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:padding="8dp">
+
+                <View
+                    android:id="@+id/uncompleted"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:background="@drawable/bg_round_4"
+                    android:backgroundTint="@color/grey"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/uncompleted"
+                    app:fontFamily="@font/poppins_medium"
+                    app:layout_constraintBottom_toBottomOf="@+id/uncompleted"
+                    app:layout_constraintStart_toEndOf="@+id/uncompleted"
+                    app:layout_constraintTop_toTopOf="@+id/uncompleted" />
+
+                <View
+                    android:id="@+id/completed"
+                    backgroundTint="@{division.color}"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_round_4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/uncompleted"
+                    tools:backgroundTint="@color/text_green" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/completed"
+                    app:fontFamily="@font/poppins_medium"
+                    app:layout_constraintBottom_toBottomOf="@+id/completed"
+                    app:layout_constraintStart_toEndOf="@+id/completed"
+                    app:layout_constraintTop_toTopOf="@+id/completed" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zhalz.eventy.domain.model.Schedule" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_screen">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_calendar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_icon"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_screen"
+                android:text="@{data.title}"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="Meeting 1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_screen"
+                android:text="@{data.date}"
+                android:textColor="@color/text_grey"
+                android:textSize="@dimen/text_normal"
+                tools:ignore="TextContrastCheck"
+                tools:text="Aug 10, 10:00 AM" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_screen"
+                android:text="@{data.location}"
+                android:textColor="@color/text_grey"
+                android:textSize="@dimen/text_normal"
+                tools:ignore="TextContrastCheck"
+                tools:text="On Google Meet" />
+
+        </LinearLayout>
+
+        <TextView
+            android:text='@{String.format(@string/attendees, data.attendant)}'
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:textSize="14sp"
+            app:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2 Attendees" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

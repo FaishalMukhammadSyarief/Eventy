@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/home_fragment">
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.zhalz.eventy.presentation.main.home.HomeFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_schedule"
+            app:destination="@id/schedule_fragment" />
+        <action
+            android:id="@+id/action_home_to_history"
+            app:destination="@id/history_fragment" />
+        <action
+            android:id="@+id/action_home_to_event"
+            app:destination="@id/event_fragment"
+            app:enterAnim="@anim/anim_slide_up"
+            app:popExitAnim="@anim/anim_slide_down" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/history_fragment"
+        android:name="com.zhalz.eventy.presentation.history.HistoryFragment"
+        android:label="@string/history"
+        tools:layout="@layout/fragment_history">
+        <action
+            android:id="@+id/action_history_to_event"
+            app:destination="@id/event_fragment"
+            app:enterAnim="@anim/anim_slide_up"
+            app:popExitAnim="@anim/anim_slide_down" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/notification_fragment"
+        android:name="com.zhalz.eventy.presentation.main.notification.NotificationFragment"
+        android:label="@string/notification"
+        tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/schedule_fragment"
+        android:name="com.zhalz.eventy.presentation.schedule.ScheduleFragment"
+        android:label="Schedule"
+        tools:layout="@layout/fragment_schedule" />
+
+    <fragment
+        android:id="@+id/event_fragment"
+        android:name="com.zhalz.eventy.presentation.event.EventFragment"
+        tools:layout="@layout/fragment_event">
+        <argument
+            android:name="event"
+            app:argType="com.zhalz.eventy.domain.model.Event" />
+        <action
+            android:id="@+id/action_event_to_member"
+            app:destination="@id/member_fragment"
+            app:enterAnim="@anim/anim_slide_up" />
+        <action
+            android:id="@+id/action_event_to_spending"
+            app:destination="@id/spending_fragment"
+            app:enterAnim="@anim/anim_slide_up" />
+        <action
+            android:id="@+id/action_event_to_meeting"
+            app:destination="@id/meeting_fragment"
+            app:enterAnim="@anim/anim_slide_up" />
+        <action
+            android:id="@+id/action_event_to_division"
+            app:destination="@id/division_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/contact_fragment"
+        android:name="com.zhalz.eventy.presentation.contact.ContactFragment"
+        android:label="Contact"
+        tools:layout="@layout/fragment_contact">
+        <action
+            android:id="@+id/action_contact_to_add_person_dialog"
+            app:destination="@id/add_person_dialog" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/member_fragment"
+        android:name="com.zhalz.eventy.presentation.member.MemberFragment"
+        android:label="Member"
+        tools:layout="@layout/fragment_member">
+        <action
+            android:id="@+id/action_member_to_add_person_dialog"
+            app:destination="@id/add_person_dialog" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/spending_fragment"
+        android:name="com.zhalz.eventy.presentation.report.division.spending.SpendingFragment"
+        android:label="Spending"
+        tools:layout="@layout/fragment_spending">
+        <argument
+            android:name="division"
+            app:argType="com.zhalz.eventy.domain.model.Division" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.zhalz.eventy.presentation.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/create_event_fragment"
+        android:name="com.zhalz.eventy.presentation.main.create_event.CreateEventFragment"
+        android:label="Create Event"
+        tools:layout="@layout/fragment_create_event">
+        <action
+            android:id="@+id/action_create_event_to_add_division_dialog"
+            app:destination="@id/add_division_dialog" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeting_fragment"
+        android:name="com.zhalz.eventy.presentation.meeting.MeetingFragment"
+        android:label="Meeting"
+        tools:layout="@layout/fragment_meeting" />
+
+    <fragment
+        android:id="@+id/division_fragment"
+        android:name="com.zhalz.eventy.presentation.division.DivisionFragment"
+        tools:layout="@layout/fragment_division">
+        <argument
+            android:name="division"
+            app:argType="com.zhalz.eventy.domain.model.Division" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/add_person_dialog"
+        android:name="com.zhalz.eventy.presentation.dialog.add_person.AddPersonFragment"
+        tools:layout="@layout/fragment_add_person" />
+
+    <dialog
+        android:id="@+id/add_division_dialog"
+        android:name="com.zhalz.eventy.presentation.dialog.add_division.AddDivisionFragment"
+        tools:layout="@layout/fragment_add_division" />
+
+    <dialog
+        android:id="@+id/add_meeting_dialog"
+        android:name="com.zhalz.eventy.presentation.dialog.add_meeting.AddMeetingFragment"
+        tools:layout="@layout/fragment_add_meeting" />
+
+</navigation>

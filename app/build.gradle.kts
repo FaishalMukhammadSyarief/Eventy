@@ -1,6 +1,13 @@
-    plugins {
+plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id ("androidx.navigation.safeargs")
+    id("kotlin-parcelize")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
+    id("com.google.firebase.firebase-perf")
 }
 
 android {
@@ -27,11 +34,14 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
+    }
+    buildFeatures {
+        dataBinding = true
     }
 }
 
@@ -42,7 +52,42 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
+    /*  J Unit  */
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
+
+    /*  Espresso  */
     androidTestImplementation(libs.androidx.espresso.core)
+
+    /*  Hilt  */
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+    /*  Firebase  */
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+
+    /*  Crocodic Core  */
+    implementation(libs.androidcoreproject)
+
+    /*  Navigation  */
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+
+    /*  Swipe Refresh  */
+    implementation (libs.androidx.swiperefreshlayout)
+
+    /*  Glide  */
+    implementation (libs.glide)
+
+    /*  Lottie  */
+    implementation (libs.lottie)
+
+    /*  Image Slider  */
+    implementation(libs.imageslideshow)
+
+    /*  Overlapping Image  */
+    implementation(libs.overlapimagelistview)
+
 }

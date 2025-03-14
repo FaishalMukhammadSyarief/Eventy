@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        style="@style/MyFAB2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/email"
+        android:src="@drawable/email" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        style="@style/MyFAB2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/facebook"
+        android:src="@drawable/facebook" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        style="@style/MyFAB2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/instagram"
+        android:src="@drawable/instagram" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        style="@style/MyFAB2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/linkedin"
+        android:src="@drawable/linkedin" />
+
+</LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="schedule1Adapter"
+            type="com.crocodic.core.base.adapter.ReactiveListAdapter" />
+
+        <variable
+            name="schedule2Adapter"
+            type="com.crocodic.core.base.adapter.ReactiveListAdapter" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/margin_screen"
+        tools:context=".presentation.main.home.HomeFragment">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/august"
+            android:textSize="@dimen/text_very_large"
+            app:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adapter="@{schedule2Adapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="@string/july"
+            android:textSize="@dimen/text_very_large"
+            app:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_1" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adapter="@{schedule1Adapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            tools:listitem="@layout/item_schedule" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
