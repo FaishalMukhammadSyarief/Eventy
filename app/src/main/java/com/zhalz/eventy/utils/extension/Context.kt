@@ -3,6 +3,7 @@ package com.zhalz.eventy.utils.extension
 import android.app.Activity
 import android.content.Context
 import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -68,16 +69,18 @@ fun Fragment.addMenu(
         override fun onMenuItemSelected(menuItem: MenuItem): Boolean = false
     }, viewLifecycleOwner)*/
 
-fun Fragment.setupTabLayout(
+fun Fragment.setupTabPager(
     viewPager2: ViewPager2,
     tabLayout: TabLayout,
     fragments: List<Fragment>,
-    titles: List<String>
+    titles: List<String>? = null,
+    icon: List<Drawable?>? = null
 ) {
     viewPager2.adapter = PagerAdapter(requireActivity(), fragments)
 
     TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
-        tab.text = titles[position]
+        tab.text = titles?.get(position)
+        tab.icon = icon?.get(position)
     }.attach()
 }
 

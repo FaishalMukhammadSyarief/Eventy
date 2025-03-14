@@ -50,5 +50,6 @@ class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event
     fun toMeeting() = findNavController().navigate(R.id.action_event_to_meeting)
     fun toReport() = context?.openActivity<ReportActivity>()
     private fun toDivision(division: Division) = EventFragmentDirections.actionEventToDivision(division).navigate(this)
+    //private fun toDivision(division: Division) = context?.openActivity<DivisionActivity> { putExtra(EXTRA_DIVISION, division) }
 
 }

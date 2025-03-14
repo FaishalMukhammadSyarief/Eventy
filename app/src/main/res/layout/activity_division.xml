@@ -78,7 +78,7 @@
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab_layout"
                 tabIndicatorColor="@{division.color}"
-                tabSelectedTextColor="@{division.color}"
+                tabTextSelectedColor="@{division.color}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/tab_layout"

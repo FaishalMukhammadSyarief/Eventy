@@ -1,6 +1,7 @@
 package com.zhalz.eventy.presentation.adapter
 
 import android.app.Activity
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -29,11 +30,13 @@ fun Activity.setupTabLayout(
     viewPager2: ViewPager2,
     tabLayout: TabLayout,
     fragments: List<() -> Fragment>,
-    titles: List<String>
+    titles: List<String>,
+    icon: List<Drawable>? = null
 ) {
     viewPager2.adapter = PagerAdapter2(this as AppCompatActivity, fragments)
 
     TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
         tab.text = titles[position]
+        tab.icon = icon?.get(position)
     }.attach()
 }

@@ -2,12 +2,16 @@ package com.zhalz.eventy.presentation.division
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.content.res.AppCompatResources.getDrawable
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.tabs.TabLayout
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
 import com.zhalz.eventy.databinding.FragmentDivisionBinding
 import com.zhalz.eventy.presentation.division.task.TaskFragment
-import com.zhalz.eventy.utils.extension.setupTabLayout
+import com.zhalz.eventy.utils.extension.setupTabPager
 
 class DivisionFragment : BaseFragment<FragmentDivisionBinding>(R.layout.fragment_division) {
 
@@ -23,11 +27,39 @@ class DivisionFragment : BaseFragment<FragmentDivisionBinding>(R.layout.fragment
     }
 
     private fun initUI() {
-        setupTabLayout(
+        bind.collapsingToolbar.setupWithNavController(bind.toolbar, findNavController())
+        bind.toolbar.title = args.division.title
+
+        setTabLayout()
+    }
+
+    private fun setTabLayout() {
+        val fragments = listOf(TaskFragment(), TaskFragment(), TaskFragment())
+        val tabTitles = listOf("TASK ", "IN PROGRESS", "COMPLETED")
+        val tabIcons = listOf(
+            getDrawable(requireContext(), R.drawable.ic_list_check),
+            getDrawable(requireContext(), R.drawable.ic_circle_dashed),
+            getDrawable(requireContext(), R.drawable.ic_check_circle),
+        )
+
+        bind.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                tab.text = tabTitles[tab.position]
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab) {
+                tab.text = null
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab) {}
+        })
+
+        setupTabPager(
             bind.viewPager,
             bind.tabLayout,
-            listOf(TaskFragment(), TaskFragment(), TaskFragment()),
-            listOf("TASK", "IN PROGRESS", "COMPLETED")
+            fragments,
+            null,
+            tabIcons
         )
     }
 

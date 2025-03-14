@@ -11,6 +11,7 @@ import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.tabs.TabLayout
 import com.zen.overlapimagelistview.OverlapImageListView
+import com.zhalz.eventy.R
 import com.zhalz.eventy.domain.model.Person
 import com.zhalz.eventy.utils.extension.formatDate
 import com.zhalz.eventy.utils.extension.lighten
@@ -81,12 +82,27 @@ fun LinearProgressIndicator.setIndicatorColor(color: Int) =
 fun TabLayout.setTabIndicatorColor(color: Int) =
     setSelectedTabIndicatorColor(getColor(context, color))
 
-@BindingAdapter("tabSelectedTextColor")
-fun TabLayout.setTabSelectedTextColor(color: Int) =
+@BindingAdapter("tabTextSelectedColor")
+fun TabLayout.setTabTextSelectedColor(color: Int) =
     setTabTextColors(
         tabTextColors?.defaultColor ?: getColor(context, color),
         getColor(context, color)
     )
+
+@BindingAdapter("tabIconSelectedColor")
+fun TabLayout.setTabIconSelectedColor(color: Int) {
+    val states = arrayOf(
+        intArrayOf(android.R.attr.state_selected),
+        intArrayOf(-android.R.attr.state_selected)
+    )
+
+    val colors = intArrayOf(
+        getColor(context, color),
+        getColor(context, R.color.text_grey)
+    )
+
+    tabIconTint = ColorStateList(states, colors)
+}
 
 /*  Overlap Image  */
 @BindingAdapter("listImage")

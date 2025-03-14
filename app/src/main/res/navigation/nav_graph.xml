@@ -125,7 +125,6 @@
     <fragment
         android:id="@+id/division_fragment"
         android:name="com.zhalz.eventy.presentation.division.DivisionFragment"
-        android:label="Division"
         tools:layout="@layout/fragment_division">
         <argument
             android:name="division"
