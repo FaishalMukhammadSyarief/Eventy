@@ -35,10 +35,10 @@ class DivisionFragment : BaseFragment<FragmentDivisionBinding>(R.layout.fragment
 
     private fun setTabLayout() {
         val fragments = listOf(TaskFragment(), TaskFragment(), TaskFragment())
-        val tabTitles = listOf("TASK ", "IN PROGRESS", "COMPLETED")
+        val tabTitles = listOf("Uncompleted ", "In-Progress", "Completed")
         val tabIcons = listOf(
-            getDrawable(requireContext(), R.drawable.ic_list_check),
-            getDrawable(requireContext(), R.drawable.ic_circle_dashed),
+            getDrawable(requireContext(), R.drawable.ic_cross_circle),
+            getDrawable(requireContext(), R.drawable.ic_play_circle),
             getDrawable(requireContext(), R.drawable.ic_check_circle),
         )
 
