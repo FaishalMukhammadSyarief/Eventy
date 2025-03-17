@@ -13,13 +13,15 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_screen">
+        android:paddingHorizontal="16dp">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_profile"
             style="@style/MyRoundImage"
+            imageUrl="@{data.image}"
             android:layout_width="65dp"
             android:layout_height="65dp"
+            android:layout_marginVertical="16dp"
             android:elevation="8dp"
             android:src="@drawable/faishal"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -43,11 +45,11 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_id"
-            android:text="@{String.valueOf(data.id)}"
             android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:layout_marginStart="12dp"
             android:gravity="center"
+            android:text="@{String.valueOf(data.phone)}"
             app:layout_constraintBottom_toBottomOf="@+id/iv_profile"
             app:layout_constraintStart_toEndOf="@+id/iv_profile"
             tools:ignore="TextSizeCheck"

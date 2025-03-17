@@ -7,6 +7,8 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.getColor
 import androidx.core.content.ContextCompat.getDrawable
 import androidx.databinding.BindingAdapter
+import com.bumptech.glide.Glide
+import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.tabs.TabLayout
@@ -104,10 +106,16 @@ fun TabLayout.setTabIconSelectedColor(color: Int) {
     tabIconTint = ColorStateList(states, colors)
 }
 
-/*  Overlap Image  */
+/*  Image  */
 @BindingAdapter("listImage")
 fun OverlapImageListView.setOverlapImages(listImage: List<String>) = CoroutineScope(IO).launch {
     imageList = ArrayList(
         listImage.map { context.toBitmap(it) }
     )
 }
+
+@BindingAdapter("imageUrl")
+fun ShapeableImageView.setImageUrl(url: String?) =
+    Glide.with(context)
+        .load(url)
+        .into(this)

@@ -69,7 +69,7 @@ fun Fragment.addMenu(
 fun Fragment.setupTabPager(
     viewPager2: ViewPager2,
     tabLayout: TabLayout,
-    fragments: List<Fragment>,
+    fragments: List<() -> Fragment>,
     titles: List<String>? = null,
     icon: List<Drawable?>? = null
 ) {

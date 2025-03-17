@@ -10,15 +10,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class PagerAdapter(activity: FragmentActivity, private val items: List<Fragment>) : FragmentStateAdapter(activity) {
-
-    override fun getItemCount() = items.size
-
-    override fun createFragment(position: Int) = items[position]
-
-}
-
-class PagerAdapter2(activity: FragmentActivity, private val items: List<() -> Fragment>) : FragmentStateAdapter(activity) {
+class PagerAdapter(activity: FragmentActivity, private val items: List<() -> Fragment>) : FragmentStateAdapter(activity) {
 
     override fun getItemCount() = items.size
 
@@ -33,7 +25,7 @@ fun Activity.setupTabLayout(
     titles: List<String>,
     icon: List<Drawable>? = null
 ) {
-    viewPager2.adapter = PagerAdapter2(this as AppCompatActivity, fragments)
+    viewPager2.adapter = PagerAdapter(this as AppCompatActivity, fragments)
 
     TabLayoutMediator(tabLayout, viewPager2) { tab, position ->
         tab.text = titles[position]

@@ -10,7 +10,6 @@ import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.presentation.report.division.overview.OverviewFragment
 import com.zhalz.eventy.presentation.report.division.spending.SpendingFragment
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
-import com.zhalz.eventy.utils.extension.setupWithTabLayout
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,12 +31,7 @@ class DivisionReportActivity : NoViewModelActivity<ActivityDivisionReportBinding
     }
 
     private fun initUI() {
-        binding.viewPager.setupWithTabLayout(
-            this,
-            binding.tabLayout,
-            listOf(OverviewFragment(), SpendingFragment()),
-            listOf("OVERVIEW", "SPENDING")
-        )
+
     }
 
 }

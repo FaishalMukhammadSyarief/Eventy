@@ -2,18 +2,19 @@ package com.zhalz.eventy.presentation.contact.friend
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.crocodic.core.base.adapter.ReactiveListAdapter
-import com.crocodic.core.extension.openActivity
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
 import com.zhalz.eventy.data.teamList
 import com.zhalz.eventy.databinding.FragmentFriendBinding
 import com.zhalz.eventy.databinding.ItemContactBinding
 import com.zhalz.eventy.domain.model.Person
-import com.zhalz.eventy.presentation.profile.ProfileActivity
-import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_PERSON
+import com.zhalz.eventy.presentation.contact.ContactFragmentDirections
+import com.zhalz.eventy.presentation.profile.ProfileFragmentArgs
+import com.zhalz.eventy.utils.extension.navigate
 
 class FriendFragment : BaseFragment<FragmentFriendBinding>(R.layout.fragment_friend) {
 
@@ -33,7 +34,12 @@ class FriendFragment : BaseFragment<FragmentFriendBinding>(R.layout.fragment_fri
         contactAdapter.submitList(teamList)
     }
 
-    private fun toDetail(person: Person) = context?.openActivity<ProfileActivity> { putExtra(EXTRA_PERSON, person) }
+    private fun toDetail(person: Person) = ContactFragmentDirections.actionContactToProfile(person).navigate(this)
+
+/*    private fun toDetail(person: Person) {
+        val bundle = ProfileFragmentArgs.Builder(person).build().toBundle()
+        findNavController().navigate(R.id.profile_fragment, bundle)
+    }*/
 
     override fun onDestroyView() {
         super.onDestroyView()

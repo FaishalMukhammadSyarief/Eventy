@@ -13,7 +13,6 @@ import com.zhalz.eventy.presentation.dialog.add_person.AddPersonFragment
 import com.zhalz.eventy.presentation.division.task.TaskFragment
 import com.zhalz.eventy.presentation.member.MemberActivity
 import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_DIVISION
-import com.zhalz.eventy.utils.extension.setupWithTabLayout
 
 class DivisionActivity : BaseActivity<ActivityDivisionBinding, DivisionViewModel>(R.layout.activity_division) {
 
@@ -33,12 +32,6 @@ class DivisionActivity : BaseActivity<ActivityDivisionBinding, DivisionViewModel
     }
 
     private fun initUI() {
-        binding.viewPager.setupWithTabLayout(
-            this,
-            binding.tabLayout,
-            listOf(TaskFragment(), TaskFragment(), TaskFragment()),
-            listOf("TASK", "IN PROGRESS", "COMPLETED")
-        )
 
         binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {

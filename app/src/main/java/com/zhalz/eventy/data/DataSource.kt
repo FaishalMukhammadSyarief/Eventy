@@ -17,7 +17,7 @@ val person4 = Person(342343, "Kimi", "https://i.pinimg.com/736x/9b/e7/e9/9be7e9f
 val person5 = Person(342343, "Sara", "https://i.pinimg.com/736x/92/15/b5/9215b54b58a55a238a2eaa71fb66ceb3.jpg", "sara@mail.com", "084562529854")
 
 val teamList = mutableListOf(
-    person1, person2, person3, person4, person5
+    person1, person2, person3
 )
 
 val managerList = mutableListOf(
