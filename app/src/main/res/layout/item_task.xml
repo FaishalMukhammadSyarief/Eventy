@@ -11,73 +11,74 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:strokeWidth="0dp">
 
-        <View
-            android:id="@+id/anchor"
-            android:layout_width="1dp"
-            android:layout_height="1dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_division_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="8dp"
-            android:text="@{data.date}"
-            android:textSize="@dimen/text_small"
-            app:fontFamily="@font/poppins_medium"
-            app:layout_constraintBottom_toTopOf="@+id/anchor"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="AUGUST 22, 2024" />
-
-        <TextView
-            android:id="@+id/tv_division_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="16dp"
-            android:text="@{data.title}"
-            android:textSize="@dimen/text_medium"
-            app:fontFamily="@font/poppins_medium"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/anchor"
-            tools:text="@string/divisi_perlengkapan" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingHorizontal="28dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:padding="@dimen/margin_screen">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="@{data.title}"
+                android:textSize="@dimen/text_medium"
+                app:fontFamily="@font/poppins_semi_bold"
+                app:layout_constraintEnd_toStartOf="@+id/tv_date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Task UI" />
+
+            <TextView
+                android:id="@+id/tv_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/team"
-                android:textSize="@dimen/text_normal"
-                app:fontFamily="@font/poppins_semi_bold" />
+                android:text='@{data.description}'
+                android:textColor="@color/grey"
+                android:textSize="@dimen/text_small"
+                app:layout_constraintStart_toStartOf="@+id/tv_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                tools:ignore="TextContrastCheck"
+                tools:text="Create task UI in Figma" />
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/iv_profile"
-                style="@style/MyRoundImage"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:elevation="8dp"
-                android:src="@drawable/faishal" />
+            <TextView
+                android:id="@+id/tv_date"
+                setDate="@{data.due}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/text_small"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TextContrastCheck"
+                tools:text="Tomorrow" />
 
-        </LinearLayout>
+            <com.zen.overlapimagelistview.OverlapImageListView
+                android:id="@+id/overlapImage"
+                listImage="@{data.listImage}"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginTop="16dp"
+                app:circleCount="3"
+                app:fillColor="@color/grey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_location"
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
 </layout>

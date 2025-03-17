@@ -95,7 +95,7 @@
 
             <TextView
                 android:id="@+id/tv_date"
-                android:text='@{":  " + task.date}'
+                android:text='@{task.due}'
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -134,7 +134,7 @@
 
             <TextView
                 android:id="@+id/tv_team"
-                listToText="@{task.team}"
+                listToText="@{task.assignee}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="@+id/guideline"

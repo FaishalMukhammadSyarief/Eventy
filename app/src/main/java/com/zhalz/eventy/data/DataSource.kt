@@ -4,41 +4,40 @@ import com.zhalz.eventy.R
 import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.domain.model.Event
 import com.zhalz.eventy.domain.model.Person
-import com.zhalz.eventy.domain.model.Schedule
+import com.zhalz.eventy.domain.model.Meet
 import com.zhalz.eventy.domain.model.Spending
 import com.zhalz.eventy.domain.model.Task
+import com.zhalz.eventy.domain.model.TaskStatus
 
-val user = Person(1234567, "Faishal Mukhammad", "faishalmukhammadsyarief@gmail.com", "081313327023", "Faishal Mukhammad Syarief", "_zhalz_", "faishall")
-
-val listImage = listOf(
-    R.drawable.faishal,
-    R.drawable.ship,
-    R.drawable.faishal
-)
-
-val meetingList = mutableListOf(
-    Schedule(1, "Meeting 1", "2025-01-17 06:33:45", "Google Meet", 2, listImage),
-    Schedule(2, "Meeting 2", "2025-01-16 06:33:45", "Zoom", 4, listImage),
-    Schedule(2, "Meeting 2", "2025-01-18 06:33:45", "Zoom", 4, listImage)
-)
+val user = Person(1234567, "Faishal Mukhammad", "https://avatars.githubusercontent.com/u/137977580?v=4", "faishalmukhammadsyarief@gmail.com", "081313327023")
+val person1 = Person(1321422, "Xian Xia", "https://i.pinimg.com/736x/25/2d/3c/252d3cf65cb46eb321793c6a3f2389c5.jpg", "xiann@mail.com", "087852163210")
+val person2 = Person(1233543, "Kanroji", "https://i.pinimg.com/736x/18/b9/79/18b979f234fa1cba8753bcb1f5678824.jpg", "kann@mail.com", "089525223615")
+val person3 = Person(3424123, "Sharon", "https://i.pinimg.com/736x/68/5f/13/685f1349eccce0eed3f10fe7b2c48595.jpg", "sharonn@mail.com", "084562529854")
+val person4 = Person(342343, "Kimi", "https://i.pinimg.com/736x/9b/e7/e9/9be7e9f94c5c5f9a8d2f825cc54b4960.jpg", "kimii@mail.com", "084562529854")
+val person5 = Person(342343, "Sara", "https://i.pinimg.com/736x/92/15/b5/9215b54b58a55a238a2eaa71fb66ceb3.jpg", "sara@mail.com", "084562529854")
 
 val teamList = mutableListOf(
-    Person(1321422, "Rafi Raditya", "radit@mail.com", "087852163210", "Raditya", "rafi.raditya", "rafi"),
-    Person(1233543, "Dandy Rama", "rama@mail.com", "089525223615", "Dandyy", "_dandy_", "rama"),
-    Person(3424123, "Fabe Bustanil", "fatichin@mail.com", "084562529854", "Fabe B F", "xbstnl", "bustanil"),
+    person1, person2, person3, person4, person5
 )
 
 val managerList = mutableListOf(
-    Person(1092312, "Ikhsandi Saktiawan", "ikhsan@mail.com", "081326584842", "Ikhsandi", "_ikhsan_", "ikhsanD"),
+    person4
 )
 
 val managerList2 = mutableListOf(
-    Person(1239112, "Fabe Bustanil", "fatichin@mail.com", "084562529854", "Fabe B F", "xbstnl", "bustanil"),
+    person5
+)
+
+val meetingList = mutableListOf(
+    Meet(1, "Meeting 1", "2025-01-17 06:33:45", "Google Meet", teamList),
+    Meet(2, "Meeting 2", "2025-01-16 06:33:45", "Zoom", teamList),
+    Meet(2, "Meeting 2", "2025-01-18 06:33:45", "Zoom", teamList)
 )
 
 val taskList = mutableListOf(
-    Task(1092312, "Menyiapkan Panggung", "2025-01-02 06:33:45", "Saiful", teamList),
-    Task(1239112, "Menyiapkan Banner", "2025-01-02 06:33:45", "Ikhsandi", teamList),
+    Task(1092312, "Task UI", "Create task ui in figma", "2025-01-02 06:33:45", "Saiful", teamList, TaskStatus.UNCOMPLETED),
+    Task(1092312, "Home UI", "Create home ui in figma", "2025-02-02 06:33:45", "Pahael", teamList, TaskStatus.ON_PROGRESS),
+    Task(1092312, "Division UI", "Create division ui in figma", "2025-02-02 06:33:45", "Fulan", teamList, TaskStatus.COMPLETED),
 )
 
 val divisionList = mutableListOf(

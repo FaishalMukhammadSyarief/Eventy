@@ -7,12 +7,12 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 fun String.formatDate(pattern: String): String {
-    val inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
-    val outputFormatter = DateTimeFormatter.ofPattern(pattern)
+    val inputFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
+    val outputFormat = DateTimeFormatter.ofPattern(pattern)
 
-    val dateTime = LocalDateTime.parse(this, inputFormatter)
+    val dateTime = LocalDateTime.parse(this, inputFormat)
 
-    return dateTime.format(outputFormatter)
+    return dateTime.format(outputFormat)
 }
 
 fun String.recognizeDate(context: Context, pattern: String): String {

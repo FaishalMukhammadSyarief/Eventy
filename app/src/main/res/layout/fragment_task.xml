@@ -13,16 +13,15 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".presentation.contact.friend.FriendFragment">
+        android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_contact"
+            android:id="@+id/rv_task"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:adapter="@{taskAdapter}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_contact" />
+            tools:listitem="@layout/item_task" />
 
     </FrameLayout>
 

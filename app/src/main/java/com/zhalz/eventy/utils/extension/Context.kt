@@ -10,7 +10,6 @@ import android.view.MenuItem
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.annotation.ColorInt
-import androidx.annotation.DrawableRes
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
@@ -20,8 +19,6 @@ import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.zhalz.eventy.presentation.adapter.PagerAdapter
-import kotlinx.coroutines.Dispatchers.IO
-import kotlinx.coroutines.withContext
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -84,12 +81,9 @@ fun Fragment.setupTabPager(
     }.attach()
 }
 
-suspend fun Context.toBitmap(@DrawableRes drawable: Int): Bitmap =
-    withContext(IO) {
-        Glide.with(this@toBitmap)
-            .asBitmap()
-            .load(drawable)
-            .apply(circleCropTransform())
-            .submit()
-            .get()
-    }
+fun Context.toBitmap(url: String): Bitmap = Glide.with(this)
+    .asBitmap()
+    .load(url)
+    .apply(circleCropTransform())
+    .submit()
+    .get()

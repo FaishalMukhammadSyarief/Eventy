@@ -2,8 +2,6 @@ package com.zhalz.eventy.presentation.division.task
 
 import android.os.Bundle
 import android.view.View
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.crocodic.core.base.adapter.ReactiveListAdapter
 import com.crocodic.core.extension.openActivity
 import com.zhalz.eventy.R
@@ -25,10 +23,6 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>(R.layout.fragment_task) {
         super.onViewCreated(view, savedInstanceState)
 
         binding?.taskAdapter = taskAdapter
-
-        DividerItemDecoration(requireContext(), LinearLayoutManager(requireContext()).orientation).also {
-            binding?.rvContact?.addItemDecoration(it)
-        }
 
         taskAdapter.submitList(taskList)
 

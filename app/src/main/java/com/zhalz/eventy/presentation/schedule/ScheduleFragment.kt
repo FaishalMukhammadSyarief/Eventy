@@ -10,16 +10,16 @@ import com.zhalz.eventy.base.BaseFragment
 import com.zhalz.eventy.data.meetingList
 import com.zhalz.eventy.databinding.FragmentScheduleBinding
 import com.zhalz.eventy.databinding.ItemScheduleBinding
-import com.zhalz.eventy.domain.model.Schedule
+import com.zhalz.eventy.domain.model.Meet
 
 class ScheduleFragment : BaseFragment<FragmentScheduleBinding>(R.layout.fragment_schedule) {
 
     private val schedule1Adapter by lazy {
-        ReactiveListAdapter<ItemScheduleBinding, Schedule>(R.layout.item_schedule)
+        ReactiveListAdapter<ItemScheduleBinding, Meet>(R.layout.item_schedule)
     }
 
     private val schedule2Adapter by lazy {
-        ReactiveListAdapter<ItemScheduleBinding, Schedule>(R.layout.item_schedule)
+        ReactiveListAdapter<ItemScheduleBinding, Meet>(R.layout.item_schedule)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
