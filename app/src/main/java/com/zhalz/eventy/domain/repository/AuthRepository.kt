@@ -14,4 +14,6 @@ interface AuthRepository {
 
     suspend fun verifyOtp(request: OtpRequest) : ApiResult<AuthResponse>
 
+    suspend fun logout() : ApiResult<AuthResponse>
+
 }

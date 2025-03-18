@@ -19,6 +19,10 @@
     <string name="home">Home</string>
 
     <string name="msg_error_empty">Cannot be Empty</string>
+    <string name="action_positive">Yes</string>
+    <string name="action_negative">No</string>
+    <string name="action_neutral">Cancel</string>
+    <string name="this_cannot_be_undone">This cannot be undone</string>
 
     <string name="history">History</string>
     <string name="notification">Notification</string>

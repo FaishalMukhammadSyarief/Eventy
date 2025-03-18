@@ -45,7 +45,7 @@ class DataStoreSession(context: Context) {
     }
 
     /*  Clear User */
-    suspend fun clearUserCredentials() = dataStore.edit {
+    suspend fun clearUser() = dataStore.edit {
         it.remove(tokenKey)
         it.remove(rememberKey)
 

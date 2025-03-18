@@ -5,6 +5,7 @@ import com.zhalz.eventy.data.remote.model.request.OtpRequest
 import com.zhalz.eventy.data.remote.model.request.RegisterRequest
 import com.zhalz.eventy.data.remote.model.response.AuthResponse
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.POST
 
 interface ApiService {
@@ -23,5 +24,8 @@ interface ApiService {
     suspend fun verifyOtp(
         @Body request: OtpRequest
     ) : AuthResponse
+
+    @DELETE("auth/logout")
+    suspend fun logout() : AuthResponse
 
 }

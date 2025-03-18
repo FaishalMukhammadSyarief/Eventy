@@ -33,4 +33,11 @@ class AuthRepositoryImpl @Inject constructor(private val apiService: ApiService)
                 onFailure = { throwable -> ApiResult.Error(throwable.handleError()) }
             )
 
+    override suspend fun logout(): ApiResult<AuthResponse> =
+        runCatching { apiService.logout() }
+            .fold(
+                onSuccess = { response -> ApiResult.Success(response) },
+                onFailure = { throwable -> ApiResult.Error(throwable.handleError()) }
+            )
+
 }

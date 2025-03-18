@@ -5,14 +5,15 @@ import androidx.activity.enableEdgeToEdge
 import androidx.core.view.isGone
 import androidx.core.view.isInvisible
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.crocodic.core.base.activity.NoViewModelActivity
 import com.crocodic.core.extension.tos
 import com.zhalz.eventy.R
+import com.zhalz.eventy.base.BaseActivity
 import com.zhalz.eventy.data.user
 import com.zhalz.eventy.databinding.ActivityMainBinding
 import com.zhalz.eventy.databinding.NavHeaderBinding
@@ -21,13 +22,14 @@ import com.zhalz.eventy.utils.extension.fadeIn
 import com.zhalz.eventy.utils.extension.fadeOut
 import com.zhalz.eventy.utils.extension.gone
 import com.zhalz.eventy.utils.extension.invisible
+import com.zhalz.eventy.utils.extension.showDialog
 import com.zhalz.eventy.utils.extension.slideDownGone
 import com.zhalz.eventy.utils.extension.slideUpVisible
 import com.zhalz.eventy.utils.extension.visible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_main) {
+class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.activity_main) {
 
     private val appBarConfiguration by lazy {
         AppBarConfiguration(setOf(R.id.home_fragment, R.id.notification_fragment), binding.drawerLayout)
@@ -101,7 +103,7 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
             when (it.itemId) {
                 R.id.contact_fragment -> navController.navigate(R.id.contact_fragment)
                 R.id.menu_help -> tos("HELP")
-                R.id.menu_logout -> navController.navigate(R.id.landing_fragment)
+                R.id.menu_logout -> logout()
             }
             binding.drawerLayout.closeDrawers()
             true
@@ -110,6 +112,19 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
 
     private fun setBottomNav() =
         binding.bottomNav.setupWithNavController(navController)
+
+    fun logout() = showDialog(
+        getString(R.string.logout),
+        getString(R.string.this_cannot_be_undone),
+        R.drawable.ic_logout
+    ) {
+        viewModel.logout()
+        viewModel.clearUser()
+        val options = NavOptions.Builder()
+            .setPopUpTo(navController.graph.startDestinationId, inclusive = true)
+            .build()
+        navController.navigate(R.id.landing_fragment, null, options)
+    }
 
     fun toCreate() = navController.navigate(R.id.create_event_fragment)
 

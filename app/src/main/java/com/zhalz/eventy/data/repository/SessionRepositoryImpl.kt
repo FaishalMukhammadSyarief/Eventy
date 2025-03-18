@@ -14,6 +14,6 @@ class SessionRepositoryImpl @Inject constructor(private val dataStoreSession: Da
     override suspend fun saveUserCredential(user: Pair<String, String>): Preferences = dataStoreSession.setUserCredentials(user)
     override suspend fun getUserCredential(): Pair<String?, String?> = dataStoreSession.getUserCredentials().first()
 
-    override suspend fun clearUser(): Preferences = dataStoreSession.clearUserCredentials()
+    override suspend fun clearUser(): Preferences = dataStoreSession.clearUser()
 
 }

@@ -16,7 +16,9 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions.circleCropTransform
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
+import com.zhalz.eventy.R
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -82,3 +84,24 @@ fun Activity.showSnackBar(message: String?) =
         message.toString(),
         Snackbar.LENGTH_SHORT
     ).show()
+
+fun Activity.showDialog(
+    title: String,
+    message: String,
+    icon: Int,
+    positiveAction: () -> Unit = {},
+) {
+    MaterialAlertDialogBuilder(this)
+        .setTitle(title)
+        .setMessage(message)
+        .setIcon(icon)
+        .setCancelable(false)
+        .setPositiveButton(R.string.action_positive) { dialog, _ ->
+            positiveAction()
+            dialog.dismiss()
+        }
+        .setNegativeButton(R.string.action_neutral) { dialog, _ ->
+            dialog.dismiss()
+        }
+        .show()
+}
