@@ -9,11 +9,9 @@ import com.crocodic.core.base.adapter.ReactiveListAdapter
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
 import com.zhalz.eventy.data.divisionList
-import com.zhalz.eventy.data.taskList
 import com.zhalz.eventy.databinding.FragmentEventBinding
 import com.zhalz.eventy.databinding.ItemDivisionBinding
 import com.zhalz.eventy.domain.model.Division
-import com.zhalz.eventy.presentation.task.task_detail.TaskDetailFragmentArgs
 import com.zhalz.eventy.utils.extension.navigate
 
 class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event) {

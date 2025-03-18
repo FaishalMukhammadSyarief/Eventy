@@ -22,12 +22,14 @@ class ContactFragment : BaseFragment<FragmentContactBinding>(R.layout.fragment_c
 
     private fun initUI() {
 
-        setupTabPager(
-            bind.viewPager,
-            bind.tabLayout,
-            listOf({ FriendFragment() } , { CollaboratorFragment() }),
-            listOf(getString(R.string.friend2), getString(R.string.collaborator))
-        )
+        binding?.let {
+            setupTabPager(
+                it.viewPager,
+                it.tabLayout,
+                listOf({ FriendFragment() } , { CollaboratorFragment() }),
+                listOf(getString(R.string.friend2), getString(R.string.collaborator))
+            )
+        }
 
         addMenu(R.menu.menu_contact) {
             when (it.itemId) {
