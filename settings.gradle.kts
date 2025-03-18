@@ -20,5 +20,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Eventry"
+rootProject.name = "Eventy"
 include(":app")
