@@ -148,5 +148,6 @@
     <string name="start_time">Start Time</string>
     <string name="end_date">End Date</string>
     <string name="time">Time</string>
+    <string name="task_list">Task List</string>
 
 </resources>
