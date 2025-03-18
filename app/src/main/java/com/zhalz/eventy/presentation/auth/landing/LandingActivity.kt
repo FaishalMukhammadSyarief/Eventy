@@ -8,8 +8,6 @@ import com.crocodic.core.base.activity.NoViewModelActivity
 import com.crocodic.core.extension.openActivity
 import com.zhalz.eventy.R
 import com.zhalz.eventy.databinding.ActivityLandingBinding
-import com.zhalz.eventy.presentation.auth.login.LoginActivity
-import com.zhalz.eventy.presentation.auth.register.RegisterActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -31,7 +29,7 @@ class LandingActivity : NoViewModelActivity<ActivityLandingBinding>(R.layout.act
         }
     }
 
-    fun toLogin() = openActivity<LoginActivity> { finish() }
-    fun toRegister() = openActivity<RegisterActivity> { finish() }
+    fun toLogin() = {  }
+    fun toRegister() = {  }
 
 }

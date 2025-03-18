@@ -23,6 +23,10 @@ fun View.visible() = this.apply {
     visibility = View.VISIBLE
 }
 
+fun View.invisible() = this.apply {
+    visibility = View.INVISIBLE
+}
+
 
 /*  UI Component  */
 fun RecyclerView.addDivider(context: Context, orientation: Int = LinearLayoutManager.VERTICAL) =
@@ -41,13 +45,13 @@ fun AutoCompleteTextView.setDropdown(list: List<String?>, onSelected: (Int) -> U
 }
 
 /*  Animations  */
-fun View.slideDown(): ObjectAnimator = ObjectAnimator.ofFloat(this, TRANSLATION_Y, 0f, this.height.toFloat()).apply {
+fun View.slideDownGone(): ObjectAnimator = ObjectAnimator.ofFloat(this, TRANSLATION_Y, 0f, this.height.toFloat()).apply {
     duration = 400
     onFinish { gone() }
     start()
 }
 
-fun View.slideUp(): ObjectAnimator = ObjectAnimator.ofFloat(this, TRANSLATION_Y, this.height.toFloat(), 0f).apply {
+fun View.slideUpVisible(): ObjectAnimator = ObjectAnimator.ofFloat(this, TRANSLATION_Y, this.height.toFloat(), 0f).apply {
     duration = 400
     onStart { visible() }
     start()

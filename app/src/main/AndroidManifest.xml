@@ -14,14 +14,11 @@
         android:theme="@style/Theme.Eventy"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.create_schedule.CreateScheduleActivity"
-            android:exported="false" />
-        <activity
             android:name=".presentation.splash.SplashCustomActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.main.MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,12 +27,6 @@
         </activity>
         <activity
             android:name=".presentation.auth.otp.OtpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.auth.register.RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.auth.login.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.auth.landing.LandingActivity"
