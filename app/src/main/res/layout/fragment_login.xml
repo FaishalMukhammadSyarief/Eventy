@@ -77,12 +77,12 @@
             app:layout_constraintTop_toBottomOf="@+id/etl_email">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_password"
+                android:id="@+id/et_pass"
                 style="@style/MyEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/password"
-                android:text="@={viewModel.password}"
+                android:text="@={viewModel.pass}"
                 android:inputType="textPassword"
                 tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
         </com.zhalz.eventy.presentation.custom_view.TextLayoutPassword>

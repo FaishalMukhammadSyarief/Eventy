@@ -26,6 +26,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
         super.onViewCreated(view, savedInstanceState)
 
         binding?.fragment = this
+        binding?.viewModel = viewModel
 
         initUI()
 
@@ -38,8 +39,10 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
     @SuppressLint("SetTextI18n")
     fun login() = lifecycleScope.launch {
         requireActivity().closeKeyboard()
-        binding?.etEmail?.setText("fool@gmail.com")
-        binding?.etPassword?.setText("123123123123")
+
+        binding?.etEmail?.setText("fool1@gmail.com")
+        binding?.etPass?.setText("081231231231")
+
         viewModel.login().collect(loginResult())
     }
 
@@ -47,18 +50,14 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
         when (it) {
             is ApiResult.Success -> toHome()
             is ApiResult.Error -> {
-                dismissLoadingDialog()
+                loadingDialog?.dismiss()
                 context?.tos(it.message.orEmpty())
             }
-            is ApiResult.Loading -> showLoadingDialog()
+            is ApiResult.Loading -> loadingDialog?.show("Loading...")
         }
     }
 
     fun toRegister() = LoginFragmentDirections.actionLoginToRegister().navigate(this)
     fun toHome() = LoginFragmentDirections.actionLoginToHome().navigate(this)
-
-    fun showLoadingDialog() = loadingDialog?.show("Loading...")
-    fun dismissLoadingDialog() = loadingDialog?.dismiss()
-
 
 }

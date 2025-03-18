@@ -12,17 +12,12 @@ import javax.inject.Inject
 class LoginViewModel @Inject constructor() : BaseViewModel() {
 
     val email = MutableLiveData<String>()
-    val password = MutableLiveData<String>()
-
-    init {
-        email.value = "fool@gmail.com"
-        password.value = "123123123123"
-    }
+    val pass = MutableLiveData<String>()
 
     fun login() = flow {
         emit(ApiResult.Loading())
         val result = authRepository.login(
-            LoginRequest(email.value.orEmpty(), password.value.orEmpty())
+            LoginRequest(email.value.orEmpty(), pass.value.orEmpty())
         )
         emit(result)
     }
