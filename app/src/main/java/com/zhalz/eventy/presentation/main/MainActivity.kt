@@ -11,13 +11,11 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.crocodic.core.base.activity.NoViewModelActivity
-import com.crocodic.core.extension.openActivity
 import com.crocodic.core.extension.tos
 import com.zhalz.eventy.R
 import com.zhalz.eventy.data.user
 import com.zhalz.eventy.databinding.ActivityMainBinding
 import com.zhalz.eventy.databinding.NavHeaderBinding
-import com.zhalz.eventy.presentation.auth.landing.LandingActivity
 import com.zhalz.eventy.presentation.profile.ProfileFragmentArgs
 import com.zhalz.eventy.utils.extension.fadeIn
 import com.zhalz.eventy.utils.extension.fadeOut
@@ -60,7 +58,7 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
                 R.id.meeting_fragment ->
                     binding.fabAddMeeting.fadeIn()
 
-                R.id.login_fragment, R.id.register_fragment -> binding.apply {
+                R.id.landing_fragment, R.id.login_fragment, R.id.register_fragment -> binding.apply {
                     toolbar.invisible()
                     bottomApp.slideDownGone()
                     fabCreate.fadeOut()
@@ -99,7 +97,7 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
             when (it.itemId) {
                 R.id.contact_fragment -> navController.navigate(R.id.contact_fragment)
                 R.id.menu_help -> tos("HELP")
-                R.id.menu_logout -> openActivity<LandingActivity> { finishAffinity() }
+                R.id.menu_logout -> navController.navigate(R.id.landing_fragment)
             }
             binding.drawerLayout.closeDrawers()
             true

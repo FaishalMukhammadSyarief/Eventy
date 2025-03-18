@@ -6,8 +6,8 @@
     <data>
 
         <variable
-            name="activity"
-            type="com.zhalz.eventy.presentation.auth.landing.LandingActivity" />
+            name="fragment"
+            type="com.zhalz.eventy.presentation.auth.landing.LandingFragment" />
 
     </data>
 
@@ -23,7 +23,6 @@
             android:id="@+id/ic_eventy_logo"
             android:layout_width="175dp"
             android:layout_height="175dp"
-            android:layout_marginTop="65dp"
             android:contentDescription="@string/cd_eventy_logo"
             android:src="@drawable/ic_eventy_logo"
             app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +83,7 @@
             android:layout_marginHorizontal="64dp"
             android:layout_marginBottom="8dp"
             android:backgroundTint="@color/blue"
-            android:onClick="@{() -> activity.toLogin()}"
+            android:onClick="@{() -> fragment.toLogin()}"
             android:text="@string/login"
             android:textColor="@color/white"
             app:fontFamily="@font/poppins_bold"
@@ -112,9 +111,9 @@
             style="@style/MyButton"
             android:layout_width="match_parent"
             android:layout_marginHorizontal="64dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="64dp"
             android:backgroundTint="@color/yellow"
-            android:onClick="@{() -> activity.toRegister()}"
+            android:onClick="@{() -> fragment.toRegister()}"
             android:text="@string/register"
             android:textColor="@color/white"
             app:fontFamily="@font/poppins_bold"

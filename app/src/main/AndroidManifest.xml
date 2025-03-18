@@ -28,9 +28,6 @@
         <activity
             android:name=".presentation.auth.otp.OtpActivity"
             android:exported="false" />
-        <activity
-            android:name=".presentation.auth.landing.LandingActivity"
-            android:exported="false" />
     </application>
 
 </manifest>
