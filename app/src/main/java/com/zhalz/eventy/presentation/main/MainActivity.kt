@@ -16,6 +16,7 @@ import com.zhalz.eventy.data.user
 import com.zhalz.eventy.databinding.ActivityMainBinding
 import com.zhalz.eventy.databinding.NavHeaderBinding
 import com.zhalz.eventy.presentation.auth.landing.LandingActivity
+import com.zhalz.eventy.presentation.profile.ProfileFragmentArgs
 import com.zhalz.eventy.utils.extension.fadeIn
 import com.zhalz.eventy.utils.extension.fadeOut
 import com.zhalz.eventy.utils.extension.gone
@@ -58,9 +59,10 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
                     if (bottomApp.translationY != 0f) bottomApp.slideUp()
                     if (fabCreate.alpha == 0f) fabCreate.fadeIn()
                 }
-                R.id.division_fragment -> binding.apply {
-                    toolbar.gone()
-                }
+                R.id.division_fragment -> binding.toolbar.gone()
+
+                R.id.task_detail_fragment -> binding.toolbar.gone()
+
                 else -> binding.apply {
                     toolbar.visible()
                     bottomApp.slideDown()
@@ -81,7 +83,8 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
         DataBindingUtil.bind<NavHeaderBinding>(header)?.apply {
             person = user
             root.setOnClickListener {
-                navController.navigate(R.id.profile_fragment)
+                val bundle = ProfileFragmentArgs.Builder(user).build().toBundle()
+                navController.navigate(R.id.profile_fragment, bundle)
                 binding.drawerLayout.closeDrawers()
             }
         }

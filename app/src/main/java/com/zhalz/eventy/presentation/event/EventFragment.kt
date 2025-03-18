@@ -6,14 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.crocodic.core.base.adapter.ReactiveListAdapter
-import com.crocodic.core.extension.openActivity
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
 import com.zhalz.eventy.data.divisionList
 import com.zhalz.eventy.databinding.FragmentEventBinding
 import com.zhalz.eventy.databinding.ItemDivisionBinding
 import com.zhalz.eventy.domain.model.Division
-import com.zhalz.eventy.presentation.report.ReportActivity
 import com.zhalz.eventy.utils.extension.navigate
 
 class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event) {
@@ -48,8 +46,7 @@ class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event
     fun toMember() = findNavController().navigate(R.id.action_event_to_member)
     fun toSpending() = EventFragmentDirections.actionEventToSpending(args.event.divisionList[0]).navigate(this)
     fun toMeeting() = findNavController().navigate(R.id.action_event_to_meeting)
-    fun toReport() = context?.openActivity<ReportActivity>()
+    fun toReport() = {}
     private fun toDivision(division: Division) = EventFragmentDirections.actionEventToDivision(division).navigate(this)
-    //private fun toDivision(division: Division) = context?.openActivity<DivisionActivity> { putExtra(EXTRA_DIVISION, division) }
 
 }

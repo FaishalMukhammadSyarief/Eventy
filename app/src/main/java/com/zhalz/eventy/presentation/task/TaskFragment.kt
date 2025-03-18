@@ -1,19 +1,16 @@
-package com.zhalz.eventy.presentation.division.task
+package com.zhalz.eventy.presentation.task
 
 import android.os.Bundle
 import android.view.View
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.crocodic.core.base.adapter.ReactiveListAdapter
-import com.crocodic.core.extension.openActivity
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
 import com.zhalz.eventy.data.taskList
 import com.zhalz.eventy.databinding.FragmentTaskBinding
 import com.zhalz.eventy.databinding.ItemTaskBinding
 import com.zhalz.eventy.domain.model.Task
-import com.zhalz.eventy.presentation.task.TaskActivity
-import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_TASK
+import com.zhalz.eventy.presentation.division.DivisionFragmentDirections
+import com.zhalz.eventy.utils.extension.navigate
 
 class TaskFragment : BaseFragment<FragmentTaskBinding>(R.layout.fragment_task) {
 
@@ -26,14 +23,10 @@ class TaskFragment : BaseFragment<FragmentTaskBinding>(R.layout.fragment_task) {
 
         binding?.taskAdapter = taskAdapter
 
-        DividerItemDecoration(requireContext(), LinearLayoutManager(requireContext()).orientation).also {
-            binding?.rvContact?.addItemDecoration(it)
-        }
-
         taskAdapter.submitList(taskList)
 
     }
 
-    private fun toDetail(task: Task) = context?.openActivity<TaskActivity> { putExtra(EXTRA_TASK, task) }
+    private fun toDetail(task: Task) = DivisionFragmentDirections.actionDivisionToTaskDetail(task).navigate(this)
 
 }

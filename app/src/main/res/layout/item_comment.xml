@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.zhalz.eventy.domain.model.Comment" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:layout_marginHorizontal="@dimen/margin_screen">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_profile"
+            style="@style/MyRoundImage"
+            imageUrl="@{data.image}"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="8dp"
+            android:elevation="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/faishal" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_marginStart="12dp"
+            android:gravity="center_vertical"
+            android:text="@{data.name}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:fontFamily="@font/poppins_medium"
+            app:layout_constraintStart_toEndOf="@+id/iv_profile"
+            app:layout_constraintTop_toTopOf="@+id/iv_profile"
+            tools:ignore="TextSizeCheck"
+            tools:text="@string/faishal_mukhammad" />
+
+        <TextView
+            android:id="@+id/tv_location"
+            setHour="@{data.date}"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_name"
+            app:layout_constraintStart_toEndOf="@+id/tv_name"
+            app:layout_constraintTop_toTopOf="@+id/tv_name"
+            tools:ignore="TextSizeCheck,TextContrastCheck"
+            tools:text="45m ago" />
+
+        <TextView
+            android:id="@+id/tv_comment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:ellipsize="end"
+            android:maxLines="5"
+            android:text="@{data.comment}"
+            android:textSize="@dimen/text_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_profile"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            tools:ignore="TextSizeCheck"
+            tools:text="The layout of the stage is great. But i have several suggestion about the left part." />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -78,6 +78,9 @@
         <action
             android:id="@+id/action_contact_to_add_person_dialog"
             app:destination="@id/add_person_dialog" />
+        <action
+            android:id="@+id/action_contact_to_profile"
+            app:destination="@id/profile_fragment" />
     </fragment>
 
     <fragment
@@ -88,6 +91,9 @@
         <action
             android:id="@+id/action_member_to_add_person_dialog"
             app:destination="@id/add_person_dialog" />
+        <action
+            android:id="@+id/action_member_to_profile"
+            app:destination="@id/profile_fragment" />
     </fragment>
 
     <fragment
@@ -104,7 +110,11 @@
         android:id="@+id/profile_fragment"
         android:name="com.zhalz.eventy.presentation.profile.ProfileFragment"
         android:label="Profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile">
+        <argument
+            android:name="person"
+            app:argType="com.zhalz.eventy.domain.model.Person" />
+    </fragment>
 
     <fragment
         android:id="@+id/create_event_fragment"
@@ -129,6 +139,18 @@
         <argument
             android:name="division"
             app:argType="com.zhalz.eventy.domain.model.Division" />
+        <action
+            android:id="@+id/action_division_to_task_detail"
+            app:destination="@id/task_detail_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/task_detail_fragment"
+        android:name="com.zhalz.eventy.presentation.task.task_detail.TaskDetailFragment"
+        tools:layout="@layout/fragment_task">
+        <argument
+            android:name="task"
+            app:argType="com.zhalz.eventy.domain.model.Task" />
     </fragment>
 
     <dialog

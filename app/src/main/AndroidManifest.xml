@@ -14,28 +14,10 @@
         android:theme="@style/Theme.Eventy"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.task.TaskActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.report.division.DivisionReportActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.report.ReportActivity"
-            android:exported="false" />
-        <activity
             android:name=".presentation.create_schedule.CreateScheduleActivity"
             android:exported="false" />
         <activity
-            android:name=".presentation.member.MemberActivity"
-            android:exported="false" />
-        <activity
             android:name=".presentation.splash.SplashCustomActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.division.DivisionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.profile.ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.main.MainActivity"
@@ -46,9 +28,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".utils.TestActivity"
-            android:exported="false" />
         <activity
             android:name=".presentation.auth.otp.OtpActivity"
             android:exported="false" />

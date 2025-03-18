@@ -9,16 +9,10 @@ import android.view.View.ALPHA
 import android.view.View.TRANSLATION_Y
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
 import com.zhalz.eventy.R
-import com.zhalz.eventy.presentation.adapter.PagerAdapter
 
 /*  Visibility  */
 fun View.gone() = this.apply {
@@ -45,21 +39,6 @@ fun AutoCompleteTextView.setDropdown(list: List<String?>, onSelected: (Int) -> U
         onSelected(position)
     }
 }
-
-fun ViewPager2.setupWithTabLayout(
-    context: AppCompatActivity,
-    tabLayout: TabLayout,
-    fragments: List<Fragment>,
-    titles: List<String>
-) {
-
-    adapter = PagerAdapter(context, fragments)
-
-    TabLayoutMediator(tabLayout, this) { tab, position ->
-        tab.text = titles[position]
-    }.attach()
-}
-
 
 /*  Animations  */
 fun View.slideDown(): ObjectAnimator = ObjectAnimator.ofFloat(this, TRANSLATION_Y, 0f, this.height.toFloat()).apply {

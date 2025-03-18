@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="task"
+            type="com.zhalz.eventy.domain.model.Task" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:colorBackground"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="64dp"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
+                android:layout_marginVertical="8dp"
+                android:text="@string/start_date"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_normal"
+                app:fontFamily="@font/poppins_regular"
+                tools:ignore="TextContrastCheck"
+                tools:text="Start Date" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
+                android:layout_marginVertical="8dp"
+                android:text="@string/end_date"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_normal"
+                app:fontFamily="@font/poppins_regular"
+                tools:ignore="TextContrastCheck"
+                tools:text="End Date" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
+                android:layout_marginVertical="8dp"
+                android:text="@string/time"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_normal"
+                app:fontFamily="@font/poppins_regular"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
+                android:layout_marginVertical="8dp"
+                android:text="@string/status"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_normal"
+                app:fontFamily="@font/poppins_regular"
+                tools:ignore="TextContrastCheck"
+                tools:text="Status" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <TextView
+                setDate="@{task.due}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
+                android:layout_marginVertical="8dp"
+                android:textSize="@dimen/text_normal"
+                app:fontFamily="@font/poppins_medium"
+                tools:ignore="TextContrastCheck"
+                tools:text="16 January 2025" />
+
+            <TextView
+                setDate="@{task.due}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
+                android:layout_marginVertical="8dp"
+                android:textSize="@dimen/text_normal"
+                app:fontFamily="@font/poppins_medium"
+                tools:ignore="TextContrastCheck"
+                tools:text="16 March 2025" />
+
+            <TextView
+                setHour="@{task.due}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
+                android:layout_marginVertical="8dp"
+                android:textSize="@dimen/text_normal"
+                app:fontFamily="@font/poppins_medium"
+                tools:ignore="TextContrastCheck"
+                tools:text="18:00" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_screen"
+                android:layout_marginVertical="8dp"
+                android:background="@drawable/bg_slightly_round"
+                android:backgroundTint="@color/text_grey"
+                android:gravity="center"
+                android:paddingHorizontal="8dp"
+                android:paddingTop="2dp"
+                android:text="@{task.status.ON_PROGRESS.toString()}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_normal"
+                app:fontFamily="@font/poppins_regular"
+                tools:ignore="TextContrastCheck"
+                tools:text="Uncompleted" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

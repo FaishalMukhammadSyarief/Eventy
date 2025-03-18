@@ -5,14 +5,14 @@ import android.view.View
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.crocodic.core.base.adapter.ReactiveListAdapter
-import com.crocodic.core.extension.openActivity
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
+import com.zhalz.eventy.data.teamList
 import com.zhalz.eventy.databinding.FragmentCollaboratorBinding
 import com.zhalz.eventy.databinding.ItemContactBinding
 import com.zhalz.eventy.domain.model.Person
-import com.zhalz.eventy.presentation.profile.ProfileActivity
-import com.zhalz.eventy.utils.Constanta.Parcel.EXTRA_PERSON
+import com.zhalz.eventy.presentation.contact.ContactFragmentDirections
+import com.zhalz.eventy.utils.extension.navigate
 
 class CollaboratorFragment : BaseFragment<FragmentCollaboratorBinding>(R.layout.fragment_collaborator) {
 
@@ -25,19 +25,14 @@ class CollaboratorFragment : BaseFragment<FragmentCollaboratorBinding>(R.layout.
 
         binding?.collaboratorAdapter = contactAdapter
 
-        val contactList = listOf(
-            Person(1092312, "Ikhsandi Saktiawan", "ikhsan@mail.com", "081326584842", "Ikhsandi", "_ikhsan_", "ikhsanD"),
-            Person(1239112, "Fabe Bustanil", "fatichin@mail.com", "084562529854", "Fabe B F", "xbstnl", "bustanil"),
-        )
-
         DividerItemDecoration(requireContext(), LinearLayoutManager(requireContext()).orientation).also {
             binding?.rvCollaborator?.addItemDecoration(it)
         }
 
-        contactAdapter.submitList(contactList)
+        contactAdapter.submitList(teamList)
 
     }
 
-    private fun toDetail(person: Person) = context?.openActivity<ProfileActivity> { putExtra(EXTRA_PERSON, person) }
+    private fun toDetail(person: Person) = ContactFragmentDirections.actionContactToProfile(person).navigate(this)
 
 }

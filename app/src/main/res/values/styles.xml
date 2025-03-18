@@ -57,6 +57,11 @@
         <item name="android:padding">8dp</item>
     </style>
 
+    <style name="MySlightlyRoundImage">
+        <item name="android:scaleType">centerCrop</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.Corner.Small</item>
+    </style>
+
     <style name="CustomIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/dark_blue</item>
     </style>

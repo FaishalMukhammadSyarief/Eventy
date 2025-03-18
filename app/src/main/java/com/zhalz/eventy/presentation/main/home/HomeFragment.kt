@@ -12,14 +12,14 @@ import com.zhalz.eventy.databinding.FragmentHomeBinding
 import com.zhalz.eventy.databinding.ItemEventBinding
 import com.zhalz.eventy.databinding.ItemScheduleBinding
 import com.zhalz.eventy.domain.model.Event
-import com.zhalz.eventy.domain.model.Schedule
+import com.zhalz.eventy.domain.model.Meet
 import com.zhalz.eventy.utils.extension.addDivider
 import com.zhalz.eventy.utils.extension.navigate
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     private val scheduleAdapter by lazy {
-        ReactiveListAdapter<ItemScheduleBinding, Schedule>(R.layout.item_schedule)
+        ReactiveListAdapter<ItemScheduleBinding, Meet>(R.layout.item_schedule)
     }
 
     private val eventAdapter by lazy {
