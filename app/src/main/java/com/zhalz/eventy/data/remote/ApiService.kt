@@ -4,8 +4,10 @@ import com.zhalz.eventy.data.remote.model.request.LoginRequest
 import com.zhalz.eventy.data.remote.model.request.OtpRequest
 import com.zhalz.eventy.data.remote.model.request.RegisterRequest
 import com.zhalz.eventy.data.remote.model.response.AuthResponse
+import com.zhalz.eventy.data.remote.model.response.EventResponse
 import retrofit2.http.Body
 import retrofit2.http.DELETE
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ApiService {
@@ -27,5 +29,8 @@ interface ApiService {
 
     @DELETE("auth/logout")
     suspend fun logout() : AuthResponse
+
+    @GET("events")
+    suspend fun getEvent() : EventResponse
 
 }

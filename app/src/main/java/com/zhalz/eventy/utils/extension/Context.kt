@@ -78,9 +78,9 @@ fun Context.toBitmap(url: String): Bitmap = Glide.with(this)
     .submit()
     .get()
 
-fun Activity.showSnackBar(message: String?) =
+fun Fragment.showSnackBar(message: String?) =
     Snackbar.make(
-        this.window.decorView,
+        this.requireActivity().window.decorView,
         message.toString(),
         Snackbar.LENGTH_SHORT
     ).show()

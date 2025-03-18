@@ -63,7 +63,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    setDay="@{data.date}"
+                    setDay="@{data.endDate}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -72,7 +72,7 @@
                     tools:text="15" />
 
                 <TextView
-                    setMonth="@{data.date}"
+                    setMonth="@{data.endDate}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -82,7 +82,7 @@
                     tools:text="JAN" />
 
                 <TextView
-                    setYear="@{data.date}"
+                    setYear="@{data.endDate}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"

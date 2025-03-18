@@ -38,7 +38,7 @@
 
             <TextView
                 android:id="@+id/tv_day"
-                setDay="@{data.date}"
+                setDay="@{data.endDate}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -54,7 +54,7 @@
 
             <TextView
                 android:id="@+id/tv_month"
-                setMonth="@{data.date}"
+                setMonth="@{data.endDate}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
