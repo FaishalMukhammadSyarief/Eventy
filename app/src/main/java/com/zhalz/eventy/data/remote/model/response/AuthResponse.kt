@@ -10,11 +10,11 @@ data class AuthResponse(
     val error: Any? = null,
 
     @field:SerializedName("data")
-    val data: Data? = null,
+    val authData: AuthData? = null,
 
 ) : ModelResponse()
 
-data class Data(
+data class AuthData(
 
     @field:SerializedName("user")
     val person: Person? = null,

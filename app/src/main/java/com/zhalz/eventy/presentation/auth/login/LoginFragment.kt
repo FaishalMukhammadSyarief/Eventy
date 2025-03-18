@@ -42,8 +42,9 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
 
         binding?.etEmail?.setText("vool12@gmail.com")
         binding?.etPass?.setText("081231231212")
+        val remember = binding?.cbRemember?.isChecked == true
 
-        viewModel.login().collect(loginResult())
+        viewModel.login(remember).collect(loginResult())
     }
 
     private fun loginResult() = FlowCollector<ApiResult<AuthResponse>> {

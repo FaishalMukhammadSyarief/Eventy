@@ -52,7 +52,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(R.layout.fragment
                 is ApiResult.Success -> {
                     requireActivity().showSnackBar("Register success, verifying OTP")
                     loadingDialog?.dismiss()
-                    verifyOtp(it.data?.data?.otp ?: 0)
+                    verifyOtp(it.data?.authData?.otp ?: 0)
                 }
                 is ApiResult.Error -> {
                     loadingDialog?.dismiss()
