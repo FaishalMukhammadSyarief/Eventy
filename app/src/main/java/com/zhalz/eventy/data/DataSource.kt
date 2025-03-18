@@ -13,7 +13,7 @@ val user = Person(1234567, "Faishal Mukhammad", "https://avatars.githubuserconte
 val person1 = Person(1321422, "Xian Xia", "https://i.pinimg.com/736x/25/2d/3c/252d3cf65cb46eb321793c6a3f2389c5.jpg", "xiann@mail.com", "087852163210")
 val person2 = Person(1233543, "Kanroji", "https://i.pinimg.com/736x/18/b9/79/18b979f234fa1cba8753bcb1f5678824.jpg", "kann@mail.com", "089525223615")
 val person3 = Person(3424123, "Sharon", "https://i.pinimg.com/736x/68/5f/13/685f1349eccce0eed3f10fe7b2c48595.jpg", "sharonn@mail.com", "084562529854")
-val person4 = Person(342343, "Kimi", "https://i.pinimg.com/736x/9b/e7/e9/9be7e9f94c5c5f9a8d2f825cc54b4960.jpg", "kimii@mail.com", "084562529854")
+//val person4 = Person(342343, "Kimi", "https://i.pinimg.com/736x/9b/e7/e9/9be7e9f94c5c5f9a8d2f825cc54b4960.jpg", "kimii@mail.com", "084562529854")
 val person5 = Person(342343, "Sara", "https://i.pinimg.com/736x/92/15/b5/9215b54b58a55a238a2eaa71fb66ceb3.jpg", "sara@mail.com", "084562529854")
 
 val teamList = mutableListOf(
@@ -21,7 +21,7 @@ val teamList = mutableListOf(
 )
 
 val managerList = mutableListOf(
-    person4
+    person5
 )
 
 val managerList2 = mutableListOf(

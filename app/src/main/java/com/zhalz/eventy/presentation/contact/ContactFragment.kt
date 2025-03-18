@@ -6,10 +6,10 @@ import androidx.navigation.fragment.findNavController
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
 import com.zhalz.eventy.databinding.FragmentContactBinding
+import com.zhalz.eventy.presentation.adapter.setupTabPager
 import com.zhalz.eventy.presentation.contact.collaborator.CollaboratorFragment
 import com.zhalz.eventy.presentation.contact.friend.FriendFragment
 import com.zhalz.eventy.utils.extension.addMenu
-import com.zhalz.eventy.utils.extension.setupTabPager
 
 class ContactFragment : BaseFragment<FragmentContactBinding>(R.layout.fragment_contact) {
 
@@ -21,10 +21,11 @@ class ContactFragment : BaseFragment<FragmentContactBinding>(R.layout.fragment_c
     }
 
     private fun initUI() {
+
         setupTabPager(
             bind.viewPager,
             bind.tabLayout,
-            listOf({ FriendFragment() }, { CollaboratorFragment() }),
+            listOf({ FriendFragment() } , { CollaboratorFragment() }),
             listOf(getString(R.string.friend2), getString(R.string.collaborator))
         )
 

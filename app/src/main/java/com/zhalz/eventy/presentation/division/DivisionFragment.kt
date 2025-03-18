@@ -10,8 +10,8 @@ import com.google.android.material.tabs.TabLayout
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
 import com.zhalz.eventy.databinding.FragmentDivisionBinding
+import com.zhalz.eventy.presentation.adapter.setupTabPager
 import com.zhalz.eventy.presentation.division.task.TaskFragment
-import com.zhalz.eventy.utils.extension.setupTabPager
 
 class DivisionFragment : BaseFragment<FragmentDivisionBinding>(R.layout.fragment_division) {
 
