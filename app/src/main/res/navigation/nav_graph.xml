@@ -176,7 +176,7 @@
     <fragment
         android:id="@+id/task_detail_fragment"
         android:name="com.zhalz.eventy.presentation.task.task_detail.TaskDetailFragment"
-        tools:layout="@layout/fragment_task">
+        tools:layout="@layout/fragment_task_detail">
         <argument
             android:name="task"
             app:argType="com.zhalz.eventy.domain.model.Task" />
