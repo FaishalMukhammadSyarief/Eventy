@@ -65,8 +65,11 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
                     fabCreate.fadeOut()
                 }
 
-                R.id.division_fragment, R.id.task_detail_fragment ->
-                    binding.toolbar.gone()
+                R.id.division_fragment, R.id.task_detail_fragment -> binding.apply {
+                    toolbar.gone()
+                    bottomApp.slideDownGone()
+                    fabCreate.fadeOut()
+                }
 
                 else -> binding.apply {
                     if (toolbar.isGone) toolbar.visible()
