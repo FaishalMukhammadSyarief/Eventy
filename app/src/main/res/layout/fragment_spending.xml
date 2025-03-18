@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            tools:context=".presentation.report.division.spending.SpendingFragment">
+            tools:context=".presentation.spending.SpendingFragment">
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"

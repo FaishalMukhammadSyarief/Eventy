@@ -1,4 +1,4 @@
-package com.zhalz.eventy.presentation.report.division.spending
+package com.zhalz.eventy.presentation.spending
 
 import android.os.Bundle
 import android.view.View
