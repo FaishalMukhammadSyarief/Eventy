@@ -11,7 +11,7 @@ import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
 import com.zhalz.eventy.databinding.FragmentDivisionBinding
 import com.zhalz.eventy.presentation.adapter.setupTabPager
-import com.zhalz.eventy.presentation.division.task.TaskFragment
+import com.zhalz.eventy.presentation.task.TaskFragment
 
 class DivisionFragment : BaseFragment<FragmentDivisionBinding>(R.layout.fragment_division) {
 
@@ -20,15 +20,10 @@ class DivisionFragment : BaseFragment<FragmentDivisionBinding>(R.layout.fragment
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        bind.division = args.division
-
-        initUI()
-
-    }
-
-    private fun initUI() {
-        bind.collapsingToolbar.setupWithNavController(bind.toolbar, findNavController())
-        bind.toolbar.title = args.division.title
+        binding?.let{
+            it.collapsingToolbar.setupWithNavController(it.toolbar, findNavController())
+            it.division = args.division
+        }
 
         setTabLayout()
     }
@@ -42,7 +37,7 @@ class DivisionFragment : BaseFragment<FragmentDivisionBinding>(R.layout.fragment
             getDrawable(requireContext(), R.drawable.ic_check_circle),
         )
 
-        bind.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+        binding?.tabLayout?.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 tab.text = tabTitles[tab.position]
             }
@@ -54,13 +49,15 @@ class DivisionFragment : BaseFragment<FragmentDivisionBinding>(R.layout.fragment
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
 
-        setupTabPager(
-            bind.viewPager,
-            bind.tabLayout,
-            fragments,
-            null,
-            tabIcons
-        )
+        binding?.let {
+            setupTabPager(
+                it.viewPager,
+                it.tabLayout,
+                fragments,
+                null,
+                tabIcons
+            )
+        }
     }
 
 }
