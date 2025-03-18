@@ -35,7 +35,7 @@
         <action
             android:id="@+id/action_login_to_home"
             app:destination="@id/home_fragment"
-            app:popUpTo="@id/login_fragment"
+            app:popUpTo="@id/landing_fragment"
             app:popUpToInclusive="true" />
     </fragment>
 

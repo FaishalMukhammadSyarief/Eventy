@@ -9,6 +9,10 @@
             name="fragment"
             type="com.zhalz.eventy.presentation.auth.login.LoginFragment" />
 
+        <variable
+            name="viewModel"
+            type="com.zhalz.eventy.presentation.auth.login.LoginViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -42,7 +46,7 @@
             app:layout_constraintTop_toBottomOf="@+id/iv_eventy" />
 
         <!--  NAME / EMAIL  -->
-        <com.zhalz.eventy.presentation.custom_view.TextLayoutNormal
+        <com.zhalz.eventy.presentation.custom_view.TextLayoutEmail
             android:id="@+id/etl_email"
             style="@style/MyTextInputLayout"
             android:layout_width="match_parent"
@@ -52,13 +56,15 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_welcome">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_email"
                 style="@style/MyEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="@string/name_email"
+                android:hint="@string/email"
                 android:inputType="text"
+                android:text="@={viewModel.email}"
                 tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
-        </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
+        </com.zhalz.eventy.presentation.custom_view.TextLayoutEmail>
 
         <!--  PASSWORD  -->
         <com.zhalz.eventy.presentation.custom_view.TextLayoutPassword
@@ -71,10 +77,12 @@
             app:layout_constraintTop_toBottomOf="@+id/etl_email">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_password"
                 style="@style/MyEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/password"
+                android:text="@={viewModel.password}"
                 android:inputType="textPassword"
                 tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
         </com.zhalz.eventy.presentation.custom_view.TextLayoutPassword>
@@ -107,7 +115,7 @@
             android:layout_width="match_parent"
             android:layout_marginHorizontal="@dimen/margin_screen"
             android:backgroundTint="@color/dark_blue"
-            android:onClick="@{() -> fragment.toHome()}"
+            android:onClick="@{() -> fragment.login()}"
             android:text="@string/login"
             android:textColor="@color/white"
             app:layout_constraintTop_toBottomOf="@+id/cb_remember"
@@ -128,10 +136,10 @@
                 android:textSize="@dimen/text_normal" />
 
             <Button
+                android:id="@+id/btn_register"
                 style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="@{() -> fragment.toRegister()}"
                 android:text="@string/register_now"
                 android:textColor="@color/blue"
                 android:textSize="@dimen/text_normal"

@@ -5,9 +5,9 @@
     <string name="sign_up">Sign Up</string>
     <string name="email_error">Invalid email format</string>
     <string name="email_empty">Email field is required</string>
-    <string name="password_error">Password harus lebih dari 8 karakter</string>
-    <string name="password_empty">Password dibutuhkan</string>
-    <string name="text_empty">Text dibutuhkan</string>
+    <string name="password_error">Password must be 8 character or more</string>
+    <string name="password_empty">Password cannot be empty</string>
+    <string name="text_empty">Text cannot be empty</string>
     <string name="otp_code">OTP Code</string>
     <string name="success_register">Success Register</string>
     <string name="kode_otp_dibutuhkan">Kode OTP dibutuhkan</string>
@@ -18,6 +18,7 @@
     <string name="friend">Friend</string>
     <string name="home">Home</string>
 
+    <string name="msg_error_empty">Cannot be Empty</string>
 
     <string name="history">History</string>
     <string name="notification">Notification</string>

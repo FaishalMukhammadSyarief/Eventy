@@ -1,6 +1,7 @@
 package com.zhalz.eventy.domain.model
 
 import android.os.Parcelable
+import com.zhalz.eventy.domain.common.TaskStatus
 import kotlinx.parcelize.IgnoredOnParcel
 import kotlinx.parcelize.Parcelize
 
@@ -17,10 +18,4 @@ data class Task(
 ) : Parcelable {
     @IgnoredOnParcel
     val listImage = assignee.map { it.image }
-}
-
-enum class TaskStatus {
-    UNCOMPLETED,
-    ON_PROGRESS,
-    COMPLETED
 }

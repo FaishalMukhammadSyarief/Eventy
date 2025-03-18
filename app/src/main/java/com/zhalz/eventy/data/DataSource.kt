@@ -1,6 +1,7 @@
 package com.zhalz.eventy.data
 
 import com.zhalz.eventy.R
+import com.zhalz.eventy.domain.common.TaskStatus
 import com.zhalz.eventy.domain.model.Comment
 import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.domain.model.Event
@@ -8,7 +9,6 @@ import com.zhalz.eventy.domain.model.Person
 import com.zhalz.eventy.domain.model.Meet
 import com.zhalz.eventy.domain.model.Spending
 import com.zhalz.eventy.domain.model.Task
-import com.zhalz.eventy.domain.model.TaskStatus
 
 val user = Person(1234567, "Faishal Mukhammad", "https://avatars.githubusercontent.com/u/137977580?v=4", "faishalmukhammadsyarief@gmail.com", "081313327023")
 val person1 = Person(1321422, "Xian Xia", "https://i.pinimg.com/736x/25/2d/3c/252d3cf65cb46eb321793c6a3f2389c5.jpg", "xiann@mail.com", "087852163210")

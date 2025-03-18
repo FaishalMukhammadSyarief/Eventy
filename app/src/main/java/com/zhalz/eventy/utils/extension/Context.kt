@@ -2,13 +2,16 @@ package com.zhalz.eventy.utils.extension
 
 import android.app.Activity
 import android.content.Context
+import android.content.Context.INPUT_METHOD_SERVICE
 import android.graphics.Bitmap
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.view.inputmethod.InputMethodManager
 import androidx.annotation.ColorInt
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
@@ -21,6 +24,11 @@ import java.util.Locale
 @Suppress("DEPRECATION")
 fun Activity.setStatusBarColor(@ColorInt color: Int) {
     window.statusBarColor = color
+}
+
+fun Activity.closeKeyboard() {
+    val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+    inputMethodManager.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
 }
 
 fun Activity.getAnim(animation: Int): Animation = AnimationUtils.loadAnimation(this, animation)

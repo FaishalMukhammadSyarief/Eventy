@@ -71,6 +71,10 @@ dependencies {
     /*  Crocodic Core  */
     implementation(libs.androidcoreproject)
 
+    /*  Retrofit  */
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
     /*  Navigation  */
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
@@ -83,9 +87,6 @@ dependencies {
 
     /*  Lottie  */
     implementation (libs.lottie)
-
-    /*  Image Slider  */
-    implementation(libs.imageslideshow)
 
     /*  Overlapping Image  */
     implementation(libs.overlapimagelistview)
