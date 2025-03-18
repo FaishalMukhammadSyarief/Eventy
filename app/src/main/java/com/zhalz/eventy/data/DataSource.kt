@@ -14,19 +14,17 @@ val user = Person(1234567, "1231", "Faishal Mukhammad", "faishalmukhammadsyarief
 val person1 = Person(1321422, "1231", "Xian Xia", "xiann@mail.com", "087852163210", "https://i.pinimg.com/736x/25/2d/3c/252d3cf65cb46eb321793c6a3f2389c5.jpg")
 val person2 = Person(1233543, "1231", "Kanroji", "kann@mail.com", "089525223615", "https://i.pinimg.com/736x/18/b9/79/18b979f234fa1cba8753bcb1f5678824.jpg")
 val person3 = Person(3424123, "1231", "Sharon", "sharonn@mail.com", "084562529854", "https://i.pinimg.com/736x/68/5f/13/685f1349eccce0eed3f10fe7b2c48595.jpg")
-//val person4 = Person(342343, "Kimi", "https://i.pinimg.com/736x/9b/e7/e9/9be7e9f94c5c5f9a8d2f825cc54b4960.jpg", "kimii@mail.com", "084562529854")
-val person5 = Person(342343, "1231", "Sara", "sara@mail.com", "084562529854", "https://i.pinimg.com/736x/92/15/b5/9215b54b58a55a238a2eaa71fb66ceb3.jpg")
 
 val teamList = mutableListOf(
     person1, person2, person3
 )
 
 val managerList = mutableListOf(
-    person5
+    person1
 )
 
 val managerList2 = mutableListOf(
-    person5
+    person1
 )
 
 val meetingList = mutableListOf(
@@ -37,7 +35,7 @@ val meetingList = mutableListOf(
 
 val commentList = listOf(
     Comment(person2, "2025-01-17 06:33:45", "The layout of the stage is great. But i have several suggestion about the left part."),
-    Comment(person5, "2025-01-17 06:33:45", "The layout of the stage is great. But i have several suggestion about the left part."),
+    Comment(person1, "2025-01-17 06:33:45", "The layout of the stage is great. But i have several suggestion about the left part."),
     Comment(person1, "2025-01-17 06:33:45", "The layout of the stage is great. But i have several suggestion about the left part."),
 )
 
