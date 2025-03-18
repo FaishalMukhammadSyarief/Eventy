@@ -51,6 +51,7 @@ class MainActivity : NoViewModelActivity<ActivityMainBinding>(R.layout.activity_
             when (destination.id) {
                 R.id.home_fragment, R.id.notification_fragment -> binding.apply {
                     if (toolbar.isInvisible) toolbar.visible()
+                    if (toolbar.isGone) toolbar.visible()
                     if (bottomApp.isGone) bottomApp.slideUpVisible()
                     if (fabCreate.alpha == 0f) fabCreate.fadeIn()
                 }

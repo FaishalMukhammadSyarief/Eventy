@@ -57,8 +57,8 @@
         android:label="@string/app_name"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_home_to_schedule"
-            app:destination="@id/schedule_fragment" />
+            android:id="@+id/action_home_to_task"
+            app:destination="@id/task_fragment" />
         <action
             android:id="@+id/action_home_to_history"
             app:destination="@id/history_fragment" />
@@ -67,6 +67,9 @@
             app:destination="@id/event_fragment"
             app:enterAnim="@anim/anim_slide_up"
             app:popExitAnim="@anim/anim_slide_down" />
+        <action
+            android:id="@+id/action_home_to_task_detail"
+            app:destination="@id/task_detail_fragment" />
     </fragment>
 
     <fragment
@@ -88,10 +91,10 @@
         tools:layout="@layout/fragment_notification" />
 
     <fragment
-        android:id="@+id/schedule_fragment"
-        android:name="com.zhalz.eventy.presentation.schedule.ScheduleFragment"
-        android:label="Schedule"
-        tools:layout="@layout/fragment_schedule" />
+        android:id="@+id/task_fragment"
+        android:name="com.zhalz.eventy.presentation.task.TaskFragment"
+        android:label="Task"
+        tools:layout="@layout/fragment_task" />
 
     <fragment
         android:id="@+id/event_fragment"
