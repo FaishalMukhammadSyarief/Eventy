@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions.circleCropTransform
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.snackbar.Snackbar
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -74,3 +75,10 @@ fun Context.toBitmap(url: String): Bitmap = Glide.with(this)
     .apply(circleCropTransform())
     .submit()
     .get()
+
+fun Activity.showSnackBar(message: String?) =
+    Snackbar.make(
+        this.window.decorView,
+        message.toString(),
+        Snackbar.LENGTH_SHORT
+    ).show()

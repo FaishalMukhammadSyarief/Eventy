@@ -6,15 +6,23 @@ import com.zhalz.eventy.domain.model.Person
 
 data class AuthResponse(
 
-    @field:SerializedName("msg")
-    val msg: String? = null,
-
     @field:SerializedName("error")
     val error: Any? = null,
 
     @field:SerializedName("data")
-    val data: Person? = null,
+    val data: Data? = null,
 
-) : ModelResponse() {
-    val otp = data?.otp
-}
+) : ModelResponse()
+
+data class Data(
+
+    @field:SerializedName("user")
+    val person: Person? = null,
+
+    @field:SerializedName("token")
+    val token: String? = null,
+
+    @field:SerializedName("otp")
+    val otp: Int? = null
+
+)

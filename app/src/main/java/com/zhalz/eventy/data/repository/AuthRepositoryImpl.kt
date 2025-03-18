@@ -2,6 +2,7 @@ package com.zhalz.eventy.data.repository
 
 import com.zhalz.eventy.data.remote.ApiService
 import com.zhalz.eventy.data.remote.model.request.LoginRequest
+import com.zhalz.eventy.data.remote.model.request.OtpRequest
 import com.zhalz.eventy.data.remote.model.request.RegisterRequest
 import com.zhalz.eventy.data.remote.model.response.AuthResponse
 import com.zhalz.eventy.domain.common.ApiResult
@@ -20,6 +21,13 @@ class AuthRepositoryImpl @Inject constructor(private val apiService: ApiService)
 
     override suspend fun register(request: RegisterRequest): ApiResult<AuthResponse> =
         runCatching { apiService.register(request) }
+            .fold(
+                onSuccess = { response -> ApiResult.Success(response) },
+                onFailure = { throwable -> ApiResult.Error(throwable.handleError()) }
+            )
+
+    override suspend fun verifyOtp(request: OtpRequest): ApiResult<AuthResponse> =
+        runCatching { apiService.verifyOtp(request) }
             .fold(
                 onSuccess = { response -> ApiResult.Success(response) },
                 onFailure = { throwable -> ApiResult.Error(throwable.handleError()) }

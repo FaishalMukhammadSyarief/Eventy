@@ -8,13 +8,12 @@ import androidx.lifecycle.lifecycleScope
 import com.crocodic.core.extension.tos
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
-import com.zhalz.eventy.data.remote.model.response.AuthResponse
 import com.zhalz.eventy.databinding.FragmentRegisterBinding
 import com.zhalz.eventy.domain.common.ApiResult
 import com.zhalz.eventy.utils.extension.closeKeyboard
 import com.zhalz.eventy.utils.extension.navigate
+import com.zhalz.eventy.utils.extension.showSnackBar
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -40,26 +39,43 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(R.layout.fragment
     fun register() = lifecycleScope.launch {
         requireActivity().closeKeyboard()
 
-        binding?.etUsername?.setText("Vool1")
-        binding?.etEmail?.setText("vool1@gmail.com")
-        binding?.etPhone?.setText("081231231231")
-        binding?.etPass?.setText("081231231231")
-        binding?.etPassConfirm?.setText("081231231231")
+        val pass = "081231231212"
+        
+        binding?.etUsername?.setText("Vool12")
+        binding?.etEmail?.setText("vool12@gmail.com")
+        binding?.etPhone?.setText(pass)
+        binding?.etPass?.setText(pass)
+        binding?.etPassConfirm?.setText(pass)
 
-        viewModel.register().collect(registerResult())
+        viewModel.register().collect {
+            when (it) {
+                is ApiResult.Success -> {
+                    requireActivity().showSnackBar("Register success, verifying OTP")
+                    loadingDialog?.dismiss()
+                    verifyOtp(it.data?.data?.otp ?: 0)
+                }
+                is ApiResult.Error -> {
+                    loadingDialog?.dismiss()
+                    context?.tos(it.message.orEmpty())
+                }
+                is ApiResult.Loading -> loadingDialog?.show("Registering...")
+            }
+        }
     }
 
-    private fun registerResult() = FlowCollector<ApiResult<AuthResponse>> {
-        when (it) {
-            is ApiResult.Success -> {
-                context?.tos("Register success, please login to proceed")
-                toLogin()
+    fun verifyOtp(otp: Int) = lifecycleScope.launch {
+        viewModel.verifyOtp(otp).collect {
+            when (it) {
+                is ApiResult.Success -> {
+                    requireActivity().showSnackBar("OTP verification success")
+                    toLogin()
+                }
+                is ApiResult.Error -> {
+                    loadingDialog?.dismiss()
+                    context?.tos(it.message.orEmpty())
+                }
+                is ApiResult.Loading -> loadingDialog?.show("Verifying...")
             }
-            is ApiResult.Error -> {
-                loadingDialog?.dismiss()
-                context?.tos(it.message.orEmpty())
-            }
-            is ApiResult.Loading -> loadingDialog?.show("Loading...")
         }
     }
 

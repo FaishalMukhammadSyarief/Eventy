@@ -2,6 +2,7 @@ package com.zhalz.eventy.presentation.auth.register
 
 import androidx.lifecycle.MutableLiveData
 import com.zhalz.eventy.base.BaseViewModel
+import com.zhalz.eventy.data.remote.model.request.OtpRequest
 import com.zhalz.eventy.data.remote.model.request.RegisterRequest
 import com.zhalz.eventy.domain.common.ApiResult
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,9 +21,20 @@ class RegisterViewModel @Inject constructor(): BaseViewModel() {
     fun register() = flow {
         emit(ApiResult.Loading())
         val result = authRepository.register(
-            RegisterRequest(username.value.orEmpty(), email.value.orEmpty(), phone.value.orEmpty(), pass.value.orEmpty(), passConfirm.value.orEmpty() )
+            RegisterRequest(
+                username.value.orEmpty(),
+                email.value.orEmpty(),
+                phone.value.orEmpty(),
+                pass.value.orEmpty(),
+                passConfirm.value.orEmpty()
+            )
         )
         emit(result)
     }
 
+    fun verifyOtp(otp: Int) = flow {
+        emit(ApiResult.Loading())
+        val result = authRepository.verifyOtp( OtpRequest(otp) )
+        emit(result)
+    }
 }
