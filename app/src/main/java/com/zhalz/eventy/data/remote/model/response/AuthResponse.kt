@@ -15,4 +15,6 @@ data class AuthResponse(
     @field:SerializedName("data")
     val data: Person? = null,
 
-) : ModelResponse()
+) : ModelResponse() {
+    val otp = data?.otp
+}

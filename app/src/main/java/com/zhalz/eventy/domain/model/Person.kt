@@ -10,4 +10,5 @@ data class Person (
     val image: String,
     val email: String,
     val phone: String,
+    val otp: Int,
 ) : Parcelable

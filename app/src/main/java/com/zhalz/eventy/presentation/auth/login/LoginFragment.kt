@@ -40,7 +40,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
     fun login() = lifecycleScope.launch {
         requireActivity().closeKeyboard()
 
-        binding?.etEmail?.setText("fool1@gmail.com")
+        binding?.etEmail?.setText("vool1@gmail.com")
         binding?.etPass?.setText("081231231231")
 
         viewModel.login().collect(loginResult())

@@ -9,6 +9,10 @@
             name="fragment"
             type="com.zhalz.eventy.presentation.auth.register.RegisterFragment" />
 
+        <variable
+            name="viewModel"
+            type="com.zhalz.eventy.presentation.auth.register.RegisterViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -53,11 +57,13 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_welcome">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_username"
                 style="@style/MyEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/username"
                 android:inputType="text"
+                android:text="@={viewModel.username}"
                 tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
         </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
 
@@ -71,11 +77,13 @@
             app:layout_constraintTop_toBottomOf="@+id/etl_name">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_email"
                 style="@style/MyEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
+                android:text="@={viewModel.email}"
                 tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
         </com.zhalz.eventy.presentation.custom_view.TextLayoutEmail>
 
@@ -89,11 +97,14 @@
             app:layout_constraintTop_toBottomOf="@+id/textLayoutNormal">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_phone"
                 style="@style/MyEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/phone_number"
                 android:inputType="phone"
+
+                android:text="@={viewModel.phone}"
                 tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
         </com.zhalz.eventy.presentation.custom_view.TextLayoutNormal>
 
@@ -108,11 +119,13 @@
             app:layout_constraintTop_toBottomOf="@+id/etl_phone">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_pass"
                 style="@style/MyEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/password"
                 android:inputType="textPassword"
+                android:text="@={viewModel.pass}"
                 tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
         </com.zhalz.eventy.presentation.custom_view.TextLayoutPassword>
 
@@ -127,22 +140,24 @@
             app:layout_constraintTop_toBottomOf="@+id/etl_password">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_passConfirm"
                 style="@style/MyEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/confirm_password"
                 android:inputType="textPassword"
+                android:text="@={viewModel.passConfirm}"
                 tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
         </com.zhalz.eventy.presentation.custom_view.TextLayoutPassword>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_sign_in"
+            android:id="@+id/btn_register"
             style="@style/MyButton"
             android:layout_width="match_parent"
             android:layout_marginHorizontal="@dimen/margin_screen"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/dark_blue"
-            android:onClick="@{() -> fragment.toLogin()}"
+            android:onClick="@{() -> fragment.register()}"
             android:text="@string/register"
             android:textColor="@color/white"
             app:layout_constraintTop_toBottomOf="@+id/etl_password_confirm"
@@ -154,7 +169,7 @@
             android:layout_marginVertical="@dimen/margin_screen"
             android:gravity="center"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/btn_sign_in">
+            app:layout_constraintTop_toBottomOf="@+id/btn_register">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -163,10 +178,10 @@
                 android:textSize="@dimen/text_normal" />
 
             <Button
+                android:id="@+id/btn_login"
                 style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="@{() -> fragment.toLogin()}"
                 android:text="@string/login_now"
                 android:textColor="@color/blue"
                 android:textSize="@dimen/text_normal"
