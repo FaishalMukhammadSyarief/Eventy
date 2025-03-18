@@ -1,0 +1,141 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="task"
+            type="com.zhalz.eventy.domain.model.Task" />
+
+        <variable
+            name="adapter"
+            type="com.crocodic.core.base.adapter.ReactiveListAdapter" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_round_top"
+        android:elevation="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="28dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:text="@string/description"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_normal"
+                app:fontFamily="@font/poppins_regular"
+                tools:ignore="TextContrastCheck" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="8dp"
+                android:text="@{task.description}"
+                android:textSize="@dimen/text_medium"
+                app:fontFamily="@font/poppins_medium"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="32dp"
+                android:text="@string/assignee"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_normal"
+                app:fontFamily="@font/poppins_regular"
+                tools:ignore="TextContrastCheck" />
+
+            <com.zen.overlapimagelistview.OverlapImageListView
+                android:id="@+id/overlapImage"
+                listImage="@{task.listImage}"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="8dp"
+                app:circleCount="3"
+                app:fillColor="@color/grey"
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="32dp"
+                android:text="@string/attachments"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_normal"
+                app:fontFamily="@font/poppins_regular"
+                tools:ignore="TextContrastCheck" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                style="@style/MySlightlyRoundImage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/faishal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="32dp"
+                android:text="@string/comments"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_normal"
+                app:fontFamily="@font/poppins_regular"
+                tools:ignore="TextContrastCheck" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adapter="@{adapter}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_comment" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/MyTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:elevation="32dp"
+                app:elevation="32dp"
+                app:endIconDrawable="@drawable/ic_send"
+                app:endIconMode="custom"
+                app:endIconTint="@color/blue"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/MyEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_slightly_round"
+                    android:backgroundTint="@color/very_light_gray"
+                    android:hint="@string/add_comment"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -1,23 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
+        <variable
+            name="task"
+            type="com.zhalz.eventy.domain.model.Task" />
+
+        <variable
+            name="adapter"
+            type="com.crocodic.core.base.adapter.ReactiveListAdapter" />
+
     </data>
 
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/nested_scroll_view"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context=".presentation.division.DivisionActivity">
 
-        <LinearLayout
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true">
 
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentScrim="?android:colorBackground"
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+                app:titleEnabled="false">
 
+                <include
+                    layout="@layout/layout_task_header"
+                    app:task="@{task}" />
 
-        </LinearLayout>
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:paddingEnd="8dp"
+                    app:layout_collapseMode="pin"
+                    app:titleCentered="true"
+                    app:titleTextAppearance="@style/ToolbarTitleAppearance"
+                    tools:ignore="RtlSymmetry"
+                    tools:title="@{task.title}" />
 
-    </androidx.core.widget.NestedScrollView>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <include
+            layout="@layout/layout_task_detail"
+            app:adapter="@{adapter}"
+            app:task="@{task}" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </layout>

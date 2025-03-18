@@ -1,6 +1,7 @@
 package com.zhalz.eventy.data
 
 import com.zhalz.eventy.R
+import com.zhalz.eventy.domain.model.Comment
 import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.domain.model.Event
 import com.zhalz.eventy.domain.model.Person
@@ -34,10 +35,16 @@ val meetingList = mutableListOf(
     Meet(2, "Meeting 2", "2025-01-18 06:33:45", "Zoom", teamList)
 )
 
+val commentList = listOf(
+    Comment(person2, "2025-01-17 06:33:45", "The layout of the stage is great. But i have several suggestion about the left part."),
+    Comment(person5, "2025-01-17 06:33:45", "The layout of the stage is great. But i have several suggestion about the left part."),
+    Comment(person1, "2025-01-17 06:33:45", "The layout of the stage is great. But i have several suggestion about the left part."),
+)
+
 val taskList = mutableListOf(
-    Task(1092312, "Task UI", "Create task ui in figma", "2025-01-02 06:33:45", "Saiful", teamList, TaskStatus.UNCOMPLETED),
-    Task(1092312, "Home UI", "Create home ui in figma", "2025-02-02 06:33:45", "Pahael", teamList, TaskStatus.ON_PROGRESS),
-    Task(1092312, "Division UI", "Create division ui in figma", "2025-02-02 06:33:45", "Fulan", teamList, TaskStatus.COMPLETED),
+    Task(1092312, "Task UI", "Create task ui in figma", "2025-01-02 06:33:45", "Saiful", teamList, TaskStatus.UNCOMPLETED, commentList),
+    Task(1092312, "Home UI", "Create home ui in figma", "2025-02-02 06:33:45", "Pahael", teamList, TaskStatus.ON_PROGRESS, commentList),
+    Task(1092312, "Division UI", "Create division ui in figma", "2025-02-02 06:33:45", "Fulan", teamList, TaskStatus.COMPLETED, commentList),
 )
 
 val divisionList = mutableListOf(

@@ -13,6 +13,7 @@ data class Task(
     val author: String,
     val assignee: List<Person>,
     val status: TaskStatus,
+    val commentList: List<Comment>
 ) : Parcelable {
     @IgnoredOnParcel
     val listImage = assignee.map { it.image }
