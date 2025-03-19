@@ -15,7 +15,7 @@ fun Throwable.handleError(): String =
             errorResponse.getErrorMessage() ?: errorResponse.message ?: "Unexpected HTTP Error."
         }
         is IOException -> {
-            println("IO Exception " + this.message)
+            println("IO Exception bro " + this.message)
             "Internet Problem."
         }
         else -> "An unexpected error occurred."

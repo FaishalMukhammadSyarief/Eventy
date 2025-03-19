@@ -3,6 +3,7 @@ package com.zhalz.eventy.presentation.event
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.crocodic.core.base.adapter.ReactiveListAdapter
@@ -13,10 +14,14 @@ import com.zhalz.eventy.databinding.FragmentEventBinding
 import com.zhalz.eventy.databinding.ItemDivisionBinding
 import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.utils.extension.navigate
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event) {
 
     private val args by navArgs<EventFragmentArgs>()
+
+    private val viewModel by viewModels<EventViewModel>()
 
     private val divisionAdapter by lazy {
         ReactiveListAdapter<ItemDivisionBinding, Division>(R.layout.item_division).initItem { _, data -> toDivision(data) }
@@ -32,7 +37,6 @@ class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event
     }
 
     private fun initUI() {
-        activity.supportActionBar?.title = args.event.title
 
         binding?.apply {
             fragment = this@EventFragment
@@ -43,10 +47,28 @@ class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event
         divisionAdapter.submitList(divisionList)
     }
 
+/*
+    private fun getEvent(id: Int) = lifecycleScope.launch {
+        viewModel.getEvent(id).collect {
+            when (it) {
+                is ApiResult.Success -> {
+                    binding?.event = it.data?.event
+                    activity.supportActionBar?.title = it.data?.event?.title
+                }
+
+                is ApiResult.Error -> {
+                    showSnackBar(it.message.orEmpty())
+                }
+                is ApiResult.Loading -> {  }
+            }
+        }
+    }
+*/
+
     fun toMember() = findNavController().navigate(R.id.action_event_to_member)
-    fun toSpending() = EventFragmentDirections.actionEventToSpending(args.event.divisionList[0]).navigate(this)
+    fun toSpending() = EventFragmentDirections.actionEventToSpending(divisionList[0]).navigate(this)
     fun toMeeting() = findNavController().navigate(R.id.action_event_to_meeting)
-    fun toReport() = {}
+    fun toReport() = {  }
     private fun toDivision(division: Division) = EventFragmentDirections.actionEventToDivision(division).navigate(this)
 
 }

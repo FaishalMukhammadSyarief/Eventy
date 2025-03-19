@@ -11,7 +11,7 @@ class HomeViewModel @Inject constructor() : BaseViewModel() {
 
     fun getEvents() = flow {
         emit(ApiResult.Loading())
-        val result = eventRepository.getEvent()
+        val result = eventRepository.getEvents()
         emit(result)
     }
 

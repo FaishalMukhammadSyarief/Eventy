@@ -3,7 +3,6 @@ package com.zhalz.eventy.presentation.main.home
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.crocodic.core.base.adapter.ReactiveListAdapter
 import com.zhalz.eventy.R
@@ -13,13 +12,10 @@ import com.zhalz.eventy.data.taskList
 import com.zhalz.eventy.databinding.FragmentHomeBinding
 import com.zhalz.eventy.databinding.ItemEventBinding
 import com.zhalz.eventy.databinding.ItemTaskBinding
-import com.zhalz.eventy.domain.common.ApiResult
 import com.zhalz.eventy.domain.model.Event
 import com.zhalz.eventy.domain.model.Task
 import com.zhalz.eventy.utils.extension.navigate
-import com.zhalz.eventy.utils.extension.showSnackBar
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
@@ -53,7 +49,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         it.rvEvent.adapter = eventAdapter
     }
 
-    private fun getEvents() = lifecycleScope.launch {
+/*    private fun getEvents() = lifecycleScope.launch {
         viewModel.getEvents().collect {
             when (it) {
                 is ApiResult.Success -> {
@@ -67,7 +63,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
                 is ApiResult.Loading -> {} //.swipeRefresh.isRefreshing = true
             }
         }
-    }
+    }*/
 
     fun toTask() = findNavController().navigate(R.id.action_home_to_task)
     fun toHistory() = findNavController().navigate(R.id.action_home_to_history)
