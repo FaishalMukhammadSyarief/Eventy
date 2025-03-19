@@ -46,7 +46,7 @@ class CreateEventFragment : BaseFragment<FragmentCreateEventBinding>(R.layout.fr
         }
 
         /*  Dropdown Menu  */
-        val dropdownList = listOf("musIc", "cathE", "foOtBedral")
+        val dropdownList = listOf("Music", "Wedding", "Award")
         atvCategory.setDropdown(dropdownList) {}
 
         /*  Recycler View  */

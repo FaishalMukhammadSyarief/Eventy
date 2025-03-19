@@ -12,11 +12,11 @@ import com.zhalz.eventy.domain.model.Task
 
 val user = Person(1234567, "1231", "Faishal Mukhammad", "faishalmukhammadsyarief@gmail.com", "081313327023", "https://avatars.githubusercontent.com/u/137977580?v=4")
 val person1 = Person(1321422, "1231", "Xian Xia", "xiann@mail.com", "087852163210", "https://i.pinimg.com/736x/25/2d/3c/252d3cf65cb46eb321793c6a3f2389c5.jpg")
-val person2 = Person(1233543, "1231", "Kanroji", "kann@mail.com", "089525223615", "https://i.pinimg.com/736x/18/b9/79/18b979f234fa1cba8753bcb1f5678824.jpg")
+val person2 = Person(1233543, "1231", "Jeremy", "jemm@mail.com", "089525223615", "https://i.pinimg.com/736x/e6/ba/e8/e6bae8666c67370d63f98cc3bffe0e72.jpg")
 val person3 = Person(3424123, "1231", "Sharon", "sharonn@mail.com", "084562529854", "https://i.pinimg.com/736x/68/5f/13/685f1349eccce0eed3f10fe7b2c48595.jpg")
 
 val teamList = mutableListOf(
-    person1, person2, person3
+    person1, person3, person2
 )
 
 val managerList = mutableListOf(
@@ -36,7 +36,7 @@ val meetingList = mutableListOf(
 val commentList = listOf(
     Comment(person2, "2025-01-17 06:33:45", "The layout of the stage is great. But i have several suggestion about the left part."),
     Comment(person1, "2025-01-17 06:33:45", "The layout of the stage is great. But i have several suggestion about the left part."),
-    Comment(person1, "2025-01-17 06:33:45", "The layout of the stage is great. But i have several suggestion about the left part."),
+    Comment(person3, "2025-01-17 06:33:45", "The layout of the stage is great. But i have several suggestion about the left part."),
 )
 
 val taskList = mutableListOf(
@@ -51,6 +51,10 @@ val divisionList = mutableListOf(
 )
 
 val eventList = mutableListOf(
+    Event(1, "Music Festival", "Experience an unforgettable evening of music, energy, and celebration at the Rhythm & Beats Festival 2025! This year’s lineup features world-renowned artists and rising stars across genres like pop, rock, electronic, and indie. Set against the stunning backdrop of the Sunset Grove Amphitheater, attendees will enjoy breathtaking performances, dazzling light shows, and a vibrant atmosphere.",
+        "2025-01-02 06:33:45",
+        "2027-02-05 06:33:45", "City Hall", "Music", divisionList, managerList, teamList, teamList),
+    Event(2, "Tech Conference", "lorem ipsum dolor sit amet", "2025-02-05 06:33:45", "2027-02-05 06:33:45", "Sampookong", "Expo", divisionList, managerList2, teamList, teamList),
     Event(1, "Music Festival", "Experience an unforgettable evening of music, energy, and celebration at the Rhythm & Beats Festival 2025! This year’s lineup features world-renowned artists and rising stars across genres like pop, rock, electronic, and indie. Set against the stunning backdrop of the Sunset Grove Amphitheater, attendees will enjoy breathtaking performances, dazzling light shows, and a vibrant atmosphere.",
         "2025-01-02 06:33:45",
         "2027-02-05 06:33:45", "City Hall", "Music", divisionList, managerList, teamList, teamList),
