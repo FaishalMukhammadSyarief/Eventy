@@ -23,11 +23,6 @@ fun View.visible() = this.apply {
     visibility = View.VISIBLE
 }
 
-fun View.invisible() = this.apply {
-    visibility = View.INVISIBLE
-}
-
-
 /*  UI Component  */
 fun RecyclerView.addDivider(context: Context, orientation: Int = LinearLayoutManager.VERTICAL) =
     DividerItemDecoration(context, orientation).also {
@@ -50,8 +45,19 @@ fun View.slideDownGone(): ObjectAnimator = ObjectAnimator.ofFloat(this, TRANSLAT
     onFinish { gone() }
     start()
 }
+fun View.slideUpGone(): ObjectAnimator = ObjectAnimator.ofFloat(this, TRANSLATION_Y, 0f, -this.height.toFloat()*1.5f).apply {
+    duration = 400
+    onFinish { gone() }
+    start()
+}
 
 fun View.slideUpVisible(): ObjectAnimator = ObjectAnimator.ofFloat(this, TRANSLATION_Y, this.height.toFloat(), 0f).apply {
+    duration = 400
+    onStart { visible() }
+    start()
+}
+
+fun View.slideDownVisible(): ObjectAnimator = ObjectAnimator.ofFloat(this, TRANSLATION_Y, -this.height.toFloat() *1.5f, 0f).apply {
     duration = 400
     onStart { visible() }
     start()

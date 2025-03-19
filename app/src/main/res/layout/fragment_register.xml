@@ -25,6 +25,7 @@
             android:id="@+id/iv_eventy"
             android:layout_width="215dp"
             android:layout_height="75dp"
+            android:layout_marginTop="?attr/actionBarSize"
             android:contentDescription="@string/cd_eventy_logo"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_eventy"

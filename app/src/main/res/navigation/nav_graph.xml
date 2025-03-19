@@ -69,7 +69,9 @@
             app:popExitAnim="@anim/anim_slide_down" />
         <action
             android:id="@+id/action_home_to_task_detail"
-            app:destination="@id/task_detail_fragment" />
+            app:destination="@id/task_detail_fragment"
+            app:enterAnim="@anim/anim_slide_up"
+            app:popExitAnim="@anim/anim_slide_down"/>
     </fragment>
 
     <fragment
@@ -117,7 +119,9 @@
             app:enterAnim="@anim/anim_slide_up" />
         <action
             android:id="@+id/action_event_to_division"
-            app:destination="@id/division_fragment" />
+            app:destination="@id/division_fragment"
+            app:enterAnim="@anim/anim_slide_up"
+            app:popExitAnim="@anim/anim_slide_down"/>
     </fragment>
 
     <fragment

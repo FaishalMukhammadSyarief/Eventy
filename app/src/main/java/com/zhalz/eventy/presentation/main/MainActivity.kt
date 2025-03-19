@@ -3,7 +3,6 @@ package com.zhalz.eventy.presentation.main
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.core.view.isGone
-import androidx.core.view.isInvisible
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
@@ -21,11 +20,11 @@ import com.zhalz.eventy.presentation.profile.ProfileFragmentArgs
 import com.zhalz.eventy.utils.extension.fadeIn
 import com.zhalz.eventy.utils.extension.fadeOut
 import com.zhalz.eventy.utils.extension.gone
-import com.zhalz.eventy.utils.extension.invisible
 import com.zhalz.eventy.utils.extension.showDialog
 import com.zhalz.eventy.utils.extension.slideDownGone
+import com.zhalz.eventy.utils.extension.slideDownVisible
+import com.zhalz.eventy.utils.extension.slideUpGone
 import com.zhalz.eventy.utils.extension.slideUpVisible
-import com.zhalz.eventy.utils.extension.visible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -52,8 +51,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.home_fragment, R.id.notification_fragment -> binding.apply {
-                    if (toolbar.isInvisible) toolbar.visible()
-                    if (toolbar.isGone) toolbar.visible()
+                    if (toolbar.isGone) toolbar.slideDownVisible()
                     if (bottomApp.isGone) bottomApp.slideUpVisible()
                     if (fabCreate.alpha == 0f) fabCreate.fadeIn()
                 }
@@ -62,19 +60,19 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
                     binding.fabAddMeeting.fadeIn()
 
                 R.id.landing_fragment, R.id.login_fragment, R.id.register_fragment -> binding.apply {
-                    toolbar.invisible()
-                    bottomApp.slideDownGone()
-                    fabCreate.fadeOut()
-                }
-
-                R.id.division_fragment, R.id.task_detail_fragment -> binding.apply {
                     toolbar.gone()
                     bottomApp.slideDownGone()
                     fabCreate.fadeOut()
                 }
 
+                R.id.division_fragment, R.id.task_detail_fragment -> binding.apply {
+                    toolbar.slideUpGone()
+                    bottomApp.slideDownGone()
+                    fabCreate.fadeOut()
+                }
+
                 else -> binding.apply {
-                    if (toolbar.isGone) toolbar.visible()
+                    if (toolbar.isGone) toolbar.slideDownVisible()
                     bottomApp.slideDownGone()
                     fabCreate.fadeOut()
                     fabAddMeeting.fadeOut()

@@ -23,6 +23,7 @@
             android:id="@+id/ic_eventy_logo"
             android:layout_width="175dp"
             android:layout_height="175dp"
+            android:layout_marginTop="?attr/actionBarSize"
             android:contentDescription="@string/cd_eventy_logo"
             android:src="@drawable/ic_eventy_logo"
             app:layout_constraintEnd_toEndOf="parent"
