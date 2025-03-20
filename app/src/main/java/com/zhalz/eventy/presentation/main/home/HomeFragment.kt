@@ -3,7 +3,9 @@ package com.zhalz.eventy.presentation.main.home
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle.State.STARTED
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.crocodic.core.base.adapter.ReactiveListAdapter
 import com.zhalz.eventy.R
@@ -36,35 +38,29 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding?.fragment = this
-
         initUI()
 
         taskAdapter.submitList(taskList)
-        //eventAdapter.submitList(eventList)
 
-        getEvents()
+        lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(STARTED) {
+                getEvents()
+            }
+        }
 
     }
 
     private fun initUI() = binding?.let {
+        it.fragment = this
         it.rvTask.adapter = taskAdapter
         it.rvEvent.adapter = eventAdapter
     }
 
-    private fun getEvents() = lifecycleScope.launch {
-        viewModel.getEvents().collect {
-            when (it) {
-                is ApiResult.Success -> {
-                    //binding.swipeRefresh.isRefreshing = false
-                    eventAdapter.submitList(it.data?.data)
-                }
-                is ApiResult.Error -> {
-                    //binding.swipeRefresh.isRefreshing = false
-                    showSnackBar(it.message.orEmpty())
-                }
-                is ApiResult.Loading -> {} //.swipeRefresh.isRefreshing = true
-            }
+    private suspend fun getEvents(): Unit = viewModel.eventsState.collect {
+        when (it) {
+            is ApiResult.Loading -> {}
+            is ApiResult.Success -> eventAdapter.submitList(it.data?.data)
+            is ApiResult.Error -> showSnackBar(it.message.orEmpty())
         }
     }
 
