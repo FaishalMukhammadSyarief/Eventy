@@ -8,6 +8,6 @@ interface EventRepository {
 
     suspend fun getEvents(): ApiResult<EventsResponse>
 
-    suspend fun getEvent(id: Int): ApiResult<EventResponse>
+    suspend fun getEvent(string: String): ApiResult<EventResponse>
 
 }

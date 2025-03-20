@@ -8,7 +8,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Division(
     val id: Int,
-    val title: String,
+    val name: String,
     val description: String,
     @ColorRes val color: Int,
     @DrawableRes val icon: Int,

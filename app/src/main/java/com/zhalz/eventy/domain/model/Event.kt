@@ -7,11 +7,13 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Event(
 
-    val id: Int,
+    @field:SerializedName("id")
+    val id: Int? = null,
 
     @field:SerializedName("title")
     val title: String? = null,
 
+    @field:SerializedName("description")
     val description: String? = null,
 
     @field:SerializedName("start_date")
@@ -20,11 +22,24 @@ data class Event(
     @field:SerializedName("end_date")
     val endDate: String? = null,
 
-    val place: String? = null,
+    @field:SerializedName("location")
+    val location: String? = null,
+
+    @field:SerializedName("category")
     val category: String? = null,
+
+    @field:SerializedName("image_path")
+    val image: String? = null,
+
+//    @field:SerializedName("attachments")
+//    val attachments: List<String?>? = null,
+
     val divisionList: List<Division>,
+
     val managerList: List<Person>,
+
     val coordinatorList: List<Person>,
+
     val memberList: List<Person>,
 
-) : Parcelable
+    ) : Parcelable

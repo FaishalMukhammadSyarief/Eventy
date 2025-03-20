@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/login_fragment">
+    app:startDestination="@id/landing_fragment">
 
     <fragment
         android:id="@+id/landing_fragment"
@@ -103,8 +103,8 @@
         android:name="com.zhalz.eventy.presentation.event.EventFragment"
         tools:layout="@layout/fragment_event">
         <argument
-            android:name="event"
-            app:argType="com.zhalz.eventy.domain.model.Event" />
+            android:name="eventTitle"
+            app:argType="string" />
         <action
             android:id="@+id/action_event_to_member"
             app:destination="@id/member_fragment"

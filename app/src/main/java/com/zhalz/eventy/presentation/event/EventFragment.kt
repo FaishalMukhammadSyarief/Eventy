@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.crocodic.core.base.adapter.ReactiveListAdapter
@@ -12,9 +13,12 @@ import com.zhalz.eventy.base.BaseFragment
 import com.zhalz.eventy.data.divisionList
 import com.zhalz.eventy.databinding.FragmentEventBinding
 import com.zhalz.eventy.databinding.ItemDivisionBinding
+import com.zhalz.eventy.domain.common.ApiResult
 import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.utils.extension.navigate
+import com.zhalz.eventy.utils.extension.showSnackBar
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event) {
@@ -41,19 +45,18 @@ class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event
         binding?.apply {
             fragment = this@EventFragment
             adapter = divisionAdapter
-            event = args.event
+            activity.supportActionBar?.title = args.eventTitle
         }
 
-        divisionAdapter.submitList(divisionList)
+        getEvent(args.eventTitle)
     }
 
-/*
-    private fun getEvent(id: Int) = lifecycleScope.launch {
-        viewModel.getEvent(id).collect {
+    private fun getEvent(title: String) = lifecycleScope.launch {
+        viewModel.getEvent(title).collect {
             when (it) {
                 is ApiResult.Success -> {
                     binding?.event = it.data?.event
-                    activity.supportActionBar?.title = it.data?.event?.title
+                    divisionAdapter.submitList(divisionList)
                 }
 
                 is ApiResult.Error -> {
@@ -63,7 +66,6 @@ class EventFragment : BaseFragment<FragmentEventBinding>(R.layout.fragment_event
             }
         }
     }
-*/
 
     fun toMember() = findNavController().navigate(R.id.action_event_to_member)
     fun toSpending() = EventFragmentDirections.actionEventToSpending(divisionList[0]).navigate(this)

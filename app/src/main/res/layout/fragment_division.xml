@@ -65,7 +65,7 @@
                     app:titleCentered="true"
                     app:titleTextAppearance="@style/ToolbarTitleAppearance"
                     tools:ignore="RtlSymmetry"
-                    tools:title="@{division.title}" />
+                    tools:title="@{division.name}" />
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 

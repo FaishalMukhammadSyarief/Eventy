@@ -9,9 +9,9 @@ import javax.inject.Inject
 @HiltViewModel
 class EventViewModel @Inject constructor() : BaseViewModel() {
 
-    fun getEvent(id: Int) = flow {
+    fun getEvent(title: String) = flow {
         emit(ApiResult.Loading())
-        val result = eventRepository.getEvent(id)
+        val result = eventRepository.getEvent(title)
         emit(result)
     }
 

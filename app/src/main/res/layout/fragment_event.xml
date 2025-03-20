@@ -30,13 +30,15 @@
             android:orientation="vertical">
 
             <com.google.android.material.imageview.ShapeableImageView
+                imageUrl="@{event.image}"
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
                 android:layout_marginHorizontal="@dimen/margin_screen"
                 android:layout_marginTop="8dp"
+                android:background="@color/white"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ship"
                 app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium"
+                tools:src="@drawable/ship"
                 tools:visibility="gone" />
 
             <include
@@ -89,20 +91,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_screen"
-                    android:text="Bandung, Central Java"
+                    android:text="@string/location"
                     android:textColor="@color/text_gray"
                     android:textSize="@dimen/text_normal"
                     app:fontFamily="@font/poppins_regular"
                     app:layout_constraintStart_toEndOf="@+id/fab_location"
                     app:layout_constraintTop_toTopOf="@+id/fab_location"
-                    tools:ignore="TextContrastCheck"
-                    tools:text="Bandung, Central Java" />
+                    tools:ignore="TextContrastCheck" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_screen"
-                    android:text="@{event.place}"
+                    android:text="@{event.location}"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_medium"
                     app:fontFamily="@font/poppins_semi_bold"
@@ -140,20 +141,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_screen"
-                    android:text="Dec, 10 - 13 2025"
+                    tools:text="@string/date"
+                    setDate="@{event.endDate}"
                     android:textColor="@color/text_gray"
                     android:textSize="@dimen/text_normal"
                     app:fontFamily="@font/poppins_regular"
                     app:layout_constraintStart_toEndOf="@+id/fab_date"
                     app:layout_constraintTop_toTopOf="@+id/fab_date"
-                    tools:ignore="TextContrastCheck"
-                    tools:text="Dec, 10 - 13 2025" />
+                    tools:ignore="TextContrastCheck" />
 
                 <TextView
+                    endDate="@{event.endDate}"
+                    startDate="@{event.startDate}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_screen"
-                    android:text="08:00 - 10:00"
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_medium"
                     app:fontFamily="@font/poppins_semi_bold"

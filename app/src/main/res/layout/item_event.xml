@@ -29,7 +29,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ship"
+                tools:src="@drawable/ship"
+                imageUrl="@{data.image}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -95,14 +96,14 @@
                 android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="1"
-                android:text="@{data.place}"
+                android:text="@{data.description}"
                 android:textColor="@color/semi_white"
                 android:textSize="11sp"
                 app:fontFamily="@font/poppins_regular"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/tv_title"
                 app:layout_constraintStart_toStartOf="@+id/tv_title"
-                tools:text="Main Hall" />
+                tools:text="Description" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

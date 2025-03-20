@@ -29,6 +29,6 @@ class HistoryFragment : BaseFragment<FragmentHistoryBinding>(R.layout.fragment_h
         adapter = historyAdapter
     }
 
-    private fun toDetail(event: Event) = HistoryFragmentDirections.actionHistoryToEvent(event).navigate(this)
+    private fun toDetail(event: Event) = HistoryFragmentDirections.actionHistoryToEvent(event.title.orEmpty()).navigate(this)
 
 }

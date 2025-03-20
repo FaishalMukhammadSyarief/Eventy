@@ -71,7 +71,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:text="@{data.title}"
+                    android:text="@{data.name}"
                     android:textSize="@dimen/text_medium"
                     app:fontFamily="@font/poppins_semi_bold"
                     app:layout_constraintBottom_toTopOf="@+id/anchor"

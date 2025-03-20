@@ -35,9 +35,9 @@ interface ApiService {
     @GET("events")
     suspend fun getEvents() : EventsResponse
 
-    @GET("events/{id}")
+    @GET("events/{title}")
     suspend fun getEvent(
-        @Path("id") id: Int?,
+        @Path("title") title: String?,
     ) : EventResponse
 
 }

@@ -14,7 +14,6 @@ import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.tabs.TabLayout
 import com.zen.overlapimagelistview.OverlapImageListView
 import com.zhalz.eventy.R
-import com.zhalz.eventy.domain.model.Person
 import com.zhalz.eventy.utils.extension.formatDate
 import com.zhalz.eventy.utils.extension.lighten
 import com.zhalz.eventy.utils.extension.recognizeDate
@@ -24,33 +23,35 @@ import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 
 /*  Text View  */
-@BindingAdapter("listToText")
-fun TextView.listToText(list: List<Person>) =
-    ":  ${list.joinToString(", ") { it.name }}".also { text = it }
+@BindingAdapter(value = ["startDate", "endDate"], requireAll = true)
+fun TextView.setHourRange(start: String?, end: String?) {
+    val range = "${start?.formatDate("HH:mm")} - ${end?.formatDate("HH:mm")}"
+    text = range
+}
 
 @BindingAdapter("setHour")
-fun TextView.setHour(date: String) {
-    text = date.formatDate("HH : mm")
+fun TextView.setHour(date: String?) {
+    text = date?.formatDate("HH : mm")
 }
 
 @BindingAdapter("setDay")
-fun TextView.setDay(date: String) {
-    text = date.formatDate("dd")
+fun TextView.setDay(date: String?) {
+    text = date?.formatDate("dd")
 }
 
 @BindingAdapter("setMonth")
-fun TextView.setMonth(date: String) {
-    text = date.formatDate("MMM")
+fun TextView.setMonth(date: String?) {
+    text = date?.formatDate("MMM")
 }
 
 @BindingAdapter("setYear")
-fun TextView.setYear(date: String) {
-    text = date.formatDate("yyyy")
+fun TextView.setYear(date: String?) {
+    text = date?.formatDate("yyyy")
 }
 
 @BindingAdapter("setDate")
-fun TextView.setDate(date: String) {
-    text = date.recognizeDate(context, "dd MMM yyyy")
+fun TextView.setDate(date: String?) {
+    text = date?.recognizeDate(context, "dd MMM yyyy")
 }
 
 /*  Set Color  */
@@ -117,5 +118,5 @@ fun OverlapImageListView.setOverlapImages(listImage: List<String>) = CoroutineSc
 @BindingAdapter("imageUrl")
 fun ShapeableImageView.setImageUrl(url: String?) =
     Glide.with(context)
-        .load(url)
+        .load("http://project.crocodic.academy/eventyapp/storage/$url")
         .into(this)

@@ -17,8 +17,8 @@ class EventRepositoryImpl @Inject constructor(private val apiService: ApiService
                 onFailure = { throwable -> ApiResult.Error(throwable.handleError()) }
             )
 
-    override suspend fun getEvent(id: Int): ApiResult<EventResponse> =
-        runCatching { apiService.getEvent(id) }
+    override suspend fun getEvent(string: String): ApiResult<EventResponse> =
+        runCatching { apiService.getEvent(string) }
             .fold(
                 onSuccess = { response -> ApiResult.Success(response) },
                 onFailure = { throwable -> ApiResult.Error(throwable.handleError()) }
