@@ -3,31 +3,24 @@ package com.zhalz.eventy.utils
 import com.crocodic.core.extension.toObject
 import com.google.gson.Gson
 import com.zhalz.eventy.data.remote.model.response.ErrorResponse
+import com.zhalz.eventy.utils.extension.getErrorMessage
 import retrofit2.HttpException
+import timber.log.Timber
 import java.io.IOException
 
 fun Throwable.handleError(): String =
     when (this) {
         is HttpException -> {
-            val stringJson = response()?.errorBody()?.string().orEmpty()
-            val errorResponse = stringJson.toObject<ErrorResponse>(Gson())
+            val json = response()?.errorBody()?.string().orEmpty()
+            val errorResponse = runCatching { json.toObject<ErrorResponse>(Gson()) }.getOrNull()
 
-            errorResponse.getErrorMessage() ?: errorResponse.message ?: "Unexpected HTTP Error."
+            errorResponse?.getErrorMessage()?: message.orEmpty()
         }
-        is IOException -> {
-            println("IO Exception bro " + this.message)
-            "Internet Problem."
-        }
+
+        is IOException -> message.orEmpty()
+
         else -> "An unexpected error occurred."
-    }
 
-fun ErrorResponse.getErrorMessage(): String? =
-    when (errors) {
-        is Map<*, *> -> {
-            errors.flatMap { (_, value) ->
-                (value as List<*>).filterIsInstance<String>()
-            }.joinToString("\n")
-        }
-        is String -> errors
-        else -> null
+    }.also {
+        Timber.e("Exception Occurred: $this::class.java.simpleName")
     }

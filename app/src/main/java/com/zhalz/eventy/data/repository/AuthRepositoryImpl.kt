@@ -15,28 +15,28 @@ class AuthRepositoryImpl @Inject constructor(private val apiService: ApiService)
     override suspend fun login(request: LoginRequest): ApiResult<AuthResponse> =
         runCatching { apiService.login(request) }
             .fold(
-                onSuccess = { response -> ApiResult.Success(response) },
+                onSuccess = { data -> ApiResult.Success(data) },
                 onFailure = { throwable -> ApiResult.Error(throwable.handleError()) }
             )
 
     override suspend fun register(request: RegisterRequest): ApiResult<AuthResponse> =
         runCatching { apiService.register(request) }
             .fold(
-                onSuccess = { response -> ApiResult.Success(response) },
+                onSuccess = { data -> ApiResult.Success(data) },
                 onFailure = { throwable -> ApiResult.Error(throwable.handleError()) }
             )
 
     override suspend fun verifyOtp(request: OtpRequest): ApiResult<AuthResponse> =
         runCatching { apiService.verifyOtp(request) }
             .fold(
-                onSuccess = { response -> ApiResult.Success(response) },
+                onSuccess = { data -> ApiResult.Success(data) },
                 onFailure = { throwable -> ApiResult.Error(throwable.handleError()) }
             )
 
     override suspend fun logout(): ApiResult<AuthResponse> =
         runCatching { apiService.logout() }
             .fold(
-                onSuccess = { response -> ApiResult.Success(response) },
+                onSuccess = { data -> ApiResult.Success(data) },
                 onFailure = { throwable -> ApiResult.Error(throwable.handleError()) }
             )
 
