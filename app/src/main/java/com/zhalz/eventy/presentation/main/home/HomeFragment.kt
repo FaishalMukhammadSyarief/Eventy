@@ -51,16 +51,28 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     }
 
     private fun initUI() = binding?.let {
-        it.fragment = this
-        it.rvTask.adapter = taskAdapter
-        it.rvEvent.adapter = eventAdapter
+        it.apply {
+            fragment = this@HomeFragment
+            rvTask.adapter = taskAdapter
+            rvEvent.adapter = eventAdapter
+
+            swipeRefresh.setOnRefreshListener {
+                viewModel.fetchEvents()
+            }
+        }
     }
 
     private suspend fun getEvents(): Unit = viewModel.eventsState.collect {
         when (it) {
-            is ApiResult.Loading -> {}
-            is ApiResult.Success -> eventAdapter.submitList(it.data?.data)
-            is ApiResult.Error -> showSnackBar(it.message.orEmpty())
+            is ApiResult.Loading -> binding?.swipeRefresh?.isRefreshing = true
+            is ApiResult.Success -> {
+                eventAdapter.submitList(it.data?.data)
+                binding?.swipeRefresh?.isRefreshing = false
+            }
+            is ApiResult.Error -> {
+                showSnackBar(it.message.orEmpty())
+                binding?.swipeRefresh?.isRefreshing = false
+            }
         }
     }
 
