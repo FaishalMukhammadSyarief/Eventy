@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.crocodic.core.extension.tos
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
 import com.zhalz.eventy.data.remote.model.response.AuthResponse
@@ -13,6 +12,7 @@ import com.zhalz.eventy.databinding.FragmentLoginBinding
 import com.zhalz.eventy.domain.common.ApiResult
 import com.zhalz.eventy.utils.extension.closeKeyboard
 import com.zhalz.eventy.utils.extension.navigate
+import com.zhalz.eventy.utils.extension.showSnackBar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.launch
@@ -52,7 +52,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
             is ApiResult.Success -> toHome()
             is ApiResult.Error -> {
                 loadingDialog?.dismiss()
-                context?.tos(it.message.orEmpty())
+                showSnackBar(it.message.orEmpty())
             }
             is ApiResult.Loading -> loadingDialog?.show("Loading...")
         }
