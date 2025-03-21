@@ -157,7 +157,7 @@
         tools:layout="@layout/fragment_spending">
         <argument
             android:name="division"
-            app:argType="com.zhalz.eventy.domain.model.Division" />
+            app:argType="com.zhalz.eventy.domain.model.Division2" />
     </fragment>
 
     <fragment

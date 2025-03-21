@@ -4,6 +4,7 @@ import com.zhalz.eventy.data.remote.model.request.LoginRequest
 import com.zhalz.eventy.data.remote.model.request.OtpRequest
 import com.zhalz.eventy.data.remote.model.request.RegisterRequest
 import com.zhalz.eventy.data.remote.model.response.AuthResponse
+import com.zhalz.eventy.data.remote.model.response.DivisionResponse
 import com.zhalz.eventy.data.remote.model.response.EventResponse
 import com.zhalz.eventy.data.remote.model.response.EventsResponse
 import retrofit2.http.Body
@@ -14,6 +15,7 @@ import retrofit2.http.Path
 
 interface ApiService {
 
+    /*  Auth  */
     @POST("auth/login")
     suspend fun login(
         @Body request: LoginRequest
@@ -32,6 +34,8 @@ interface ApiService {
     @DELETE("auth/logout")
     suspend fun logout() : AuthResponse
 
+
+    /*  Event  */
     @GET("events")
     suspend fun getEvents() : EventsResponse
 
@@ -39,5 +43,12 @@ interface ApiService {
     suspend fun getEvent(
         @Path("title") title: String?,
     ) : EventResponse
+
+
+    /*  Division  */
+    @GET("reports/{eventId}")
+    suspend fun getDivisionList(
+        @Path("eventId") id: Int?,
+    ) : DivisionResponse
 
 }

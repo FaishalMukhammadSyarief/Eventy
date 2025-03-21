@@ -34,7 +34,7 @@ data class Event(
 //    @field:SerializedName("attachments")
 //    val attachments: List<String?>? = null,
 
-    val divisionList: List<Division>,
+    val divisionList: List<Division2>,
 
     val managerList: List<Person>,
 

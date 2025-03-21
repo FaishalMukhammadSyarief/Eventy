@@ -9,10 +9,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
 import com.crocodic.core.extension.tos
 import com.zhalz.eventy.R
-import com.zhalz.eventy.data.divisionList
+import com.zhalz.eventy.data.division2List
 import com.zhalz.eventy.data.teamList
 import com.zhalz.eventy.databinding.FragmentAddDivisionBinding
-import com.zhalz.eventy.domain.model.Division
+import com.zhalz.eventy.domain.model.Division2
 import com.zhalz.eventy.domain.model.Person
 import com.zhalz.eventy.utils.extension.setDropdown
 
@@ -57,7 +57,7 @@ class AddDivisionFragment : DialogFragment() {
     }
 
     fun createDivision() {
-        divisionList.add(Division(id, title, "Promotions, communications, and public relations", selectedColor, R.drawable.ic_admin, binding.atvCoordinator.text.toString()))
+        division2List.add(Division2(id, title, "Promotions, communications, and public relations", selectedColor, R.drawable.ic_admin, binding.atvCoordinator.text.toString()))
         dismiss()
     }
 

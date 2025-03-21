@@ -10,10 +10,6 @@
             type="com.zhalz.eventy.presentation.event.EventFragment" />
 
         <variable
-            name="adapter"
-            type="com.crocodic.core.base.adapter.ReactiveListAdapter" />
-
-        <variable
             name="event"
             type="com.zhalz.eventy.domain.model.Event" />
 
@@ -175,10 +171,10 @@
                 app:fontFamily="@font/poppins_bold" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_division"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="12dp"
-                android:adapter="@{adapter}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:itemCount="3"
                 tools:listitem="@layout/item_division" />

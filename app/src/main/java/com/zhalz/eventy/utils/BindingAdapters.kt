@@ -10,7 +10,6 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.progressindicator.CircularProgressIndicator
-import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.tabs.TabLayout
 import com.zen.overlapimagelistview.OverlapImageListView
 import com.zhalz.eventy.R
@@ -77,9 +76,9 @@ fun ImageView.setIcon(iconRes: Int) {
 fun CircularProgressIndicator.setIndicatorColor(color: Int) =
     setIndicatorColor(getColor(context, color))
 
-@BindingAdapter("indicatorColor")
+/*@BindingAdapter("indicatorColor")
 fun LinearProgressIndicator.setIndicatorColor(color: Int) =
-    setIndicatorColor(getColor(context, color))
+    setIndicatorColor(getColor(context, color))*/
 
 @BindingAdapter("tabIndicatorColor")
 fun TabLayout.setTabIndicatorColor(color: Int) =

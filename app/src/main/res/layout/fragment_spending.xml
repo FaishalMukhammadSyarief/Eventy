@@ -11,7 +11,7 @@
 
         <variable
             name="division"
-            type="com.zhalz.eventy.domain.model.Division" />
+            type="com.zhalz.eventy.domain.model.Division2" />
 
     </data>
 

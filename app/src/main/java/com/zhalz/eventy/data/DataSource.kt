@@ -3,7 +3,7 @@ package com.zhalz.eventy.data
 import com.zhalz.eventy.R
 import com.zhalz.eventy.domain.common.TaskStatus
 import com.zhalz.eventy.domain.model.Comment
-import com.zhalz.eventy.domain.model.Division
+import com.zhalz.eventy.domain.model.Division2
 import com.zhalz.eventy.domain.model.Event
 import com.zhalz.eventy.domain.model.Person
 import com.zhalz.eventy.domain.model.Meet
@@ -45,20 +45,22 @@ val taskList = mutableListOf(
     Task(1092312, "Division UI", "Create division ui in figma", "2025-02-02 06:33:45", "Fulan", teamList, TaskStatus.COMPLETED, commentList),
 )
 
-val divisionList = mutableListOf(
-    Division(1092312, "Strategy", "Event planning, concept, and coordination", R.color.blue, R.drawable.ic_admin, managerList[0].name, teamList, taskList),
-    Division(1232991, "Marketing", "Promotions, communications, and public relations", R.color.orange, R.drawable.ic_megaphone, managerList2[0].name, teamList, taskList),
+val division2List = mutableListOf(
+    Division2(1092312, "Strategy", "Event planning, concept, and coordination", R.color.blue, R.drawable.ic_admin, managerList[0].name, teamList, taskList),
+    Division2(1232991, "Marketing", "Promotions, communications, and public relations", R.color.orange, R.drawable.ic_megaphone, managerList2[0].name, teamList, taskList),
 )
+
+
 
 val eventList = mutableListOf(
     Event(1, "Music Festival", "Experience an unforgettable evening of music, energy, and celebration at the Rhythm & Beats Festival 2025! This year’s lineup features world-renowned artists and rising stars across genres like pop, rock, electronic, and indie. Set against the stunning backdrop of the Sunset Grove Amphitheater, attendees will enjoy breathtaking performances, dazzling light shows, and a vibrant atmosphere.",
         "2025-01-02 06:33:45",
-        "2027-02-05 06:33:45", "City Hall", "Music", person2.image, divisionList, managerList, teamList, teamList),
-    Event(2, "Tech Conference", "lorem ipsum dolor sit amet", "2025-02-05 06:33:45", "2027-02-05 06:33:45", "Sampookong", "Expo", person1.image, divisionList, managerList2, teamList, teamList),
+        "2027-02-05 06:33:45", "City Hall", "Music", person2.image, division2List, managerList, teamList, teamList),
+    Event(2, "Tech Conference", "lorem ipsum dolor sit amet", "2025-02-05 06:33:45", "2027-02-05 06:33:45", "Sampookong", "Expo", person1.image, division2List, managerList2, teamList, teamList),
     Event(3, "Music Festival", "Experience an unforgettable evening of music, energy, and celebration at the Rhythm & Beats Festival 2025! This year’s lineup features world-renowned artists and rising stars across genres like pop, rock, electronic, and indie. Set against the stunning backdrop of the Sunset Grove Amphitheater, attendees will enjoy breathtaking performances, dazzling light shows, and a vibrant atmosphere.",
         "2025-01-02 06:33:45",
-        "2027-02-05 06:33:45", "City Hall", "Music", person3.image, divisionList, managerList, teamList, teamList),
-    Event(4, "Tech Conference", "lorem ipsum dolor sit amet", "2025-02-05 06:33:45", "2027-02-05 06:33:45", "Sampookong", "Expo", person1.image, divisionList, managerList2, teamList, teamList),
+        "2027-02-05 06:33:45", "City Hall", "Music", person3.image, division2List, managerList, teamList, teamList),
+    Event(4, "Tech Conference", "lorem ipsum dolor sit amet", "2025-02-05 06:33:45", "2027-02-05 06:33:45", "Sampookong", "Expo", person1.image, division2List, managerList2, teamList, teamList),
 )
 
 val spendingList = listOf(
