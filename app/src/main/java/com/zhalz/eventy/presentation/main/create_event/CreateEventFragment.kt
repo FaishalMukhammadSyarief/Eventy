@@ -6,10 +6,9 @@ import androidx.navigation.fragment.findNavController
 import com.crocodic.core.base.adapter.ReactiveListAdapter
 import com.zhalz.eventy.R
 import com.zhalz.eventy.base.BaseFragment
-import com.zhalz.eventy.data.division2List
 import com.zhalz.eventy.databinding.FragmentCreateEventBinding
 import com.zhalz.eventy.databinding.ItemDivisionBinding
-import com.zhalz.eventy.domain.model.Division2
+import com.zhalz.eventy.domain.model.Division
 import com.zhalz.eventy.utils.extension.addMenu
 import com.zhalz.eventy.utils.extension.setDropdown
 import com.zhalz.eventy.utils.extension.showMaterialDatePicker
@@ -17,7 +16,7 @@ import com.zhalz.eventy.utils.extension.showMaterialDatePicker
 class CreateEventFragment : BaseFragment<FragmentCreateEventBinding>(R.layout.fragment_create_event) {
 
     private val divisionAdapter by lazy {
-        ReactiveListAdapter<ItemDivisionBinding, Division2>(R.layout.item_division)
+        ReactiveListAdapter<ItemDivisionBinding, Division>(R.layout.item_division)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -51,7 +50,7 @@ class CreateEventFragment : BaseFragment<FragmentCreateEventBinding>(R.layout.fr
 
         /*  Recycler View  */
         rvDivision.adapter = divisionAdapter.apply {
-            submitList(division2List)
+            //submitList(division2List)
         }
     }
 
